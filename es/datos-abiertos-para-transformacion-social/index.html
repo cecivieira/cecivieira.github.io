@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Blog personal para compartir aprendizajes y unir mis experiéncias en las comunidades de tecnología." />
+    <meta name="keywords" content="Tecnología" />
+
+    <link rel="icon" href="/es/assets/images/favicon.ico">
+
+    <title>Datos abiertos para transformación social | Ana Cecília Vieira</title>
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Datos abiertos para transformación social</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Datos abiertos para transformación social" />
+<meta name="author" content="cecivieira" />
+<meta property="og:locale" content="es" />
+<meta name="description" content="Keynote impartido en PyCon Bolivia acerca de datos abiertos, el nivel de transparencia en Bolivia, la importancia y poder de esta tecnología para la participación ciudadana y algunos proyectos de referencia." />
+<meta property="og:description" content="Keynote impartido en PyCon Bolivia acerca de datos abiertos, el nivel de transparencia en Bolivia, la importancia y poder de esta tecnología para la participación ciudadana y algunos proyectos de referencia." />
+<link rel="canonical" href="http://www.cecivieira.com//es/datos-abiertos-para-transformacion-social/" />
+<meta property="og:url" content="http://www.cecivieira.com//es/datos-abiertos-para-transformacion-social/" />
+<meta property="og:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1702869750/capas-site/7723725_pooq9o.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-12-16T08:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1702869750/capas-site/7723725_pooq9o.jpg" />
+<meta property="twitter:title" content="Datos abiertos para transformación social" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@cecivieira" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","image":"https://res.cloudinary.com/damhz6skt/image/upload/v1702869750/capas-site/7723725_pooq9o.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.cecivieira.com//es/assets/images/logo.png"},"name":"cecivieira"},"headline":"Datos abiertos para transformación social","dateModified":"2023-12-16T08:00:00-03:00","datePublished":"2023-12-16T08:00:00-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.cecivieira.com//es/datos-abiertos-para-transformacion-social/"},"author":{"@type":"Person","name":"cecivieira"},"description":"Keynote impartido en PyCon Bolivia acerca de datos abiertos, el nivel de transparencia en Bolivia, la importancia y poder de esta tecnología para la participación ciudadana y algunos proyectos de referencia.","url":"http://www.cecivieira.com//es/datos-abiertos-para-transformacion-social/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="/es/assets/css/screen.css" rel="stylesheet">
+
+    <link href="/es/assets/css/main.css" rel="stylesheet">
+
+    <script src="/es/assets/js/jquery.min.js"></script>
+
+    <!-- Google Analytics -->
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG4L84NMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEG4L84NMR');
+</script>
+    
+
+</head>
+
+
+
+<body class="layout-post">
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CMukta:300,300i,400,400i,700,700i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
+
+
+    <!-- Begin Menu Navigation
+================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="/es/">
+                <img src="/es/assets/images/logo.png" alt="">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        
+
+                        
+
+                        <a class="nav-link" href="/es/">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/es/categorias-es">Categorías</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/es/sobre-mi">Sobre mí</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/es/contacto">Contacto</a>
+                    </li>
+
+                    
+
+                    
+
+                    <script src="/es/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Buscar..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/es/assets/js/lunrsearchengine.js"></script>
+
+                    
+                    <li><a href="http://www.cecivieira.com/"> 🇧🇷 </a></li>
+                    
+                    
+
+                </ul>
+
+                <!-- End Menu -->
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+
+        <div class="container">
+
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Datos abiertos para transformación social&url=http://www.cecivieira.com//es/datos-abiertos-para-transformacion-social/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://www.cecivieira.com//es/datos-abiertos-para-transformacion-social/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.cecivieira.com//es/datos-abiertos-para-transformacion-social/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">Datos abiertos para transformación social</h1>
+
+                <!-- Post Date -->
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="2023-12-16">16 Dec 2023</time></span>           
+                    
+                    </small>
+                </p>
+
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/es/temas-es#américa-latina">américa latina</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/es/temas-es#datos-abiertos">datos abiertos</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/es/temas-es#gobierno-abierto">gobierno abierto</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/es/actividades#artículo">#artículo</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/es/actividades#charla">#charla</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Tags -->                
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image - Insere a imagem do card da notícia, antes do texto do artigo -->
+            <!-- 
+
+            
+            <img class="featured-image img-fluid" src="https://res.cloudinary.com/damhz6skt/image/upload/v1702869750/capas-site/7723725_pooq9o.jpg" alt="Datos abiertos para transformación social">
+            
+
+             -->
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <blockquote>
+  <p>En este artículo encontrás el contenido y <a href="../../assets/images/2023-12-16/pybo-2023-datos-abiertos-para-transformacion-social.pdf">las diapositivas</a> de la <a href="">charla “Datos abiertos para transformación social”</a> presentada en la <a href="https://bo.pycon.org/">PyCon Bolivia 2023</a>.</p>
+</blockquote>
+
+<p>Hace aproximadamente 12 años, las naciones de América Latina y el Caribe se comprometieron a divulgar sus datos con el objetivo de promover la transparencia, el desarrollo y la innovación en diversos ámbitos internacionales, a través de la <a href="https://www.opengovpartnership.org/es/">Alianza para el Gobierno Abierto</a>. En la actualidad, contamos con la participación de 16 países latinoamericanos como signatarios de esta alianza. No obstante, el progreso de la agenda en la región ha sido bastante lento en los últimos años. La apertura de datos públicos por parte de los gobiernos resulta fundamental para fortalecer nuestras democracias en la era digital.</p>
+
+<p>Contar con información es crucial para la toma de decisiones, especialmente para que sean bien fundamentadas. Aunque pueda parecer evidente, esto no siempre fue así. En la actualidad, los datos son omnipresentes, presentes en abundancia y diversidad, desempeñando un papel fundamental al orientar nuestras acciones en diversas áreas. Se han convertido en una parte integral de nuestra rutina diaria.
+Adicionalmente, un gobierno que destaca por su alto índice de transparencia y datos abiertos fomenta la innovación, el desarrollo económico sostenible y la formulación y expansión de políticas públicas eficientes y efectivas. Estos aspectos son esenciales para garantizar una calidad de vida óptima para nosotras.</p>
+
+<h1 id="agenda-2030">Agenda 2030</h1>
+
+<p>Entonces, cómo nosotras, desde la sociedad civil, en especial como expertas y expertos en tecnología, podemos contribuir para una sociedad más justa, equitativa y democrática?</p>
+
+<p>Os enseño la <a href="https://www.un.org/sustainabledevelopment/es/2015/09/la-asamblea-general-adopta-la-agenda-2030-para-el-desarrollo-sostenible/">Agenda 2030</a>, un plan de acción establecido por la ONU para “lograr dar respuesta a los 17 Objetivos de Desarrollo Sostenible (ODS) a favor de las personas, el planeta y la prosperidad, que también tiene la intención de fortalecer la paz universal y el acceso a la justicia” (<a href="https://www.un.org/sustainabledevelopment/es/2015/09/la-asamblea-general-adopta-la-agenda-2030-para-el-desarrollo-sostenible/">Naciones Unidas</a>). En la práctica es decir: que los grandes desafíos mundiales van desde el combate a la pobreza, hambre, corrupción, hasta el cambio climático.</p>
+
+<p>Los objetivos 16 y 17 tienen metas acerca de dados y gobierno abierto:</p>
+
+<p><strong>Objetivo 16 - Promover sociedades justas, pacíficas e inclusivas</strong></p>
+
+<ul>
+  <li>16.5 Reducir considerablemente la corrupción y el soborno en todas sus formas.</li>
+  <li>16.6 Crear a todos los niveles instituciones eficaces y transparentes que rindan cuentas.</li>
+  <li>16.7 Garantizar la adopción en todos los niveles de decisiones inclusivas, participativas y representativas que respondan a las necesidades.</li>
+</ul>
+
+<p><strong>Objetivo 17 - Revitalizar la Alianza Mundial para el Desarrollo Sostenible</strong></p>
+
+<ul>
+  <li>17.18 Mejorar el apoyo a la creación de capacidad prestado a los países en desarrollo, incluidos los países menos adelantados y los pequeños Estados insulares en desarrollo, para aumentar significativamente la disponibilidad de datos oportunos, fiables y de gran calidad desglosados por ingresos, sexo, edad, raza, origen étnico, estatus migratorio, discapacidad, ubicación geográfica y otras características pertinentes en los contextos nacionales.</li>
+  <li>17.19 Aprovechar las iniciativas existentes para elaborar indicadores que permitan medir los progresos en materia de desarrollo sostenible y complementen el producto interno bruto, y apoyar la creación de capacidad estadística en los países en desarrollo.</li>
+</ul>
+
+<p>Estos objetivos plantean nuevas metas para que nuestras instituciones se caractericen por ser más abiertas, participativas y colaborativas. Una gobernanza mejorada también representa una contribución esencial al desarrollo sostenible.</p>
+
+<p>La abundancia de datos ha llevado a los Estados a desarrollar nuevas capacidades. Los datos abiertos pueden ser empleados en la planificación, diseño, seguimiento y evaluación de políticas públicas. De este modo, los Estados pueden aumentar su eficiencia y tomar decisiones más acertadas en función de los objetivos establecidos. Además, mayor  interacción  entre  los  gobiernos  y  sociedad permiten oportunidades de co-creación de soluciones y negocios.</p>
+
+<h1 id="instrumentos-para-evaluar-nivel-de-tranparencia-de-datos-en-los-países">Instrumentos para evaluar nivel de tranparencia de datos en los países</h1>
+
+<p>Hoy en día, para tratar de medir la evolución de las iniciativas de datos abiertos en los países, existen cuatro índices:</p>
+<ol>
+  <li>el <a href="https://opendatabarometer.org/4thedition/report/?lang=es">Barómetro de Datos Abiertos (ODB)</a> producido por la World Wide Web Foundation;</li>
+  <li>el <a href="http://index.okfn.org/">Índice Global de Datos Abiertos (GODI)</a> producido por la Open Knowledge Foundation;</li>
+  <li>el <a href="https://odin.opendatawatch.com/">Inventario de los Datos Abiertos (ODIN)</a> producido por la Open Data Watch; y</li>
+  <li>y el <a href="https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm">OURdata Index</a> realizado por la OCDE.</li>
+</ol>
+
+<p>Cada uno de estos índices se enfoca en distintas dimensiones de las iniciativas de datos abiertos. Nosotras tendremos en cuenta el <a href="https://odin.opendatawatch.com/">Inventario de los Datos Abiertos (ODIN)</a>, pues es el que tiene la última edición más reciente, de febrero de 2023.</p>
+
+<h1 id="inventario-de-apertura-de-datos-odin">Inventario de Apertura de Datos (ODIN)</h1>
+
+<p>El <a href="https://odin.opendatawatch.com/">Inventario de Apertura de Datos (ODIN)</a> evalúa la exhaustividad de las ofertas estadísticas de un país y verifica si sus datos cumplen con los estándares internacionales de apertura. Los datos sujetos a evaluación en el ODIN son aquellos oficiales del país, los cuales se publican en el sitio web de la oficina nacional de estadísticas o en cualquier otro sitio oficial del país vinculado desde el sitio web de la mencionada oficina estadística. Los aspectos analizados por este índice son: cobertura y apertura.</p>
+
+<p>Los puntajes de cobertura se fundamentan en la presencia de indicadores clave y desgloses adecuados a lo largo del tiempo y en subdivisiones geográficas.</p>
+
+<p>Por otro lado, las puntuaciones de apertura se sustentan en la posibilidad de descargar los datos en formatos legibles por máquina y no propietarios. Además, se evalúa la presencia de metadatos, la disponibilidad de opciones de descarga como descarga masiva y selección de usuarios o API, así como la existencia de términos de uso o licencia de datos abiertos.</p>
+
+<h2 id="panorama-boliviano">Panorama boliviano</h2>
+
+<p>En la <a href="https://odin.opendatawatch.com/Report/countryProfileUpdated/BOL?year=2022">clasificación global del ODIN Bolivia</a> se sitúa en el puesto 84 con un total de 53 puntos. A continuación, se presenta un desglose detallado de las categorías investigadas:</p>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/2023-12-16/odin-bolivia-puntos-por-categorias.png" /></p>
+
+<p>Me ha llamado atención dos de los puntos investigados: salud reproductiva y finanzas gubernamentales.  Entonces, me he profundizado en la Metodología del Índice para comprender el significado.</p>
+
+<p>La categoría de Salud Reproductiva presenta una cobertura de 0 puntos. Para alcanzar al menos 0.5 puntos, sería necesario divulgar datos como la tasa de mortalidad materna, la tasa de mortalidad neonatal, la tasa de mortalidad infantil (menores de 5 años), así como las tasas de fertilidad, métodos anticonceptivos y la tasa de embarazo en la adolescencia.</p>
+
+<p>Aunque existen algunos puntos en la categoría de apertura, lo publicado hasta el momento no resulta suficiente, ya que falta información crucial, como una tasa de mortalidad. La carencia de estos datos es significativa, especialmente al considerar la importancia de la salud reproductiva en el diseño de políticas públicas para mujeres. ¿Cómo podemos desarrollar políticas efectivas sin tener en cuenta aspectos fundamentales de la salud reproductiva?</p>
+
+<p>La categoría de Finanzas Gubernamentales registra una puntuación de 0 en todos los aspectos. No se encuentran disponibles datos en formato abierto que cumplan con los estándares internacionales para las finanzas gubernamentales. Aunque he hallado información en el sitio web del gobierno, esta se presenta en formato de archivo PDF en lugar de un formato accesible.</p>
+
+<p>Índices tan bajos por sí mismos ya constituyen material suficiente para impulsar una participación ciudadana activa. Sin datos sólidos, resulta imposible lograr que los gobiernos sean responsables por las decisiones que toman, las políticas que aprueban y la gestión del presupuesto.</p>
+
+<p>Aquí es donde nosotras, expertas en tecnología y miembros de la sociedad civil informada y participativa, podemos intervenir.</p>
+
+<p>En la actualidad, gran parte del desarrollo tecnológico se realiza utilizando datos como materia prima, y, por supuesto, la mayoría de estos datos son recopilados de diversas plataformas. De hecho, existe un extenso mercado de comercialización de datos. Bueno, este tema es para otra conversación. Pero, imagina si tuviéramos datos gubernamentales abundantes, confiables, de calidad y en tiempo real; ¿cuántas tecnologías cívicas podríamos desarrollar para beneficiar nuestras ciudades?</p>
+
+<p>Para comprender mejor cómo podemos actuar, es interesante observar la cadena de valor de los datos. Esta fue <a href="https://opendatawatch.com/reference/the-data-value-chain-executive-summary/">publicada por Open Data Watch</a>:</p>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/2023-12-16/ODW-Data2x-Data-Value-Chain-simple-CC-BY-ATTRIBUTION-2048x939.jpg" /></p>
+
+<p>En Bolivia, puedes encontrar organizaciones sin ánimo de lucro actuando en cada uno de los pasos.</p>
+
+<p>En 2019, la Fundación Hivos ha publicado el <a href="https://america-latina.hivos.org/document/mapeo-de-actores-de-sociedad-civil-relacionados-a-datos-abiertos-en-bolivia/">Mapeo de Actores de Sociedad Civil Relacionados a Datos Abiertos en Bolivia</a>, que ha identificado cinco grupos en el ecosistema de datos abiertos boliviano: cientistas de datos, analista de datos, periodistas de datos, activistas que abogan por la transparencia y investigadores.</p>
+
+<p>Destaco dos nodos en particular:</p>
+
+<p>Nodos de activistas
+<img class="rounded mx-auto d-block" src="../../assets/images/2023-12-16/nodos-de-activistas.png" /></p>
+
+<p>Nodos de científicos de datos
+<img class="rounded mx-auto d-block" src="../../assets/images/2023-12-16/nodos-de-cientistas-de-datos.png" /></p>
+
+<p>Considero fundamental que colaboraremos con organizaciones de la sociedad civil para impulsar el desarrollo del ecosistema de datos abiertos. Un ecosistema robusto depende de la participación de diversos sectores. Dada la amplitud e importancia de los datos en diversas áreas de la sociedad, es esencial adoptar un modelo participativo.</p>
+
+<p>Gráfico de porcentaje de grupos involucrados
+<img class="rounded mx-auto d-block" src="../../assets/images/2023-12-16/porcentaje-de-grupos-involucrados.png" /></p>
+
+<p>La presencia importante de cientistas de datos, ingeniera de datos y analista representa una oportunidad maravillosa puesto que somos nosotras que contamos con las mayores habilidades de procesamiento de datos de entre todos las integrantes del ecosistema. Simultáneamente, la presencia de activistas también es importante para que los datos abiertos no queden solamente en emprendimiento privados, sino que tenga carácter de beneficio público.</p>
+
+<p>La primera experiencia de Bolivia con datos abiertos fue en 2013 con la realización del primer Data Bootcamp, hubo una segunda versión y luego en 2015 el 1er. Acelerador de periodismo de datos que originó pequeños proyectos periodísticos y otros varios desde la sociedad civil. En 2017 el gobierno plurinacional de Bolivia ha publicado el <a href="https://www.agetic.gob.bo/wp-content/uploads/2022/08/1.-lineamiento-adecuacion-datos-abiertos.pdf">Lineamientos para la adecuación y publicación de datos abiertos</a>. Muchos proyectos han sido desarrollados en favor de la apertura, uso y reuso de datos abiertos desde el gobierno y la sociedad civil. Sin embargo, según el Barómetro de Datos Abiertos de 2019, se ha observado un estancamiento en el avance de la transparencia y apertura de datos en Latinoamérica. En el caso específico de Bolivia, al revisar el Portal de Datos Abiertos, se constata que actualmente solo hay disponibles 43 conjuntos de datos abiertos. Además, estos conjuntos no se encuentran actualizados tampoco cumplen completamente con las definiciones de datos abiertos establecidas por la comunidad internacional de datos.</p>
+
+<p>Te invito a sumarte a una de las iniciativas que trabajan por la apertura de datos en nuestra región, para que podamos contribuir al fortalecimiento de nuestras democracias y alcanzar una sociedad más justa y equitativa.</p>
+
+<h1 id="organizaciones-que-promueven-uso-de-la-tecnología-para-el-fortalecimiento-de-democracias">Organizaciones que promueven uso de la tecnología para el fortalecimiento de democracias</h1>
+
+<ul>
+  <li><a href="https://escueladedatos.online/">Escuela de datos</a></li>
+  <li><a href="https://www.aru.org.bo/">Fundación ARU</a></li>
+  <li><a href="https://www.fundacionconstruir.org/">Fundación Construir</a></li>
+  <li><a href="https://america-latina.hivos.org/">Hivos: people unlimited: América Latina</a></li>
+  <li><a href="https://idatosabiertos.org/">ILDA</a></li>
+  <li><a href="https://latinno.net/es/">Latinno</a></li>
+  <li><a href="https://lapazcomovamos.org/">La Paz ¿Cómo vamos?</a></li>
+  <li><a href="https://miga.org.bo/">Miga: cocinas regionales</a></li>
+  <li><a href="https://warmi.red/">Warmi.red: mujeres en tecnología</a></li>
+</ul>
+
+<h1 id="citaciones">Citaciones</h1>
+
+<ul>
+  <li><a href="https://blogs.iadb.org/administracion-publica/en/five-lessons-from-open-data-workshops-in-latin-america-and-the-caribbean/">5 Lessons Learned from Open Data Workshops in Latin America and the Caribbean</a></li>
+  <li><a href="https://www.aduana.gob.bo/aduana7/content/datos-abiertos">Aduana Nacional - Datos Abiertos</a></li>
+  <li><a href="https://opendatawatch.com/publications/data-action-plan-sets-targets-for-2030/">Data Action Plan Sets Targets for 2030</a></li>
+  <li><a href="https://www.d4d.net/">Data for Development Network</a></li>
+  <li><a href="https://elpais.bo/tarija/20180804_datos-abiertos-bolivia-desaprovecha-una-oportunidad-sin-precedentes.html">Datos Abiertos: Bolivia desaprovecha una “oportunidad sin precedentes”</a></li>
+  <li><a href="https://barometrolac.org/ilda-edicion/informe/">El Barometro de Datos Abiertos América Latina e Caribe 2020</a></li>
+  <li><a href="https://es.schoolofdata.org/2016/06/28/estado-de-los-datos-abiertos-en-bolivia/index.html">Estado de los datos abiertos en Bolivia</a></li>
+  <li><a href="https://www.agetic.gob.bo/wp-content/uploads/2022/08/1.-lineamiento-adecuacion-datos-abiertos.pdf">Lineamientos para la adecuación y publicación de datos abiertos</a></li>
+  <li><a href="https://cleiman.com/dev/wp-content/uploads/2020/10/PublicacionDatosAbiertosFinal.pdf">Los datos abiertos en América Latina y el Caribe</a></li>
+  <li><a href="https://america-latina.hivos.org/document/mapeo-de-actores-de-sociedad-civil-relacionados-a-datos-abiertos-en-bolivia/">Mapeo de actores de sociedad civil relacionados a datos abiertos en Bolivia</a></li>
+  <li><a href="https://odin.opendatawatch.com/ReportCreator/ExportCountryReport/BOL/2022">Open Data Inventory 2022/23 - Bolivia</a></li>
+  <li><a href="https://odin.opendatawatch.com/ReportCreator/">Open Data Inventory 2022/2023</a></li>
+  <li><a href="https://www.un.org/sustainabledevelopment/es/2015/09/la-asamblea-general-adopta-la-agenda-2030-para-el-desarrollo-sostenible/">Objetivos de Desarrollo Sostenible</a></li>
+  <li><a href="https://www.datos.gob.bo/">Portal de Datos Abiertos - Bolivia</a></li>
+</ul>
+
+<hr />
+<p><img class="rounded mx-auto d-block" src="../../assets/images/2023-12-16/divulgacao-pybo-2023.jpg" /></p>
+
+<p>Este texto son los apuntes de la charla “Datos abiertos para transformación social” presentada en la <a href="https://bo.pycon.org/">PyCon Bolivia 2023</a> en el 16 de diciembre en la ciudad de La Paz (Bolivia).</p>
+
+<p>Recursos:</p>
+<ul>
+  <li><a href="../../assets/images/2023-12-16/pybo-2023-datos-abiertos-para-transformacion-social.pdf">Diapositivas</a></li>
+  <li><a href="">Charla en video (en breve)</a></li>
+</ul>
+
+                <i class="far fa-laugh-beam"></i>               
+            </div>
+
+            <!-- Version in other languages -->
+            <div class="language-version">
+                
+                
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Author Box -->
+                        
+            <div class="row post-top-meta">
+            <!-- Foto da autora
+                <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                    
+                    <img class="author-thumb" src="/es/" alt="Ana Cecília Vieira">
+                    
+                </div>
+            -->
+
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                    <i class="fas fa-star"></i>                     
+                </div>
+                
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">                                                        
+                    Ana Cecília Vieira
+                    <span class="author-description">Analista de datos experta en calidad de datos.Entusiasta de datos abiertos, código abierto y de las comunidades autogestionadas como instrumento para el cambio social. Embajadora del programa 'Ciencia de Datos para Innovación Cívica' de la Open Knowledge Brasil y podcaster en el Pizza de Dados.</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- Prev/Next -->
+            <p> ----- </p>
+            <h4>Lea también: </h4>
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="/eshttp://www.cecivieira.com///datos-abiertos-en-la-universidad-publica-el-caso-de-la-universidad-federal-de-pernambuco/"> &laquo; Datos abiertos en la gestión pública: el caso de la Universidad Federal de Pernambuco</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+            </div>
+
+            
+
+        </div>
+
+        <!-- Categories Jumbotron
+================================================== -->
+        
+
+<div class="jumbotron fortags">
+      <div class="d-md-flex h-100">
+            <div class="col-md-4 transpdark align-self-center text-center h-100">
+                  <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">
+                              Temas
+                              <span class="d-none d-md-inline">→</span>
+                        </h2>
+                  </div>
+            </div>
+            <div class="col-md-8 p-5 align-self-center text-center">
+                  
+
+    
+        <a class="mt-1 mb-1" href="/es/temas-es#pyladies">pyladies (2)</a>
+    
+        <a class="mt-1 mb-1" href="/es/temas-es#equidad-de-género">equidad de género (2)</a>
+    
+        <a class="mt-1 mb-1" href="/es/temas-es#comunidad">comunidad (2)</a>
+    
+        <a class="mt-1 mb-1" href="/es/temas-es#datos-abiertos">datos abiertos (4)</a>
+    
+        <a class="mt-1 mb-1" href="/es/temas-es#gobierno-abierto">gobierno abierto (4)</a>
+    
+        <a class="mt-1 mb-1" href="/es/temas-es#américa-latina">américa latina (4)</a>
+    
+        <a class="mt-1 mb-1" href="/es/temas-es#análisis-exploratorio">análisis exploratorio (2)</a>
+    
+        <a class="mt-1 mb-1" href="/es/temas-es#innovación-cívica">innovación cívica (2)</a>
+    
+        <a class="mt-1 mb-1" href="/es/temas-es#pandas">pandas (2)</a>
+    
+        <a class="mt-1 mb-1" href="/es/temas-es#docker">docker (1)</a>
+    
+
+
+            </div>
+      </div>
+</div>
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 text-center text-lg-left">
+                        Ana Cecília Vieira © <a target="_blank"
+                            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center social-media">
+                        
+                        <a target="_blank" href="https://twitter.com/cecivieira"><i class="fab fa-twitter"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://github.com/cecivieira"><i class="fab fa-github"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://www.linkedin.com/in/cecivieira/"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        
+                        <a target="_blank" href="mailto:cecivieira@gmail.com"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center text-lg-right">
+                        <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish
+                            Jekyll Theme</a> by WowThemes.net
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer
+================================================== -->
+
+    </div> <!-- /.site-content -->
+
+    <!-- Scripts
+================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script src="/es/assets/js/mediumish.js"></script>
+
+    
+
+    <script src="/es/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+    
+
+</body>
+
+</html>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script>
+<script>L2Dwidget.init({ "model": { "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618, "jsonPath": "/live2dw/assets/hijiki.model.json" }, "display": { "superSample": 2, "width": 150, "height": 300, "position": "right", "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 }, "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }, "log": false, "pluginJsPath": "lib/", "pluginModelPath": "assets/", "pluginRootPath": "live2dw/", "tagMode": false });</script>

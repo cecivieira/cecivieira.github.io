@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description></description>
+    <link>http://www.cecivieira.com//en/</link>
+    <atom:link href="http://www.cecivieira.com//en/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 28 Mar 2024 15:28:14 -0300</pubDate>
+    <lastBuildDate>Thu, 28 Mar 2024 15:28:14 -0300</lastBuildDate>
+    <generator>Jekyll v3.9.0</generator>
+    
+  </channel>
+</rss>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia." />
+    <meta name="keywords" content="Tecnologia" />
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <title>Correlação entre variáveis | Ana Cecília Vieira</title>
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Correlação entre variáveis</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Correlação entre variáveis" />
+<meta name="author" content="cecivieira" />
+<meta property="og:locale" content="pt_br" />
+<meta name="description" content="Último de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse é apresentado conceito sobre correlação entre variáveis." />
+<meta property="og:description" content="Último de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse é apresentado conceito sobre correlação entre variáveis." />
+<link rel="canonical" href="http://www.cecivieira.com//correlacao-entre-variaveis/" />
+<meta property="og:url" content="http://www.cecivieira.com//correlacao-entre-variaveis/" />
+<meta property="og:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/22_fos8dv.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-26T09:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/22_fos8dv.png" />
+<meta property="twitter:title" content="Correlação entre variáveis" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@cecivieira" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","image":"https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/22_fos8dv.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.cecivieira.com//assets/images/logo.png"},"name":"cecivieira"},"headline":"Correlação entre variáveis","dateModified":"2022-06-26T09:00:00-03:00","datePublished":"2022-06-26T09:00:00-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.cecivieira.com//correlacao-entre-variaveis/"},"author":{"@type":"Person","name":"cecivieira"},"description":"Último de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse é apresentado conceito sobre correlação entre variáveis.","url":"http://www.cecivieira.com//correlacao-entre-variaveis/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="/assets/css/screen.css" rel="stylesheet">
+
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <!-- Google Analytics -->
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG4L84NMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEG4L84NMR');
+</script>
+    
+
+</head>
+
+
+
+<body class="layout-post">
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CMukta:300,300i,400,400i,700,700i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
+
+
+    <!-- Begin Menu Navigation
+================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/assets/images/logo.png" alt="">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        
+
+                        
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categorias">Categorias</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre-mim">Sobre mim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Contato</a>
+                    </li>
+
+                    
+
+                    <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Buscar..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+                    
+                    <li><a href="http://www.cecivieira.com//es"> 🇪🇸 </a></li>
+                    
+                    
+
+                </ul>
+
+                <!-- End Menu -->
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+
+        <div class="container">
+
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Correlação entre variáveis&url=http://www.cecivieira.com//correlacao-entre-variaveis/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://www.cecivieira.com//correlacao-entre-variaveis/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.cecivieira.com//correlacao-entre-variaveis/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">Correlação entre variáveis</h1>
+
+                <!-- Post Date -->
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="2022-06-26">26 Jun 2022</time></span>           
+                    
+                    </small>
+                </p>
+
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#estatística">estatística</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#artigo">#artigo</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Tags -->                
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image - Insere a imagem do card da notícia, antes do texto do artigo -->
+            <!-- 
+
+            
+            <img class="featured-image img-fluid" src="https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/22_fos8dv.png" alt="Correlação entre variáveis">
+            
+
+             -->
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>Esse artigo é o último de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse é apresentado conceito sobre correlação entre variáveis.</p>
+
+<p><a href="https://cecivieira.com/valores-discrepantes-e-valores-faltantes/">No artigo anterior falamos sobre valores discrepantes (outliers) e valores faltantes (missings). Talvez, lê-lo te ajude a entender a importância de tratar os dados, antes de estudar sobre a influência de uma variável sobre outra e de fazer alguma inferência.</a></p>
+
+<h2 id="conceito">Conceito</h2>
+
+<p>Às vezes, desejamos analisar um dado cujo comportamento pode está sendo inﬂuenciado por outros dados. Por exemplo, temos mais sede durante os dias que mais suamos, então pode ser que a quantidade de líquido ingerido diariamente por uma pessoa esteja relacionada a quantidade de exercício físico que ela pratica ou ao clima do local aonde ela mora ou por algum outro fator que a faça suar. A esse fenômeno chamamos de correlação entre variáveis, que pode ser de três tipos:</p>
+
+<p><strong>positiva</strong>: quando as variáveis analisadas tendem a aumentar na mesma direção;</p>
+
+<p><strong>negativa</strong>: quando as variáveis tendem a crescerem em sentidos opostos, ou seja, quando uma variável aumenta a outra tende a diminuir;</p>
+
+<p><strong>nula</strong>: quando não se observa variação interdependente.</p>
+
+<h3 id="coeficiente-de-correlação">Coeficiente de correlação</h3>
+
+<p>Para medir a correlação entre as variáveis usamos o “coeﬁciente de correlação, um valor numérico que indica o grau e a direção da tendência de associação entre [elas]” (<a href="https://bookdown.org/cienciadedadosnaep/ciencia_de_dados/cap4.html">Ciência de Dados na Educação Pública, 2021</a>).</p>
+
+<p>Existem vários tipos de cálculo que podemos fazer para achar esse coeﬁciente, a depender das características dos dados. Neste artigo vou falar sobre o coeﬁciente de Pearson, também conhecido como <em>coeficiente de correlação linear</em>, que é usado para veriﬁcar a correlação entre duas variáveis quantitativas (numéricas).</p>
+
+<p>Esse coeficiente é resultado da divisão da covariância de duas variáveis pelo produto dos seus desvios padrão, que sempre resultará em valores situados entre -1 e 1. Quanto mais extremos os valores, mais forte é a correlação entre as variáveis analisadas e quanto mais próximo de zero, mais fraca, sendo 0 a indicação de que não há correlação.</p>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/serie-estatistica-para-ciencia-dados/escala-coeficiente-correlacao.png" /></p>
+
+<p>Uma forma comum e muito eﬁciente para visualizar o coeﬁciente é usando a matriz de correlação. Para isso, vamos continuar usando o <a href="https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/#contexto">conjunto de dados de candidaturas para a Câmara dos Vereadores de Recife em 2020</a>. Verificaremos o coeﬁciente de correlação entre as colunas <code class="language-plaintext highlighter-rouge">NR_IDADE_DATA_POSSE</code> e <code class="language-plaintext highlighter-rouge">CD_ESTADO_CIVIL</code>, tendo como hipótese que a idade tem uma correlação forte com o estado civil das pessoas candidatas.</p>
+
+<p>Só é possível realizar essa correlação porque cada estado civil está relacionado a um código numérico, conforme apresentado no dicionário de dados.</p>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/serie-estatistica-para-ciencia-dados/matriz-de-correlacao.png" />
+Fonte:<a href="https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados">Notebook “Estatística básica para Ciência de Dados”</a></p>
+
+<p>Observamos que a correlação linear é fraca. Então, nossa hipótese não foi comprovada, ou seja, não é possível afirmar que existe correlação entre as variáveis analisadas.</p>
+
+<h2 id="correlação-não-significa-causalidade-fator-de-confusão">Correlação não significa causalidade: fator de confusão</h2>
+
+<p>Nesse tema precisamos ﬁcar alertas para não fazermos associações absurdas. Nem sempre uma correlação linear forte signiﬁca que as variáveis possuem uma relação de causa-efeito. Correlação não implica em causalidade. É preciso analisar cuidadosa e criticamente cada relação e seu contexto, além de considerar os fatores de confusão.</p>
+
+<p>Para entender melhor, imaginemos o seguinte caso: nos meses de dezembro e janeiro é observado aumento no número de afogamentos em praias e, ao mesmo tempo, um aumento na venda de picolés. Imaginemos que, segundo os dados analisados, o coeficiente de correlação linear é de 0,96. Nesse caso, podemos concluir que a venda de picolés causa afogamentos em praias? Não. Precisamos considerar uma terceira variável, que nesse contexto, é o <em>fator de confusão</em>. Esses meses são de verão, isso significa que costumamos ir mais à praia e consumir mais picolés. Portanto, para essa análise, também precisamos considerar a variável “temperatura” para compreender o contexto e não fazer uma inferência equivocada.</p>
+
+<p>Com esse artigo finalizamos a série sobre conceitos (bem) básicos de estatística para ciência de dados. Espero que essas leituras ajudem que esse tema faça um pouquinho mais de sentido na tua próxima tentativa de estudá-lo.</p>
+
+<p>Se assistir vídeo aula te ajudar, dá uma olhadinha <a href="https://youtu.be/xiZwte8D1Xs">nessa sobre conceitos de estatística básica para ciência de dados</a>, que fiz para a <a href="https://youtube.com/playlist?list=PL7h1S1pOf5-t13ktXkAIX5_ZG2nXpU8rE">Sprint de Dados da PrograMaria</a>.</p>
+
+<h2 id="continue-estudando"><strong>Continue estudando</strong></h2>
+
+<h3 id="outros-artigos-da-série"><strong>Outros artigos da série</strong></h3>
+
+<ul>
+  <li><a href="https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/">Estatística descritiva e distribuição estatística</a></li>
+  <li><a href="https://cecivieira.com/medidas-de-tendencia-central/">Medidas de tendência central</a></li>
+  <li><a href="https://cecivieira.com/medidas-de-dispersao/">Medidas de dispersão</a></li>
+  <li><a href="https://cecivieira.com/valores-discrepantes-e-valores-faltantes/">Valores discrepantes e valores faltantes</a></li>
+</ul>
+
+<h3 id="recomendações-gerais"><strong>Recomendações gerais</strong></h3>
+
+<ul>
+  <li><strong>WHEELAN, Charles. Estatística: O que é, para que serve, como funciona. São Paulo: Zahar, 2016.</strong> (como uma das primeiras tentativas, também recomendo a leitura desse livro)</li>
+  <li><a href="https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados">Notebook “Estatística básica para Ciência de Dados”</a></li>
+  <li><a href="https://escoladedados.org/tutoriais/analise-com-estatistica-descritiva-para-leigos/">OKBR. Análise com estatística descritiva para leigos</a></li>
+  <li><a href="https://escoladedados.org/tutoriais/correlacao-nao-e-causalidade-mas-o-que-e-entao/">OKBR. Correlação não é causalidade, mas o que é então?</a></li>
+  <li><a href="https://dadosabertos.tse.jus.br/dataset/candidatos-2020-subtemas">Portal de Dados Abertos do Tribunal Superior Eleitoral: candidaturas 2020.</a></li>
+  <li><a href="https://www.tylervigen.com/spurious-correlations">Spurious Correlations</a></li>
+  <li><a href="https://bookdown.org/cienciadedadosnaep/ciencia_de_dados/cap4.html">UFBA. Ciência de Dados na Educação Pública. Correlação e causalidade</a></li>
+</ul>
+
+                <i class="far fa-laugh-beam"></i>               
+            </div>
+
+            <!-- Version in other languages -->
+            <div class="language-version">
+                
+                
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Author Box -->
+                        
+            <div class="row post-top-meta">
+            <!-- Foto da autora
+                <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                    
+                    <img class="author-thumb" src="/" alt="Ana Cecília Vieira">
+                    
+                </div>
+            -->
+
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                    <i class="fas fa-star"></i>                     
+                </div>
+                
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">                                                        
+                    Ana Cecília Vieira
+                    <span class="author-description">Analista de dados especializada em qualidade de dados. Entusiasta em dados abertos, código aberto e comunidades autogestinadas como instrumento para transformação social. Embaixadora do programa 'Ciência de Dados para Inovação Cívica' da Open Knowledge Brasil e podcaster no Pizza de Dados.</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- Prev/Next -->
+            <p> ----- </p>
+            <h4>Leia também: </h4>
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://www.cecivieira.com///valores-discrepantes-e-valores-faltantes/"> &laquo; Valores discrepantes e valores faltantes</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="http://www.cecivieira.com///analise-exploratoria-de-dados-para-fortalecimento-de-democracias/">Análise exploratória de dados para fortalecimento de democracias &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+            </div>
+
+            
+
+        </div>
+
+        <!-- Categories Jumbotron
+================================================== -->
+        
+
+<div class="jumbotron fortags">
+      <div class="d-md-flex h-100">
+            <div class="col-md-4 transpdark align-self-center text-center h-100">
+                  <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">
+                              Temas
+                              <span class="d-none d-md-inline">→</span>
+                        </h2>
+                  </div>
+            </div>
+            <div class="col-md-8 p-5 align-self-center text-center">
+                  
+
+    
+        <a class="mt-1 mb-1" href="/temas#dados-abertos">dados abertos (8)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#carreira">carreira (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#bash">bash (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#controle-de-tarefas">controle de tarefas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#linux">linux (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#terminal-commands">terminal commands (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#cidades-inteligentes">cidades inteligentes (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#governo-aberto">governo aberto (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#oracle-virtual-box">oracle virtual box (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ubuntu-20.04">ubuntu 20.04 (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#entrevista">entrevista (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#comunidades">comunidades (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#internacionalização">internacionalização (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#plugin">plugin (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ruby">ruby (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jekyll">jekyll (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ckan">ckan (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#docker">docker (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#folium">folium (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#mapa">mapa (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#extensão-ckan">extensão ckan (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#gestão-pública">gestão pública (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#estatística">estatística (5)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#américa-latina">américa latina (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#análise-exploratoria">análise exploratoria (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#inovação-cívica">inovação cívica (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#pandas">pandas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#software-livre">software livre (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jinja">jinja (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#python">python (2)</a>
+    
+
+
+            </div>
+      </div>
+</div>
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 text-center text-lg-left">
+                        Ana Cecília Vieira © <a target="_blank"
+                            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center social-media">
+                        
+                        <a target="_blank" href="https://twitter.com/cecivieira"><i class="fab fa-twitter"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://github.com/cecivieira"><i class="fab fa-github"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://www.linkedin.com/in/cecivieira/"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        
+                        <a target="_blank" href="mailto:cecivieira@gmail.com"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center text-lg-right">
+                        <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish
+                            Jekyll Theme</a> by WowThemes.net
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer
+================================================== -->
+
+    </div> <!-- /.site-content -->
+
+    <!-- Scripts
+================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script src="/assets/js/mediumish.js"></script>
+
+    
+
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+    
+
+</body>
+
+</html>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script>
+<script>L2Dwidget.init({ "model": { "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618, "jsonPath": "/live2dw/assets/hijiki.model.json" }, "display": { "superSample": 2, "width": 150, "height": 300, "position": "right", "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 }, "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }, "log": false, "pluginJsPath": "lib/", "pluginModelPath": "assets/", "pluginRootPath": "live2dw/", "tagMode": false });</script>
