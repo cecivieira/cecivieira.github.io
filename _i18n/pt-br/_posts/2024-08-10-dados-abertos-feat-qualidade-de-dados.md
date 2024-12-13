@@ -14,7 +14,7 @@ description: "Conteúdo do keynote realizado na Python Nordeste 2024, sobre dado
 toc: false
 beforetoc:
 ---
-> Nesse artigo você encontrará o conteúdo na palestra (keynote) ["Dados abertos feat Qualidade de Dados"](https://www.youtube.com/@PythonNordeste), apresentada na Python Nordeste 2024, e os [slides](../../assets/images/2024-08-10/Dados abertos feat qualidade de dados.pdf) utilizados.
+> Nesse artigo você encontrará o conteúdo na palestra (keynote) ["Dados abertos feat Qualidade de Dados"](https://www.youtube.com/@PythonNordeste), apresentada na Python Nordeste 2024, e os [slides](../../assets/images/2024-08-10/Dados abertos feat qualidade de dados.pdf) utilizados. Esta palestra também foi apresentada no evento [América Aberta 2024](https://atividades.americaaberta.org/2024/talk/DXCAK7/) (trilha Coda.BR) e [Python Brasil 2024](https://talks.python.org.br/pythonbrasil-2024/talk/KL78N7/). 
 
 ---
 Em outubro de 2023 recebi o [prêmio Dorneles Treméa \| Jean Ferri](https://apyb.python.org.br/apyb/premio-dorneles-tremea-jean-ferri/) em reconhecimento pelo trabalho que faço junto à comunidade Python. No momento do anúncio, fiquei tão surpresa que não consegui agradecer apropriadamente ao vivo. Depois que a emoção arrefeceu, eu só conseguia pensar em uma coisa: "precisarei de uma palestra keynote para agradecer o prêmio". Meses depois, a organização da Python Nordeste 2024 me convidou para ser a palestrante principal do evento. Essa palestra, é o meu agradecimento.
