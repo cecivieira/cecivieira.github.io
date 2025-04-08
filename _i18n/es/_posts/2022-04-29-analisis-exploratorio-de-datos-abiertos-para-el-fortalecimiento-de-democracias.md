@@ -20,7 +20,7 @@ Para empezar, todo el análisis de datos hay que tener un contexto. Lo nuestro e
 
 Los temas de las proposiciones son interesante porque la Organización de los Estados America (OEA) prevé que a partir de 30% de mujeres en las casas legislativas se nota aumento sustancial en proposiciones legislativas en favor de la democracia y protección de derechos de grupos históricamente marginados, ejemplo: campesinos, mujeres, población LGTQIA+, negros, ancianos, discapacitados, artistas, poblaciones económicamente vulnerables y pueblos indígenas.
 
-Si tienes interés en el tema de datos abiertos y nivel de transparencia de datos en América Latina, invitote a leer el artículo con el [contenido teórico de la charla](www.cecivieira.com/es/analisis-exploratorio-de-datos-tecnologia-social-y-gobiernos-democraticos/).
+Si tienes interés en el tema de datos abiertos y nivel de transparencia de datos en América Latina, invitote a leer el artículo con el [contenido teórico de la charla](www.cecivieira.com.br/es/analisis-exploratorio-de-datos-tecnologia-social-y-gobiernos-democraticos/).
 
 ## Pipeline
 
