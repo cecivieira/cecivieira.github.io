@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia." />
+    <meta name="keywords" content="Tecnologia" />
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <title>Dados abertos e software livre: um match perfeito | Ana Cecília Vieira</title>
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Dados abertos e software livre: um match perfeito</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Dados abertos e software livre: um match perfeito" />
+<meta name="author" content="cecivieira" />
+<meta property="og:locale" content="pt_br" />
+<meta name="description" content="Nesse post são apresentados os conceitos de software livre e dados abertos, bem como as liberdades do software livre, os princípios de dados abertos e as semelhanças entre esses movimentos. Por fim, apresenta o poder social desses conceitos e ferramentas, além de estimular a leitora uma participação social mais ativa." />
+<meta property="og:description" content="Nesse post são apresentados os conceitos de software livre e dados abertos, bem como as liberdades do software livre, os princípios de dados abertos e as semelhanças entre esses movimentos. Por fim, apresenta o poder social desses conceitos e ferramentas, além de estimular a leitora uma participação social mais ativa." />
+<link rel="canonical" href="http://www.cecivieira.com.br//dados-abertos-e-software-livre-um-match-perfeito/" />
+<meta property="og:url" content="http://www.cecivieira.com.br//dados-abertos-e-software-livre-um-match-perfeito/" />
+<meta property="og:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1685128159/capas-site/27_phapgm.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-29T09:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1685128159/capas-site/27_phapgm.jpg" />
+<meta property="twitter:title" content="Dados abertos e software livre: um match perfeito" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@cecivieira" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","image":"https://res.cloudinary.com/damhz6skt/image/upload/v1685128159/capas-site/27_phapgm.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.cecivieira.com.br//assets/images/logo.png"},"name":"cecivieira"},"headline":"Dados abertos e software livre: um match perfeito","dateModified":"2023-04-29T09:00:00-03:00","datePublished":"2023-04-29T09:00:00-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.cecivieira.com.br//dados-abertos-e-software-livre-um-match-perfeito/"},"author":{"@type":"Person","name":"cecivieira"},"description":"Nesse post são apresentados os conceitos de software livre e dados abertos, bem como as liberdades do software livre, os princípios de dados abertos e as semelhanças entre esses movimentos. Por fim, apresenta o poder social desses conceitos e ferramentas, além de estimular a leitora uma participação social mais ativa.","url":"http://www.cecivieira.com.br//dados-abertos-e-software-livre-um-match-perfeito/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="/assets/css/screen.css" rel="stylesheet">
+
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <!-- Google Analytics -->
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG4L84NMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEG4L84NMR');
+</script>
+    
+
+</head>
+
+
+
+<body class="layout-post">
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CMukta:300,300i,400,400i,700,700i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
+
+
+    <!-- Begin Menu Navigation
+================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/assets/images/logo.png" alt="">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        
+
+                        
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categorias">Categorias</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre-mim">Sobre mim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Contato</a>
+                    </li>
+
+                    
+
+                    <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Buscar..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+                    
+                    <li><a href="http://www.cecivieira.com.br//es"> 🇪🇸 </a></li>
+                    
+                    
+
+                </ul>
+
+                <!-- End Menu -->
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+
+        <div class="container">
+
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Dados abertos e software livre: um match perfeito&url=http://www.cecivieira.com.br//dados-abertos-e-software-livre-um-match-perfeito/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://www.cecivieira.com.br//dados-abertos-e-software-livre-um-match-perfeito/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.cecivieira.com.br//dados-abertos-e-software-livre-um-match-perfeito/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">Dados abertos e software livre: um match perfeito</h1>
+
+                <!-- Post Date -->
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="2023-04-29">29 Apr 2023</time></span>           
+                    
+                    </small>
+                </p>
+
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#dados-abertos">dados abertos</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#software-livre">software livre</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#artigo">#artigo</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#palestra">#palestra</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Tags -->                
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image - Insere a imagem do card da notícia, antes do texto do artigo -->
+            <!-- 
+
+            
+            <img class="featured-image img-fluid" src="https://res.cloudinary.com/damhz6skt/image/upload/v1685128159/capas-site/27_phapgm.jpg" alt="Dados abertos e software livre: um match perfeito">
+            
+
+             -->
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <blockquote>
+  <p>Esse artigo é composto pelas anotações da palestra “Dados abertos e software livre: um match perfeito”, apresentada no FLISOL, realizado no IFPE Palmares em 29 abr. 2023. Aqui você também encontrará a apresentação (<a href="../../assets/images/2023-04-29/dados-abertos-software-livre-match-perfeito.pdf">slides</a>).</p>
+</blockquote>
+
+<p>Dados abertos e software livre tem muito em comum na sua conceituação, principalmente no que se refere ao objetivo de proporcionar liberdade e autonomia para a sociedade com objetivo de que tenhamos poder debater e contribuir com o desenvolvimento de soluções.</p>
+
+<h2 id="1-parte-do-match-o-software-livre">1. parte do match: O Software Livre</h2>
+
+<p>“Software livre é uma denominação utilizada para sistemas que respeitam a liberdade e a ideia de comunidade das usuárias quanto a autonomia de executar, copiar, distribuir, estudar, alterar e melhorar o software.” (GNU Operating System, tradução livre)</p>
+
+<p>Isso não significa que toda distribuição de software livre é gratuita, mas significa que todas elas devem ter licença que permita sua cópia e alteração ou mesmo monetização. O termo “livre” é proposital, para que não haja confusão com “gratuidade”. Podemos fazer uma analogia com a nossa liberdade de “ir e vir”, a qual não significa que essa movimentação é livre de custo.</p>
+
+<h3 id="história">História</h3>
+
+<p>Na década de 1980, no Laboratorio de Inteligência Artificial do MIT, onde trabalhava o programador estadunidense <a href="https://pt.wikipedia.org/wiki/Richard_Matthew_Stallman">Richard Stallman</a>, havia uma impressora que sempre atolava papel e as pessoas só notavam o problema quando iam buscar os documentos, que não estavam impressos, e, além disso, se deparavam com uma fila enorme de impressões. Isso gerava perda de tempo recorrente para as trabalhadoras do laboratório.</p>
+
+<p>Então, Richard teve a ideia de implementar um sistema de monitoramento de impressões e notificação à solicitante quando ocorria alguma falha nessa tarefa. Assim, seria possível sua rápida correção. No entanto, ao pedir o código fonte da impressora para a fabricante, ele recebeu uma negativa.</p>
+
+<p>Esse é um caso anedótico que ilustra a inquietação que deu origem ao movimento chamado “software livre”, o qual Richard é o seu fundador. A partir do desenvolvimento de tecnologias durante a Segunda Guerra Mundial se notava uma tendência de mudança de um dos paradigmas no desenvolvimento de sistemas: fornecimento de código fonte. Logo, naquele momento havia um ambiente propício para o surgimento de um movimento que visasse questões éticas com foco na usuária do produto.</p>
+
+<p>Em 1984, foi iniciado o projeto GNU, desenvolvido de forma colaborativa, que teve como objetivo dar liberdade e controle para as pessoas usuárias no uso de seus computadores, permitindo, a partir da sua licença, a execução do software, distribuição, estudo e modificação.</p>
+
+<p>Em 1985, foi publicado o manifesto GNU, que estabeleceu as bases filosóficas do movimento de software livre. Nesse mesmo ano, também, foi fundada a Free Software Foundation, uma organização sem fins lucrativos, que dá suporte ao citado movimento.</p>
+
+<p>Em 1986, foi publicada a Licença Pública Geral - GNU, a primeira do tipo copyleft, ou seja, que proporciona a liberdade de uso e distribuição de uma obra, exigindo que seja preservado o mesmo tipo de licença nas suas cópias e distribuições.</p>
+
+<h3 id="liberdades">Liberdades</h3>
+
+<p>A filosofia do movimento “software livre” é composta por quatro liberdades para as pessoas usuárias de sistemas, são elas:</p>
+
+<ol>
+  <li>Liberdade para usar o programa com qualquer propósito;</li>
+  <li>Liberdade para estudar como funciona o programa, modificá-lo e adaptá-lo;</li>
+  <li>Liberdade para distribuir cópias do programa, para ajudar outras usuárias;</li>
+  <li>Liberdade de distribuir cópias de suas versões modificadas para outras pessoas.</li>
+</ol>
+
+<p>O detalhamento sobre cada liberdade e as fronteiras entre “livre” e não “livre”, você encontra <a href="https://www.gnu.org/philosophy/free-sw.html#four-freedoms">nesse artigo</a>.</p>
+
+<h3 id="vantagens-de-usar-softwares-livres">Vantagens de usar softwares livres</h3>
+
+<p>As vantagens são muitas, mas destaco as seguintes:</p>
+
+<p><strong>Desenvolvimento e melhoria contínua:</strong> O fato de o código fonte estar disponível, permite que muitas pessoas possam revisá-lo e testá-lo, como consequência, pode haver uma maior rapidez no tratamento das falhas e resolução de problemas.</p>
+
+<p><strong>Independência tecnológica:</strong> As liberdades 2 e 4 garantem que o software possa ser estudado, customizado conforme necessidade da usuária ou sua comunidade e distribuído sem submeter a aprovação ou informar a ninguém.</p>
+
+<p><strong>Economia na aquisição, manutenção e renovação de tecnologias:</strong> Ainda que “software livre” não signifique “gratuito”, costuma ter um custo menor de aquisição e atualização.</p>
+
+<p><strong>Permite ser copiado:</strong> Como mencionado anteriormente com as liberdades, o software livre permite ser copiado, portanto, sem a necessidade de adquirir novas licenças, pode ser distribuído a todos que precisarem.</p>
+
+<h2 id="2-parte-do-match-os-dados-abertos">2. parte do match: Os Dados Abertos</h2>
+
+<p>“Dados abertos são dados que podem ser livremente usados, reutilizados e redistribuídos por qualquer pessoa - sujeitos, no máximo, à exigência de atribuição da fonte e compartilhamento pelas mesmas regras.” (Open Knowledge Foundation)</p>
+
+<p>À essa definição é necessário acrescentar que os dados devem estar em formato de arquivo aberto, ou seja, que suas especificações técnicas estejam publicadas e sob licença não-proprietária.</p>
+
+<h3 id="história-1">História</h3>
+
+<p>Em 1942, <a href="https://pt.wikipedia.org/wiki/Robert_King_Merton">Robert King Merton</a> explicou a importância de que resultados de pesquisas científicas fossem livremente acessíveis a todos. Sua ideia era que cada pessoa pesquisadora deveria contribuir para o “pote comum” e abrir mão dos seus direitos de propriedade intelectual para permitir que o conhecimento avançasse mais rapidamente.</p>
+
+<p>O termo “dados abertos” apareceu pela primeira vez em 1995, em um documento de uma agência científica estadunidense, que estimulava a promoção de um intercâmbio completo e aberto de informações científicas entre diferentes países como pré-requisito para a análise e compreensão de fenômenos globais.</p>
+
+<p>Só em 2006, foi publicado um artigo que trazia a definição do termo: “dados que qualquer pessoa pode acessar, usar e compartilhar”, escrito por <a href="https://pt.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a>.</p>
+
+<h3 id="princípios-dos-dados-abertos">Princípios dos dados abertos</h3>
+
+<p>Em 2007, durante um encontro do “Open Government Working Group” foram estabelecidos oito princípios para que um dado seja considerado como aberto. São eles:</p>
+
+<p><strong>Completo:</strong> Todos os dados públicos devem ser disponibilizados. Dados públicos são dados que não estão sujeitos a restrições de privacidade, segurança ou privilégios de acesso.</p>
+
+<p><strong>Primários:</strong> Os dados devem ser coletados na fonte com o maior nível de detalhamento possível, e não de forma agregada ou modificada.</p>
+
+<p><strong>Oportunidade:</strong> Sua disponibilidade deve ser feita tão rapidamente quanto necessário para preservar o valor dos dados.</p>
+
+<p><strong>Acessibilidade:</strong> Os dados devem estar disponíveis para a mais ampla gama de usuários e as mais diversas finalidades.</p>
+
+<p><strong>Processável por máquinas:</strong> Os dados devem ser razoavelmente estruturados de modo a permitir o processamento automatizado.</p>
+
+<p><strong>Não-discriminatório:</strong> Os dados devem estar disponíveis para qualquer pessoa, sem necessidade de registro.</p>
+
+<p><strong>Não-proprietário:</strong> Os dados devem estar disponíveis em um formato sobre o qual nenhuma entidade tem o controle exclusivo.</p>
+
+<p><strong>Licença livre:</strong> Os dados não estão sujeitos a quaisquer direitos de autor, patentes, marcas comerciais ou regulamento secreto. Pode ser permitida uma razoável privacidade e restrições de privilégio e segurança.</p>
+
+<h3 id="licença">Licença</h3>
+
+<p>Para garantir a proteção jurídica necessária para que os dados possam ser utilizados, reutilizados e redistribuídos, existe um grupo de licenças específica para base de dados, que explicita condições de uso e favorece a redistribuição. Algumas dessas licenças são:</p>
+
+<ul>
+  <li><a href="https://opendatacommons.org/licenses/odbl/">Open Data Commons Open Database License (ODbL)</a></li>
+  <li><a href="https://opendatacommons.org/licenses/by/">Open Data Commons Attribution License</a></li>
+  <li><a href="https://opendatacommons.org/licenses/pddl/">Open Data Commons Public Domain Dedication and License (PDDL)</a></li>
+</ul>
+
+<p>Idealmente, os dados devem ser publicados sem nenhum tipo de restrição para uso, reuso e distribuição.</p>
+
+<h3 id="vantagens">Vantagens</h3>
+
+<p>Alto nível de transparência de dados nos permite comparar, combinar e realizar conexões entre os dados. Isso possibilita identificar tendências, desafios, desigualdades econômicas e sociais, além de facilitar o monitoramento de programas e serviços públicos.</p>
+
+<p>Um exemplo concreto da importância de ter um alto nível de transparência e abertura de dados, foi a luta coletiva contra a pandemia de COVID-19. Só foi possível acompanhar em tempo real a situação em cada país, monitorar a gestão dos recursos, desenvolver ferramentas tecnológicas e soluções científicas em um curto prazo devido ao esforço coletivo e intencional para abertura de dados e prática de ciência aberta.</p>
+
+<h2 id="o-match">O match</h2>
+
+<p>Você já percebeu as similaridades entre os temas?</p>
+
+<p>A tabela abaixo relaciona algumas similaridades:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Dados Abertos</strong></th>
+      <th><strong>Software livre</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Completo:</strong> Todos os dados públicos devem ser disponibilizados. Dados públicos são dados que não estão sujeitos a restrições de privacidade, segurança ou privilégios de acesso. <br /> <br /> <strong>Primários:</strong> Os dados devem ser coletados na fonte com o maior nível de detalhamento possível, e não de forma agregada ou modificada. <br /> <br /><strong>Oportunidade:</strong> Sua disponibilidade deve ser feita tão rapidamente quanto necessário para preservar o valor dos dados. <br /> <br /><strong>Processável por máquinas:</strong> Os dados devem ser razoavelmente estruturados de modo a permitir o processamento automatizado.</td>
+      <td><strong>Código fonte:</strong> O programa deve incluir o código fonte e deve permitir a distribuição do código fonte, bem como na forma compilada. Quando algum tipo de produto não for distribuído com código fonte, deve haver um meio bem divulgado de obtê-lo por um custo de reprodução não superior a um custo razoável, de preferência por download gratuito na Internet.</td>
+    </tr>
+    <tr>
+      <td><strong>Não-discriminatório:</strong> Os dados devem estar disponíveis para qualquer pessoa, sem necessidade de registro. <br /><br /><strong>Acessibilidade:</strong> Os dados devem estar disponíveis para a mais ampla gama de usuários e as mais diversas finalidades.</td>
+      <td><strong>Não discriminação contra pessoas ou grupos:</strong> A licença não deve discriminar nenhuma pessoa ou grupo de pessoas, bem como não deve restringir ninguém de usar o programa em uma área específica de atuação.</td>
+    </tr>
+    <tr>
+      <td><strong>Não-proprietário:</strong> Os dados devem estar disponíveis em um formato sobre o qual nenhuma entidade tem o controle exclusivo.</td>
+      <td><strong>Redistribuição Gratuita:</strong> Nenhuma das partes está impedida de vender ou redistribuir o software. <br /><br /><strong>Trabalhos Derivados:</strong> A licença deve permitir modificações e trabalhos derivados, e deve permitir que sejam distribuídos nos mesmos termos da licença de software original.</td>
+    </tr>
+    <tr>
+      <td><strong>Licença livre:</strong> Os dados não estão sujeitos a quaisquer direitos de autor, patentes, marcas comerciais ou regulamento secreto. Pode ser permitida uma razoável privacidade e restrições de privilégio e segurança.</td>
+      <td><strong>Licença aberta:</strong> Para uso e redistribuição e modificação</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+Viu?! Ambos movimentos tem em sua essência o desejo de promover autonomia e liberdade para a usuária, no sentido de desenvolvimento de inovação e solucionar problemas comunitários.</p>
+
+<h2 id="e-na-prática">E na prática?</h2>
+
+<p>Existe uma revolução global que busca fomentar ações colaborativas em torno a desafios mundiais, proporcionar um monitoramento eficaz das atividades governamentais e privadas, apoiar inovação, desenvolvimento econômico sustentável e criação e expansão de políticas públicas eficientes e eficazes.</p>
+
+<p>Desde uma perspectiva governamental, em 2011, foi firmada a Parceria para Governo Aberto, a qual o Brasil foi um dos 8 primeiros signatários, junto com representantes da sociedade civil e outros países. Com essa Parceria, começamos a pensar sobre estratégias para transformação digital do nosso governo, além disso é notório o incentivo ao uso de softwares de código aberto e softwares livres. Ademais, algumas ferramentas desenvolvidas pelo governo federal começaram a ter licença aberta e seus códigos fonte publicados em <a href="https://github.com/govbr">repositórios no Github</a>.</p>
+
+<p>Um dos pilares da Parceria para o Governo Aberto é dar poder à sociedade para que possamos participar de forma efetiva das gestões das nossas cidades e dados abertos e software livre são ferramentas potentes para alcançarmos isso.</p>
+
+<p>Desde a sociedade civil organizada, existe desenvolvimento de muitas tecnologias baseada em software livres e incentivando a abertura ou libertando dados, além de consumi-los. O poder está conosco.</p>
+
+<h2 id="referências">Referências</h2>
+
+<ul>
+  <li><a href="http://www.paristechreview.com/2013/03/29/brief-history-open-data/">A brief history of open data</a></li>
+  <li><a href="https://pt.wikipedia.org/wiki/Formato_aberto">Formato aberto</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/GNU_Project">GNU Project</a></li>
+  <li><a href="https://www.gov.br/governodigital/pt-br/legislacao/legislacao-governanca-digital">Governança digital</a></li>
+  <li><a href="https://www.gov.br/cgu/pt-br/governo-aberto">Governo aberto</a></li>
+  <li><a href="http://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14129.htm">Lei n. 14.129/2021</a></li>
+  <li><a href="https://www.gnu.org/philosophy/free-sw.html">O que é o software livre?</a></li>
+  <li><a href="https://opendatacommons.org/">Open data commons</a></li>
+  <li><a href="https://ok.org.br/noticia/quando-surgiram-os-oito-principios-dos-dados-abertos/">Quando surgiram os 8 princípios dos dados abertos?</a></li>
+  <li><a href="https://es.wikipedia.org/wiki/Software_libre">Software libre</a></li>
+</ul>
+
+<hr />
+<p><img class="rounded mx-auto d-block" src="https://res.cloudinary.com/damhz6skt/image/upload/c_scale,w_400/v1682856815/2023-04-29/divulgacao-flisol-palmares-2023_wiwf1l.png" /></p>
+
+<p>Esse artigo é composto pelas anotações da palestra “Dados abertos e software livre: um match perfeito”, apresentada no FLISOL, realizado no IFPE Palmares em 29 abr. 2023.</p>
+
+<p>Recursos:</p>
+<ul>
+  <li><a href="../../assets/images/2023-04-29/dados-abertos-software-livre-match-perfeito.pdf">Slides</a></li>
+  <li><a href="https://github.com/douglasfernandesjr/geradorcartelabingo">Bingo - Gerador de cartelas</a></li>
+</ul>
+
+                <i class="far fa-laugh-beam"></i>               
+            </div>
+
+            <!-- Version in other languages -->
+            <div class="language-version">
+                
+                
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Author Box -->
+                        
+            <div class="row post-top-meta">
+            <!-- Foto da autora
+                <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                    
+                    <img class="author-thumb" src="/" alt="Ana Cecília Vieira">
+                    
+                </div>
+            -->
+
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                    <i class="fas fa-star"></i>                     
+                </div>
+                
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">                                                        
+                    Ana Cecília Vieira
+                    <span class="author-description">Analista de dados especializada em qualidade de dados. Entusiasta em dados abertos, código aberto e comunidades autogestinadas como instrumento para transformação social. Embaixadora do programa 'Ciência de Dados para Inovação Cívica' da Open Knowledge Brasil e podcaster no Pizza de Dados.</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- Prev/Next -->
+            <p> ----- </p>
+            <h4>Leia também: </h4>
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://www.cecivieira.com.br///quinta-com-dados/"> &laquo; Quinta com dados</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="http://www.cecivieira.com.br///gerador-de-posts-pacote-python/">Gerador de posts: pacote python &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+            </div>
+
+            
+
+        </div>
+
+        <!-- Categories Jumbotron
+================================================== -->
+        
+
+<div class="jumbotron fortags">
+      <div class="d-md-flex h-100">
+            <div class="col-md-4 transpdark align-self-center text-center h-100">
+                  <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">
+                              Temas
+                              <span class="d-none d-md-inline">→</span>
+                        </h2>
+                  </div>
+            </div>
+            <div class="col-md-8 p-5 align-self-center text-center">
+                  
+
+    
+        <a class="mt-1 mb-1" href="/temas#dados-abertos">dados abertos (9)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#carreira">carreira (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#bash">bash (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#controle-de-tarefas">controle de tarefas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#linux">linux (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#terminal-commands">terminal commands (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#cidades-inteligentes">cidades inteligentes (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#governo-aberto">governo aberto (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#oracle-virtual-box">oracle virtual box (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ubuntu-20.04">ubuntu 20.04 (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#entrevista">entrevista (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#comunidades">comunidades (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#internacionalização">internacionalização (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#plugin">plugin (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ruby">ruby (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jekyll">jekyll (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ckan">ckan (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#docker">docker (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#folium">folium (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#mapa">mapa (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#extensão-ckan">extensão ckan (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#gestão-pública">gestão pública (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#estatística">estatística (5)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#américa-latina">américa latina (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#análise-exploratoria">análise exploratoria (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#inovação-cívica">inovação cívica (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#pandas">pandas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#software-livre">software livre (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jinja">jinja (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#python">python (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#qualidade-de-dados">qualidade de dados (1)</a>
+    
+
+
+            </div>
+      </div>
+</div>
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 text-center text-lg-left">
+                        Ana Cecília Vieira © <a target="_blank"
+                            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center social-media">
+                        
+                        <a target="_blank" href="https://twitter.com/cecivieira"><i class="fab fa-twitter"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://github.com/cecivieira"><i class="fab fa-github"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://www.linkedin.com/in/cecivieira/"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        
+                        <a target="_blank" href="mailto:cecivieira@gmail.com"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center text-lg-right">
+                        <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish
+                            Jekyll Theme</a> by WowThemes.net
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer
+================================================== -->
+
+    </div> <!-- /.site-content -->
+
+    <!-- Scripts
+================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script src="/assets/js/mediumish.js"></script>
+
+    
+
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+    
+
+</body>
+
+</html>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script>
+<script>L2Dwidget.init({ "model": { "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618, "jsonPath": "/live2dw/assets/hijiki.model.json" }, "display": { "superSample": 2, "width": 150, "height": 300, "position": "right", "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 }, "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }, "log": false, "pluginJsPath": "lib/", "pluginModelPath": "assets/", "pluginRootPath": "live2dw/", "tagMode": false });</script>

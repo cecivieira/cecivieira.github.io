@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia." />
+    <meta name="keywords" content="Tecnologia" />
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <title>Análise exploratória de dados para fortalecimento de democracias | Ana Cecília Vieira</title>
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Análise exploratória de dados para fortalecimento de democracias</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Análise exploratória de dados para fortalecimento de democracias" />
+<meta name="author" content="cecivieira" />
+<meta property="og:locale" content="pt_br" />
+<meta name="description" content="Dados abertos são recursos importantes para o desenvolvimento de tecnologia cívica e fomento de gestões participativas. Este artigo apresentará técnicas de exploração de conjunto de dados abertos usando a biblioteca Pandas, visando estimular o uso de dados abertos governamentais." />
+<meta property="og:description" content="Dados abertos são recursos importantes para o desenvolvimento de tecnologia cívica e fomento de gestões participativas. Este artigo apresentará técnicas de exploração de conjunto de dados abertos usando a biblioteca Pandas, visando estimular o uso de dados abertos governamentais." />
+<link rel="canonical" href="http://www.cecivieira.com.br//analise-exploratoria-de-dados-para-fortalecimento-de-democracias/" />
+<meta property="og:url" content="http://www.cecivieira.com.br//analise-exploratoria-de-dados-para-fortalecimento-de-democracias/" />
+<meta property="og:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/24_qtancy.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-08T08:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/24_qtancy.jpg" />
+<meta property="twitter:title" content="Análise exploratória de dados para fortalecimento de democracias" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@cecivieira" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","image":"https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/24_qtancy.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.cecivieira.com.br//assets/images/logo.png"},"name":"cecivieira"},"headline":"Análise exploratória de dados para fortalecimento de democracias","dateModified":"2022-10-08T08:00:00-03:00","datePublished":"2022-10-08T08:00:00-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.cecivieira.com.br//analise-exploratoria-de-dados-para-fortalecimento-de-democracias/"},"author":{"@type":"Person","name":"cecivieira"},"description":"Dados abertos são recursos importantes para o desenvolvimento de tecnologia cívica e fomento de gestões participativas. Este artigo apresentará técnicas de exploração de conjunto de dados abertos usando a biblioteca Pandas, visando estimular o uso de dados abertos governamentais.","url":"http://www.cecivieira.com.br//analise-exploratoria-de-dados-para-fortalecimento-de-democracias/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="/assets/css/screen.css" rel="stylesheet">
+
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <!-- Google Analytics -->
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG4L84NMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEG4L84NMR');
+</script>
+    
+
+</head>
+
+
+
+<body class="layout-post">
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CMukta:300,300i,400,400i,700,700i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
+
+
+    <!-- Begin Menu Navigation
+================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/assets/images/logo.png" alt="">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        
+
+                        
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categorias">Categorias</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre-mim">Sobre mim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Contato</a>
+                    </li>
+
+                    
+
+                    <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Buscar..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+                    
+                    <li><a href="http://www.cecivieira.com.br//es"> 🇪🇸 </a></li>
+                    
+                    
+
+                </ul>
+
+                <!-- End Menu -->
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+
+        <div class="container">
+
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Análise exploratória de dados para fortalecimento de democracias&url=http://www.cecivieira.com.br//analise-exploratoria-de-dados-para-fortalecimento-de-democracias/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://www.cecivieira.com.br//analise-exploratoria-de-dados-para-fortalecimento-de-democracias/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.cecivieira.com.br//analise-exploratoria-de-dados-para-fortalecimento-de-democracias/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">Análise exploratória de dados para fortalecimento de democracias</h1>
+
+                <!-- Post Date -->
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="2022-10-08">08 Oct 2022</time></span>           
+                    
+                    </small>
+                </p>
+
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#américa-latina">américa latina</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#análise-exploratoria">análise exploratoria</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#dados-abertos">dados abertos</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#governo-aberto">governo aberto</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#inovação-cívica">inovação cívica</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#pandas">pandas</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#artigo">#artigo</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#palestra">#palestra</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Tags -->                
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image - Insere a imagem do card da notícia, antes do texto do artigo -->
+            <!-- 
+
+            
+            <img class="featured-image img-fluid" src="https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/24_qtancy.jpg" alt="Análise exploratória de dados para fortalecimento de democracias">
+            
+
+             -->
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <blockquote>
+  <p>Nesse artigo você encontrará o material (<a href="https://github.com/cecivieira/cotas-genero-eleicoes-e-proposicoes-legislativas.git">repositório</a> e <a href="../../assets/images/2022-10-08/pybr2022 - Análise exploratória de dados para fortalecimento de democracias.pdf">slides</a>) usados na <a href="https://www.youtube.com/watch?v=QGyg0ICDIyY">palestra “Análise exploratória de dados para fortalecimento de democracias”</a>, apresentada na Python Brasil 2022.</p>
+</blockquote>
+
+<p>Para começar qualquer análise de dados, é necessário compreender o contexto no qual você está desenvolvendo o estudo. O nosso, é a celebração de <a href="https://www2.camara.leg.br/legin/fed/decret/1930-1939/decreto-21076-24-fevereiro-1932-507583-publicacaooriginal-1-pe.html">90 anos do Código Eleitoral</a>, instrumento que permitiu às mulheres votarem e serem votadas para cargos eletivos. Também faz parte do nosso contexto, a publicação de leis sobre cotas de gênero (Lei <a href="http://www.planalto.gov.br/ccivil_03/leis/l9504.htm">9.504/1997</a> e <a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12034.htm">12.034/2009</a>) e as propostas legislativas apresentadas.</p>
+
+<p>A Organização dos Estados Americanos (OEA) prevê que a partir de 30% de mulheres ocupando cargos eletivos, em casas legislativas, é possível notar um aumento substancial em propostas legislativas com temas relacionados a defesa da democracia e proteção de direitos de grupos historicamente marginalizados, a saber: mulheres, população campesina, negra, LGBTQIA+, idosos, PCDs, artistas, população economicamente vulneáveis e indígenas.</p>
+
+<p>Nessa análise exploraremos os conjuntos de dados “Deputados”, “Legislaturas”, “Proposições” e “Temas” publicados pela Câmera dos Deputados Federais, afim de verificar o impacto das citadas legislações na composição de gênero da citada casa legislativa, além da correlação dessa composição com os temas das propostas legislativas ano após ano.</p>
+
+<p><strong>Sumário</strong></p>
+<ul>
+  <li><a href="#dados-abertos">Dados abertos</a></li>
+  <li><a href="#panorama-da-transparência-de-dados-na-américa-latina-e-caribe">Panorama da transparência de dados na América Latina e Caribe</a>
+    <ul>
+      <li><a href="#índice-de-dados-abertos-úteis-e-reutilizáveis-ourdata-index">Índice de dados abertos, úteis e reutilizáveis (OURdata Index)</a></li>
+      <li><a href="#panorama-das-administrações-públicas-de-américa-latina-e-caribe">Panorama das Administrações Públicas de América Latina e Caribe</a></li>
+    </ul>
+  </li>
+  <li><a href="#análise-exploratória-de-dados">Análise exploratória de dados</a>
+    <ul>
+      <li><a href="#pipeline">Pipeline</a></li>
+      <li><a href="#coleta-de-datos">Coleta de datos</a></li>
+      <li><a href="#código-completo">Código completo</a></li>
+      <li><a href="#considerações-finais">Considerações finais</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Antes de iniciarmos a análise exploratória, vamos observar o panorama atual do nível de transparência de dados na América Latina para comprender a importância da abertura de dados para a manutenção e fortalecimento de gestões democráticas.</p>
+
+<h1 id="dados-abertos">Dados abertos</h1>
+<p>Dados abertos são dados digitais publicados com as características técnicas e jurídicas necessárias para que possam ser usados, reusados e redistribuidos por qualquer pessoa, em qualquer momento e lugar. Esse conceito aplica-se a dados de interesse público que não sofre nenhuma restrição de acesso.</p>
+
+<p>Dados abertos permitem a governos, cidadãs, organizações da sociedade civil e setor privado tomarem decisões mais acertivas, baseada em evidências. Além disso, o acesso eficaz e oportuno a dados ajuda a desenvolver novos desafios e ideias inovadoras que podem gerar benefícios sociais e econômicos, bem como, fomentam maior interação entre governos e cidadãs, permitindo assim, um ambiente propício à ações colaborativas.</p>
+
+<p>Alto nível de transparência de dados nos permite comparar, combinar e realizar conexões entre diversos conjuntos de dados. Isso nos permite identificar tendências, desafios, desigualdades econômicas e sociais, além de monitorar programas e serviços públicos. Um exemplo concreto da importância de ter um alto nível de abertura de dados, foi a luta coletiva contra a pandemia de COVID-19. Só foi possível acompanhar em tempo real a situação em cada país, monitorar a gestão dos recursos, desenvolver ferramentas tecnológicas e soluções científicas em um curto prazo devido ao esforço coletivo e intencional para abertura de dados e prática de ciência aberta.</p>
+
+<p>Construir sociedades prósperas, equitativas e justas requer governos transparentes, que prestem contas e contribuam de maneira contante e significativa com a sociedade. Nesse sentido, existe uma revolução global de dados, que busca fomentar a ações colaborativas em torno a desafios chaves, proporcionar um monitoramento eficaz das atividades governamentais, apoiar inovação, desenvolvimento econômico sustentável e criação e expansão de políticas públicas eficientes e eficazes.</p>
+
+<p>Dados abertos é um dos eixos principais para alcançar um governo aberto e democrático.</p>
+
+<h1 id="panorama-da-transparência-de-dados-na-américa-latina-e-caribe">Panorama da transparência de dados na América Latina e Caribe</h1>
+
+<p>Aqui, na nossa região, os esforços para incentivar gestões mais participativas, começaram há alguns anos. Em 2011 governos de todo o mundo e representantes da sociedade civil se uniram para criar a <a href="https://www.opengovpartnership.org/">Parceria para Governo Aberto (OGP)</a> com o objetivo de promover gestões transparentes, participativas, inclusivas e responsáveis. O Brasil foi um dos 8 países fundadores desta Parceria. Atualmente, 16 países da América Latina e Caribe participam da Parceria.</p>
+
+<p>Em 2015, como ação do grupo de trabalho de Dados Abertos da OGP, foi lançada a <a href="https://opendatacharter.net/principles-es/">Carta internacional de Dados Abertos</a>. Desenvolvida com participação de representantes da sociedade civil e especialistas no tema, essa carta determina os seguintes princípios:</p>
+<ol>
+  <li>Abertos por padrão</li>
+  <li>Oportunos e exaustivos</li>
+  <li>Acessíveis e utilizáveis</li>
+  <li>Comparáveis e interoperáveis</li>
+  <li>Para melhorar a governança e a participação cidadã</li>
+  <li>Para o desenvolvimento inclusivo e inovação</li>
+</ol>
+
+<p>Atualmente, as seguintes publicações que se baseiam nessa <a href="https://opendatacharter.net/principles-es/">Carta</a> para analisar o nível de abertura de dados nos governos:</p>
+
+<ul>
+  <li><strong><a href="https://opendatabarometer.org/">Open Data Barometer</a></strong>: produzido pela <a href="https://www.w3.org/">World Wide Web Foundation</a>, mede como governos de todo o mundo publicam e utilizam dados abertos para prestação de contas, inovação e impacto social;</li>
+  <li><strong><a href="https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm">OURdata Index</a></strong>: publicado pela <a href="https://www.oecd.org/">OCDE</a>, esse índice realiza uma análise comparativa do desenvolvimento e implementação de políticas públicas para abertura de dados governamentais.</li>
+</ul>
+
+<p>Nesse artigo enfocaremos no <a href="https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm">OURdata Index</a>, pois possue a abordagem mais apropriada para a comparação que desejamos realizar, além de ser usado como base para o <a href="https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020">Panorama das Administrações Públicas: América Latina e Caribe</a>, que detalharemos nos próximos capítulos.</p>
+
+<h2 id="índice-de-dados-abertos-úteis-e-reutilizáveis-ourdata-index">Índice de dados abertos, úteis e reutilizáveis (OURdata Index)</h2>
+
+<p>Tem o objetivo de medir o nível de disponibilidade, acessibilidade e apoio governamental para a reutilização de dados, seguindo os princípios da <a href="https://opendatacharter.net/principles-es/">Carta Internacional de Dados Abertos</a>. Os três citados indicadores tem o mesmo peso, além disso pode variar entre 0 e 1.</p>
+
+<p>Com esse índice é possível comparar os níveis de abertura de dados entre os países da América Latina com os membros da OCDE. No OURdata Index de 2019, a pontuação média dos países latinoamericanos foi de 0,43, enquanto a média dos países da OCDE é 0,60.</p>
+
+<p>No entanto, entre os países da América Latina, existe um evidente contraste no desenvolvimento do tema de transparência de dados governamentais. Colombia (0,88), México (0,71) e Brasil  (0,63) lideram a região com uma pontuação mais alta do que a média dos países membros da OCDE, enquanto Equador e El Salvador possuem 0,29 e 0.27, respectivamente.</p>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/2021-08-28/grafica-ourdata-index-2019-america-latina.png" /></p>
+
+<h2 id="panorama-das-administrações-públicas-de-américa-latina-e-caribe">Panorama das Administrações Públicas de América Latina e Caribe</h2>
+
+<p>A publicação <a href="https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020">Panorama das Administrações Públicas de América Latina e Caribe</a> abrange aspectos importantes para entender a governança pública e permite analizar o desempenho dos governos da região em comparação com os países membros da OCDE. Um dos apectos considerados para construção de indicadores, nessa publicação, é o tema “dados abertos governamentais”, que utiliza os dados do <a href="https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm">OURdata Index</a>.</p>
+
+<p>Esse Panorama, publicado em 2020, é a publicação mais recente sobre dados abertos públicos da América Latina. Foi produzido pela <a href="https://www.oecd.org/acerca/miembros-y-socios/">OCDE (Organização para Cooperação e Desenvolvimento Econômico)</a>, uma organização que agrupa 38 países com a missão de promover políticas públicas que melhorem o bem estar econômico e social das pessoas; e pelo <a href="https://www.iadb.org/es/acerca-del-bid/como-estamos-organizados">BID (Banco Interamericano de Desenvolvimento)</a>, que é a principal fonte de financiamento para o desenvolvimento da América Latina e Caribe, além disso ajuda a melhorar a vida das cidadãs ao brindar soluções financeiras e conhecimento sobre o desenvolvimento para clientes do setor público e privado.</p>
+
+<p>Este <a href="https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020">Panorama</a> informa que 81% dos países que compõe a América Latina e Caribe possuem uma estratégia de médio prazo e 75% tem um plano de ação nacional, que prevê implementação de portais e publicação de conjuntos de dados abertos. Quanto a participação cidadã, a metade dos países latinoamericanos possuem programas governamentais para apoiar a qualificação sobre datos abertos para as organizações da sociedade civil. No entanto, essa taxa está abaixo da média dos países da OCDE, que é de 75%.</p>
+
+<p>Ainda que a agenda sobre dados abertos está avançando na nossa região, há muito o que avançarmos. De acordo com o <a href="https://opendatabarometer.org/">Open Data Barómetro</a>, os governos da região desenvolvem iniciativas isoladas sobre o tema. Ou seja, deveríamos priorizar e investir na gestão baseada em dados para respaldar as mudanças estruturais necessárias para termos um enfoque “aberto” em todos os âmbitos e esimular a participação cidadã no desenvolvimento de políticas e programas governamentais.</p>
+
+<p>A democracia na América Latina e Caribe vai muito além das eleições, de acordo com o <a href="https://latinno.net/es/">projeto LATINNO</a>, nos últimos anos estamos nos convertendo em um laboratório de inovação política e de gestão participativa. Muito disso se dá devido a transparência de dados governamentais, ainda que tenhamos muito o que avançar nesse tema.</p>
+
+<h1 id="análise-exploratória-de-dados">Análise exploratória de dados</h1>
+
+<p>Até aqui te mostrei a importância dos dados abertos governamentais para o desenvolvimento de inovação e uma gestão más participativa, além disso também apresentei um panorama do nível de transparência de dados e a política adotada pelos governos da América Latina sobre o tema. Agora, vamos colocar a mão na massa… quer dizer… nos dados.</p>
+
+<p>A ideia dessa análise exploratória é ensinar um pouco da biblioteca Pandas e ser um exemplo de uso de dados abertos, além disso apresentar a potência dos dados e estimular você a consumi dados governamentais, seja para desenvolver novas tecnologia para melhorar a vida da sua comunidade ou acompanhar uma política governamental.</p>
+
+<p>Escolhi para esta análise os dados de candidaturas eleitas e propostas legislativas para a Câmera dos Deputados Federal do Brasil.</p>
+
+<h2 id="pipeline">Pipeline</h2>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/2022-10-08/pipeline.png" /></p>
+
+<p>O pipeline dessa análise é composto por coleta, pré-processamento e análise de dados. Contudo, antes analisar as proposições legislativas foi necessário criar um vocabulário controlado. Para isso, foi desenvolvido um classificador (modelo de aprendizado de máquina).</p>
+
+<p>Os dados foram coletados no <a href="https://dadosabertos.camara.leg.br/">Portal de Dados Abertos da Câmera de Deputados Federal do Brasil</a> e correspondem às candidaturas eleitas no período entre 1934 e 2021. O objetivo da análise é compreender a evolução da quantidade de mulheres eleitas como deputada federal no período, o impacto da legislação referente a cota de gênero para esta casa legislativa e se já é possível verificar mudança nas temáticas das propostas legislativas.</p>
+
+<h3 id="coleta-de-datos">Coleta de datos</h3>
+
+<p>Foi utilizada a API Restful em Python para coleta dos dados, exceto das propostas legislativas, pois não estavam disponíveis via API. Então, os dados foram coletados manualmente, ano a ano.</p>
+
+<p>É importante dizer que no <a href="https://dadosabertos.camara.leg.br/">Portal de Dados Abertos da Câmera de Deputados Federal do Brasil</a> nexistem dados apenas de algumas proposições tramitadas entre os anos de 1934 e 1945, além disso os dados das proposições legislativas entre os anos de 1946 e 2000 estão parcialmente disponibilizados - estão abertos apenas os referentes às “proposições de tipos que poderiam se tornar (ou se tornaram) leis e normas jurídicas” (Brasil, [2021?]). Então, é possível que o resulta desta análise não reflita a realidade, no entanto acredito que é um bom exercício para termos ideia de como podemos reutilizar os dados abertos como sociedade civil.</p>
+
+<h3 id="código-completo">Código completo</h3>
+
+<p>O código de todas as etapas do <em>pipeline</em> estão disponíveis <a href="https://github.com/cecivieira/cotas-genero-eleicoes-e-proposicoes-legislativas.git">neste repositório</a>.</p>
+
+<h2 id="considerações-finais">Considerações finais</h2>
+
+<p>A análise apresente duas hipóteses e a exploração dos dados em busca da confirmação ou não destas. Por fim, o gráfico abaixo representa a evolução da quantidade de deputadas eleitas para a Câmara dos Deputados do Brasil e os marcos legislativos de cotas de gênero.</p>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/2022-10-08/evolucao-deputadas.png" /></p>
+
+<h2 id="referências">Referências</h2>
+
+<ul>
+  <li><a href="https://www2.camara.leg.br/legin/fed/decret/1930-1939/decreto-21076-24-fevereiro-1932-507583-publicacaooriginal-1-pe.html">90 anos do Código Eleitoral</a></li>
+  <li><a href="https://blogs.iadb.org/administracion-publica/es/datos-abiertos-en-gobiernos-de-america-latina-y-el-caribe-como-avanzamos/">Datos abiertos en gobiernos de América Latina y el Caribe: ¿cómo avanzamos?, 2020</a></li>
+  <li><a href="http://www.planalto.gov.br/ccivil_03/leis/l9504.htm">Lei 9.504/1997</a></li>
+  <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12034.htm">Lei 12.034/2009</a></li>
+  <li><a href="https://publications.iadb.org/es/los-datos-abiertos-en-america-latina-y-el-caribe">Los datos abiertos en América Latina y el Caribe, 2018</a></li>
+  <li><a href="https://opendatabarometer.org/3rdedition/regional-report/latin-america/?lang=es">Open Data Barometer, 3.ed</a></li>
+  <li><a href="https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020">Panorama de las Administraciones Públicas: América Latina y el Caribe 2020</a></li>
+  <li><a href="https://www.cepal.org/es/publicaciones/40768-panorama-regional-datos-abiertos-avances-desafios-america-latina-caribe">Panorama regional de los datos abiertos: avances y desafíos en América Latina y el Caribe, 2016</a></li>
+  <li><a href="https://opendatahandbook.org/guide/es/what-is-open-data/">¿Qué son los datos abiertos?</a></li>
+</ul>
+
+<hr />
+<p><img class="rounded mx-auto d-block" src="../../assets/images/2022-10-08/divulgacao-pybr-2022.png" /></p>
+
+<p>Esse artigo é composto pelas anotações da palestra “Análise de dados para fortalecimento de democracias”, apresentada na <a href="https://pretalx.com/python-brasil-2022/talk/AN7RJP/">Python Brasil 2022</a>) em 23 out. no Centro de Convenções do Amazonas Vasco Vasquez (Manaus).</p>
+
+<p>Recursos:</p>
+<ul>
+  <li><a href="../../assets/images/2022-10-08/pybr2022 - Análise exploratória de dados para fortalecimento de democracias.pdf">Slides</a></li>
+  <li><a href="https://github.com/cecivieira/cotas-genero-eleicoes-e-proposicoes-legislativas.git">Repositório</a></li>
+  <li><a href="https://www.youtube.com/watch?v=QGyg0ICDIyY">Palestra completa</a></li>
+</ul>
+
+                <i class="far fa-laugh-beam"></i>               
+            </div>
+
+            <!-- Version in other languages -->
+            <div class="language-version">
+                
+                <p> Você também pode ler esse texto em: 
+                    
+                    
+                        <a href="http://www.cecivieira.com.br/es/analisis-exploratorio-de-datos-abiertos-para-el-fortalecimiento-de-democracias"> 🇪🇸 </a>
+                    
+                    
+                </p> 
+                
+                
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Author Box -->
+                        
+            <div class="row post-top-meta">
+            <!-- Foto da autora
+                <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                    
+                    <img class="author-thumb" src="/" alt="Ana Cecília Vieira">
+                    
+                </div>
+            -->
+
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                    <i class="fas fa-star"></i>                     
+                </div>
+                
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">                                                        
+                    Ana Cecília Vieira
+                    <span class="author-description">Analista de dados especializada em qualidade de dados. Entusiasta em dados abertos, código aberto e comunidades autogestinadas como instrumento para transformação social. Embaixadora do programa 'Ciência de Dados para Inovação Cívica' da Open Knowledge Brasil e podcaster no Pizza de Dados.</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- Prev/Next -->
+            <p> ----- </p>
+            <h4>Leia também: </h4>
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://www.cecivieira.com.br///correlacao-entre-variaveis/"> &laquo; Correlação entre variáveis</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="http://www.cecivieira.com.br///quinta-com-dados/">Quinta com dados &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+            </div>
+
+            
+
+        </div>
+
+        <!-- Categories Jumbotron
+================================================== -->
+        
+
+<div class="jumbotron fortags">
+      <div class="d-md-flex h-100">
+            <div class="col-md-4 transpdark align-self-center text-center h-100">
+                  <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">
+                              Temas
+                              <span class="d-none d-md-inline">→</span>
+                        </h2>
+                  </div>
+            </div>
+            <div class="col-md-8 p-5 align-self-center text-center">
+                  
+
+    
+        <a class="mt-1 mb-1" href="/temas#dados-abertos">dados abertos (9)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#carreira">carreira (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#bash">bash (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#controle-de-tarefas">controle de tarefas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#linux">linux (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#terminal-commands">terminal commands (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#cidades-inteligentes">cidades inteligentes (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#governo-aberto">governo aberto (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#oracle-virtual-box">oracle virtual box (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ubuntu-20.04">ubuntu 20.04 (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#entrevista">entrevista (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#comunidades">comunidades (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#internacionalização">internacionalização (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#plugin">plugin (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ruby">ruby (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jekyll">jekyll (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ckan">ckan (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#docker">docker (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#folium">folium (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#mapa">mapa (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#extensão-ckan">extensão ckan (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#gestão-pública">gestão pública (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#estatística">estatística (5)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#américa-latina">américa latina (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#análise-exploratoria">análise exploratoria (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#inovação-cívica">inovação cívica (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#pandas">pandas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#software-livre">software livre (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jinja">jinja (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#python">python (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#qualidade-de-dados">qualidade de dados (1)</a>
+    
+
+
+            </div>
+      </div>
+</div>
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 text-center text-lg-left">
+                        Ana Cecília Vieira © <a target="_blank"
+                            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center social-media">
+                        
+                        <a target="_blank" href="https://twitter.com/cecivieira"><i class="fab fa-twitter"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://github.com/cecivieira"><i class="fab fa-github"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://www.linkedin.com/in/cecivieira/"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        
+                        <a target="_blank" href="mailto:cecivieira@gmail.com"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center text-lg-right">
+                        <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish
+                            Jekyll Theme</a> by WowThemes.net
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer
+================================================== -->
+
+    </div> <!-- /.site-content -->
+
+    <!-- Scripts
+================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script src="/assets/js/mediumish.js"></script>
+
+    
+
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+    
+
+</body>
+
+</html>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script>
+<script>L2Dwidget.init({ "model": { "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618, "jsonPath": "/live2dw/assets/hijiki.model.json" }, "display": { "superSample": 2, "width": 150, "height": 300, "position": "right", "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 }, "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }, "log": false, "pluginJsPath": "lib/", "pluginModelPath": "assets/", "pluginRootPath": "live2dw/", "tagMode": false });</script>

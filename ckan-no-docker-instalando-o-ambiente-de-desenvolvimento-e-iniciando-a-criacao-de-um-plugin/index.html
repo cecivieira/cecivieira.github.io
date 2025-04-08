@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia." />
+    <meta name="keywords" content="Tecnologia" />
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <title>CKAN no Docker: instalando o ambiente de desenvolvimento e iniciando a criação de um plugin | Ana Cecília Vieira</title>
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>CKAN no Docker: instalando o ambiente de desenvolvimento e iniciando a criação de um plugin</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="CKAN no Docker: instalando o ambiente de desenvolvimento e iniciando a criação de um plugin" />
+<meta name="author" content="cecivieira" />
+<meta property="og:locale" content="pt_br" />
+<meta name="description" content="Aprenda a instalar o ambiente de desenvolvimento do CKAN usando Docker e a iniciar a criação de um plugin." />
+<meta property="og:description" content="Aprenda a instalar o ambiente de desenvolvimento do CKAN usando Docker e a iniciar a criação de um plugin." />
+<link rel="canonical" href="http://www.cecivieira.com.br//ckan-no-docker-instalando-o-ambiente-de-desenvolvimento-e-iniciando-a-criacao-de-um-plugin/" />
+<meta property="og:url" content="http://www.cecivieira.com.br//ckan-no-docker-instalando-o-ambiente-de-desenvolvimento-e-iniciando-a-criacao-de-um-plugin/" />
+<meta property="og:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/11_v0twrm.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-30T12:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/11_v0twrm.jpg" />
+<meta property="twitter:title" content="CKAN no Docker: instalando o ambiente de desenvolvimento e iniciando a criação de um plugin" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@cecivieira" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","image":"https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/11_v0twrm.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.cecivieira.com.br//assets/images/logo.png"},"name":"cecivieira"},"headline":"CKAN no Docker: instalando o ambiente de desenvolvimento e iniciando a criação de um plugin","dateModified":"2021-08-30T12:00:00-03:00","datePublished":"2021-08-30T12:00:00-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.cecivieira.com.br//ckan-no-docker-instalando-o-ambiente-de-desenvolvimento-e-iniciando-a-criacao-de-um-plugin/"},"author":{"@type":"Person","name":"cecivieira"},"description":"Aprenda a instalar o ambiente de desenvolvimento do CKAN usando Docker e a iniciar a criação de um plugin.","url":"http://www.cecivieira.com.br//ckan-no-docker-instalando-o-ambiente-de-desenvolvimento-e-iniciando-a-criacao-de-um-plugin/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="/assets/css/screen.css" rel="stylesheet">
+
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <!-- Google Analytics -->
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG4L84NMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEG4L84NMR');
+</script>
+    
+
+</head>
+
+
+
+<body class="layout-post">
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CMukta:300,300i,400,400i,700,700i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
+
+
+    <!-- Begin Menu Navigation
+================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/assets/images/logo.png" alt="">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        
+
+                        
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categorias">Categorias</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre-mim">Sobre mim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Contato</a>
+                    </li>
+
+                    
+
+                    <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Buscar..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+                    
+                    <li><a href="http://www.cecivieira.com.br//es"> 🇪🇸 </a></li>
+                    
+                    
+
+                </ul>
+
+                <!-- End Menu -->
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+
+        <div class="container">
+
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=CKAN no Docker: instalando o ambiente de desenvolvimento e iniciando a criação de um plugin&url=http://www.cecivieira.com.br//ckan-no-docker-instalando-o-ambiente-de-desenvolvimento-e-iniciando-a-criacao-de-um-plugin/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://www.cecivieira.com.br//ckan-no-docker-instalando-o-ambiente-de-desenvolvimento-e-iniciando-a-criacao-de-um-plugin/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.cecivieira.com.br//ckan-no-docker-instalando-o-ambiente-de-desenvolvimento-e-iniciando-a-criacao-de-um-plugin/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">CKAN no Docker: instalando o ambiente de desenvolvimento e iniciando a criação de um plugin</h1>
+
+                <!-- Post Date -->
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="2021-08-30">30 Aug 2021</time></span>           
+                    
+                    </small>
+                </p>
+
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#ckan">ckan</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#dados-abertos">dados abertos</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#docker">docker</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#tutorial">#tutorial</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Tags -->                
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image - Insere a imagem do card da notícia, antes do texto do artigo -->
+            <!-- 
+
+            
+            <img class="featured-image img-fluid" src="https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/11_v0twrm.jpg" alt="CKAN no Docker: instalando o ambiente de desenvolvimento e iniciando a criação de um plugin">
+            
+
+             -->
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p><a href="https://ckan.org/">CKAN</a> (Comprehensive Knowledge Archive Network) é uma aplicação web de código aberto para gerenciamento de dados. Tem como algumas das funcionalidade: armazenamento de dados, uso de metadados para catalogação e API para consumo dos dados publicados. Esse sistema é mantido pela <a href="https://okfn.org/">Open Knowledge Foundation</a> e possui uma comunidade de código aberto muito ativa, a qual disponibiliza uma quantidade importante de plugins úteis.</p>
+
+<p>Atualmente é o principal sistema usado em portais de dados abertos governamentais, sendo alguns exemplos: <a href="https://datos.gob.ar/">Datos Argentina</a>, <a href="https://africaopendata.org/">Open Africa</a>, <a href="https://data.gov.sg/">Data Singapore</a> e <a href="https://dados.gov.br/">Portal Brasileiro de Dados Abertos</a>.</p>
+
+<p>Existem três caminhos para fazer a instalação do CKAN, via:</p>
+
+<ul>
+  <li><a href="https://docs.ckan.org/en/2.9/maintaining/installing/install-from-package.html">Pacote do sistema operacional</a>;</li>
+  <li><a href="https://docs.ckan.org/en/2.9/maintaining/installing/install-from-source.html">Código fonte</a>;</li>
+  <li><a href="https://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html">Docker</a>.</li>
+</ul>
+
+<p>Nesse artigo focaremos na instalação do ambiente de desenvolvimento usando Docker. Caso você não vá desenvolver nenhum plugin, nem mexer no código fonte do CKAN, sugiro que você instale usando o tutorial <a href="https://herrmann.tech/pt/blog/2020/09/30/como-instalar-e-configurar-ckan-2-9-0-usando-docker.html">Como instalar e configurar o CKAN 2.9.0 usando o Docker escrito por Augusto Herrmann</a>. Faço essa sugestão porque a documentação oficial de instalação do CKAN via Docker não está das melhores.</p>
+
+<p>No meu caso, estou desenvolvendo um plugin, então fazia falta algumas facilidades que um ambiente de desenvolvimento pode oferecer.</p>
+
+<h1 id="tutorial">Tutorial</h1>
+
+<p>O CKAN possui um repositório que está sendo desenvolvido para conter a nova instalação do CKAN via Docker. O ambiente de desenvolvimento deste respositório é muito útil para visualizar em tempo de execução dos containers as modificações realizadas.</p>
+
+<p>Esse tutorial abrange a instalação do CKAN e de todos os requisitos necessários para o uso do Docker.</p>
+
+<p>A partir daqui todas as instruções pressupõe que você está usando o sistema operacional <a href="https://ubuntu.com/">Ubuntu 20.04</a> ou mais recente.</p>
+
+<p><strong>Sumário</strong></p>
+<ul>
+  <li><a href="#instalando-o-git">Instalar Git</a>
+    <ul>
+      <li><a href="#gitlab-configurando-a-chave-ssh">GitLab: configurar chave SSH</a></li>
+    </ul>
+  </li>
+  <li><a href="#instalando-o-docker">Instalar Docker</a></li>
+  <li><a href="#instalando-o-docker-compose">Instalar Docker compose</a></li>
+  <li><a href="#instalando-o-ckan-ambiente-de-desenvolvimento">Instalar CKAN (ambiente de desenvolvimento)</a></li>
+  <li><a href="#testando-plugin-existente">Testar plugin existente</a></li>
+  <li><a href="#iniciando-a-criação-de-um-plugin">Criar novo plugin</a></li>
+</ul>
+
+<h2 id="instalando-o-git">Instalando o Git</h2>
+<p>No terminal execute os seguintes comandos:</p>
+
+<ul>
+  <li>Instale o Git
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo apt-get install git-all
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Configure o nome e e-mail que identificarão teus commits. Isso só é necessário 1 vez
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>git config --global user.name "&lt;nome&gt;"
+git config --global user.email "&lt;e-mail&gt;"
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="gitlab-configurando-a-chave-ssh">GitLab: configurando a chave SSH</h3>
+
+<p>Esse passo é opcional, ele será útil para você versionar o código do plugin que você irá desenvolver.</p>
+
+<p>No terminal execute os seguintes comandos:</p>
+
+<ul>
+  <li>Gere uma par de chave SSH
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>ssh-keygen -t rsa -b 2048 -C "&lt;comentário que identifique sua chave, ex.: pc-trabalho-dell"
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>Obs.:</strong> Nesse passo será solicitado um local para armazenamento da chave e uma senha. Não é necessário que você forneça essas informações. Caso você deseje guardar a chave no local padrão (recomendado) e não informar uma senha, basta deixar o espaço vazio e teclar “enter”.</p>
+
+<ul>
+  <li>Copie sua chave pública
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>xclip -sel clip &lt; ~/.ssh/id_rsa.pub
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Logue no seu GitLab e navegue até a página da Foto de perfil &gt; Settings &gt; SSH Keys</li>
+  <li>Na janela destinada a chave, tecle Ctrl + V ou clique no botão direito do mouse e selecione “colar”</li>
+  <li>Dê um título a sua chave. Sugiro que seja algo que identifique a qual computador ela está atrelada</li>
+  <li>Clique em “Adicionar nova chave”</li>
+</ul>
+
+<h2 id="instalando-o-docker">Instalando o Docker</h2>
+
+<p>No terminal execute os seguintes comandos:</p>
+
+<ul>
+  <li>Atualize o comando apt-get
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo apt-get update
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Remova as versões antigas do Docker (execute, ainda que seu computador seja novo):
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo apt-get remove docker-engine docker.io
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Instale o Docker
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo apt install docker.io
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Inicie o Docker
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo systemctl start docker
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Verifique o status do docker
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo systemctl status docker
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+    <p>A saída esperada é: <code class="language-plaintext highlighter-rouge">Active: active (running)</code></p>
+  </li>
+  <li>Configure a sua usuária do sistema operacional como a superusuária no Docker
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo usermod -aG docker ${USER} 
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+    <p>Caso você deseje inserir outra superusuária no Docker, além da que está logada, troque <code class="language-plaintext highlighter-rouge">${USER}</code> pelo usuária.</p>
+  </li>
+  <li>Aplique a nova usuária no grupo de permissões
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>su - ${USER}
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Por fim, verifique se a instalação foi feita com sucesso
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>docker --version
+docker run hello-world
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="instalando-o-docker-compose">Instalando o Docker Compose</h2>
+
+<ul>
+  <li>No terminal, execute o seguinte comando
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo apt install docker-compose
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="instalando-o-ckan-ambiente-de-desenvolvimento">Instalando o CKAN (ambiente de desenvolvimento)</h2>
+<p>No terminal, navegue até a pasta desejada para armazenar o repositório e execute os seguintes comandos:</p>
+
+<ul>
+  <li>Clone o repositório
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git clone https://github.com/okfn/docker-ckan
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Entre na pasta do repositório
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>cd ckan-docker/
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Abra o editor de código da sua preferência e realize as próximas etapas:</p>
+
+<ul>
+  <li>Duplique o arquivo “.env.example” e renomeie a cópia para “.env”</li>
+  <li>No arquivo “.env” , atualize as seguintes variáveis de ambiente:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>CKAN_SITE_URL=http://localhost:5000
+CKAN__DATAPUSHER__CALLBACK_URL_BASE=http://localhost:5000
+DATAPUSHER_REWRITE_URL=http://localhost:5000  
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Volte para o terminal e execute:</p>
+
+<ul>
+  <li>Construa as imagens com o ambiente de desenvolvimento (você só precisa realizar isso uma vez)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>docker-compose -f docker-compose.dev.yml build
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Nesse passo há o seguinte erro conhecido:</p>
+
+  <p><em>OpenSSL SSL_connect: Connection reset by peer in connection to github.com:443</em></p>
+
+  <p>Caso ele ocorra, atualize seus gerenciadores de pacotes do Ubuntu executando:</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</pre></td></tr></tbody></table></code></pre></div>  </div>
+</blockquote>
+
+<ul>
+  <li>Inicie as imagens (esse comando você usará sempre que precisar iniciar seu trabalho no CKAN)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>docker-compose -f docker-compose.dev.yml up
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Comprove que o CKAN está rodando no seu computador. Acesse:
+<a href="http://localhost:5000">http://localhost:5000</a></p>
+  </li>
+  <li>Nesse ambiente já existe uma usuária master. Faça login usando as credenciais:
+<strong>login:</strong> ckan_admin
+<strong>senha:</strong> test1234</li>
+</ul>
+
+<h2 id="plugin">Plugin</h2>
+
+<p>Nesse capítulo mostrarei como testar um plugin já existente e como iniciar o seu próprio plugin.</p>
+
+<h3 id="testando-plugin-existente">Testando plugin existente</h3>
+
+<p>Nessa imagem você pode testar plugins sem precisar exatamente instalá-los, basta seguir os passos:</p>
+
+<ul>
+  <li>No terminal, navegue até a pasta “src/” e clone o repositório:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git clone &lt;link do repositório que deseja testar&gt;
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+    <p>** Caso você deseje fazer modificações nele e não seja mantenedora do plugin, é necessário que você <a href="https://docs.github.com/pt/github/getting-started-with-github/quickstart/fork-a-repo">crie um fork</a> e clone a partir dele.</p>
+  </li>
+  <li>Crie sua branch para salvar suas modificações, caso deseje fazê-las:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git checkout -b &lt;seu-nome-branch&gt;
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Abra o editor de código da sua preferência e realize as próximas etapas para ativar o plugin:</p>
+
+<ul>
+  <li>No arquivo “.env”, atualize as seguintes variáveis de ambiente:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>CKAN_SITE_URL=http://localhost:5000
+CKAN__DATAPUSHER__CALLBACK_URL_BASE=http://localhost:5000
+DATAPUSHER_REWRITE_URL=http://localhost:5000
+CKAN__PLUGINS=envvars image_view text_view recline_view datastore datapusher &lt;titulo-sua-extensao&gt;
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Comprove se a sua aplicação está ativada. Acesse: <a href="http://localhost:5000/api/action/status_show">http://localhost:5000/api/action/status_show</a>. Nesse link deve aparecer, entre outras informações, a lista dos plugins ativos.</li>
+</ul>
+
+<h3 id="iniciando-a-criação-de-um-plugin">Iniciando a criação de um plugin</h3>
+
+<p>No terminal execute os seguintes comandos:</p>
+
+<ul>
+  <li>Crie um plugin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>docker-compose -f docker-compose.dev.yml exec ckan-dev /bin/bash -c "ckan generate extension --output-dir /srv/app/src_extensions"
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p>Será solicitado o título para a extensão, seu nome, nome da sua instituição e e-mail. No título para a extensão, use “_” no lugar de espaço em branco.</p>
+
+    <p>Após fornecer esses dados, será criada uma pasta com os arquivos iniciais da sua extensão. Ela estará localizada em:
+  <code class="language-plaintext highlighter-rouge">src/ckanext-&lt;titulo-sua-extensao&gt;</code></p>
+
+    <p>Para que você tenha permissão para editar essa pasta e, assim, desenvolver o seu plugin, é necessário editar sua permissão. Para isso, execute:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>sudo chown -R ${USER} &lt;caminho completo para a pasta /src/ckanext-&lt;título-plugin&gt;
+sudo chmod -R u+rwx &lt;caminho completo para a pasta /src/ckanext-&lt;título-plugin&gt;
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Abra o editor de código da sua preferência e realize as próximas etapas para ativar o plugin:</p>
+
+<ul>
+  <li>No arquivo “.env”, atualize as seguintes variáveis de ambiente:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>CKAN_SITE_URL=http://localhost:5000
+CKAN__DATAPUSHER__CALLBACK_URL_BASE=http://localhost:5000
+DATAPUSHER_REWRITE_URL=http://localhost:5000
+CKAN__PLUGINS=envvars image_view text_view recline_view datastore datapusher &lt;titulo-sua-extensao&gt;
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Comprove se a sua aplicação está ativada. Acesse: http://localhost:5000/api/action/status_show. Nesse link deve aparecer, entre outras informações, a lista dos plugins ativos.</li>
+  <li>(Etapa opcional) Crie um repositório git para guardar o seu código e, no terminal, execute:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>git init
+git remote add origin &lt;link do repositório&gt;
+git checkout -b main
+git pull
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="referências">Referências</h1>
+<ul>
+  <li><a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git">Começando - Instalando o Git</a></li>
+  <li><a href="https://youtu.be/2T3itw-2xkg">Descomplicando Docker - #1: Instalando Docker no Linux</a></li>
+  <li><a href="https://docs.gitlab.com/ee/ssh/">GitLab and SSH keys</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04">How To Install and Use Docker on Ubuntu 22.04</a></li>
+  <li><a href="https://github.com/okfn/docker-ckan">Repositório Docker Compose setup for CKAN</a></li>
+</ul>
+
+<blockquote>
+  <p>Esse artigo foi escrito em parceria com <a href="mailto:lemmg@cin.ufpe.br">Lucas Gois</a>. Atualizado em: 01 set. 2022</p>
+</blockquote>
+
+                <i class="far fa-laugh-beam"></i>               
+            </div>
+
+            <!-- Version in other languages -->
+            <div class="language-version">
+                
+                
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Author Box -->
+                        
+            <div class="row post-top-meta">
+            <!-- Foto da autora
+                <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                    
+                    <img class="author-thumb" src="/" alt="Ana Cecília Vieira">
+                    
+                </div>
+            -->
+
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                    <i class="fas fa-star"></i>                     
+                </div>
+                
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">                                                        
+                    Ana Cecília Vieira
+                    <span class="author-description">Analista de dados especializada em qualidade de dados. Entusiasta em dados abertos, código aberto e comunidades autogestinadas como instrumento para transformação social. Embaixadora do programa 'Ciência de Dados para Inovação Cívica' da Open Knowledge Brasil e podcaster no Pizza de Dados.</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- Prev/Next -->
+            <p> ----- </p>
+            <h4>Leia também: </h4>
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://www.cecivieira.com.br///criando-site-multilingue-com-jekyll/"> &laquo; Criando site multilíngue com Jekyll</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="http://www.cecivieira.com.br///criando-o-mapa-do-festival-recife-coffee-com-folium/">Criando o mapa do Festival Recife Coffee com Folium &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+            </div>
+
+            
+
+        </div>
+
+        <!-- Categories Jumbotron
+================================================== -->
+        
+
+<div class="jumbotron fortags">
+      <div class="d-md-flex h-100">
+            <div class="col-md-4 transpdark align-self-center text-center h-100">
+                  <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">
+                              Temas
+                              <span class="d-none d-md-inline">→</span>
+                        </h2>
+                  </div>
+            </div>
+            <div class="col-md-8 p-5 align-self-center text-center">
+                  
+
+    
+        <a class="mt-1 mb-1" href="/temas#dados-abertos">dados abertos (9)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#carreira">carreira (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#bash">bash (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#controle-de-tarefas">controle de tarefas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#linux">linux (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#terminal-commands">terminal commands (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#cidades-inteligentes">cidades inteligentes (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#governo-aberto">governo aberto (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#oracle-virtual-box">oracle virtual box (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ubuntu-20.04">ubuntu 20.04 (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#entrevista">entrevista (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#comunidades">comunidades (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#internacionalização">internacionalização (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#plugin">plugin (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ruby">ruby (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jekyll">jekyll (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ckan">ckan (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#docker">docker (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#folium">folium (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#mapa">mapa (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#extensão-ckan">extensão ckan (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#gestão-pública">gestão pública (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#estatística">estatística (5)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#américa-latina">américa latina (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#análise-exploratoria">análise exploratoria (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#inovação-cívica">inovação cívica (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#pandas">pandas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#software-livre">software livre (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jinja">jinja (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#python">python (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#qualidade-de-dados">qualidade de dados (1)</a>
+    
+
+
+            </div>
+      </div>
+</div>
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 text-center text-lg-left">
+                        Ana Cecília Vieira © <a target="_blank"
+                            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center social-media">
+                        
+                        <a target="_blank" href="https://twitter.com/cecivieira"><i class="fab fa-twitter"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://github.com/cecivieira"><i class="fab fa-github"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://www.linkedin.com/in/cecivieira/"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        
+                        <a target="_blank" href="mailto:cecivieira@gmail.com"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center text-lg-right">
+                        <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish
+                            Jekyll Theme</a> by WowThemes.net
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer
+================================================== -->
+
+    </div> <!-- /.site-content -->
+
+    <!-- Scripts
+================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script src="/assets/js/mediumish.js"></script>
+
+    
+
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+    
+
+</body>
+
+</html>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script>
+<script>L2Dwidget.init({ "model": { "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618, "jsonPath": "/live2dw/assets/hijiki.model.json" }, "display": { "superSample": 2, "width": 150, "height": 300, "position": "right", "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 }, "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }, "log": false, "pluginJsPath": "lib/", "pluginModelPath": "assets/", "pluginRootPath": "live2dw/", "tagMode": false });</script>

@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description></description>
+    <link>http://www.cecivieira.com.br//es/</link>
+    <atom:link href="http://www.cecivieira.com.br//es/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 08 Apr 2025 16:47:59 -0300</pubDate>
+    <lastBuildDate>Tue, 08 Apr 2025 16:47:59 -0300</lastBuildDate>
+    <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>Datos abiertos para transformación social</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;En este artículo encontrás el contenido y &lt;a href=&quot;../../assets/images/2023-12-16/pybo-2023-datos-abiertos-para-transformacion-social.pdf&quot;&gt;las diapositivas&lt;/a&gt; de la &lt;a href=&quot;&quot;&gt;charla “Datos abiertos para transformación social”&lt;/a&gt; presentada en la &lt;a href=&quot;https://bo.pycon.org/&quot;&gt;PyCon Bolivia 2023&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hace aproximadamente 12 años, las naciones de América Latina y el Caribe se comprometieron a divulgar sus datos con el objetivo de promover la transparencia, el desarrollo y la innovación en diversos ámbitos internacionales, a través de la &lt;a href=&quot;https://www.opengovpartnership.org/es/&quot;&gt;Alianza para el Gobierno Abierto&lt;/a&gt;. En la actualidad, contamos con la participación de 16 países latinoamericanos como signatarios de esta alianza. No obstante, el progreso de la agenda en la región ha sido bastante lento en los últimos años. La apertura de datos públicos por parte de los gobiernos resulta fundamental para fortalecer nuestras democracias en la era digital.&lt;/p&gt;
+
+&lt;p&gt;Contar con información es crucial para la toma de decisiones, especialmente para que sean bien fundamentadas. Aunque pueda parecer evidente, esto no siempre fue así. En la actualidad, los datos son omnipresentes, presentes en abundancia y diversidad, desempeñando un papel fundamental al orientar nuestras acciones en diversas áreas. Se han convertido en una parte integral de nuestra rutina diaria.
+Adicionalmente, un gobierno que destaca por su alto índice de transparencia y datos abiertos fomenta la innovación, el desarrollo económico sostenible y la formulación y expansión de políticas públicas eficientes y efectivas. Estos aspectos son esenciales para garantizar una calidad de vida óptima para nosotras.&lt;/p&gt;
+
+&lt;h1 id=&quot;agenda-2030&quot;&gt;Agenda 2030&lt;/h1&gt;
+
+&lt;p&gt;Entonces, cómo nosotras, desde la sociedad civil, en especial como expertas y expertos en tecnología, podemos contribuir para una sociedad más justa, equitativa y democrática?&lt;/p&gt;
+
+&lt;p&gt;Os enseño la &lt;a href=&quot;https://www.un.org/sustainabledevelopment/es/2015/09/la-asamblea-general-adopta-la-agenda-2030-para-el-desarrollo-sostenible/&quot;&gt;Agenda 2030&lt;/a&gt;, un plan de acción establecido por la ONU para “lograr dar respuesta a los 17 Objetivos de Desarrollo Sostenible (ODS) a favor de las personas, el planeta y la prosperidad, que también tiene la intención de fortalecer la paz universal y el acceso a la justicia” (&lt;a href=&quot;https://www.un.org/sustainabledevelopment/es/2015/09/la-asamblea-general-adopta-la-agenda-2030-para-el-desarrollo-sostenible/&quot;&gt;Naciones Unidas&lt;/a&gt;). En la práctica es decir: que los grandes desafíos mundiales van desde el combate a la pobreza, hambre, corrupción, hasta el cambio climático.&lt;/p&gt;
+
+&lt;p&gt;Los objetivos 16 y 17 tienen metas acerca de dados y gobierno abierto:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Objetivo 16 - Promover sociedades justas, pacíficas e inclusivas&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;16.5 Reducir considerablemente la corrupción y el soborno en todas sus formas.&lt;/li&gt;
+  &lt;li&gt;16.6 Crear a todos los niveles instituciones eficaces y transparentes que rindan cuentas.&lt;/li&gt;
+  &lt;li&gt;16.7 Garantizar la adopción en todos los niveles de decisiones inclusivas, participativas y representativas que respondan a las necesidades.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Objetivo 17 - Revitalizar la Alianza Mundial para el Desarrollo Sostenible&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;17.18 Mejorar el apoyo a la creación de capacidad prestado a los países en desarrollo, incluidos los países menos adelantados y los pequeños Estados insulares en desarrollo, para aumentar significativamente la disponibilidad de datos oportunos, fiables y de gran calidad desglosados por ingresos, sexo, edad, raza, origen étnico, estatus migratorio, discapacidad, ubicación geográfica y otras características pertinentes en los contextos nacionales.&lt;/li&gt;
+  &lt;li&gt;17.19 Aprovechar las iniciativas existentes para elaborar indicadores que permitan medir los progresos en materia de desarrollo sostenible y complementen el producto interno bruto, y apoyar la creación de capacidad estadística en los países en desarrollo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Estos objetivos plantean nuevas metas para que nuestras instituciones se caractericen por ser más abiertas, participativas y colaborativas. Una gobernanza mejorada también representa una contribución esencial al desarrollo sostenible.&lt;/p&gt;
+
+&lt;p&gt;La abundancia de datos ha llevado a los Estados a desarrollar nuevas capacidades. Los datos abiertos pueden ser empleados en la planificación, diseño, seguimiento y evaluación de políticas públicas. De este modo, los Estados pueden aumentar su eficiencia y tomar decisiones más acertadas en función de los objetivos establecidos. Además, mayor  interacción  entre  los  gobiernos  y  sociedad permiten oportunidades de co-creación de soluciones y negocios.&lt;/p&gt;
+
+&lt;h1 id=&quot;instrumentos-para-evaluar-nivel-de-tranparencia-de-datos-en-los-países&quot;&gt;Instrumentos para evaluar nivel de tranparencia de datos en los países&lt;/h1&gt;
+
+&lt;p&gt;Hoy en día, para tratar de medir la evolución de las iniciativas de datos abiertos en los países, existen cuatro índices:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;el &lt;a href=&quot;https://opendatabarometer.org/4thedition/report/?lang=es&quot;&gt;Barómetro de Datos Abiertos (ODB)&lt;/a&gt; producido por la World Wide Web Foundation;&lt;/li&gt;
+  &lt;li&gt;el &lt;a href=&quot;http://index.okfn.org/&quot;&gt;Índice Global de Datos Abiertos (GODI)&lt;/a&gt; producido por la Open Knowledge Foundation;&lt;/li&gt;
+  &lt;li&gt;el &lt;a href=&quot;https://odin.opendatawatch.com/&quot;&gt;Inventario de los Datos Abiertos (ODIN)&lt;/a&gt; producido por la Open Data Watch; y&lt;/li&gt;
+  &lt;li&gt;y el &lt;a href=&quot;https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm&quot;&gt;OURdata Index&lt;/a&gt; realizado por la OCDE.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Cada uno de estos índices se enfoca en distintas dimensiones de las iniciativas de datos abiertos. Nosotras tendremos en cuenta el &lt;a href=&quot;https://odin.opendatawatch.com/&quot;&gt;Inventario de los Datos Abiertos (ODIN)&lt;/a&gt;, pues es el que tiene la última edición más reciente, de febrero de 2023.&lt;/p&gt;
+
+&lt;h1 id=&quot;inventario-de-apertura-de-datos-odin&quot;&gt;Inventario de Apertura de Datos (ODIN)&lt;/h1&gt;
+
+&lt;p&gt;El &lt;a href=&quot;https://odin.opendatawatch.com/&quot;&gt;Inventario de Apertura de Datos (ODIN)&lt;/a&gt; evalúa la exhaustividad de las ofertas estadísticas de un país y verifica si sus datos cumplen con los estándares internacionales de apertura. Los datos sujetos a evaluación en el ODIN son aquellos oficiales del país, los cuales se publican en el sitio web de la oficina nacional de estadísticas o en cualquier otro sitio oficial del país vinculado desde el sitio web de la mencionada oficina estadística. Los aspectos analizados por este índice son: cobertura y apertura.&lt;/p&gt;
+
+&lt;p&gt;Los puntajes de cobertura se fundamentan en la presencia de indicadores clave y desgloses adecuados a lo largo del tiempo y en subdivisiones geográficas.&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, las puntuaciones de apertura se sustentan en la posibilidad de descargar los datos en formatos legibles por máquina y no propietarios. Además, se evalúa la presencia de metadatos, la disponibilidad de opciones de descarga como descarga masiva y selección de usuarios o API, así como la existencia de términos de uso o licencia de datos abiertos.&lt;/p&gt;
+
+&lt;h2 id=&quot;panorama-boliviano&quot;&gt;Panorama boliviano&lt;/h2&gt;
+
+&lt;p&gt;En la &lt;a href=&quot;https://odin.opendatawatch.com/Report/countryProfileUpdated/BOL?year=2022&quot;&gt;clasificación global del ODIN Bolivia&lt;/a&gt; se sitúa en el puesto 84 con un total de 53 puntos. A continuación, se presenta un desglose detallado de las categorías investigadas:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2023-12-16/odin-bolivia-puntos-por-categorias.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Me ha llamado atención dos de los puntos investigados: salud reproductiva y finanzas gubernamentales.  Entonces, me he profundizado en la Metodología del Índice para comprender el significado.&lt;/p&gt;
+
+&lt;p&gt;La categoría de Salud Reproductiva presenta una cobertura de 0 puntos. Para alcanzar al menos 0.5 puntos, sería necesario divulgar datos como la tasa de mortalidad materna, la tasa de mortalidad neonatal, la tasa de mortalidad infantil (menores de 5 años), así como las tasas de fertilidad, métodos anticonceptivos y la tasa de embarazo en la adolescencia.&lt;/p&gt;
+
+&lt;p&gt;Aunque existen algunos puntos en la categoría de apertura, lo publicado hasta el momento no resulta suficiente, ya que falta información crucial, como una tasa de mortalidad. La carencia de estos datos es significativa, especialmente al considerar la importancia de la salud reproductiva en el diseño de políticas públicas para mujeres. ¿Cómo podemos desarrollar políticas efectivas sin tener en cuenta aspectos fundamentales de la salud reproductiva?&lt;/p&gt;
+
+&lt;p&gt;La categoría de Finanzas Gubernamentales registra una puntuación de 0 en todos los aspectos. No se encuentran disponibles datos en formato abierto que cumplan con los estándares internacionales para las finanzas gubernamentales. Aunque he hallado información en el sitio web del gobierno, esta se presenta en formato de archivo PDF en lugar de un formato accesible.&lt;/p&gt;
+
+&lt;p&gt;Índices tan bajos por sí mismos ya constituyen material suficiente para impulsar una participación ciudadana activa. Sin datos sólidos, resulta imposible lograr que los gobiernos sean responsables por las decisiones que toman, las políticas que aprueban y la gestión del presupuesto.&lt;/p&gt;
+
+&lt;p&gt;Aquí es donde nosotras, expertas en tecnología y miembros de la sociedad civil informada y participativa, podemos intervenir.&lt;/p&gt;
+
+&lt;p&gt;En la actualidad, gran parte del desarrollo tecnológico se realiza utilizando datos como materia prima, y, por supuesto, la mayoría de estos datos son recopilados de diversas plataformas. De hecho, existe un extenso mercado de comercialización de datos. Bueno, este tema es para otra conversación. Pero, imagina si tuviéramos datos gubernamentales abundantes, confiables, de calidad y en tiempo real; ¿cuántas tecnologías cívicas podríamos desarrollar para beneficiar nuestras ciudades?&lt;/p&gt;
+
+&lt;p&gt;Para comprender mejor cómo podemos actuar, es interesante observar la cadena de valor de los datos. Esta fue &lt;a href=&quot;https://opendatawatch.com/reference/the-data-value-chain-executive-summary/&quot;&gt;publicada por Open Data Watch&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2023-12-16/ODW-Data2x-Data-Value-Chain-simple-CC-BY-ATTRIBUTION-2048x939.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En Bolivia, puedes encontrar organizaciones sin ánimo de lucro actuando en cada uno de los pasos.&lt;/p&gt;
+
+&lt;p&gt;En 2019, la Fundación Hivos ha publicado el &lt;a href=&quot;https://america-latina.hivos.org/document/mapeo-de-actores-de-sociedad-civil-relacionados-a-datos-abiertos-en-bolivia/&quot;&gt;Mapeo de Actores de Sociedad Civil Relacionados a Datos Abiertos en Bolivia&lt;/a&gt;, que ha identificado cinco grupos en el ecosistema de datos abiertos boliviano: cientistas de datos, analista de datos, periodistas de datos, activistas que abogan por la transparencia y investigadores.&lt;/p&gt;
+
+&lt;p&gt;Destaco dos nodos en particular:&lt;/p&gt;
+
+&lt;p&gt;Nodos de activistas
+&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2023-12-16/nodos-de-activistas.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nodos de científicos de datos
+&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2023-12-16/nodos-de-cientistas-de-datos.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Considero fundamental que colaboraremos con organizaciones de la sociedad civil para impulsar el desarrollo del ecosistema de datos abiertos. Un ecosistema robusto depende de la participación de diversos sectores. Dada la amplitud e importancia de los datos en diversas áreas de la sociedad, es esencial adoptar un modelo participativo.&lt;/p&gt;
+
+&lt;p&gt;Gráfico de porcentaje de grupos involucrados
+&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2023-12-16/porcentaje-de-grupos-involucrados.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;La presencia importante de cientistas de datos, ingeniera de datos y analista representa una oportunidad maravillosa puesto que somos nosotras que contamos con las mayores habilidades de procesamiento de datos de entre todos las integrantes del ecosistema. Simultáneamente, la presencia de activistas también es importante para que los datos abiertos no queden solamente en emprendimiento privados, sino que tenga carácter de beneficio público.&lt;/p&gt;
+
+&lt;p&gt;La primera experiencia de Bolivia con datos abiertos fue en 2013 con la realización del primer Data Bootcamp, hubo una segunda versión y luego en 2015 el 1er. Acelerador de periodismo de datos que originó pequeños proyectos periodísticos y otros varios desde la sociedad civil. En 2017 el gobierno plurinacional de Bolivia ha publicado el &lt;a href=&quot;https://www.agetic.gob.bo/wp-content/uploads/2022/08/1.-lineamiento-adecuacion-datos-abiertos.pdf&quot;&gt;Lineamientos para la adecuación y publicación de datos abiertos&lt;/a&gt;. Muchos proyectos han sido desarrollados en favor de la apertura, uso y reuso de datos abiertos desde el gobierno y la sociedad civil. Sin embargo, según el Barómetro de Datos Abiertos de 2019, se ha observado un estancamiento en el avance de la transparencia y apertura de datos en Latinoamérica. En el caso específico de Bolivia, al revisar el Portal de Datos Abiertos, se constata que actualmente solo hay disponibles 43 conjuntos de datos abiertos. Además, estos conjuntos no se encuentran actualizados tampoco cumplen completamente con las definiciones de datos abiertos establecidas por la comunidad internacional de datos.&lt;/p&gt;
+
+&lt;p&gt;Te invito a sumarte a una de las iniciativas que trabajan por la apertura de datos en nuestra región, para que podamos contribuir al fortalecimiento de nuestras democracias y alcanzar una sociedad más justa y equitativa.&lt;/p&gt;
+
+&lt;h1 id=&quot;organizaciones-que-promueven-uso-de-la-tecnología-para-el-fortalecimiento-de-democracias&quot;&gt;Organizaciones que promueven uso de la tecnología para el fortalecimiento de democracias&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://escueladedatos.online/&quot;&gt;Escuela de datos&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.aru.org.bo/&quot;&gt;Fundación ARU&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.fundacionconstruir.org/&quot;&gt;Fundación Construir&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://america-latina.hivos.org/&quot;&gt;Hivos: people unlimited: América Latina&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://idatosabiertos.org/&quot;&gt;ILDA&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://latinno.net/es/&quot;&gt;Latinno&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://lapazcomovamos.org/&quot;&gt;La Paz ¿Cómo vamos?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://miga.org.bo/&quot;&gt;Miga: cocinas regionales&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://warmi.red/&quot;&gt;Warmi.red: mujeres en tecnología&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;citaciones&quot;&gt;Citaciones&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blogs.iadb.org/administracion-publica/en/five-lessons-from-open-data-workshops-in-latin-america-and-the-caribbean/&quot;&gt;5 Lessons Learned from Open Data Workshops in Latin America and the Caribbean&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.aduana.gob.bo/aduana7/content/datos-abiertos&quot;&gt;Aduana Nacional - Datos Abiertos&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatawatch.com/publications/data-action-plan-sets-targets-for-2030/&quot;&gt;Data Action Plan Sets Targets for 2030&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.d4d.net/&quot;&gt;Data for Development Network&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://elpais.bo/tarija/20180804_datos-abiertos-bolivia-desaprovecha-una-oportunidad-sin-precedentes.html&quot;&gt;Datos Abiertos: Bolivia desaprovecha una “oportunidad sin precedentes”&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://barometrolac.org/ilda-edicion/informe/&quot;&gt;El Barometro de Datos Abiertos América Latina e Caribe 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://es.schoolofdata.org/2016/06/28/estado-de-los-datos-abiertos-en-bolivia/index.html&quot;&gt;Estado de los datos abiertos en Bolivia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.agetic.gob.bo/wp-content/uploads/2022/08/1.-lineamiento-adecuacion-datos-abiertos.pdf&quot;&gt;Lineamientos para la adecuación y publicación de datos abiertos&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cleiman.com/dev/wp-content/uploads/2020/10/PublicacionDatosAbiertosFinal.pdf&quot;&gt;Los datos abiertos en América Latina y el Caribe&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://america-latina.hivos.org/document/mapeo-de-actores-de-sociedad-civil-relacionados-a-datos-abiertos-en-bolivia/&quot;&gt;Mapeo de actores de sociedad civil relacionados a datos abiertos en Bolivia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://odin.opendatawatch.com/ReportCreator/ExportCountryReport/BOL/2022&quot;&gt;Open Data Inventory 2022/23 - Bolivia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://odin.opendatawatch.com/ReportCreator/&quot;&gt;Open Data Inventory 2022/2023&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.un.org/sustainabledevelopment/es/2015/09/la-asamblea-general-adopta-la-agenda-2030-para-el-desarrollo-sostenible/&quot;&gt;Objetivos de Desarrollo Sostenible&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.datos.gob.bo/&quot;&gt;Portal de Datos Abiertos - Bolivia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2023-12-16/divulgacao-pybo-2023.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Este texto son los apuntes de la charla “Datos abiertos para transformación social” presentada en la &lt;a href=&quot;https://bo.pycon.org/&quot;&gt;PyCon Bolivia 2023&lt;/a&gt; en el 16 de diciembre en la ciudad de La Paz (Bolivia).&lt;/p&gt;
+
+&lt;p&gt;Recursos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;../../assets/images/2023-12-16/pybo-2023-datos-abiertos-para-transformacion-social.pdf&quot;&gt;Diapositivas&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Charla en video (en breve)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 16 Dec 2023 08:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//es/datos-abiertos-para-transformacion-social/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//es/datos-abiertos-para-transformacion-social/</guid>
+        
+        <category>artículo</category>
+        
+        <category>charla</category>
+        
+        
+        <category>datos abiertos</category>
+        
+        <category>gobierno abierto</category>
+        
+        <category>américa latina</category>
+        
+      </item>
+    
+      <item>
+        <title>Datos abiertos en la gestión pública: el caso de la Universidad Federal de Pernambuco</title>
+        <description>&lt;p&gt;Fue un placer presentar la charla “Datos abiertos en la gestión pública: el caso de la Universidad Federal de Pernambuco”, impartida en el Women in Data Science (WiDS) La Plata en el 11 jun. 2022. Si lo perdiste, aquí está:&lt;/p&gt;
+
+&lt;div class=&quot;container text-center&quot;&gt;
+    &lt;iframe width=&quot;90%&quot; height=&quot;315&quot; title=&quot;Datos abiertos en la gestión pública: el caso de la Universidad Federal de Pernambuco&quot; src=&quot;https://www.youtube.com/embed/2QhqtcWoNyk?t=3412&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;En su contenido enseño conceptos de datos abiertos, el panorama actual del nivel de apertura de datos en América Latina y la importancia de tener alto nivel de transparancia de datos para el desempeño de administraciones públicas. Además, presento como si da la implantación del servicio de apertura de datos institucionales de la Universidad Federal de Pernambuco (UFPE) y las acciones promovidas alineadas con el Plan de Dados Abiertos UFPE 2021-2023.&lt;/p&gt;
+
+&lt;h2 id=&quot;citaciones&quot;&gt;Citaciones&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://dados.ufpe.br/&quot;&gt;Portal de Datos Abiertos de la UFPE&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://unlp.edu.ar/institucional/se-realizara-la-segunda-edicion-de-women-in-data-science-wids-en-la-plata-21484&quot;&gt;Se realiza la segunda edición de Women in Data Science (WiDS) en La Plata&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 10 Jun 2022 09:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//es/datos-abiertos-en-la-universidad-publica-el-caso-de-la-universidad-federal-de-pernambuco/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//es/datos-abiertos-en-la-universidad-publica-el-caso-de-la-universidad-federal-de-pernambuco/</guid>
+        
+        <category>charla</category>
+        
+        
+        <category>datos abiertos</category>
+        
+        <category>gobierno abierto</category>
+        
+        <category>américa latina</category>
+        
+      </item>
+    
+      <item>
+        <title>Análisis exploratorio de datos abiertos para el fortalecimiento de democracias</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;En este artículo encontrás el contenido técnico de tecnología (&lt;a href=&quot;https://github.com/cecivieira/cotas-genero-eleicoes-e-proposicoes-legislativas/blob/main/PyCon_US.ipynb&quot;&gt;notebook&lt;/a&gt;) y las diapositivas de la &lt;a href=&quot;https://youtu.be/AXQ7cFm9WLI&quot;&gt;charla “Análisis exploratorio de datos abiertos para el fortalecimiento de democracias”&lt;/a&gt; presentada en la &lt;a href=&quot;https://us.pycon.org/2022/schedule/presentation/97/&quot;&gt;PyCon US 2022 (PyCon Charlas)&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Para empezar, todo el análisis de datos hay que tener un contexto. Lo nuestro es la existencia, en Brasil, de una ley que permite a las mujeres votaren y seren votadas, además las legislaciones de cuota de género (Ley 9.504/1997 y 12.034/2009) y el tema de las propuestas legislativas.&lt;/p&gt;
+
+&lt;p&gt;Los temas de las proposiciones son interesante porque la Organización de los Estados America (OEA) prevé que a partir de 30% de mujeres en las casas legislativas se nota aumento sustancial en proposiciones legislativas en favor de la democracia y protección de derechos de grupos históricamente marginados, ejemplo: campesinos, mujeres, población LGTQIA+, negros, ancianos, discapacitados, artistas, poblaciones económicamente vulnerables y pueblos indígenas.&lt;/p&gt;
+
+&lt;p&gt;Si tienes interés en el tema de datos abiertos y nivel de transparencia de datos en América Latina, invitote a leer el artículo con el &lt;a href=&quot;www.cecivieira.com.br/es/analisis-exploratorio-de-datos-tecnologia-social-y-gobiernos-democraticos/&quot;&gt;contenido teórico de la charla&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;pipeline&quot;&gt;Pipeline&lt;/h2&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2022-04-29/pipeline.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;El pipeline de este análisis es compuesto por colecta, pre-procesamiento y análisis de datos. Todavía, antes del análisis de las proposiciones hizo falta estandarizar sus palabras claves, por lo tanto fue desarrolado un classificador (modelo de aprendizaje de máquina).&lt;/p&gt;
+
+&lt;p&gt;Los datos fueron colectados del &lt;a href=&quot;https://dadosabertos.camara.leg.br/&quot;&gt;Portal de Datos Abiertos de la Cámara de Diputados de Brasil&lt;/a&gt; y corresponden a las candidaturas electas en el periodo de 1934 y 2021. El objetivo del análisis es compreender la evolución de la cantidad de mujeres elegidas como diputadas federal, el impacto de las legislaciones de cuotas de género y si ya se nota cambio en las temáticas de las propuestas legislativas.&lt;/p&gt;
+
+&lt;h3 id=&quot;colecta-de-datos&quot;&gt;Colecta de datos&lt;/h3&gt;
+&lt;p&gt;Fue usada la API RestFul en Python para recolectar los datos, excepto los de las proposiciones legislativas que no estaban disponible por API, en este caso los datos fueron descargados manualmente año a año.&lt;/p&gt;
+
+&lt;p&gt;Es importante decir que en el &lt;a href=&quot;https://dadosabertos.camara.leg.br/&quot;&gt;Portal de Datos Abiertos de la Cámara de Diputados de Brasil&lt;/a&gt; no están disponibles todas las proposiciones legislativas hasta el año 2000. Entonces, puede que los resultados del análisis no refleje la realidad, todavía creo que es un buen ejercicio para tener ideas de cómo podemos manejar datos abiertos y actuar desde la sociedad civil.&lt;/p&gt;
+
+&lt;h3 id=&quot;pre-procesamiento&quot;&gt;Pre procesamiento&lt;/h3&gt;
+
+&lt;p&gt;Las seguintes etapas del &lt;em&gt;pipeline&lt;/em&gt; puedes encontrar en &lt;a href=&quot;https://github.com/cecivieira/cotas-genero-eleicoes-e-proposicoes-legislativas/blob/main/PyCon_US.ipynb&quot;&gt;este notebook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;consideraciones-finales&quot;&gt;Consideraciones finales&lt;/h2&gt;
+
+&lt;p&gt;Desde la sociedad civil, hay un montón de iniciativas que trabajan y luchan por mejoras en nuestra sociedad. Únete a una de ellas!! Nadie cambia el mundo sola, todavía puedes aportar tu granito de arena.&lt;/p&gt;
+
+&lt;h2 id=&quot;organizaciones-que-promueven-uso-de-la-tecnología-para-el-fortalecimiento-de-democracias&quot;&gt;Organizaciones que promueven uso de la tecnología para el fortalecimiento de democracias&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.auna.org.mx/&quot;&gt;Aúna&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://civica.digital/&quot;&gt;Cívica Digital&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://codeandomexico.org/&quot;&gt;Codeando México&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ciudadaniai.org/&quot;&gt;Ciudadanía inteligente&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://datacivica.org/&quot;&gt;Data Cívica&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://idatosabiertos.org/&quot;&gt;ILDA&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cidadedemocratica.org.br&quot;&gt;Instituto Cidade Democrática&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itsrio.org/pt/home/&quot;&gt;Instituto de Tecnologia e Sociedade&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://latinno.net/es/&quot;&gt;Latinno&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ok.org.br/&quot;&gt;Open Knowledge Brasil&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2022-04-29/cartel-pycon-charlas-2022.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Este texto son los apuntes de la charla “Análisis exploratorio de datos abiertos para el fortalecimiento de democracias” presentada en la &lt;a href=&quot;https://us.pycon.org/2022/schedule/presentation/97/&quot;&gt;PyCon US 2022 (PyCon Charlas)&lt;/a&gt; en el 29 abr 2022 en la ciudad de Salt Lake City(EUA).&lt;/p&gt;
+
+&lt;p&gt;Recursos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;../../assets/images/2022-04-29/PyCon US - Análisis exploratorio de datos abiertos para el fortalecimiento de democracias.pdf&quot;&gt;Diapositivas&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cecivieira/cotas-genero-eleicoes-e-proposicoes-legislativas/blob/main/PyCon_US.ipynb&quot;&gt;Notebook&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/AXQ7cFm9WLI&quot;&gt;Charla en video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 26 Apr 2022 09:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//es/analisis-exploratorio-de-datos-abiertos-para-el-fortalecimiento-de-democracias/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//es/analisis-exploratorio-de-datos-abiertos-para-el-fortalecimiento-de-democracias/</guid>
+        
+        <category>artículo</category>
+        
+        <category>charla</category>
+        
+        
+        <category>datos abiertos</category>
+        
+        <category>gobierno abierto</category>
+        
+        <category>américa latina</category>
+        
+        <category>análisis exploratorio</category>
+        
+        <category>innovación cívica</category>
+        
+        <category>pandas</category>
+        
+      </item>
+    
+      <item>
+        <title>Importancia de las comunidades de mujeres para la equidad de género en la tecnología</title>
+        <description>&lt;p&gt;Aunque hoy en día tenemos más niñas y mujeres escolarizadas, todavía no tenemos las mismas oportunidades. Según el informe &lt;a href=&quot;https://unesdoc.unesco.org/ark:/48223/pf0000366649&quot;&gt;Descifrar el código: La educación de las niñas y las mujeres en ciencias, tecnologías, ingeniería y matemáticas (CTIM)&lt;/a&gt;, publicado por la UNESCO en 2020, en todo el mundo solo el 35% de los estudiantes de la educación superior en CTIM son mujeres y solo el 3% de las mujeres que cursan estudios en este ámbito eligen carreras vinculadas con las tecnologías de la información y la comunicación (TIC). Además, de acuerdo con el &lt;a href=&quot;https://www.weforum.org/reports/global-gender-gap-report-2021&quot;&gt;Global Gender Gap Report 2021&lt;/a&gt; del Forum Económico Mundial, las mujeres representan un tercio o menos de la fuerza laboral en los sectores de inteligencia artificial, computación en nube, ingeniería y datos.&lt;/p&gt;
+
+&lt;h1 id=&quot;brecha-salarial-de-género&quot;&gt;Brecha salarial de género&lt;/h1&gt;
+
+&lt;p&gt;La brecha salarial de género es la diferencia entre los sueldos de los hombres y de las mujeres expresada como un porcentaje del salario masculino. Según la &lt;a href=&quot;https://lac.unwomen.org/es/que-hacemos/empoderamiento-economico/epic/que-es-la-brecha-salarial&quot;&gt;ONU MUJERES (2021)&lt;/a&gt;, las causas que contribuyen para este fenómeno social son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Empleo a tiempo parcial;&lt;/li&gt;
+  &lt;li&gt;Peores empleos;&lt;/li&gt;
+  &lt;li&gt;Trabajos socialmente menos valorados;&lt;/li&gt;
+  &lt;li&gt;Autominisvaloración;&lt;/li&gt;
+  &lt;li&gt;Ignorancia de los empleadores.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Así, nos damos cuenta que la ausencia de mujeres en el sector de TIC colabora con el desajuste, principalmente, en dos puntos: peores empleos y trabajos socialmente menos valorados. Pese que en el sector de tecnología están los empleos con mejores sueldos, además sus puestos de trabajos son socialmente valorados. Mientras en la otra punta está la mayoría de nosotras, ocupando labores relacionadas con los cuidados y la reproducción de la vida, que infelizmente son social y económicamente desvalorizados.&lt;/p&gt;
+
+&lt;p&gt;El &lt;a href=&quot;https://www.ilo.org/americas/publicaciones/WCMS_764630/lang--es/index.htm&quot;&gt;Panorama Laboral 2020 de la América Latina y el Caribe&lt;/a&gt;, publicado por la Organización Internacional del Trabajo en América Latina y Caribe (OIT), informa que el promedio salarial de las mujeres es un 12,3% inferior al de los hombres.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2022-02-05/evolucion-sueldo-hombres-mujeres.png&quot; alt=&quot;Salario de las mujeres como porcentaje del salario de los hombres&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;font-size: 10px; text-align: center&quot;&gt;Países incluidos: Bolivia, Brasil, Chile, Colombia, Costa Rica, Ecuador, El Salvador, Guatemala, Honduras, México, Panamá, Paraguay, Perú, República Dominicana y Uruguay&lt;/p&gt;
+
+&lt;p&gt;La tendencia de mejora que vemos a partir de 2016 se detuvo con la pandemia. El &lt;a href=&quot;https://oig.cepal.org/es/documentos/la-autonomia-economica-mujeres-la-recuperacion-sostenible-igualdad&quot;&gt;Observatorio de Igualdad de Género de América Latina y Caribe (UNESCO-CEPAL)&lt;/a&gt; nos cuenta en su informe de 2021 que el 56,9% de las mujeres en América Latina se encuentran ocupadas en sectores en los que se prevé un mayor efecto negativo en términos del empleo y los ingresos. Además, hasta ahora el 5% de todas las mujeres empleadas en el mundo ha perdido su trabajo, en comparación con el 3,9% de los hombres.&lt;/p&gt;
+
+&lt;h1 id=&quot;aporte-de-las-comunidades-de-mujeres-en-ti-para-la-paridad-de-género&quot;&gt;Aporte de las comunidades de mujeres en TI para la paridad de género&lt;/h1&gt;
+
+&lt;p&gt;Las comunidades de mujeres en tecnología puede aportar positivamente para el cambio de este contexto. Pongo luz en dos puntos importantes de actuación de las comunidades: promoción de equidad de género y de la representatividad de género.&lt;/p&gt;
+
+&lt;h2 id=&quot;promoción-de-equidad-de-género&quot;&gt;Promoción de equidad de género&lt;/h2&gt;
+
+&lt;p&gt;El modo más sencillo de enseñar equidad de género es hablar de su diferencia con la igualdad de género, pues es más común escuchar acerca de esta segunda.&lt;/p&gt;
+
+&lt;p&gt;La igualdad es dar la misma oportunidad, derechos y responsabilidades a todos. Es un principio jurídico universal, todavía no es una realidad. Tiene en cuenta que el &lt;a href=&quot;https://www.un.org/sustainabledevelopment/es/gender-equality/&quot;&gt;objetivo 5&lt;/a&gt; de los Objetivos de Desarrollo Sostenible 2030 de la ONU es “Lograr la igualdad entre los géneros y empoderar a todas las mujeres y las niñas”.&lt;/p&gt;
+
+&lt;p&gt;Todos no tenemos los mismos privilegios o la ausencia de ellos, así que el concepto de  “equidad” introduce además un componente ético y tiene en cuenta las diferencias entre los grupos para asegurar una igualdad real.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2022-02-05/igualdad-x-equidad.png&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;font-size: 10px; text-align: center&quot;&gt;Autoría desconocida&lt;/p&gt;
+
+&lt;p&gt;Anualmente el Forum Económico Mundial presenta un &lt;a href=&quot;https://www.weforum.org/reports/global-gender-gap-report-2021&quot;&gt;reporte acerca de la brecha de género&lt;/a&gt;, donde defiende que para disminuirla hay que mejorar 5 puntos claves: la participación política de las mujeres, el acceso a la educación, el acceso al mercado laboral, los índices de violencia de género y legislación existente destinada a asegurar medidas que garanticen la equidad de género.&lt;/p&gt;
+
+&lt;p&gt;En este ámbito, las comunidades de mujeres en tecnología se ponen, principalmente, en dos aspectos: el acceso a la educación y el acceso al mercado laboral. En la práctica se puede: garantizar que la mayor parte de las plazas de los eventos sean para mujeres; pensar en eventos hechos para mujeres, o sea, que tengan en cuenta nuestras condiciones (ej.: es sabido que la mayoría de las madres tienen que cuidar a sus infantes. Entonces, tener eventos con ambientes amistosos para niños y niñas posibilitará la participación de sus madres); hacer acuerdos con empresas que tengan políticas afirmativas de inclusión y diversidad, etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;promoción-de-la-representatividad-de-género&quot;&gt;Promoción de la representatividad de género&lt;/h2&gt;
+
+&lt;p&gt;Desde la infancia asistimos a la sociedad poner a nosotras en papeles muy específicos y crecemos escuchando adjetivos femeninos siendo ocupados para despreciar o desestimar a alguién, por ejemplo “estás manejando como una chica” o “hijo de puta” (¿¡trabajo sexual es legal, vale?!)&lt;/p&gt;
+
+&lt;p&gt;Necesitamos cambiar este tipo de pensamiento, incluso en nosotras. De ahí viene la importancia de dar visibilidad al trabajo de mujeres en CTIM. Criar espacios para que más de nosotras podamos hablar de nuestro trabajo e inspirar a otras mujeres y niñas, además decirles “ustedes pueden ser lo que quieran!!!”.&lt;/p&gt;
+
+&lt;p&gt;Es importante ver mujeres en sitios de poder y en los que no suelen ser ocupados por nosotras. Poco a poco empezamos a creer que también podemos ocupar estos espacios o los que nos dé en la gana. En este ámbito podemos construir comunidades hechas por mujeres y para mujeres.&lt;/p&gt;
+
+&lt;p&gt;Ya tenemos demasiados eventos y comunidades donde casi no hay mujeres en el liderazgo, en la organización o como panelistas. Las comunidades de mujeres en tecnología son espacios importantes para poner luz en trabajos y estudios de mujeres y chicas en todos los ámbitos, sea como talleristas, ponente, en la organización, marketing etc.&lt;/p&gt;
+
+&lt;p&gt;En Panamá hay referentes en tecnología muy importantes. Pongo luz en dos:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/susanalauhou/&quot;&gt;Susana Lau Hou&lt;/a&gt;, fundadora y CEO de &lt;a href=&quot;https://www.etyalab.com/&quot;&gt;EtyaLab&lt;/a&gt;, vicepresidenta de la &lt;a href=&quot;https://r9.ieee.org/panama/&quot;&gt;sección de Panamá del IEEE&lt;/a&gt; y en 2018 fue considerada una de las &lt;a href=&quot;https://newses.cgtn.com/news/3d3d774d664a6a4e314d7a6333566d54/p.html&quot;&gt;100 mujeres más poderosas por el periódico Forbes Centroamérica&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/silviabatista/&quot;&gt;Silvia Batista&lt;/a&gt;, jefa del Equipo de Respuestas a Incidentes a Seguridad de la Información del Gobierno de Panamá (&lt;a href=&quot;https://cert.pa/&quot;&gt;CSIRT Panamá&lt;/a&gt;), además en 2019 ha formado parte de la junta del Desafío de Mujeres Cibernéticas 2019 de la &lt;a href=&quot;https://www.oas.org/es/&quot;&gt;Organización de los Estados Americanos (OEA)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;img src=&quot;../../assets/images/2022-02-05/susana-lau.jpg&quot; class=&quot;rounded mx-auto d-block&quot; alt=&quot;Susana Lau Hou&quot; /&gt;
+        &lt;p&gt;Susana Lau Hou&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;img src=&quot;../../assets/images/2022-02-05/silvia-batista.png&quot; class=&quot;rounded mx-auto d-block&quot; alt=&quot;Silvia Batista&quot; /&gt;
+        &lt;p&gt;Silvia Batista&lt;/p&gt;
+    &lt;/div&gt;    
+&lt;/div&gt;
+
+&lt;h1 id=&quot;pyladies-recife&quot;&gt;PyLadies Recife&lt;/h1&gt;
+
+&lt;p&gt;Tenendo en cuenta el contexto social y la importancia de las comunidades de mujeres en TI para cambiar las desigualdades sociales, desde &lt;a href=&quot;https://www.instagram.com/pyladiesrecife/&quot;&gt;PyLadies Recife&lt;/a&gt; desarrollamos actividades con los objetivos a continuación:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dar soporte a mujeres que deseen estudiar tecnología;&lt;/li&gt;
+  &lt;li&gt;Dar visibilidad a trabajo de mujeres;&lt;/li&gt;
+  &lt;li&gt;Estimular el uso de la tecnología com herramienta para solventar problemas sociales;&lt;/li&gt;
+  &lt;li&gt;Apoyar y organizar eventos inclusivos para las mujeres en la tecnología;&lt;/li&gt;
+  &lt;li&gt;Apoyar acciones de promoción a la diversidad (género, sexualidad y etnia) en los eventos sobre Python en Recife.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mensualmente son puesto en marcha eventos (charla, taller, jornada o encuentro informal) cuya la agenda es compuesta por mujeres que pueden ser o no de la comunidad. Además, los temas son sobre tecnología, Python y cuestiones sociales. La comunidad compreende que hablar de diversos asuntos ayuda en el desarrollo de un espacio seguro para todas, a estrechar lazos, emponderar a las muejres, consolidar amistades y el trabajo en red. Con esto, el fortalecimiento de la comunidad.&lt;/p&gt;
+
+&lt;p&gt;Por el tema de la pandemia de COVID-19, entre febrero de 2020 y noviembre de 2021, no hubieron encuentros presenciales, todavía existieron acciones en línea, como la serie &lt;a href=&quot;https://youtube.com/playlist?list=PLCbSKoKDzRV0ObHY_hqFkNMb8ntkT30Mi&quot;&gt;Quarentena Lives&lt;/a&gt; con charlas hechas por mujeres que participaron del programa de mentoria para formación de ponentes.&lt;/p&gt;
+
+&lt;p&gt;En diciembre 2021 hubo un encuentro informal, picnic, celebrado en una de las mayores zonas verdes de la ciudad. Todavía no hay previsión para regreso de las acciones presenciales.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2022-02-05/picnic-pyladies-recife.jpg&quot; alt=&quot;Grupo de 4 mujeres comiendo sentadas en un jardin&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Organizaciones de mujeres que tengan en cuenta su importancia social es un factor muy poderoso para el avance hacia una sociedad más justa y inclusiva. ¡Involucrate en una comunidad!&lt;/p&gt;
+
+&lt;h1 id=&quot;citaciones&quot;&gt;Citaciones&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://unesdoc.unesco.org/ark:/48223/pf0000366649&quot;&gt;Descifrar el código: la educación de las niñas y las mujeres en ciencias, tecnología, ingeniería y matemáticas (STEM). 2019&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://es.unesco.org/news/entrevista-ninas-y-mujeres-educacion-y-carreras-ctim-america-latina&quot;&gt;Entrevista: Las niñas y las mujeres en educación y carreras CTIM en América Latina. 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://lac.unwomen.org/es/que-hacemos/empoderamiento-economico/epic/que-es-la-brecha-salarial&quot;&gt;Conoce más sobre brecha salarial: causas, cifras y por qué hay que combatirla. 2021&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ilo.org/americas/publicaciones/WCMS_764630/lang--es/index.htm&quot;&gt;Panorama Laboral de la América Latina y el Caribe. 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://oig.cepal.org/es/documentos/la-autonomia-economica-mujeres-la-recuperacion-sostenible-igualdad&quot;&gt;La autonomía económica de las mujeres en la recuperación sostenible y con igualdad. 2021&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.un.org/sustainabledevelopment/es/gender-equality/&quot;&gt;ODS: Objetivo 5: Lograr la igualdad entre los géneros y empoderar a todas las mujeres y las niñas&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.weforum.org/reports/global-gender-gap-report-2021&quot;&gt;Global Gender Gap Report 2021&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.dw.com/es/la-pandemia-fren%C3%B3-el-progreso-de-la-igualdad-de-g%C3%A9nero/a-57067207&quot;&gt;La pandemia frenó el progreso de la igualdad de género. 2021&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;img src=&quot;../../assets/images/2022-02-05/pyladies-panama-ana-cecilia.jpg&quot; class=&quot;rounded mx-auto d-block&quot; alt=&quot;Ana Cecília Vieira&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;img src=&quot;../../assets/images/2022-02-05/pyladies-panama-juliana.jpg&quot; class=&quot;rounded mx-auto d-block&quot; alt=&quot;Juliana Barros&quot; /&gt;
+    &lt;/div&gt;    
+&lt;/div&gt;
+
+&lt;p&gt;Este texto son los apuntes de la charla “Importancia de las comunidades de mujeres para la equidad de género en la tecnología” desarrollada en conjunto con &lt;a href=&quot;https://www.linkedin.com/in/julianabarroslima/&quot;&gt;Juliana Barros&lt;/a&gt; en el &lt;a href=&quot;https://www.meetup.com/pt-BR/Python-Panama/events/283392935&quot;&gt;primer encuentro&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/PyladiesPanama&quot;&gt;PyLadies Panamá&lt;/a&gt; en el 05 feb 22.&lt;/p&gt;
+
+&lt;p&gt;Recursos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;../../assets/images/2022-02-05/diapositivas-pyladies-panama-importancia-de-las-comunidades-de-mujeres-para-la-equidad-de-genero-en-la-tecnologia.pdf&quot;&gt;Diapositivas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 05 Feb 2022 00:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//es/importancia-de-las-comunidades-de-mujeres-para-la-equidad-de-genero-en-la-tecnologia/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//es/importancia-de-las-comunidades-de-mujeres-para-la-equidad-de-genero-en-la-tecnologia/</guid>
+        
+        <category>artículo</category>
+        
+        <category>charla</category>
+        
+        
+        <category>pyladies</category>
+        
+        <category>equidad de género</category>
+        
+        <category>comunidad</category>
+        
+      </item>
+    
+      <item>
+        <title>Como borrar imágenes Docker</title>
+        <description>&lt;p&gt;Si tú, como yo, no sabes nada de Docker, solamente ejecutar los comandos que encuentras en el README de los proyectos, entonces este artículo es para ti.&lt;/p&gt;
+
+&lt;p&gt;A vezes, las imágenes del Docker del proyecto que estoy trabajando pasa a no ejecutar más. Luego, cuando no tengo tiempo para buscar el error y la solución, simplemente reinicio todo (borro y construyo de nuevo las imágenes).&lt;/p&gt;
+
+&lt;h1 id=&quot;paso-a-paso&quot;&gt;Paso a paso&lt;/h1&gt;
+
+&lt;p&gt;Para borar todas las imágenes Docker de tu ordenador, abre el terminal y ejecuta los comandos que sigue:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;No hace falta que sea en una carpeta específica. Qualquiera te vale.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Enumere todas las imágenes:
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt; docker ps -a
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Comprobe que todas las imágenes estén detenidas, o sea, fijate si el &lt;em&gt;status&lt;/em&gt; es &lt;em&gt;exited&lt;/em&gt;.
+ &lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../assets/images/2021-12-13/status-imagens-docker.png&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Por si acaso una o más imágenes tengan otro &lt;em&gt;status&lt;/em&gt;, necesitarás detenerlas con el comando:
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;docker stop $(docker ps -a -q)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;(optativo) Si deseas borrar los datos almacenados en una imagen específica, ingrese en la carpeta que contiene los archivos del docker-composer del proyecto (quizás sea “contrib/docker”) y ejecute:
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;docker-compose down -v
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Borre todas las imágenes:
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;docker system prune -a
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Listo! Ahora tu ordenador está como si nunca tuvieras construido imágenes Docker.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 Dec 2021 17:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//es/como-borrar-imagenes-docker/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//es/como-borrar-imagenes-docker/</guid>
+        
+        <category>tip</category>
+        
+        
+        <category>docker</category>
+        
+      </item>
+    
+      <item>
+        <title>Análisis exploratorio de datos: tecnología social y gobiernos democráticos</title>
+        <description>&lt;h1 id=&quot;datos-abiertos&quot;&gt;Datos abiertos&lt;/h1&gt;
+&lt;p&gt;Datos abiertos son datos digitales puestos a disposición con las características técnicas y jurídicas necesarias para que puedan ser usados, reutilizados y redistribuidos libremente por cualquiera, en cualquier momento y en cualquier sitio.&lt;/p&gt;
+
+&lt;p&gt;Estamos hablando de información no personal, es decir, datos que no contienen información sobre individuos específicos y de datos gubernamentales que no tienen restricciones nacionales de seguridad.&lt;/p&gt;
+
+&lt;p&gt;Los datos abiertos permiten a los gobiernos, ciudadanas y organizaciones de la sociedad civil y del sector privado tomar mejores decisiones informadas, basadas en evidencias. El acceso eficaz y oportuno a los datos nos ayuda a desarrollar nuevos hallazgos e ideas innovadoras que pueden generar beneficios sociales y económicos, para mejorar nuestras vidas. Además  generan  una  mayor  interacción  entre  los  gobiernos  y  los ciudadanos, y permiten oportunidades de co-creación.&lt;/p&gt;
+
+&lt;p&gt;Los datos abiertos permiten a las usuarias comparar, combinar y seguir las conexiones entre distintos conjuntos de datos. Cuando se puede hacer esto efectivamente, es posible resaltar las tendencias, identificar desafíos, inequidades económicas y sociales, así como referenciar avances en los programas y servicios públicos.&lt;/p&gt;
+
+&lt;p&gt;Un ejemplo muy cercano a nosotras es la lucha colectiva contra la pandemia. Pudemos acompañar en tiempo real la situación en cada país, administrar los recursos destinados a enfrentar el COVID-19, y diseñar herramientas tecnológicas que útiles para la crisis y que sirvem de soporte a las acciones en el corto plazo.&lt;/p&gt;
+
+&lt;p&gt;Construir una sociedad más próspera, equitativa y justa requiere gobiernos transparentes, que rindan cuentas, y que colaboren de manera regular y significativa con la sociedad. En este sentido, existe una revolución global de datos que busca avanzar la colaboración en torno a los desafíos sociales claves, proporcionar una supervisión eficaz de las actividades gubernamentales, apoyar la innovación, el desarrollo económico sostenible y la creación y expansión de políticas públicas eficientes y efectivas.&lt;/p&gt;
+
+&lt;p&gt;Los datos abiertos son uno de los ejes para lograr un Gobierno Abierto y democrático.&lt;/p&gt;
+
+&lt;h1 id=&quot;panorama-de-los-datos-abiertos-en-américa-latina-y-caribe&quot;&gt;Panorama de los datos abiertos en América Latina y Caribe&lt;/h1&gt;
+
+&lt;p&gt;En nuestra región empezamos hace unos años los esfuerzos para incentivar gestiones más participativas. En 2011 gobiernos de todo el mundo y representantes de la sociedad civil se unieron para crear la &lt;a href=&quot;https://www.opengovpartnership.org/&quot;&gt;Alianza para el Gobierno Abierto&lt;/a&gt;, con el objetivo de promover una gobernanza transparente, participativa, inclusiva y responsable. Actualmente, 16 países de América Latina y Caribe son miembros de esta Alianza.&lt;/p&gt;
+
+&lt;p&gt;En 2015 fue creada la &lt;a href=&quot;https://opendatacharter.net/principles-es/&quot;&gt;Carta internacional de Datos Abiertos&lt;/a&gt; con participación del grupo de trabajo de Datos Abiertos de la Alianza, sociedad civil y personas expertas. La carta tiene 6 principios para los datos:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Abiertos por defecto&lt;/li&gt;
+  &lt;li&gt;Oportunos y Exhaustivos&lt;/li&gt;
+  &lt;li&gt;Accesibles y Utilizables&lt;/li&gt;
+  &lt;li&gt;Comparables e Interoperables&lt;/li&gt;
+  &lt;li&gt;Para mejorar la Gobernanza y la Participación Ciudadana&lt;/li&gt;
+  &lt;li&gt;Para el Desarrollo Inclusivo y la Innovación&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hoy en día, tenemos dos publicaciones que usan esta &lt;a href=&quot;https://opendatacharter.net/principles-es/&quot;&gt;Carta&lt;/a&gt; como soporte para analizar el nível de apertura de los datos en los gobiernos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://opendatabarometer.org/&quot;&gt;Open Data Barometer&lt;/a&gt;&lt;/strong&gt;: producido por el &lt;a href=&quot;https://www.w3.org/&quot;&gt;World Wide Web Foundation&lt;/a&gt;, es una medida global de cómo los gobiernos publican y utilizan datos abiertos para la rendición de cuentas, la innovación y el impacto social;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm&quot;&gt;OURdata Index&lt;/a&gt;&lt;/strong&gt;: producido por la &lt;a href=&quot;https://www.oecd.org/&quot;&gt;OCDE&lt;/a&gt;, este índice realiza un análisis comparativo  del  diseño  y  la  implementación  de políticas de datos abiertos gubernamentales.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enfocaremos en el &lt;a href=&quot;https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm&quot;&gt;OURdata Index&lt;/a&gt;, pues tiene la información que deseamos y es usado como base para el &lt;a href=&quot;https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020&quot;&gt;Panorama de las Administraciones Públicas de América Latina y el Caribe&lt;/a&gt;, que detallaremos en un momento.&lt;/p&gt;
+
+&lt;h2 id=&quot;índice--de--datos--abiertos--útiles--y--reutilizables-ourdata-index&quot;&gt;Índice  de  datos  abiertos,  útiles  y  reutilizables (OURdata Index)&lt;/h2&gt;
+
+&lt;p&gt;Tiene el objetivo de medir el nivel de disponibilidad, accesibilidad  y apoyo gubernamental para la reutilización de datos basados en los principios de la &lt;a href=&quot;https://opendatacharter.net/principles-es/&quot;&gt;Carta Internacional de Datos Abiertos&lt;/a&gt;. Está compuesto por 3 indicadores: disponibilidad de datos, accesibilidad de datos y apoyo del gobierno a la reutilización de datos. El puntaje de cada país varía entre 0 y 1, siendo que cada indicador tiene el mismo peso, 0.33.&lt;/p&gt;
+
+&lt;p&gt;Con este índice es posible comparar los niveles de abertura de datos (los puntajes) entre los países de América Latina y Caribe y los miembros de la OCDE. En promedio, los países de latinoamerica obtuvieron 0,43 puntos, mientras el promedio de los paises de la OCDE fue  0,60.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, existe  un evidente contraste en los niveles de desarrollo acerca de los datos abiertos gubernamentales entre los países de América Latina. Colombia (0,88), México (0,71) y Brasil  (0,63)  lideran la  región  con  puntajes  más  altos que el promedio de la OCDE.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2021-08-28/grafica-ourdata-index-2019-america-latina.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;panorama-de-las-administraciones-públicas-de-américa-latina-y-el-caribe&quot;&gt;Panorama de las Administraciones Públicas de América Latina y el Caribe&lt;/h2&gt;
+
+&lt;p&gt;Es &lt;a href=&quot;https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020&quot;&gt;una publicación&lt;/a&gt; que cubre aspectos claves de la gobernanza pública y permite a los formuladores de políticas y a la sociedad analizar el desempeño de los gobiernos de América Latina y Caribe en comparación con los países de la OCDE. Uno de los aspectos que tienen en cuenta son “datos abiertos gubernamentales”, lo cual usa como base el &lt;a href=&quot;https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm&quot;&gt;OURdata Index&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;El Panorama fue publicado en 2020 y es la publicación más reciente acerca del análisis de los datos abiertos públicos de latinoamerica. Fue producido por la &lt;a href=&quot;https://www.oecd.org/acerca/miembros-y-socios/&quot;&gt;OCDE (Organización para la Cooperación y el Desarrollo Económicos)&lt;/a&gt;, una organización que agrupa a 38 países con la misión de promover políticas que mejoren el bienestar económico y social de las personas; y por el &lt;a href=&quot;https://www.iadb.org/es/acerca-del-bid/como-estamos-organizados&quot;&gt;BID (Banco Interamericano de Desarrollo)&lt;/a&gt;, que es la principal fuente de financiamiento para el desarrollo de América Latina y el Caribe, además ayuda a mejorar vidas al brindar soluciones financieras y conocimientos sobre el desarrollo para clientes del sector público y el privado.&lt;/p&gt;
+
+&lt;p&gt;Este &lt;a href=&quot;https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020&quot;&gt;Panorama&lt;/a&gt; informa que el 81% de los países en América Latina y Caribe cuentan con una estrategia de mediano plazo y el 75% tiene un plan de acción nacional que incluye implementación de portales y publicación de datos abiertos. En cuanto a participación ciudadana, la mitad de los países latinoamericanos tienen programas gubernamentales para apoyar el conocimiento sobre datos abiertos gubernamentales entre las organizaciones de la sociedad civil. Sin embargo, esta proporción es inferior a los países de la OCDE, donde el 75% de los gobiernos los tienen.&lt;/p&gt;
+
+&lt;p&gt;Aunque la agenda de datos abiertos ha despegado en nuestra región, aún hay margen de mejora. En consonancia con el &lt;a href=&quot;https://opendatabarometer.org/&quot;&gt;Open Data Barómetro&lt;/a&gt;, los análisis muestran que los gobiernos todavía tratan los datos abiertos como iniciativas aisladas. O sea, deberíamos priorizar e invertir en la gobernanza de datos abiertos para respaldar los cambios sustanciales necesarios para incorporar un enfoque abierto en todos los ámbitos y estimular la participación ciudadana en las políticas y programas gubernamentales.&lt;/p&gt;
+
+&lt;p&gt;La democracia en América Latina y Caribe abarca mucho más que las elecciones, de acuerdo con el &lt;a href=&quot;https://latinno.net/es/&quot;&gt;proyecto LATINNO&lt;/a&gt;, en los últimos años estamos convirtiéndonos en un laboratorio de innovaciones políticas y de gobernanza participativa. Mucho se da por la transparencia de datos gubernamentales, aunque nos quede mucho por hacer.&lt;/p&gt;
+
+&lt;h1 id=&quot;análisis-exploratório-de-datos&quot;&gt;Análisis exploratório de datos&lt;/h1&gt;
+
+&lt;p&gt;Hasta aquí hemos visto la importancia de los datos abiertos gubernamentales para desarrollo de innovación y una gestión más participativa, también echamos un vistazo en el panorama de América Latina acerca del nivel de apertura de los datos y políticas de los gobiernos acerca del tema. Ahora podremos las manos en la masa… ops.. en los datos.&lt;/p&gt;
+
+&lt;p&gt;La ideia del análisis es enseñar un poquito de Pandas y ser un ejemplo de lo qué podemos hacer con datos abiertos, presentar para vosotras la potencia de este recurso y instigar vosotras a utilizarlos sea para desarrollar nuevas tecnología que mejore la vida de su comunidad o cobrar al gobierno.&lt;/p&gt;
+
+&lt;p&gt;Elegí para nuestro análisis, los datos de vacunación contra COVID-19 de algunos países de América Latina. Si quieres, puedes profundizarlo cogiendo datos de todos los países de la región.&lt;/p&gt;
+
+&lt;h2 id=&quot;datos-de-vacunación-contra-el-covid-19&quot;&gt;Datos de vacunación contra el COVID-19&lt;/h2&gt;
+
+&lt;p&gt;Busqué los datos de Argentina, Bolívia, Perú y Uruguay, sin embargo no encontré los datos de vacunación contra el COVID-19 en las páginas del gobierno de Bolívia. En Uruguay, encontré los datos, pero su granularidad estava muy alta, o sea, todas las cantidades ya estavan agrupadas. Por lo tanto, descarté dos países del análisis.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2021-08-28/panorama-conjunto-datos-vacunacion-covid19-ago2021.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;La documentación de los datos (diccionario de datos) es muy importante para nosostras hacer análisis fiables, pues detalla el contenido de cada columna, además de ser útil en el preprocessamiento de datos cuando trae las informaciones de &lt;em&gt;encoding&lt;/em&gt;, los tipos de datos de cada columna, etc.&lt;/p&gt;
+
+&lt;p&gt;Por fin, quedamos con los datos de &lt;a href=&quot;https://www.datos.gob.ar/dataset/salud-vacunas-contra-covid-19-dosis-aplicadas-republica-argentina---registro-desagregado&quot;&gt;Argentina (datos)&lt;/a&gt; y &lt;a href=&quot;https://www.datosabiertos.gob.pe/dataset/vacunacion&quot;&gt;Perú (datos)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;notebook-del-análisis&quot;&gt;Notebook del análisis&lt;/h2&gt;
+
+&lt;p&gt;Usamos el &lt;a href=&quot;https://colab.research.google.com/&quot;&gt;Google Collab&lt;/a&gt; para desarrollar el análisis, lo cual está disponível en &lt;a href=&quot;../../assets/images/2021-08-28/analisis_datos_vacunales_ar_pe_2021.ipynb&quot;&gt;este enlace&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;referencias&quot;&gt;Referencias&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blogs.iadb.org/administracion-publica/es/datos-abiertos-en-gobiernos-de-america-latina-y-el-caribe-como-avanzamos/&quot;&gt;Datos abiertos en gobiernos de América Latina y el Caribe: ¿cómo avanzamos?, 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blogs.iadb.org/administracion-publica/es/datos-abiertos-y-coronavirus-el-valor-de-la-informacion-para-luchar-colectivamente-contra-la-pandemia/&quot;&gt;Datos abiertos y Coronavirus: El valor de la información para luchar colectivamente contra la pandemia, 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://app.flourish.studio/&quot;&gt;Flourish Studio&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatabarometer.org/leadersedition/report/&quot;&gt;Informe: de la promesa al progresso, 2018&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://publications.iadb.org/es/los-datos-abiertos-en-america-latina-y-el-caribe&quot;&gt;Los datos abiertos en América Latina y el Caribe, 2018&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatabarometer.org/3rdedition/regional-report/latin-america/?lang=es&quot;&gt;Open Data Barometer, 3.ed&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020&quot;&gt;Panorama de las Administraciones Públicas: América Latina y el Caribe 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cepal.org/es/publicaciones/40768-panorama-regional-datos-abiertos-avances-desafios-america-latina-caribe&quot;&gt;Panorama regional de los datos abiertos: avances y desafíos en América Latina y el Caribe, 2016&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatahandbook.org/guide/es/what-is-open-data/&quot;&gt;¿Qué son los datos abiertos?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;organizaciones-que-promueven-uso-de-la-tecnología-para-el-fortalecimiento-de-las-democracias&quot;&gt;Organizaciones que promueven uso de la tecnología para el fortalecimiento de las democracias&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.auna.org.mx/&quot;&gt;Aúna&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://civica.digital/&quot;&gt;Cívica Digital&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://codeandomexico.org/&quot;&gt;Codeando México&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ciudadaniai.org/&quot;&gt;Ciudadanía inteligente&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://datacivica.org/&quot;&gt;Data Cívica&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://idatosabiertos.org/&quot;&gt;ILDA&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cidadedemocratica.org.br&quot;&gt;Instituto Cidade Democrática&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itsrio.org/pt/home/&quot;&gt;Instituto de Tecnologia e Sociedade&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://latinno.net/es/&quot;&gt;Latinno&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ok.org.br/&quot;&gt;Open Knowledge Brasil&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Este texto son los apuntes de la charla “Análisis exploratorio de datos: tecnología social y gobiernos democráticos” que presenté en &lt;a href=&quot;https://www.pylatam.org/horario-completo/talk19/&quot;&gt;PyCon Latam 2021&lt;/a&gt;.
+Recursos:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;../../assets/images/2021-08-28/propuesta-charla-pycon-latam-2021.pdf&quot;&gt;Propuesta de la charla&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;../../assets/images/2021-08-28/diapositivas-pycon-latam-analisis-exploratorio-de-datos-tecnologia-social-y-gobiernos-democraticos.pdf&quot;&gt;Diapositivas&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/cecivieira/analisis-datos-vacunales-ar-pe-ago2021/blob/main/analisis_datos_vacunales_ar_pe_2021.ipynb&quot;&gt;Notebook&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://youtu.be/kFbsP4wFjag&quot;&gt;Charla en video&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 28 Aug 2021 12:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//es/analisis-exploratorio-de-datos-tecnologia-social-y-gobiernos-democraticos/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//es/analisis-exploratorio-de-datos-tecnologia-social-y-gobiernos-democraticos/</guid>
+        
+        <category>artículo</category>
+        
+        <category>charla</category>
+        
+        
+        <category>datos abiertos</category>
+        
+        <category>gobierno abierto</category>
+        
+        <category>américa latina</category>
+        
+        <category>análisis exploratorio</category>
+        
+        <category>innovación cívica</category>
+        
+        <category>pandas</category>
+        
+      </item>
+    
+      <item>
+        <title>PyLadies Recife y la lucha por equidad de género</title>
+        <description>&lt;h1 id=&quot;pyladies-brasil&quot;&gt;PyLadies Brasil&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.instagram.com/pyladiesrecife/&quot;&gt;PyLadies Recife&lt;/a&gt; es una de las comunidades de la red &lt;a href=&quot;https://brasil.pyladies.com&quot;&gt;PyLadies Brasil&lt;/a&gt;, la cual hizo su primer evento en 29 de marzo de 2014 para más de 100 mujeres através del PyLadies Natal, el primer capítulo de PyLadies en América Latina. Las cofundadoras fueron &lt;a href=&quot;https://www.linkedin.com/in/gabrielacavalcante/&quot;&gt;Gabriela Cavalcante&lt;/a&gt;, Ana &lt;a href=&quot;https://twitter.com/_claranobre&quot;&gt;Clara Nobre&lt;/a&gt; y Katyanna Moura.&lt;/p&gt;
+
+&lt;p&gt;Actualmente hay alrededor de 30 capítulos en todo país. Durante la pandemia estamos nos mantenendo activas através de actividades en línea, siendo la próxima el &lt;a href=&quot;https://youtube.com/playlist?list=PL0tfcsij9geEE-4MhGViTgeiRBIBUnlAP&quot;&gt;Papo entre PyLadies&lt;/a&gt;. La idea del proyecto es hacer una serie de videos, donde cada episodio será una conversación entre tres capítulos lo cual uno de ellos será el tema. El objetivo es conocer el trabajo que cada capítulo hace en su región.&lt;/p&gt;
+
+&lt;h1 id=&quot;pyladies-recife&quot;&gt;PyLadies Recife&lt;/h1&gt;
+
+&lt;p&gt;Impartió en 06 sep. 2014 con un evento para más de 30 mujeres, con una estructura similar al del evento en Natal: una mañana de charlas y en la tarde hubo dos talleres, uno para iniciales y otro intermedio. Hoy en día somos más de 200 mujeres en el grupo de Telegram.&lt;/p&gt;
+
+&lt;p&gt;En su esencia la PyLadies es una comunidad autogestionada y en Recife es igual. No hay jerarquía o tampoco requisito para estar ahí, la única regla para estar en nustro grupo de Telegran es que seas una mujer cis o transgénero. Todos los temas son hablados en el grupo general y quién tiene interés, se va a un grupo temático temporario para seguir hablando hasta que el tema finalice. Así garantizamos la participación de todas que deseen, independiente de su disponibilidade, pues no hace falta estar involucrada a largo plazo.&lt;/p&gt;
+
+&lt;p&gt;Algunos de nuestros objetivos son:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Dar soporte a mujeres que deseen estudiar tecnología;&lt;/li&gt;
+  &lt;li&gt;Dar visibilidad a trabajo de mujeres;&lt;/li&gt;
+  &lt;li&gt;Estimular el uso de la tecnología com herramienta para solventar un problema social.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hacemos esto a través de eventos mensuales, que pueden ser charlas, workshop, jornada o un encuentro informal. Las ponentes y talleristas siempre son mujeres que pueden ser de la comunidad o no.&lt;/p&gt;
+
+&lt;p&gt;Esto año hicimos uno evento en febrero y luego empezamos la cuarentena, entonces estamos con una &lt;a href=&quot;https://www.instagram.com/p/B-8WVIBH0Nc/&quot;&gt;Llama para ponentes para lives&lt;/a&gt; abierta. La cual es también para mujeres y niñas que todavía no tienen una charla lista, pues alguna de nosotras tenemos disponibilidad y ganas de sermos mentoras para que más mujeres desarrollem esta habilidad.&lt;/p&gt;
+
+&lt;p&gt;Como pudister darte cuenta, no tenemos hombres en el grupo de Telegram, tampoco como ponentes/talleristas. Las razones van abajo.&lt;/p&gt;
+
+&lt;h1 id=&quot;equidad-de-género&quot;&gt;Equidad de género&lt;/h1&gt;
+
+&lt;p&gt;Creo que la forma más sencilla de enseñar equidad de género es hablar de la diferencia entre ella y la igualdad de género, pues es más común oír a cerca de esta segunda.&lt;/p&gt;
+
+&lt;p&gt;La igualdad es dar la misma oportunidad, derechos y responsabilidades a todos. Ya es un principio jurídico universal, todavía no es una realidad. Tiene en cuenta que uno de los &lt;a href=&quot;https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html&quot;&gt;Objetivos de Desarrollo Sostenible (ODS)&lt;/a&gt; de la ONU es “Lograr la igualdad entre los géneros y empoderar a todas las mujeres y las niñas” &lt;a href=&quot;https://www1.undp.org/content/undp/es/home/sustainable-development-goals/goal-5-gender-equality.html&quot;&gt;(5. Igualdad de Género)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Todos no tenemos los mismos privilegios o la ausencia de ellos, así que la “equidad” introduce además un componente ético, tiene en cuenta las diferencias entre los grupos para asegurar una igualdad real.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2020-04-25/igualdad-x-equidad.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fuente: Autoria desconocida&lt;/p&gt;
+
+&lt;p&gt;El &lt;a href=&quot;https://es.weforum.org/&quot;&gt;Foro Económico Mundial (FEM)&lt;/a&gt; de 2017 asegura que la brecha de género no se cerrará como mínimo en 100 años. Para los estudios se fijaron en 5 puntos: la participación política de las mujeres, el acceso a la educación, el acceso al mercado de trabajo, la violencia de género y legislación existente destinada a asegurar medidas que garanticen la equidad de género.&lt;/p&gt;
+
+&lt;p&gt;Las comunidades de mujeres en tecnología se ponen, principalmente, en dos puntos: el acceso a la educación y el acceso al mercado laboral. Entonces, en los eventos de &lt;a href=&quot;https://www.instagram.com/pyladiesrecife/&quot;&gt;PyLadies Recife&lt;/a&gt; la prioridad de las plaza son para mujeres y niñas.&lt;/p&gt;
+
+&lt;h1 id=&quot;representatividad-de-género&quot;&gt;Representatividad de género&lt;/h1&gt;
+
+&lt;p&gt;No es raro oír cosas como “hijo de puta” o “estás manejando como una chica” para despreciar o desestimar a alguién. Yo siempre me quedo con la duda “¿Cúal es el problema de mi madre ganar dinero haciendo sexo, una cosa lícita, no?”.&lt;/p&gt;
+
+&lt;p&gt;Siempre pusieron a las mujeres en papeles muy específicos de la sociedad, y por años las niñas creyeron que solamente podrían ser el mismo que sus madres y los otros papeles que veía mujeres haciendo no eran “tan buenos”.&lt;/p&gt;
+
+&lt;p&gt;Daí viene la importancia de dar visibilidad a trabajo de mujeres, para que más de nosotras estemos en sitios donde podamos hablar de nuestro trabajo y inspirar otras mujeres y niñas, además decirles “Ustedes pueden ser lo que quiera!!!”.&lt;/p&gt;
+
+&lt;p&gt;Ya tenemos demasiados eventos que solamente hay 1 o 2 mujeres como ponentes (cuando lo hay). Pensamos que hay mujeres suficientes para cuantos eventos quieras hacer en tu ciudad. Hay que encontrarlas y poner luz a sus trabajos.&lt;/p&gt;
+
+&lt;p&gt;Esta es &lt;a href=&quot;https://www.linkedin.com/in/pyladies-recife-erna-78540957/&quot;&gt;Lesly Zerna&lt;/a&gt;, Directora de Inovación, Investivagicón y Desarrollo en la Agencia de Gobierno Electrónico y Tecnologías de Información de Bolivia.&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;img src=&quot;../../assets/images/2020-04-25/lesly-2.png&quot; class=&quot;rounded mx-auto d-block&quot; alt=&quot;mujer presentando una charla&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;img src=&quot;../../assets/images/2020-04-25/lesly-1.png&quot; class=&quot;rounded mx-auto d-block&quot; alt=&quot;dos mujeres trabajando en una computadora&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+En las fotos abajo somos nosotras de &lt;a href=&quot;https://www.instagram.com/pyladiesrecife/&quot;&gt;PyLadies Recife&lt;/a&gt;, mujeres muy diversas y con diferentes conociminetos.&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;img src=&quot;../../assets/images/2020-04-25/pyladies-recife-1.png&quot; class=&quot;rounded mx-auto d-block&quot; alt=&quot;grupo de mujeres&quot; /&gt;
+        &lt;p&gt;Taller TDD con Python - fev. 2020&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;img src=&quot;../../assets/images/2020-04-25/pyladies-recife-2.png&quot; class=&quot;rounded mx-auto d-block&quot; alt=&quot;grupo de personas&quot; /&gt;
+        &lt;p&gt;Jornada en conjunto con la comunidad &lt;a href=&quot;https://twitter.com/pugpe?lang=es&quot;&gt;PUG-PE&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;img src=&quot;../../assets/images/2020-04-25/pyladies-recife-4.png&quot; class=&quot;rounded mx-auto d-block&quot; alt=&quot;grupo de mujeres&quot; /&gt;
+        &lt;p&gt;Ponentes recifenses de la conferencia &lt;a href=&quot;https://2019.pythonbrasil.org.br/&quot;&gt;Python Brasil 2019&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/2020-04-25/pyladies-recife-3.png&quot; class=&quot;rounded mx-auto d-block&quot; alt=&quot;mujer presentando una charla&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;PyLadies Day 2019&lt;/p&gt;
+
+&lt;h1 id=&quot;referencia&quot;&gt;Referencia&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://brasil.pyladies.com/2014/09/19/primeiro-encontro-recife/&quot;&gt;Primeiro encontro Recife&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.bo.undp.org/content/bolivia/es/home/sustainable-development-goals/goal-5-gender-equality.html&quot;&gt;ODS - Objetivo 5: Igualdad de Género&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.weforum.org/reports/the-global-gender-gap-report-2017&quot;&gt;The Global Gender Gap Report 2017&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=iHZoj7eC5c4&quot;&gt;Como si de esto dependiera mi vida - LESLY ZERNA - TEDxUSFX&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Este texto son los apuntes de la charla “PyLadies Recife y la lucha por equidad de género” que presenté en el evento &lt;a href=&quot;https://youtu.be/-PlescYWQus&quot;&gt;Tech Ladies&lt;/a&gt; promovido por &lt;a href=&quot;https://www.instagram.com/pyladiescbba/&quot;&gt;PyLadies Cochabamba&lt;/a&gt; (Colombia).
+Recursos:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;../../assets/images/2020-04-25/diapositivas-pyladies-recife-y-la-lucha-por-equidad-de-genero.pdf&quot;&gt;Diapositivas&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://youtu.be/-PlescYWQus?t=1790&quot;&gt;Charla completa&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 25 Apr 2020 12:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//es/pyladies-recife-y-la-lucha-por-equidad-de-genero/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//es/pyladies-recife-y-la-lucha-por-equidad-de-genero/</guid>
+        
+        <category>artículo</category>
+        
+        <category>charla</category>
+        
+        
+        <category>pyladies</category>
+        
+        <category>equidad de género</category>
+        
+        <category>comunidad</category>
+        
+      </item>
+    
+  </channel>
+</rss>

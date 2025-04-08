@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia." />
+    <meta name="keywords" content="Tecnologia" />
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <title>Criando site multilíngue com Jekyll | Ana Cecília Vieira</title>
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Criando site multilíngue com Jekyll</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Criando site multilíngue com Jekyll" />
+<meta name="author" content="cecivieira" />
+<meta property="og:locale" content="pt_br" />
+<meta name="description" content="Como internacionalizar um site estático desenvolvido em Jekyll e fazer o deploy no GitHub Page." />
+<meta property="og:description" content="Como internacionalizar um site estático desenvolvido em Jekyll e fazer o deploy no GitHub Page." />
+<link rel="canonical" href="http://www.cecivieira.com.br//criando-site-multilingue-com-jekyll/" />
+<meta property="og:url" content="http://www.cecivieira.com.br//criando-site-multilingue-com-jekyll/" />
+<meta property="og:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494287/capas-site/1_vuz4tp.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-23T12:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494287/capas-site/1_vuz4tp.jpg" />
+<meta property="twitter:title" content="Criando site multilíngue com Jekyll" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@cecivieira" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","image":"https://res.cloudinary.com/damhz6skt/image/upload/v1681494287/capas-site/1_vuz4tp.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.cecivieira.com.br//assets/images/logo.png"},"name":"cecivieira"},"headline":"Criando site multilíngue com Jekyll","dateModified":"2021-08-23T12:00:00-03:00","datePublished":"2021-08-23T12:00:00-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.cecivieira.com.br//criando-site-multilingue-com-jekyll/"},"author":{"@type":"Person","name":"cecivieira"},"description":"Como internacionalizar um site estático desenvolvido em Jekyll e fazer o deploy no GitHub Page.","url":"http://www.cecivieira.com.br//criando-site-multilingue-com-jekyll/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="/assets/css/screen.css" rel="stylesheet">
+
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <!-- Google Analytics -->
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG4L84NMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEG4L84NMR');
+</script>
+    
+
+</head>
+
+
+
+<body class="layout-post">
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CMukta:300,300i,400,400i,700,700i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
+
+
+    <!-- Begin Menu Navigation
+================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/assets/images/logo.png" alt="">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        
+
+                        
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categorias">Categorias</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre-mim">Sobre mim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Contato</a>
+                    </li>
+
+                    
+
+                    <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Buscar..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+                    
+                    <li><a href="http://www.cecivieira.com.br//es"> 🇪🇸 </a></li>
+                    
+                    
+
+                </ul>
+
+                <!-- End Menu -->
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+
+        <div class="container">
+
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Criando site multilíngue com Jekyll&url=http://www.cecivieira.com.br//criando-site-multilingue-com-jekyll/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://www.cecivieira.com.br//criando-site-multilingue-com-jekyll/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.cecivieira.com.br//criando-site-multilingue-com-jekyll/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">Criando site multilíngue com Jekyll</h1>
+
+                <!-- Post Date -->
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="2021-08-23">23 Aug 2021</time></span>           
+                    
+                    </small>
+                </p>
+
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#internacionalização">internacionalização</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#jekyll">jekyll</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#plugin">plugin</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#ruby">ruby</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#tutorial">#tutorial</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Tags -->                
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image - Insere a imagem do card da notícia, antes do texto do artigo -->
+            <!-- 
+
+            
+            <img class="featured-image img-fluid" src="https://res.cloudinary.com/damhz6skt/image/upload/v1681494287/capas-site/1_vuz4tp.jpg" alt="Criando site multilíngue com Jekyll">
+            
+
+             -->
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                    
+                        <p><em>Pode ser que deixar seu site em vários idiomas não seja tão rápido quanto você espera, então dividi esse post em capítulos para te ajudar.</em></p>
+                    
+                    <div class="toc mt-4 mb-4 lead">
+                        <h3 class="font-weight-bold">Sumário</h3>
+                        <ul>
+  <li><a href="#ferramentas">Ferramentas</a></li>
+  <li><a href="#tutorial">Tutorial</a>
+    <ul>
+      <li><a href="#1-jekyll-multiple-languages-plugin">1. Jekyll Multiple Languages Plugin</a>
+        <ul>
+          <li><a href="#instalação">Instalação</a></li>
+          <li><a href="#customização-do-tema">Customização do tema</a></li>
+        </ul>
+      </li>
+      <li><a href="#2-rake">2. Rake</a>
+        <ul>
+          <li><a href="#instalação-1">Instalação</a></li>
+          <li><a href="#script">Script</a></li>
+        </ul>
+      </li>
+      <li><a href="#3-github">3. GitHub</a></li>
+    </ul>
+  </li>
+  <li><a href="#mantendo-o-site-atualizado">Mantendo o site atualizado</a></li>
+  <li><a href="#referências">Referências</a></li>
+</ul>
+                    </div>
+                
+                <!-- End Toc -->
+                <p>Pensando em ter um espaço para reunir minhas andanças nas comunidades de TI e artigos sobre o que estou estudando, criei este site. Você pode ler sobre a escolha e customização do tema <a href="/meu-site-customizando-o-tema-mediumish">nesse post</a> [em construção].</p>
+
+<p>Essas andanças começaram, com maior frequência, lá em 2019 na Espanha. Então eu precisava de um site que fosse, pelo menos, em português e castelhano/espanhol. Achei que isso seria fácil, escolhi o tema, customizei e fui pesquisar como fazer isso usando Jekyll… ban… descobri que precisava de um plugin e de uma gambiarra para que o GitHub Page entendesse a internacionalização. Isso me levou 1 semana de pesquisa e bastante horas de vida.</p>
+
+<p>Abaixo deixo um tutorial para implementar a internacionalização em sites estáticos desenvolvidos em Jekyll e publicados no GitHub Page.</p>
+
+<blockquote>
+  <p>Esse tutorial pressupõe que você já encontrou o tema para seu site, clonou o repositório e fez os ajustes desejados. Se tu ainda não fez isso, corre <a href="https://jtemporal.com/do-tema-ao-ar/">nesse artigo maravilhoso que Jessica Temporal escreveu</a>.</p>
+</blockquote>
+
+<h1 id="ferramentas">Ferramentas</h1>
+
+<ul>
+  <li><a href="https://github.com/kurtsson/jekyll-multiple-languages-plugin">Jekyll Multiple Languages Plugin</a></li>
+  <li><a href="https://github.com/ruby/rake">Rake</a></li>
+  <li><a href="https://github.com/">GitHub</a></li>
+</ul>
+
+<h1 id="tutorial">Tutorial</h1>
+
+<h2 id="1-jekyll-multiple-languages-plugin">1. Jekyll Multiple Languages Plugin</h2>
+
+<p>O plugin Jekyll Multiple Languages vai permitir customizar o tema que você está usando para implementar multiplos idiomas. Para ler a documentação completa acesse o <a href="https://github.com/kurtsson/jekyll-multiple-languages-plugin">repositório do plugin</a>.</p>
+
+<h3 id="instalação">Instalação</h3>
+
+<ol>
+  <li>
+    <p>Abra o arquivo Gemfile localizado na pasta raiz do seu site;
+  <img class="rounded float-right mr-4" src="../../../assets/images/2021-08-23/1.png" /></p>
+  </li>
+  <li>
+    <p>Dentro dele haverá o grupo <code class="language-plaintext highlighter-rouge">:jekyll_plugins</code>. Dentro dele insira a linha <code class="language-plaintext highlighter-rouge">gem 'jekyll-multiple-languages-plugin'</code>. O código deverá parecer com isso:</p>
+  </li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+    <span class="n">gem</span> <span class="s1">'jekyll-feed'</span>
+    <span class="n">gem</span> <span class="s1">'jekyll-sitemap'</span>
+    <span class="n">gem</span> <span class="s1">'jekyll-paginate'</span>
+    <span class="n">gem</span> <span class="s1">'jekyll-seo-tag'</span>
+    <span class="n">gem</span> <span class="s1">'jekyll-archives'</span>
+    <span class="n">gem</span> <span class="s1">'jekyll-multiple-languages-plugin'</span>
+    <span class="n">gem</span> <span class="s1">'github-pages'</span>
+    <span class="n">gem</span> <span class="s1">'kramdown'</span>
+    <span class="n">gem</span> <span class="s1">'rouge'</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ol>
+  <li>No terminal, rode o comando abaixo para instalar esse novo plugin:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  bundle <span class="nb">install</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Agora, ative o plugin no seu projeto. Para isso, encontre o arquivo <code class="language-plaintext highlighter-rouge">_config.yml</code> na pasta raiz do seu site e adicione na lista de plugins:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  - jekyll-multiple-languages-plugin 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>O código deverá parecer com isso:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>  <span class="ss">plugins:
+    </span><span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">paginate</span>
+    <span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">sitemap</span>
+    <span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">feed</span>
+    <span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">seo</span><span class="o">-</span><span class="n">tag</span>
+    <span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">archives</span>
+    <span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">multiple</span><span class="o">-</span><span class="n">languages</span><span class="o">-</span><span class="n">plugin</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Plugin instalado e ativado!</p>
+
+<h3 id="customização-do-tema">Customização do tema</h3>
+
+<p>O plugin vai permitir que todo o site mude de idioma, de acordo com a seleção feita por quem está navegando na página. Para isso, vamos precisar fazer as seguintes customizações no código do nosso tema:</p>
+
+<ol>
+  <li>Abra o arquivo <code class="language-plaintext highlighter-rouge">_config.yml</code> e insira a lista com todos os idiomas desejados. O primeiro idioma será usado como o padrão para seu site.</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  languages: ["pt-br", "es", "en"]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ol>
+  <li>Crie a pasta <code class="language-plaintext highlighter-rouge">_i18n</code> e dentro dela crie uma pasta para cada idioma da lista do passo anterior (exatamente com a mesma sigla).
+  Nessa pasta colocaremos os posts e páginas referentes a cada idioma, então caso você já tenha posts, crie uma pasta <code class="language-plaintext highlighter-rouge">_post</code> na língua correspondente e mova-os. A estrutura da pasta deve aparecer assim:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>  meusite/
+  ├ _i18n/
+    ├ pt-br/
+      └ _posts/
+    ├ es/
+    └ en/
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ol>
+  <li>Agora vamos criar arquivos de dados para cada um dos nossos idiomas. Isso vai facilitar as traduções das páginas html. Para isso, dentro da pasta <code class="language-plaintext highlighter-rouge">_i18n</code> crie um <code class="language-plaintext highlighter-rouge">yml</code> para cada lingua (exatamente com a mesma sigla da lista de idiomas do passo 1). A estrutura da pasta deve aparecer assim:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>  meusite/
+  ├ _i18n/
+    ├ pt-br/
+      └ _posts/
+    ├ es/
+    ├ en/
+    ├ pt-br.yml   
+    ├ es.yml
+    └ en.yml
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ol>
+  <li>Configure os arquivos de dados (yml) com informações básicas do site (name, description, keywords, lang) e com as variáveis que você for utilizar nas páginas html, por exemplo: títulos, subtítulos e links do menu (nav).</li>
+</ol>
+
+<p>É comum nos temas Jekyll que os arquivos das pastas <code class="language-plaintext highlighter-rouge">_includes</code> e <code class="language-plaintext highlighter-rouge">_layouts</code> sejam utilizados para criação das páginas estáticas, então, sugiro que você analize esses htmls e identifique os textos que você precisará traduzir. Nesse momento não vamos traduzir o conteúdo das páginas, apenas a sua estrutura.</p>
+
+<p>Os arquivos <code class="language-plaintext highlighter-rouge">yml</code> deverão aparecer assim:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre>  site:
+    name: Ana Cecília Vieira
+    description: 'Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia.'
+    keywords: Tecnologia
+    lang: pt-br
+  main:
+    home:
+      topics: Temas
+    categories:
+      tags: Tipo de conteúdo
+      topics: Tema
+  pages:
+    about: Sobre mim
+    category: Categorias
+    contact: Contato
+    blog: Blog
+  links:
+    about: sobre-mim
+    category: categorias
+    contact: contato
+    blog:
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Lembre-se:</strong> As variáveis obrigatórias são apenas as instanciadas nas 5 primeiras linhas do exemplo acima. As demais, foram criadas de forma arbitrária por mim para customização do tema que estou usando.</p>
+
+<ol>
+  <li>Ao aplicar uma variável, o navegador vai entender magicamente qual palavra corresponde ao idioma selecionado pela pessoa que está navegando no seu site.</li>
+</ol>
+
+<p>Para aplicar uma variável usa-se a sintaxe <code class="language-plaintext highlighter-rouge">{% t &lt;variável&gt; %}</code> . Exemplo:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  {% t main.categories.tags %}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Essa chamada corresponde a variável da linha 10 do item anterior.</p>
+
+<ol>
+  <li>Em Jekyll, os conteúdos das páginas estão em arquivos do tipo Markdown (<code class="language-plaintext highlighter-rouge">md</code>) . Para traduzí-los, você precisará criar arquivos específicos dentro da pasta de cada idioma. Por exemplo:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>  meusite/
+  ├ _i18n/
+    ├ pt-br/
+    ├ _posts/
+      └ about.md
+    ├ es/
+    ├ _posts/
+      └ about.md
+    ├ en/
+    ├ _posts/
+      └ about.md
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Para chamar esses arquivos dentro de outro, usamos a sintaxe <code class="language-plaintext highlighter-rouge">{% tf titulo_arquivo.md %}</code>. Desse jeito o navegador vai entender qual conteúdo corresponde ao idioma selecionado pela pessoa que está navegando no seu site.</p>
+
+<ol>
+  <li>As páginas do seu site estão dentro da pasta <code class="language-plaintext highlighter-rouge">_pages</code> , mas em alguns temas Jekyll (como o que estou usando) alguns arquivos da pasta <code class="language-plaintext highlighter-rouge">_layouts</code> também são usamos como página.</li>
+</ol>
+
+<p>Verifique o Front Matter de cada arquivo e identifique os que possuem a variável <code class="language-plaintext highlighter-rouge">permalink</code>, ela significa o link permanente daquela página no idioma original. Você deve incluir <code class="language-plaintext highlighter-rouge">permalink_&lt;sigla da lista do passo 1&gt;</code> para cada idioma, ele deve estar escrito obrigatoriamente com essa sintaxe. Além disso, deve incluir um <code class="language-plaintext highlighter-rouge">namespace</code> para aquela página, que será seu identificador único.</p>
+
+<p>O código deve parecer com esse:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>  ---
+  layout: page
+  title: page.title.about
+
+  namespace: about
+  permalink: /sobre-mim/
+  permalink_es: /sobre-mi/
+  permalink_en: /about/
+  comments: false
+  ---
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>A URL dessas páginas ficarão assim em cada idioma:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>  pt-br: &lt;seu_dominio&gt;/sobre-mim/
+  es: &lt;seu_dominio&gt;/es/sobre-mi/
+  en: &lt;seu_dominio&gt;/en/about/
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ol>
+  <li>Com todo o nosso conteúdo e estrutura do site traduzidas, vamos acrescentar no nosso menu (navbar) a opção da língua para navegação.</li>
+</ol>
+
+<p>Para isso, usaremos o <em>Liquid</em> filtro e variáveis do Jekyll (<a href="https://jekyllrb.com/docs/liquid/">documentação completa</a>) aplicando esse trecho de código dentro do nosso navbar:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>  <span class="p">{</span><span class="sx">% if </span><span class="n">post</span><span class="p">.</span><span class="nf">lang</span> <span class="o">==</span> <span class="s2">"es"</span> <span class="n">or</span> <span class="n">page</span><span class="p">.</span><span class="nf">lang</span>  <span class="o">==</span> <span class="s2">"es"</span> <span class="n">or</span> <span class="n">site</span><span class="p">.</span><span class="nf">lang</span> <span class="o">==</span> <span class="s2">"es"</span> <span class="n">or</span> <span class="n">post</span><span class="p">.</span><span class="nf">tags</span> <span class="n">contains</span> <span class="s2">"spanish"</span> <span class="o">%</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"http://www.cecivieira.com.br/"</span><span class="o">&gt;</span> <span class="err">🇧🇷</span> <span class="o">&lt;</span><span class="sr">/a&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"http://www.cecivieira.com.br//en"</span><span class="o">&gt;</span> <span class="err">🇬🇧</span> <span class="o">&lt;</span><span class="sr">/a&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="sx">% elsif </span><span class="n">post</span><span class="p">.</span><span class="nf">lang</span> <span class="o">==</span> <span class="s2">"en"</span> <span class="n">or</span> <span class="n">page</span><span class="p">.</span><span class="nf">lang</span>  <span class="o">==</span> <span class="s2">"en"</span> <span class="n">or</span> <span class="n">site</span><span class="p">.</span><span class="nf">lang</span> <span class="o">==</span> <span class="s2">"en"</span> <span class="n">or</span> <span class="n">post</span><span class="p">.</span><span class="nf">tags</span> <span class="n">contains</span> <span class="s2">"english"</span> <span class="o">%</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"http://www.cecivieira.com.br/"</span><span class="o">&gt;</span> <span class="err">🇧🇷</span> <span class="o">&lt;</span><span class="sr">/a&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"http://www.cecivieira.com.br//es"</span><span class="o">&gt;</span> <span class="err">🇪🇸</span> <span class="o">&lt;</span><span class="sr">/a&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span> 
+  <span class="p">{</span> <span class="sx">% else </span><span class="o">%</span> <span class="p">}</span>                
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"http://www.cecivieira.com.br//es"</span><span class="o">&gt;</span> <span class="err">🇪🇸</span> <span class="o">&lt;</span><span class="sr">/a&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"http://www.cecivieira.com.br//en"</span><span class="o">&gt;</span> <span class="err">🇬🇧</span> <span class="o">&lt;</span><span class="sr">/a&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="sx">% endif </span><span class="o">%</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Você pode encontrar outras maneiras de adicionar as bandeirinhas dos idiomas no seu menu ou até não usá-las. O importante desse trecho de código é você filtrar o conteúdo apresentado na página pelo idioma.</p>
+
+<p><em>Voilà!</em> Temos um site multilíngue!! Reexecuta teu servidor local pra ver a mágica acontecer.</p>
+
+<ol>
+  <li>[Opcional] Em alguns temas Jekyll você vai precisar criar um index.html para cada idioma, o <code class="language-plaintext highlighter-rouge">/index.html</code> que encontra-se na pasta raiz do site para <code class="language-plaintext highlighter-rouge">/base.html</code> e adicionar o script abaixo:</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>  <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+      <span class="n">var</span> <span class="n">lang</span> <span class="o">=</span> <span class="n">navigator</span><span class="p">.</span><span class="nf">language</span> <span class="o">||</span> <span class="n">navigator</span><span class="p">.</span><span class="nf">userLanguage</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">lang</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="s1">'es'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+          <span class="n">window</span><span class="p">.</span><span class="nf">location</span> <span class="o">=</span> <span class="s1">'/es/'</span><span class="p">;</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">lang</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="s1">'en'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="n">window</span><span class="p">.</span><span class="nf">location</span> <span class="o">=</span> <span class="s1">'/en/'</span><span class="p">;</span>
+      <span class="k">else</span>
+          <span class="n">window</span><span class="p">.</span><span class="nf">location</span> <span class="o">=</span> <span class="s1">'/pt-br/'</span><span class="p">;</span>
+  <span class="o">&lt;</span><span class="sr">/script&gt;
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Não precisei fazer isso no tema que estou usando.</p>
+
+<blockquote>
+  <p>Se você for hospedar seu site em um servidor compartilhado, é bem provável que você não precise seguir os próximos passos.</p>
+
+  <p>Caso você faça deploy no Netlify ou GitHub Pages, segue lendo esse tutorial.</p>
+</blockquote>
+
+<h2 id="2-rake">2. Rake</h2>
+
+<p>Apesar de nosso site funcionar lindamente em todos os idiomas no ambiente local, quando subimos para o GitHub Pages ele não funciona porque essa plataforma não entende o pluging Jekyll Multiple Languages. Então, como boa brasileira que somos, vamos fazer uma pequena gambiarra.</p>
+
+<p>Para isso, usaremos o Rakefile, o makefile do Ruby. Rake, é um gerenciador de tarefas e dependências cujas as especificações são escritas em Ruby. Para saber mais detalhes <a href="https://github.com/ruby/rake">acesse sua documentação</a>.</p>
+
+<p>Vamos usá-lo para gerar o site estático em multiplos idiomas e subir em uma nova brach do nosso repositório.</p>
+
+<h3 id="instalação-1">Instalação</h3>
+
+<ol>
+  <li>Abra o arquivo Gemfile localizado na pasta raiz do seu site;</li>
+</ol>
+
+<p><img class="rounded float-right mr-4" src="../../../assets/images/2021-08-23/1.png" /></p>
+
+<ol>
+  <li>Na última linha, adicione o seguinte trecho de código para criar um novo grupo:</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>  <span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>
+      <span class="n">gem</span> <span class="s1">'rake'</span>
+  <span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ol>
+  <li>No terminal, execute o código <code class="language-plaintext highlighter-rouge">gem install rake</code> .</li>
+</ol>
+
+<h3 id="script">Script</h3>
+
+<ol>
+  <li>Na pasta raiz do seu site, crie um novo arquivo com o nome <code class="language-plaintext highlighter-rouge">Rakefile</code> ;</li>
+  <li>Dentro dele coloque o seguinte script:</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre>  <span class="nb">require</span> <span class="s2">"rubygems"</span>
+  <span class="nb">require</span> <span class="s2">"tmpdir"</span>
+  <span class="nb">require</span> <span class="s2">"bundler/setup"</span>
+  <span class="nb">require</span> <span class="s2">"jekyll"</span>
+
+  <span class="c1"># Indique o nome do seu repositório</span>
+  <span class="no">GITHUB_REPONAME</span> <span class="o">=</span> <span class="s2">"&lt;USUÁRIA/NOME DO SEU REPOSITÓRIO"</span>
+
+  <span class="n">desc</span> <span class="s2">"Geração de site estático"</span>
+  <span class="n">task</span> <span class="ss">:generate</span> <span class="k">do</span>
+    <span class="no">Jekyll</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">Jekyll</span><span class="p">.</span><span class="nf">configuration</span><span class="p">({</span>
+      <span class="s2">"source"</span>      <span class="o">=&gt;</span> <span class="s2">"."</span><span class="p">,</span>
+      <span class="s2">"destination"</span> <span class="o">=&gt;</span> <span class="s2">"_site"</span>
+    <span class="p">})).</span><span class="nf">process</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Geração de site estático e publicação no GitHub"</span>
+  <span class="n">task</span> <span class="ss">:publish</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:generate</span><span class="p">]</span> <span class="k">do</span>
+    <span class="no">Dir</span><span class="p">.</span><span class="nf">mktmpdir</span> <span class="k">do</span> <span class="o">|</span><span class="n">tmp</span><span class="o">|</span>
+      <span class="n">cp_r</span> <span class="s2">"_site/."</span><span class="p">,</span> <span class="n">tmp</span>
+
+      <span class="n">pwd</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span>
+      <span class="no">Dir</span><span class="p">.</span><span class="nf">chdir</span> <span class="n">tmp</span>
+      <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">".nojekyll"</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="p">.</span><span class="nf">puts</span><span class="p">(</span><span class="s2">"Site gerado localmente."</span><span class="p">)</span> <span class="p">}</span>
+
+      <span class="nb">system</span> <span class="s2">"git init"</span>  
+      <span class="nb">system</span> <span class="s2">"git add ."</span>
+      <span class="n">message</span> <span class="o">=</span> <span class="s2">"Site atualizado em </span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">.</span><span class="nf">utc</span><span class="si">}</span><span class="s2">"</span>
+      <span class="nb">system</span> <span class="s2">"git commit -m </span><span class="si">#{</span><span class="n">message</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
+      <span class="nb">system</span> <span class="s2">"git remote add origin git@github.com:</span><span class="si">#{</span><span class="no">GITHUB_REPONAME</span><span class="si">}</span><span class="s2">.git"</span>
+      <span class="nb">system</span> <span class="s2">"git checkout -b gh-pages"</span>
+      <span class="nb">system</span> <span class="s2">"git push origin gh-pages --force"</span>
+
+      <span class="no">Dir</span><span class="p">.</span><span class="nf">chdir</span> <span class="n">pwd</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ol>
+  <li>Rode o script usando o código <code class="language-plaintext highlighter-rouge">rake publish</code> .</li>
+</ol>
+
+<p>Ele criará a branch “gh-pages” (caso ela ainda não exista), commitará o site estático multilíngue nela e fará push para o repositório remoto.</p>
+
+<h2 id="3-github">3. GitHub</h2>
+
+<p>O GitHub disponibiliza uma hospedagem grátis de um site estático diretamente do nosso repositório. Para mais detalhes <a href="https://pages.github.com/">acesse o site do serviço</a>.</p>
+
+<p>Estou supondo que seu site em português já está no ar, caso contrário, corre <a href="https://jtemporal.com/do-tema-ao-ar/">nesse artigo maravilhoso que Jéssica Temporal escreveu</a>.</p>
+
+<p>Para que seu site multilíngue entre no ar, teremos que identificar a branch criada no passo anterior, “gh-pages”:</p>
+
+<ol>
+  <li>
+    <p>No menu do repositório, seleciona “Settings”;
+  <img class="rounded mx-auto d-block" src="../../../assets/images/2021-08-23/5.png" /></p>
+  </li>
+  <li>
+    <p>No meu lateral direito, selecione “Pages” para mostrar as configurações relativas ao GitHub Pages. Em seguida, localize o menu “Source” e selecione a branch que será usada para subir seu site, ou seja, “gh-pages”.
+  <img class="rounded mx-auto d-block" src="../../../assets/images/2021-08-23/6.png" /></p>
+  </li>
+</ol>
+
+<p>Pronto!!! Seu site multilíngue , finalmente, está no ar!!!!</p>
+
+<h1 id="mantendo-o-site-atualizado">Mantendo o site atualizado</h1>
+
+<p>Sempre que você fizer alterações no código do seu site ou se você usa o <a href="https://app.forestry.io/">Forestry</a> para escrever e publicar seus posts, será necessário executar no terminal a seguinte sequência de código a cada nova modificação ou post escrito:</p>
+
+<ol>
+  <li>[Passo obrigatório para quem usa Forestry.io] Atualize seu repositório local.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git pull
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Atualize site:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  rake publish
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Lembre-se, a branch “gh-pages” é só a conversão do código fonte do seu site para uma página legível pelo GitHub Pages, então nunca se esqueça de versionar o seu código fonte na branch “main”.</p>
+
+<hr />
+<h1 id="referências">Referências</h1>
+<ul>
+  <li><a href="https://jerry901.github.io/en/2020/02/2020-02-06-01/">A Guide to applying multilingual feature to github pages </a></li>
+  <li><a href="https://gist.github.com/ace-subido/51e1f12cd29fd94363f0">Rakefile to publish Jekyll to a User Page </a></li>
+  <li><a href="https://gist.github.com/DirtyF/24cb9c96b64173ecd85578f38bcc940d">Script para build e deploy usando Rakefile</a></li>
+  <li><a href="https://www.klaasnotfound.com/2017/02/16/proper-multilingual-site-with-github-pages-and-jekyll/">Setting up a Proper Multilingual Site with GitHub Pages and Jekyll</a></li>
+  <li><a href="https://medium.com/automa%C3%A7%C3%A3o-com-batista/trabalhando-com-o-rake-para-facilitar-a-vida-40e5ccd9624d">Trabalhando com o Rake para facilitar a vida.</a></li>
+</ul>
+
+                <i class="far fa-laugh-beam"></i>               
+            </div>
+
+            <!-- Version in other languages -->
+            <div class="language-version">
+                
+                
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Author Box -->
+                        
+            <div class="row post-top-meta">
+            <!-- Foto da autora
+                <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                    
+                    <img class="author-thumb" src="/" alt="Ana Cecília Vieira">
+                    
+                </div>
+            -->
+
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                    <i class="fas fa-star"></i>                     
+                </div>
+                
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">                                                        
+                    Ana Cecília Vieira
+                    <span class="author-description">Analista de dados especializada em qualidade de dados. Entusiasta em dados abertos, código aberto e comunidades autogestinadas como instrumento para transformação social. Embaixadora do programa 'Ciência de Dados para Inovação Cívica' da Open Knowledge Brasil e podcaster no Pizza de Dados.</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- Prev/Next -->
+            <p> ----- </p>
+            <h4>Leia também: </h4>
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://www.cecivieira.com.br///podcast-start-coding/"> &laquo; StartTalks #08 - PyLadies Recife</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="http://www.cecivieira.com.br///ckan-no-docker-instalando-o-ambiente-de-desenvolvimento-e-iniciando-a-criacao-de-um-plugin/">CKAN no Docker: instalando o ambiente de desenvolvimento e iniciando a criação de um plugin &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+            </div>
+
+            
+
+        </div>
+
+        <!-- Categories Jumbotron
+================================================== -->
+        
+
+<div class="jumbotron fortags">
+      <div class="d-md-flex h-100">
+            <div class="col-md-4 transpdark align-self-center text-center h-100">
+                  <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">
+                              Temas
+                              <span class="d-none d-md-inline">→</span>
+                        </h2>
+                  </div>
+            </div>
+            <div class="col-md-8 p-5 align-self-center text-center">
+                  
+
+    
+        <a class="mt-1 mb-1" href="/temas#dados-abertos">dados abertos (9)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#carreira">carreira (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#bash">bash (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#controle-de-tarefas">controle de tarefas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#linux">linux (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#terminal-commands">terminal commands (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#cidades-inteligentes">cidades inteligentes (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#governo-aberto">governo aberto (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#oracle-virtual-box">oracle virtual box (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ubuntu-20.04">ubuntu 20.04 (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#entrevista">entrevista (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#comunidades">comunidades (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#internacionalização">internacionalização (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#plugin">plugin (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ruby">ruby (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jekyll">jekyll (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ckan">ckan (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#docker">docker (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#folium">folium (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#mapa">mapa (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#extensão-ckan">extensão ckan (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#gestão-pública">gestão pública (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#estatística">estatística (5)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#américa-latina">américa latina (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#análise-exploratoria">análise exploratoria (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#inovação-cívica">inovação cívica (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#pandas">pandas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#software-livre">software livre (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jinja">jinja (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#python">python (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#qualidade-de-dados">qualidade de dados (1)</a>
+    
+
+
+            </div>
+      </div>
+</div>
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 text-center text-lg-left">
+                        Ana Cecília Vieira © <a target="_blank"
+                            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center social-media">
+                        
+                        <a target="_blank" href="https://twitter.com/cecivieira"><i class="fab fa-twitter"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://github.com/cecivieira"><i class="fab fa-github"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://www.linkedin.com/in/cecivieira/"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        
+                        <a target="_blank" href="mailto:cecivieira@gmail.com"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center text-lg-right">
+                        <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish
+                            Jekyll Theme</a> by WowThemes.net
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer
+================================================== -->
+
+    </div> <!-- /.site-content -->
+
+    <!-- Scripts
+================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script src="/assets/js/mediumish.js"></script>
+
+    
+
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+    
+
+</body>
+
+</html>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script>
+<script>L2Dwidget.init({ "model": { "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618, "jsonPath": "/live2dw/assets/hijiki.model.json" }, "display": { "superSample": 2, "width": 150, "height": 300, "position": "right", "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 }, "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }, "log": false, "pluginJsPath": "lib/", "pluginModelPath": "assets/", "pluginRootPath": "live2dw/", "tagMode": false });</script>

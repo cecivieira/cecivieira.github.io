@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia." />
+    <meta name="keywords" content="Tecnologia" />
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <title>Extensão CKAN Pages: instalação e uso | Ana Cecília Vieira</title>
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Extensão CKAN Pages: instalação e uso</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Extensão CKAN Pages: instalação e uso" />
+<meta name="author" content="cecivieira" />
+<meta property="og:locale" content="pt_br" />
+<meta name="description" content="Como criar páginas extras no CKAN usando a extensão ckanext-pages. Aprenda como instalar no ambiente do CKAN no Docker e a como usá-la" />
+<meta property="og:description" content="Como criar páginas extras no CKAN usando a extensão ckanext-pages. Aprenda como instalar no ambiente do CKAN no Docker e a como usá-la" />
+<link rel="canonical" href="http://www.cecivieira.com.br//extensao-ckan-pages-instalacao-e-uso/" />
+<meta property="og:url" content="http://www.cecivieira.com.br//extensao-ckan-pages-instalacao-e-uso/" />
+<meta property="og:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/14_gchypy.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-03T15:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/14_gchypy.jpg" />
+<meta property="twitter:title" content="Extensão CKAN Pages: instalação e uso" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@cecivieira" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","image":"https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/14_gchypy.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.cecivieira.com.br//assets/images/logo.png"},"name":"cecivieira"},"headline":"Extensão CKAN Pages: instalação e uso","dateModified":"2021-11-03T15:00:00-03:00","datePublished":"2021-11-03T15:00:00-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.cecivieira.com.br//extensao-ckan-pages-instalacao-e-uso/"},"author":{"@type":"Person","name":"cecivieira"},"description":"Como criar páginas extras no CKAN usando a extensão ckanext-pages. Aprenda como instalar no ambiente do CKAN no Docker e a como usá-la","url":"http://www.cecivieira.com.br//extensao-ckan-pages-instalacao-e-uso/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="/assets/css/screen.css" rel="stylesheet">
+
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <!-- Google Analytics -->
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG4L84NMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEG4L84NMR');
+</script>
+    
+
+</head>
+
+
+
+<body class="layout-post">
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CMukta:300,300i,400,400i,700,700i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
+
+
+    <!-- Begin Menu Navigation
+================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/assets/images/logo.png" alt="">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        
+
+                        
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categorias">Categorias</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre-mim">Sobre mim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Contato</a>
+                    </li>
+
+                    
+
+                    <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Buscar..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+                    
+                    <li><a href="http://www.cecivieira.com.br//es"> 🇪🇸 </a></li>
+                    
+                    
+
+                </ul>
+
+                <!-- End Menu -->
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+
+        <div class="container">
+
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Extensão CKAN Pages: instalação e uso&url=http://www.cecivieira.com.br//extensao-ckan-pages-instalacao-e-uso/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://www.cecivieira.com.br//extensao-ckan-pages-instalacao-e-uso/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.cecivieira.com.br//extensao-ckan-pages-instalacao-e-uso/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">Extensão CKAN Pages: instalação e uso</h1>
+
+                <!-- Post Date -->
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="2021-11-03">03 Nov 2021</time></span>           
+                    
+                    </small>
+                </p>
+
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#ckan">ckan</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#dados-abertos">dados abertos</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#docker">docker</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#extensão-ckan">extensão ckan</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#tutorial">#tutorial</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Tags -->                
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image - Insere a imagem do card da notícia, antes do texto do artigo -->
+            <!-- 
+
+            
+            <img class="featured-image img-fluid" src="https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/14_gchypy.jpg" alt="Extensão CKAN Pages: instalação e uso">
+            
+
+             -->
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>A extensão <a href="https://github.com/ckan/ckanext-pages">Pages (ckanext-pages)</a> permite a criação de páginas extras no <a href="https://ckan.org/">CKAN</a> a partir da interface de administradora da plataforma.</p>
+
+<p>Caso você ainda não tenha o CKAN instalado, segue o tutorial <a href="https://cecivieira.com/ckan-no-docker-instalando-o-ambiente-de-desenvolvimento-e-iniciando-a-criacao-de-um-plugin/">CKAN no Docker: instalando o ambiente de desenvolvimento e iniciando a criação de um plugin</a> até o capítulo “Instalando o CKAN (ambiente de desenvolvimento)”. É nesse ambiente que faremos a adição do <em>plugin</em> Pages.</p>
+
+<h1 id="ckan-pages">CKAN Pages</h1>
+
+<p>As páginas criadas pelo CKAN Pages poderão ser filiadas a uma organização ou a um grupo, além disso podem ter a visibilidade “pública” ou “privada”. Nesse tutorial você verá como:</p>
+
+<ul>
+  <li><a href="#instalar-ckan-pages-ckanext-pages">Instalar o CKAN Pages</a></li>
+  <li><a href="#criar-uma-nova-página">Criar uma nova página</a></li>
+</ul>
+
+<h2 id="instalar-ckanext-pages">Instalar ckanext-pages</h2>
+
+<p>No terminal, execute os seguintes comandos:</p>
+
+<ol>
+  <li>Navegue até a pasta docker-ckan/src;</li>
+  <li>Clone o repositório da extensão:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git clone git@github.com:ckan/ckanext-pages.git
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>No arquivo .env:</p>
+
+    <ul>
+      <li>Ative a extensão adicionando-a na variável “CKAN__PLUGINS”, ou seja, encontre a citada variável e insira “pages” no final da linha, por exemplo:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre> CKAN__PLUGINS=envvars image_view text_view recline_view datastore pages
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+        <p>Essa ativação habilita a criação de páginas genéricas, sem filiação. Os demais tipos podem ser habilitados conforme orientações abaixo.</p>
+      </li>
+      <li>Insira as variáveis de ambiente pertinentes para seu projeto:
+        <ul>
+          <li><strong>CKANEXT__PAGES__FORM -</strong> Determina o arquivo que será usado como formulário padrão para criação de novas páginas. Essa variável só deve ser usada caso você não deseje usar o formulário padrão; nesse caso, deverás criar um novo formulário e infomar seu caminho completo.</li>
+          <li><strong>CKANEXT__PAGES__ALLOW_HTML -</strong> Habilita a edição das páginas usando HTML. Valores possíveis: <em>True</em> ou <em>False</em></li>
+          <li><strong>CKANEXT__PAGES__EDITOR -</strong> Define o editor a ser incorporado na interface de administradora do CKAN. As opções disponíveis são: <a href="https://jakiestfu.github.io/Medium.js/docs/">medium</a> e <a href="https://ckeditor.com/">ckeditor</a></li>
+          <li><strong>CKANEXT__PAGES__ORGANIZATION -</strong> Habilita a criação de páginas vinculadas às organizações. Valores possíveis: <em>True</em> ou <em>False</em>.</li>
+          <li><strong>CKANEXT__PAGES__GROUP -</strong> Habilita a criação de páginas vinculadas aos grupos. Valores possíveis: <em>True</em> ou <em>False</em>.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>Abaixo um exemplo de trecho de código, o qual usa o formulário padrão para criação de páginas e habilita a criação de páginas filiadas à organizações.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre> CKANEXT__PAGES__ALLOW_HTML=True
+ CKANEXT__PAGES__EDITOR=ckeditor
+ CKANEXT__PAGES__ORGANIZATION=True
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Inicie as imagens do Docker:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>docker-compose -f docker-compose.dev.yml up
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Inicie a base de dados:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>docker-compose -f docker-compose.dev.yml exec ckan-dev /bin/bash -c "ckan --config=$CKAN_INI pages initdb"
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Caso você tenha um tema customizado, vá até sua pasta, localize o arquivo .plugin.py e adicione o trecho de código abaixo. Isso permitirá que outras extensões atualizem o esquema de páginas e adicionem campos personalizados:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>from ckanext.pages.interfaces import IPagesSchema
+class MyextPlugin(plugins.SingletonPlugin):
+ plugins.implements(IPagesSchema)
+ #IPagesSchema
+ def update_pages_schema(self, schema):
+     schema.update({
+         'new_field': [
+             toolkit.get_validator('not_empty'),
+             toolkit.get_validator('boolean_validator')]
+         })
+     return schema
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Pronto! Extensão instalada e configurada. Agora bora aprender a criar páginas =D</p>
+
+<h2 id="criar-uma-nova-página">Criar uma nova página</h2>
+
+<p>É possível criar dois tipos de páginas genéricas, sem filiação:</p>
+
+<ul>
+  <li><strong>Blog post -</strong> Usada comumente para divulgação de notícias.</li>
+  <li><strong>Página -</strong> Utilizada na criação de páginas estáticas.</li>
+</ul>
+
+<p>Para isso, no menu principal, clique no lápis para criar um <em>blog post</em> e na folha para criar uma página:
+<img class="rounded mx-auto d-block" src="../assets/images/2021-11-03/icones-blog-pagina.png" /></p>
+
+<p>Caso você deseje criar uma página vinculada a uma organização ou grupo:</p>
+
+<ul>
+  <li>Selecione:
+    <ul>
+      <li>A organização desejada, na página “Organização” (<code class="language-plaintext highlighter-rouge">&lt;seu-dominio&gt;/organization</code>), ou</li>
+      <li>O grupo desejado, na página “Grupos” (<code class="language-plaintext highlighter-rouge">&lt;seu-dominio&gt;/group</code>)</li>
+    </ul>
+  </li>
+  <li>
+    <p>No menu, selecione a opção “Pages”
+ <img class="rounded mx-auto d-block" src="../assets/images/2021-11-03/submenu.png" /></p>
+  </li>
+  <li>Em seguida, clique no botão “+ Add page”
+ <img class="rounded mx-auto d-block" src="../assets/images/2021-11-03/botao-add-page.png" /></li>
+</ul>
+
+<p>A partir daqui, os demais passos são comuns para todos os tipos de páginas:</p>
+
+<ol>
+  <li>Especifique as seguintes informações:
+    <ul>
+      <li><strong>Título -</strong> Título da página;</li>
+      <li><strong>URL -</strong> Determine o sufixo da url da página;
+ <img class="rounded mx-auto d-block" src="../assets/images/2021-11-03/url-organization.png" />
+ <img class="rounded mx-auto d-block" src="../assets/images/2021-11-03/url-groups.png" /></li>
+      <li><strong>Publish Date -</strong> Data de publicação;</li>
+      <li><strong>Visibilidade -</strong> Escolha entre “pública” (todas as usuárias da página poderão vê-la) ou “privada”(apenas usuárias logadas e com permissão de administradora poderão visualizá-la);</li>
+      <li><strong>Header order -</strong> Ordem que a página aparecerá no menu (navbar). Essa configuração funcinou para páginas genéricas, sem filiação, mas não para páginas vinculadas à organização e grupo. Então, abri <a href="https://github.com/ckan/ckanext-pages/issues/115">essa issue no repositório da extensão</a>. Dá uma olhadinha lá pra vê se já tem alguma resposta;</li>
+      <li><strong>Content -</strong> Conteúdo completo da página. É possível editá-lo usando HTML, basta selecionar a opção “Source” do menu de edição.</li>
+    </ul>
+  </li>
+  <li>Salve a página clicando no botão “Adicionar”.
+ <img class="rounded mx-auto d-block" src="../assets/images/2021-11-03/botao-adicionar.png" /></li>
+</ol>
+
+<p>Tchanran! Páginas criadas!</p>
+
+<h1 id="referências">Referências</h1>
+<ul>
+  <li><a href="https://github.com/ckan/ckanext-pages">Extensão CKAN Pages (ckanext-pages)</a></li>
+  <li><a href="https://keitaroinc.medium.com/just-a-few-more-pages-ckanext-pages-577cde20d989">Just a few more pages… ckanext-pages</a></li>
+</ul>
+
+<blockquote>
+  <p>Esse artigo foi escrito em parceria com <a href="mailto:lemmg@cin.ufpe.br">Lucas Gois</a>.</p>
+</blockquote>
+
+                <i class="far fa-laugh-beam"></i>               
+            </div>
+
+            <!-- Version in other languages -->
+            <div class="language-version">
+                
+                
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Author Box -->
+                        
+            <div class="row post-top-meta">
+            <!-- Foto da autora
+                <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                    
+                    <img class="author-thumb" src="/" alt="Ana Cecília Vieira">
+                    
+                </div>
+            -->
+
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                    <i class="fas fa-star"></i>                     
+                </div>
+                
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">                                                        
+                    Ana Cecília Vieira
+                    <span class="author-description">Analista de dados especializada em qualidade de dados. Entusiasta em dados abertos, código aberto e comunidades autogestinadas como instrumento para transformação social. Embaixadora do programa 'Ciência de Dados para Inovação Cívica' da Open Knowledge Brasil e podcaster no Pizza de Dados.</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- Prev/Next -->
+            <p> ----- </p>
+            <h4>Leia também: </h4>
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://www.cecivieira.com.br///criando-o-mapa-do-festival-recife-coffee-com-folium/"> &laquo; Criando o mapa do Festival Recife Coffee com Folium</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="http://www.cecivieira.com.br///dados-abertos-para-gestao-publica/">Dados abertos para gestão pública &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+            </div>
+
+            
+
+        </div>
+
+        <!-- Categories Jumbotron
+================================================== -->
+        
+
+<div class="jumbotron fortags">
+      <div class="d-md-flex h-100">
+            <div class="col-md-4 transpdark align-self-center text-center h-100">
+                  <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">
+                              Temas
+                              <span class="d-none d-md-inline">→</span>
+                        </h2>
+                  </div>
+            </div>
+            <div class="col-md-8 p-5 align-self-center text-center">
+                  
+
+    
+        <a class="mt-1 mb-1" href="/temas#dados-abertos">dados abertos (9)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#carreira">carreira (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#bash">bash (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#controle-de-tarefas">controle de tarefas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#linux">linux (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#terminal-commands">terminal commands (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#cidades-inteligentes">cidades inteligentes (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#governo-aberto">governo aberto (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#oracle-virtual-box">oracle virtual box (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ubuntu-20.04">ubuntu 20.04 (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#entrevista">entrevista (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#comunidades">comunidades (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#internacionalização">internacionalização (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#plugin">plugin (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ruby">ruby (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jekyll">jekyll (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ckan">ckan (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#docker">docker (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#folium">folium (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#mapa">mapa (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#extensão-ckan">extensão ckan (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#gestão-pública">gestão pública (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#estatística">estatística (5)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#américa-latina">américa latina (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#análise-exploratoria">análise exploratoria (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#inovação-cívica">inovação cívica (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#pandas">pandas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#software-livre">software livre (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jinja">jinja (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#python">python (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#qualidade-de-dados">qualidade de dados (1)</a>
+    
+
+
+            </div>
+      </div>
+</div>
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 text-center text-lg-left">
+                        Ana Cecília Vieira © <a target="_blank"
+                            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center social-media">
+                        
+                        <a target="_blank" href="https://twitter.com/cecivieira"><i class="fab fa-twitter"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://github.com/cecivieira"><i class="fab fa-github"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://www.linkedin.com/in/cecivieira/"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        
+                        <a target="_blank" href="mailto:cecivieira@gmail.com"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center text-lg-right">
+                        <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish
+                            Jekyll Theme</a> by WowThemes.net
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer
+================================================== -->
+
+    </div> <!-- /.site-content -->
+
+    <!-- Scripts
+================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script src="/assets/js/mediumish.js"></script>
+
+    
+
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+    
+
+</body>
+
+</html>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script>
+<script>L2Dwidget.init({ "model": { "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618, "jsonPath": "/live2dw/assets/hijiki.model.json" }, "display": { "superSample": 2, "width": 150, "height": 300, "position": "right", "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 }, "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }, "log": false, "pluginJsPath": "lib/", "pluginModelPath": "assets/", "pluginRootPath": "live2dw/", "tagMode": false });</script>

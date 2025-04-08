@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description></description>
+    <link>http://www.cecivieira.com.br//</link>
+    <atom:link href="http://www.cecivieira.com.br//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 08 Apr 2025 16:47:58 -0300</pubDate>
+    <lastBuildDate>Tue, 08 Apr 2025 16:47:58 -0300</lastBuildDate>
+    <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>Dados abertos feat Qualidade de Dados</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Nesse artigo você encontrará o conteúdo na palestra (keynote) &lt;a href=&quot;https://www.youtube.com/@PythonNordeste&quot;&gt;“Dados abertos feat Qualidade de Dados”&lt;/a&gt;, apresentada na Python Nordeste 2024, e os &lt;a href=&quot;../../assets/images/2024-08-10/Dados abertos feat qualidade de dados.pdf&quot;&gt;slides&lt;/a&gt; utilizados. Esta palestra também foi apresentada no evento &lt;a href=&quot;https://atividades.americaaberta.org/2024/talk/DXCAK7/&quot;&gt;América Aberta 2024&lt;/a&gt; (trilha Coda.BR) e &lt;a href=&quot;https://talks.python.org.br/pythonbrasil-2024/talk/KL78N7/&quot;&gt;Python Brasil 2024&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Em outubro de 2023 recebi o &lt;a href=&quot;https://apyb.python.org.br/apyb/premio-dorneles-tremea-jean-ferri/&quot;&gt;prêmio Dorneles Treméa | Jean Ferri&lt;/a&gt; em reconhecimento pelo trabalho que faço junto à comunidade Python. No momento do anúncio, fiquei tão surpresa que não consegui agradecer apropriadamente ao vivo. Depois que a emoção arrefeceu, eu só conseguia pensar em uma coisa: “precisarei de uma palestra keynote para agradecer o prêmio”. Meses depois, a organização da Python Nordeste 2024 me convidou para ser a palestrante principal do evento. Essa palestra, é o meu agradecimento.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Esse artigo trata sobre dados abertos e qualidade de dados, o objetivo é apresentar uma visão geral sobre a contribuição dos temas para gestões democráticas, além de conceituar as 6 dimensões para a qualidade de dados e a governança de dados.&lt;/p&gt;
+
+&lt;h2 id=&quot;dados-abertos&quot;&gt;Dados abertos&lt;/h2&gt;
+
+&lt;p&gt;Em 1940, surgia a ideia de “dados abertos científicos”, popularizada por Robert King Merton, que defendia que a pesquisa científica deveria ser gratuita para todos. A primeira vez que o termo “dados abertos” apareceu foi em 1995, em um relatório da Agência Estadunidense para Divulgação de Dados Geofísicos e Ambientais.&lt;/p&gt;
+
+&lt;p&gt;Desde então, o debate foi ampliando, amadurecendo e em 2005, a &lt;a href=&quot;https://opendefinition.org/od/2.1/en/&quot;&gt;definição do termo “dados abertos”&lt;/a&gt; foi publicada no &lt;em&gt;Open Definition&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;“Dados abertos são dados que podem ser livremente usados, reutilizados e redistribuídos por qualquer pessoa - sujeitos, no máximo, à exigência de atribuição da fonte e compartilhamento pelas mesmas regras.”&lt;/p&gt;
+
+&lt;p&gt;Acrescento a isto um trecho do &lt;a href=&quot;https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8777.htm&quot;&gt;Decreto 8.777/2016&lt;/a&gt;, que amplia o entendimento do conceito, deixando, assim, a definição mais didática:&lt;/p&gt;
+
+&lt;p&gt;“Dados abertos são dados [representados em meio digital, estruturados em formato aberto, processáveis por máquina, referenciados na internet], que podem ser livremente usados, reutilizados e redistribuídos por qualquer pessoa - sujeitos, no máximo, à exigência de atribuição da fonte e compartilhamento pelas mesmas regras.”&lt;/p&gt;
+
+&lt;p&gt;Por “formato aberto” entende-se extensões de arquivo documentadas publicamente e que seja de livre implantação. Também é importante informar que quando estamos falando sobre dados abertos, nos referimos a dados de interesse público, sem restrição legal de acesso, sejam eles oriundos de instituições públicas ou privadas.&lt;/p&gt;
+
+&lt;h3 id=&quot;instrumentos-legislativos-brasileiros&quot;&gt;Instrumentos legislativos brasileiros&lt;/h3&gt;
+
+&lt;p&gt;Em 2003, nós da sociedade civil junto com organizações de mídia e pesquisadores instituímos o Fórum de Direito de Acesso a Informações Públicas. Foi a partir dessas intensas discussões que a &lt;a href=&quot;https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm&quot;&gt;Lei de Acesso a Informação (LAI)&lt;/a&gt; foi criada. Essa é uma das nossas únicas leis que sua redação não é escrita originalmente pelo poder legislativo. O debate sobre transparência de dados e informações, desde seu princípio, é pautado pela sociedade civil.&lt;/p&gt;
+
+&lt;p&gt;Então, em 2016 foi publicado o &lt;a href=&quot;https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8777.htm&quot;&gt;Decreto 8.777/2016&lt;/a&gt; com a Política de Dados Abertos do Poder Executivo Federal, onde explicita ações que instituições e autarquias devem realizar em direção a uma maior transparência de dados institucionais.&lt;/p&gt;
+
+&lt;p&gt;Em 2020, foi publicado o &lt;a href=&quot;https://www.gov.br/cgu/pt-br/governo-aberto/a-ogp/planos-de-acao/4o-plano-de-acao-brasileiro/compromisso-2-docs/modelo-de-referencia-de-abertura-de-dados_versao-final-2.pdf&quot;&gt;Modelo de Referência para Publicação de Dados Abertos&lt;/a&gt;, objetivando prover parâmetros para publicação de dados em formato aberto por estados e municípios. Esse instrumento é um dos marcos do &lt;a href=&quot;https://www.gov.br/cgu/pt-br/governo-aberto/a-ogp/planos-de-acao/4o-plano-de-acao-brasileiro/2o-plano-de-acao-brasileiro&quot;&gt;4. Plano de Ação da Parceria para Governo Aberto&lt;/a&gt;. Uma parceria que tem como objetivo promover gestões transparentes, participativas, inclusivas e responsáveis; a qual foi firmada em 2011 e o Brasil é um dos 11 primeiros países signatários.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block - centro&quot; src=&quot;../assets/images/2024-08-10/instrumentos_normativos_brasileiros.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;transparência-de-dados-na-prática&quot;&gt;Transparência de dados na prática&lt;/h2&gt;
+
+&lt;p&gt;O debate sobre o tema de transparência de dados evoluiu muito entre 2011 e 2019, mas então a moda passou e as ações governamentais foram estabilizando ou minguando, de acordo com o &lt;a href=&quot;https://barometrolac.org/ilda-edicion/informe/&quot;&gt;Barómetro Regional de Datos Abiertos para América Latina y el Caribe 2020&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Enquanto sociedade, já entendemos que sem transparência de dados, não há evolução de tecnologia cívica. Além disso, nossa atuação, enquanto sociedade civil na gestão de nossas cidades fica muito limitada. Não queremos retroceder. Queremos sociedades prósperas, equitativas e justas. Para isso, precisamos de governos transparentes. Então, precisamos aprofundar o debate sobre transparência de dados, o que atualmente significa falar sobre “qualidade de dados”.&lt;/p&gt;
+
+&lt;h3 id=&quot;propriedade-efetiva-o-que-é-para-que-serve&quot;&gt;Propriedade efetiva: o que é? para que serve?&lt;/h3&gt;
+
+&lt;div class=&quot;container text-center&quot;&gt;
+    &lt;iframe width=&quot;90%&quot; height=&quot;315&quot; title=&quot;Datos abiertos en la gestión pública: el caso de la Universidad Federal de Pernambuco&quot; src=&quot;https://www.youtube.com/embed/SVm7MH44FT4?si=ZsOcXd9ybDvoNfUf&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Em 2020, no principal porto do Líbano, o de Beirute, ocorreu uma das maiores explosões não nucleares da nossa história: bairros inteiros foram destruídos, cerca de 220 pessoas morreram e quase 7 mil ficaram feridas. A explosão ocorreu porque, em um dos armazéns haviam toneladas de nitrato de amônio armazenadas sem cumprir a regulação internacional.&lt;/p&gt;
+
+&lt;p&gt;Devido a iniciativas de transparência de dados na área “propriedade efetiva”, foi possível usar dados abertos sobre propriedade de empresas para rastrear as proprietárias dessa carga. Consequentemente, a investigação foi mais ágil. Ainda que não tenhamos conclusão do processo judicial até hoje (mas morosidade na justiça é outro assunto).&lt;/p&gt;
+
+&lt;p&gt;Dados de “Propriedade efetiva” são referentes às proprietárias de fato de determinada empresa. É bem comum nos depararmos com uma empresa, que é dona de outra empresa, que é dona já de outra empresa, e assim é desenhado um labirinto danado que, às vezes, pode até parecer que os meios de produção estão “distribuídos” entre um grupo grande de pessoas. Mas, quando observada a propriedade efetiva dessas empresas, ou seja, o quadro societário e/ou lista de acionistas, percebemos que o grupo é bem pequeno.&lt;/p&gt;
+
+&lt;p&gt;A transparência dos dados sobre “propriedade efetiva” é fundamental para combater a corrupção, prevenir e investigar a evasão fiscal, proteger a segurança nacional e promover ambientes de negócios sustentáveis. É crucial entender claramente quem são os proprietários e beneficiários das empresas que operam em setores estratégicos e, assim, identificar quem exerce controle sobre a economia do nosso país e a economia global.&lt;/p&gt;
+
+&lt;p&gt;No Brasil, há alguns anos, houve uma iniciativa de código aberto que usava os dados públicos da Receita Federal sobre CNPJ, para desenvolvimento de grafos que ajudavam a identificação da propriedade efetiva das empresas. A &lt;a href=&quot;https://github.com/rictom/rede-cnpj&quot;&gt;RedeCNPJ&lt;/a&gt; já não está mais no ar, mas seu código pode ser encontrado no repositório  do GitHub e reutilizado.&lt;/p&gt;
+
+&lt;div class=&quot;container text-center&quot;&gt;
+    &lt;iframe width=&quot;90%&quot; height=&quot;315&quot; title=&quot;Datos abiertos en la gestión pública: el caso de la Universidad Federal de Pernambuco&quot; src=&quot;https://www.youtube.com/embed/nxz9Drhqn_I?si=HCX9S0TFEO1U5fqk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A nível mundial, a ferramenta &lt;a href=&quot;https://resources.linkurious.com/openscreening&quot;&gt;Linkurious&lt;/a&gt;, da Openscreening, conecta as bases de dados do &lt;a href=&quot;https://www.opensanctions.org/&quot;&gt;Consórcio Internacional de Jornalismo Investigativo (Open Sanctions)&lt;/a&gt; e a do &lt;a href=&quot;https://register.openownership.org/&quot;&gt;Open Ownership Register&lt;/a&gt;, a empresa que desenvolveu o padrão de dados para informações sobre propriedade efetiva e criadora do primeiro registro público transnacional. Com esta ferramenta é possível visualizar relacionamentos entre pessoas, políticas, empresas, entre outras coisas.&lt;/p&gt;
+
+&lt;h2 id=&quot;as-3-ondas-de-dados-abertos&quot;&gt;As 3 ondas de Dados Abertos&lt;/h2&gt;
+
+&lt;p&gt;Quase 20 anos depois que conceituamos esse movimento pela abertura de dados, é possível ver fases bem caracterizadas e avanços.&lt;/p&gt;
+
+&lt;p&gt;Nos primeiros anos nós, da comunidade de dados abertos, nos demos por satisfeitas com a publicação dos dados em formato aberto. Já era um ganho significativo que os governos e empresas publicassem seus dados, quanto mais dados publicados, em formato aberto, melhor. Continuamos felizes com isso, pois ainda é necessário manter atenção na quantidade de conjuntos de dados publicados. Mas, além disso, passamos a observar a qualidade desses dados.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-onda&quot;&gt;1° onda&lt;/h3&gt;
+
+&lt;p&gt;A primeira onda é caracterizada pelas instituições nacionais disponibilizando dados sob demanda da sociedade civil.&lt;/p&gt;
+
+&lt;p&gt;Gosto de pensar  que essa fase inicia em 1988, com a nossa Constituição Federal, pois um dos seus 5 princípios fundamentais é o da “Publicidade”. Em seguida, em 1991, foi promulgada a &lt;a href=&quot;https://www.planalto.gov.br/cciviL_03/////LEIS/L8159.htm&quot;&gt;Lei Geral de Arquivos Públicos&lt;/a&gt; que permite acesso público a documentos.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-onda&quot;&gt;2° onda&lt;/h3&gt;
+
+&lt;p&gt;Já a segunda onda é caracterizada pela disponibilização de conjuntos de dados em formatos abertos de forma proativa e como padrão do Poder Executivo Federal.&lt;/p&gt;
+
+&lt;p&gt;Aqui, começamos essa fase com a publicação da LAI, em 2011, que definitivamente, sem nenhuma dúvida ou brecha legislativa, estabelece que nosso país tem a “publicidade como preceito geral e do sigilo como exceção”.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-onda&quot;&gt;3° onda&lt;/h3&gt;
+
+&lt;p&gt;Atualmente, estamos vivenciando a terceira onda, marcada por uma ênfase na qualidade dos dados disponíveis. O foco não está apenas na quantidade de conjuntos de dados publicados, mas também no contexto técnico, social, político e econômico mais amplo em que esses dados são gerados e utilizados.&lt;/p&gt;
+
+&lt;p&gt;Afinal, para que seja possível promover desenvolvimento social, tecnológico, inovação e participação cívica na gestão das nossas cidades, esses dados precisam estar completos, válidos, consistentes, oportunos e com boa acurácia.&lt;/p&gt;
+
+&lt;p&gt;Qualidade de dados é o nosso agora!&lt;/p&gt;
+
+&lt;h2 id=&quot;qualidade-de-dados&quot;&gt;Qualidade de dados&lt;/h2&gt;
+
+&lt;p&gt;“A qualidade dos dados é a capacidade dos dados de satisfazer os requisitos técnicos, de sistema e de negócios declarados de uma empresa. A qualidade dos dados é uma visão ou uma avaliação da adequação dos dados para servir a seu propósito em um determinado contexto” (&lt;a href=&quot;https://asq.org/quality-press/display-item?item=H1552&quot;&gt;Mahanti, 2019&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;A qualidade pode ser aferida a partir de 6 dimensões: completude, unicidade, validade, consistência, oportunidade e precisão.&lt;/p&gt;
+
+&lt;h3 id=&quot;completude&quot;&gt;Completude&lt;/h3&gt;
+
+&lt;p&gt;Essa dimensão pode ser aferida de duas formas, a nível de:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Conjunto de dados: Verifica se todos os registros tem dados preenchidos quando esperado. Por exemplo: Em um conjunto de dados referente a licitações de uma instituição, o tipo de pergunta que essa dimensão responde é, “todas as licitações realizadas em 2024 estão nesse conjunto?”&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Registro: Já a nível de registro, verifica se todos os dados de determinado registro estão preenchidos, quando esperado. Por exemplo: o tipo de pergunta a ser respondida é, “cada licitação tem todos os dados mínimos preenchidos a caracterizam (data de abertura, itens, solicitante, preço base, etc.)?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;validade&quot;&gt;Validade&lt;/h3&gt;
+
+&lt;p&gt;Essa dimensão mede o grau em que os dados preenchidos correspondem à regra de negócio estabelecida. Pode ser um simples acordo de formatação de campo, como, por exemplo, representar o campo “ano” com 4 dígitos numéricos; como também pode ser a regra que define qual é o ano certo a ser coletado. Por exemplo: qual é o ano de início da sua/suas relações afetivas atual? Pode ser, que o acordo com suas parcerias, seja representar esse início com o ano que vocês deram o primeiro beijo ou o ano que iniciou o namoro ou o que foi morar junto… Essa regra é estabelecida com as pessoas daquela relação, então o ano válido para preencher esse campo é o que segue a “regra de negócio” (o acordo).&lt;/p&gt;
+
+&lt;h3 id=&quot;unicidade&quot;&gt;Unicidade&lt;/h3&gt;
+&lt;p&gt;Mede o grau em que os registros em um conjunto de dados não estão duplicados.&lt;/p&gt;
+
+&lt;h3 id=&quot;oportunidade&quot;&gt;Oportunidade&lt;/h3&gt;
+
+&lt;p&gt;Essa dimensão mede o grau em que um conjunto de dados está disponível quando esperado, ou seja, os dados precisam estar disponíveis em tempo hábil para serem úteis. Por exemplo: em uma central de regulação de leitos de UTI, é necessário que o dado do leito desocupado seja fornecido em tempo real para que seja possível disponibilizá-lo para uma nova paciente. Não é oportuno que esse dado seja disponibilizado a cada 24h, pois para quem está precisando de um leito de UTI, 24h pode definir a sua permanência em vida. No entanto, esse mesmo intervalo de tempo para atualização de dados sobre a abertura de uma licitação, não tem o mesmo grau de impacto negativo para uma empresa que deseja concorrer ao processo licitatório, pois o edital para propostas fica aberto por 8 dias úteis.&lt;/p&gt;
+
+&lt;h3 id=&quot;consistência&quot;&gt;Consistência&lt;/h3&gt;
+
+&lt;p&gt;Essa dimensão pode ser aferida de duas formas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;O grau em que os dados são os mesmos em todas as instâncias. Por exemplo: é comum o nome da nossa cliente estar em vários bancos de dados, sendo cada banco destinado a um serviço. Então, o nome dessa cliente deve ser o mesmo em todas essas instância: o que aparece no e-mail marketing, o impresso na nota fiscal e o mesmo no sistema do autoatendimento das lojas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;O grau de consistência na contagem de registros ao longo do tempo. Por exemplo: hipotéticamente, o total semanal de diários oficiais coletados por um raspador no site da Prefeitura Municipal de São Lourenço da Mata é de 1 unidade. Sendo que, em uma determinada semana, o raspador coletou 5 unidades. Um aumento de 500% na ingestão de dados semanal, se planejamento me parece um tanto alarmante e denota inconsistência na entrada desses dados, considerando o período histórico analisado.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;precisão&quot;&gt;Precisão&lt;/h3&gt;
+
+&lt;p&gt;Essa dimensão mensura o grau em que os dados estão corretos e representam a verdade, ou seja, refletem a realidade. Talvez, seja a dimensão mais desafiadora para aferir, pois depende da fonte primária do dado.&lt;/p&gt;
+
+&lt;h3 id=&quot;dimensões-complementares&quot;&gt;Dimensões complementares&lt;/h3&gt;
+
+&lt;p&gt;Aferir apenas uma das dimensões não é suficiente para expressar a qualidade dos dados analisados. As dimensões são complementares. Como exemplo, trago uma visualização muito popular sobre Consistência e Precisão, onde o centro do alvo significa alta precisão e a borda, baixíssima precisão.&lt;/p&gt;
+
+&lt;p&gt;Na figura abaixo, o segundo alvo retrata que os dados podem ser consistentes , ou seja, ter pouca diferença entre si, mas serem imprecisos (não retratarem a realidade). Nesse caso, os dados não são úteis e tem baixa qualidade.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block - centro&quot; src=&quot;../assets/images/2024-08-10/precisao_e_consistencia.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;governança-de-dados&quot;&gt;Governança de dados&lt;/h2&gt;
+
+&lt;p&gt;É comum encontrarmos artigos informando que o maior desafio para uma qualidade de dados são os dados em grande escala. Mas, esse é apenas um desafio técnico. O principal desafio mesmo da qualidade de dados é estabelecer uma boa governança de dados.&lt;/p&gt;
+
+&lt;p&gt;A governança de dados envolve a definição de padrões e políticas internas para a coleta, armazenamento, compartilhamento e descarte de informações, com o objetivo de garantir a consistência, a confiabilidade e a proteção contra o uso indevido dos dados. Trata-se de todas as medidas adotadas para assegurar que os dados sejam seguros, precisos, disponíveis e utilizáveis. Isso abrange as ações que as pessoas devem executar, os processos que precisam seguir e a tecnologia que dá suporte durante todo o ciclo de vida dos dados.&lt;/p&gt;
+
+&lt;p&gt;Os principais benefícios de uma boa governança são:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Responsabilidades explícitas - estabelecer quem é responsável pelo quê e qual o público alvo.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Qualidade de dados - ter um conjunto de regras que define o padrão mínimo aceitável para os dados.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Processos definidos - ter fluxos modelados para cada atividade (passo a passo bem definidos).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Uma boa governança significa estabelecer acordos entre todas as entidades participantes do ciclo de vida de um dado.&lt;/p&gt;
+
+&lt;h2 id=&quot;considerações-finais&quot;&gt;Considerações finais&lt;/h2&gt;
+
+&lt;p&gt;Talvez, pensemos que os desafios para publicação de dados em boa qualidade é de responsabilidade das instituições publicadoras desses dados. E que nós nada podemos fazer em relação a isso. Isso não é uma verdade completa!&lt;/p&gt;
+
+&lt;p&gt;Os dados coletados para a pesquisa durante tua graduação ou pós-graduação na universidade pública, estão abertos? Ou tu acha que é melhor guardá-los para que não “roubem” a tua ideia? Já tentaste ver se existem iniciativas para abertura de dados científicos na tua instituição de ensino? Caso não haja, o que você poderia fazer para contribuir com a existência dela?&lt;/p&gt;
+
+&lt;p&gt;Também podemos solicitar a publicação de dados em formato aberto através de um pedido de acesso à informação, previsto na LAI.&lt;/p&gt;
+
+&lt;p&gt;Precisamos entender que transparência de dados é um dos pilares de gestões democráticas e que “gestão democrática” quer dizer “participação cidadã”. Além disso, o acesso eficaz e oportuno a dados ajuda a desenvolver novos desafios e ideias inovadoras que podem gerar benefícios sociais e econômicos, bem como, fomentam maior interação entre governos e sociedade civil, permitindo assim, um ambiente propício à ações colaborativas, seja para o desenvolvimento de produtos tecnológicos, seja no desenvolvimento de políticas públicas.&lt;/p&gt;
+
+&lt;p&gt;A democracia na América Latina vai muito além das eleições, ela precisa do seu engajamento na associação de moradores do bairro, ONGs, comunidades de tecnologia, etc. É necessário pensar coletivamente para soluções de problemas coletivos.&lt;/p&gt;
+
+&lt;h2 id=&quot;referências&quot;&gt;Referências&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.dsacademy.com.br/as-6-dimensoes-da-qualidade-de-dados-data-quality/&quot;&gt;As 6 Dimensões da Qualidade de Dados (Data Quality)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pt.wikipedia.org/wiki/Coco_(dan%C3%A7a)#:~:text=De%20origem%20remota%2C%20surgiu%20nos,de%20coco%20em%20Olinda%2C%20Pernambuco.&quot;&gt;Coco (dança)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.d4d.net/state-of-open-data/chapters/sectors/corporate-ownership/v2/&quot;&gt;Corporate Ownership&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8777.htm&quot;&gt;Decreto 8.777/2016&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.okfn.org/2013/10/03/defining-open-data/&quot;&gt;Defining Open Data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/SVm7MH44FT4?si=An5AwMNO7fM2-vz6&quot;&gt;Grande explosão atinge Beirute: veja imagens&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wikilai.fiquemsabendo.com.br/wiki/Hist%C3%B3ria_da_LAI&quot;&gt;História da LAI&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wikilai.fiquemsabendo.com.br/wiki/F%C3%B3rum_de_Direito_de_Acesso_a_Informa%C3%A7%C3%B5es_P%C3%BAblicas&quot;&gt;Fórum de Direito de Acesso a Informações Públicas&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatawatch.com/blog/indexes-of-data-quality-and-openness/&quot;&gt;Indexes of Data Quality and Openness&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm&quot;&gt;Lei de acesso à informação&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.gov.br/cgu/pt-br/governo-aberto/noticias/2020/10/modelo-de-referencia-para-publicacao-de-dados-abertos-e-lancado&quot;&gt;Modelo de referência para publicação de dados abertos&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.d4d.net/news/new-horizons-the-state-of-open-data-in-2024/&quot;&gt;New Horizons - The State of Open Data in 2024&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pt.wikipedia.org/wiki/N%C3%ADsia_Floresta_(escritora)&quot;&gt;Nísia Floresta&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://apolitical.co/solution-articles/en/open-data-101-the-history-and-principles-of-open-data-part-1&quot;&gt;Open data 101: The history and principles of open data – Part 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://data.europa.eu/sites/default/files/d2.1.2_training_module_2.2_open_data_quality_en_edp.pdf&quot;&gt;Open Data &amp;amp; Metadata Quality&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/pdf/2007.06540&quot;&gt;Open data quality &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://resources.linkurious.com/openscreening&quot;&gt;OpenScreening&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/learn/what-is-data-governance?hl=pt-BR&quot;&gt;O que é governança de dados? (Google)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sap.com/brazil/products/technology-platform/master-data-governance/what-is-data-governance.html&quot;&gt;O que é governança de dados? (SAP)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rictom/rede-cnpj&quot;&gt;Rede CNPJ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nic.br/noticia/na-midia/terceira-onda-de-dados-abertos-oportunidade-para-o-pais-compromisso-do-governo/&quot;&gt;Terceira onda de dados abertos: oportunidade para o País, compromisso do governo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatapolicylab.org/third-wave-of-open-data/&quot;&gt;Third wave of open data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2024-08-10/baner-keynote-pyne2024.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Esse artigo é composto pelas anotações da palestra (keynote) “Dados abertos feat Qualidade de dados”, apresentada na Python Nordeste 2024 em 10 ago. no Escola de Governo Cardeal Dom Eugênio de Araújo Sales (Rio Grande do Norte).&lt;/p&gt;
+
+&lt;p&gt;Recursos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;../../assets/images/2024-08-10/Dados abertos feat qualidade de dados.pdf&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/@PythonNordeste&quot;&gt;Palestra completa (em construção)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 10 Aug 2024 08:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//dados-abertos-feat-qualidade-de-dados/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//dados-abertos-feat-qualidade-de-dados/</guid>
+        
+        <category>artigo</category>
+        
+        <category>palestra</category>
+        
+        
+        <category>dados abertos</category>
+        
+        <category>qualidade de dados</category>
+        
+      </item>
+    
+      <item>
+        <title>Criando variáveis a partir de uma lista</title>
+        <description>&lt;p&gt;Volta e meia preciso usar elementos de uma lista como nomes de variáveis e atribuir valores distintos para cada uma. O comando é bem simples:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;globals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item_lista&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Achar essa solução pela internet é que não é tão simples assim.&lt;/p&gt;
+
+&lt;p&gt;Antes de te mostrar a aplicação, lembro que há algumas convensões para nomear as variáveis em Python. Essas boas práticas existem para que o código seja mais explícito e facilmente legível por qualquer pessoa, até pela sua “eu do futuro”. Na &lt;a href=&quot;https://peps.python.org/pep-0008/&quot;&gt;PEP 8 - Style Guide fo Python Code&lt;/a&gt; você encontrará essa e várias outras convensões como: uso da identação e uso de aspas.&lt;/p&gt;
+
+&lt;h2 id=&quot;caso-de-uso&quot;&gt;Caso de uso&lt;/h2&gt;
+&lt;p&gt;Atribuir um número inteiro aleatório para cada elemento de umas lista de strings.&lt;/p&gt;
+
+&lt;h2 id=&quot;solução&quot;&gt;Solução&lt;/h2&gt;
+&lt;p&gt;Para gerar os números, escolhi usar a &lt;a href=&quot;https://docs.python.org/pt-br/3/library/random.html&quot;&gt;biblioteca random&lt;/a&gt;; especificamente a função &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;randint()&lt;/code&gt;, que retorna um número entre os parâmetros informados (13 e 76):&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;lista&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;numero_casa&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;idade&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;tamanho_camisa&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;total_gastos&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lista&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;globals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;76&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Pronto! As variáveis foram criadas.&lt;/p&gt;
+
+&lt;p&gt;Para verificá-las use a função &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;print()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;numero_casa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;idade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tamanho_camisa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;total_gastos&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;saiba-mais&quot;&gt;Saiba mais&lt;/h2&gt;
+
+&lt;p&gt;Em linhas gerais, python armazena todas as variáveis e símbolos do entorno/programa em um dicionário, sendo a “chave” o nome da variável e o “valor” o valor atribuído à variável. Então, a função &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;globals()&lt;/code&gt; retorna esse dicionário apenas com as chaves do tipo “global” (pera, já te explico isso). Isso quer dizer que ao executar o comando &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;globals()['nome_variável']&lt;/code&gt;, com o nome de qualquer que seja a variável global já existente no entorno, o resultado será o valor atribuído a ela:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;altura&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.64&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;A altura é de &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;globals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'altura'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Saída esperada:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;A altura é de 1.64
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dessa forma, quando usamos o comando &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;globals()['nome_variável']&lt;/code&gt; podemos tanto criar uma nova (como já vimos no começo desse artigo), quanto modificar o valor de uma variável existente:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;altura&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.64&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;globals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'altura'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.2&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;A altura é de &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;globals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'altura'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Saída esperada:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;A altura é de 2.2
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Te falei que a função &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;globals()&lt;/code&gt; retorna apenas os símbolos do tipo “global”, não foi?! Isso porque, python tem dois tipos: global e local. Os símbolos do tipo “global” são os que foram criados de forma genérica no código, fora de estruturas dos tipos: função, classe, repetição (while e for), etc. Já os símbolos do tipo “local”, são os criados dentro dessas estruturas e que, consequentemente, só podem ser usados dentro delas.&lt;/p&gt;
+
+&lt;p&gt;Mais informações sobre o funcionamento da função embutida &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;globals()&lt;/code&gt; estão disponíveis na &lt;a href=&quot;https://docs.python.org/pt-br/3/library/functions.html#globals&quot;&gt;documentação da linguagem&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 28 Mar 2024 09:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//criando-variaveis-a-partir-de-lista/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//criando-variaveis-a-partir-de-lista/</guid>
+        
+        <category>tutorial</category>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>Gerador de posts: pacote python</title>
+        <description>&lt;p&gt;Toda vez que eu precisava publicar um episódio do &lt;a href=&quot;https://pod.link/pizzadedados&quot;&gt;podcast Pizza de Dados&lt;/a&gt;, gastava muito tempo escrevendo o post em HTML para publicação nos streams de áudio e, em seguida, adaptando esse post para uma versão resumida em .txt para publicação no Youtube. Mês a mês a estrutura do texto permanece, mas os dados mudam de acordo com o assunto abordado no episódio e entrevistada, ou seja, ambos os posts são um template cujas as variáveis mudam a cada novo episódio.&lt;/p&gt;
+
+&lt;p&gt;Para resolver esse problema, desenvolvi uma aplicação que recebe arquivos de dados (.csv e .yaml), templates em qualquer formato de arquivo e aplica os dados nesses templates.&lt;/p&gt;
+
+&lt;p&gt;Esse artigo fala sobre o desenvolvimento dessa aplicação e hospedagem no PyPI.&lt;/p&gt;
+
+&lt;h2 id=&quot;tecnologias-utilizadas&quot;&gt;Tecnologias utilizadas&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jinja.palletsprojects.com/en/3.1.x/&quot;&gt;Jinja&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.python.org/&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;desenvolvimento-da-aplicação&quot;&gt;Desenvolvimento da aplicação&lt;/h2&gt;
+
+&lt;h3 id=&quot;delimitação-do-escopo&quot;&gt;Delimitação do escopo&lt;/h3&gt;
+
+&lt;p&gt;Em toda gravação coletamos menções de conceitos, ferramentas, livros, pesquisadoras, etc. e buscamos links de referência para inserir na descrição do episódio. Além disso, existem outros dados que variam em cada episódio: podcasters particiantes, resumo, palavras chaves e informações das entrevistadas. Todos esses dados devem estar presentes no corpo do post de publicação do episódio nas plataformas de stream e Youtube. Com isso, preciso gerar a cada novo episódio 2 posts com diferente formatação, mas usando os mesmos dados.&lt;/p&gt;
+
+&lt;h3 id=&quot;implantação&quot;&gt;Implantação&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A partir daqui, recomendo que tu abra o &lt;a href=&quot;https://github.com/cecivieira/gerador-posts/&quot;&gt;repositório da aplicação&lt;/a&gt; e vá lendo e olhando o código. Acredito que isso vai facilitar o teu entendimento.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Como eu já conhecia o &lt;a href=&quot;https://jinja.palletsprojects.com/en/3.1.x/&quot;&gt;Jinja&lt;/a&gt;, um &lt;em&gt;template engine&lt;/em&gt; escrito em Python, sabia que poderia usar a sua sintaxe no desenvolvimento dos templates e inserir quantas variáveis eu precisasse, além de consegui fazer filtros, &lt;em&gt;for loops&lt;/em&gt;, condicionais, etc. Assim, escolhi a principal ferramenta para a aplicação.&lt;/p&gt;
+
+&lt;p&gt;Faltava estruturar como eu coletaria os dados a cada novo episódio, para daí pensar em como faria o tratamento e aplicação nos templates. &lt;a href=&quot;https://www.redhat.com/pt-br/topics/automation/what-is-yaml&quot;&gt;YAML&lt;/a&gt; foi a estrutura de dados que escolhi como fonte de variáveis para o Jinja. No entanto, ficaria muito complexo escrever um arquivo desse tipo enquanto tá rolando a gravação da entrevista, então decidi que para coletar as menções da entrevista usaria um formato de arquivo tabular (planilha). No fim das contas, os dados planilhados também são inseridos no YAML. Essa transformação é parte do pipeline da aplicação.&lt;/p&gt;
+
+&lt;p&gt;Os templates já existiam, então eu apenas precisei adequar à sintaxe do Jinja e fazer a mágica acontecer: aplicar as variáveis nos templates e gerar os novos arquivos. Fiz isso com os seguintes scripts:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tratar_dados&lt;/code&gt;: converte o .csv em uma lista de dicionários python e insere essa lista na variável “links” do arquivo YAMl.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;configuracao&lt;/code&gt;: identifica o arquivo YAML com as variáveis, identifica os templates e renderiza os novos textos resultado da “soma” do template com as variáveis.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Tudo lindo e funcionando, maaasss queria publicar isso no &lt;a href=&quot;https://pypi.org/&quot;&gt;PyPI&lt;/a&gt;, o repositório de sistemas em Python. Nunca publiquei nada lá, então queria fazê-lo. Para isso, segui &lt;a href=&quot;https://www.freecodecamp.org/portuguese/news/como-criar-o-seu-primeiro-pacote-em-python/&quot;&gt;esse tutorial do FreeCodeCamp&lt;/a&gt;, mas quero compartilhar alguns aprendizados dessa etapa:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Uns detalhes bestas fazem a diferença quando tu sobe a aplicação pro PyPI, então na importação de classes e métodos entre arquivos, eu fiz assim:
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt; &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;.tratar_dados&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TratarDados&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;Na execução local, não precisava desse ‘.’ antes do nome do arquivo, mas quando fiz a execução a partir do pacote hospedado no PyPI, a classe não era encontrada.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Eu queria que a aplicação fosse uma CLI, então, no arquivo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setup.py&lt;/code&gt;, estabeleci o &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entry_point&lt;/code&gt; usando a biblioteca &lt;a href=&quot;https://setuptools.pypa.io/en/latest/userguide/entry_point.html#console-scripts&quot;&gt;setuptools&lt;/a&gt;.
+    &lt;ol&gt;
+      &lt;li&gt;Na minha aplicação, o caminho para o entry_point foi &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[variável name do arquivo setup.py].[pasta-aplicaçao]:[classe chamada no arquivo __main__.py]&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Antes de subir para o PyPI queria testar a aplicação como um pacote, então fiz a instalação dela local usando o comando:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt; python setup.py &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Documentar como a aplicação deve ser instalada e ser executada é essencial para que outras pessoas possam usufruir do que tu desenvolveu.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Agora sim, a aplicação estava funcionando e disponível no PyPI.&lt;/p&gt;
+
+&lt;h3 id=&quot;repositório-de-exemplos&quot;&gt;Repositório de exemplos&lt;/h3&gt;
+&lt;p&gt;Pensando em ter um espaço com exemplos de uso da aplicação e aonde as pessoas possam ter dados e templates para testar, criei um &lt;a href=&quot;https://github.com/cecivieira/gerador-posts-exemplos&quot;&gt;repositório dedicado a isso&lt;/a&gt;. Lá coloquei um exemplo de cada post do podcast.&lt;/p&gt;
+
+&lt;p&gt;Espero que a aplicação seja útil para mais pessoas, além de mim e das ouvintes do &lt;a href=&quot;https://pod.link/pizzadedados&quot;&gt;podcast Pizza de Dados&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;links-para-a-aplicação&quot;&gt;Links para a aplicação&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pypi.org/project/gerador-posts/&quot;&gt;Gerador de posts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cecivieira/gerador-posts/&quot;&gt;Gerador de posts (código fonte)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cecivieira/gerador-posts-exemplos&quot;&gt;Gerador de posts: exemplos&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;referências&quot;&gt;Referências&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://networkbit.ch/python-jinja-template/&quot;&gt;Python Jinja2 Template: YAML File Cisco Example Tutorial&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.freecodecamp.org/portuguese/news/como-criar-o-seu-primeiro-pacote-em-python/&quot;&gt;Como criar o seu primeiro pacote em Python&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://holypython.com/python-packaging-local-installation-tests-before-uploading/&quot;&gt;Python Packaging: Local Installation &amp;amp; Tests Before Uploading&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://setuptools.pypa.io/en/latest/userguide/entry_point.html&quot;&gt;Setuptools: Entry Points&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 26 May 2023 09:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//gerador-de-posts-pacote-python/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//gerador-de-posts-pacote-python/</guid>
+        
+        <category>artigo</category>
+        
+        
+        <category>jinja</category>
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>Dados abertos e software livre: um match perfeito</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Esse artigo é composto pelas anotações da palestra “Dados abertos e software livre: um match perfeito”, apresentada no FLISOL, realizado no IFPE Palmares em 29 abr. 2023. Aqui você também encontrará a apresentação (&lt;a href=&quot;../../assets/images/2023-04-29/dados-abertos-software-livre-match-perfeito.pdf&quot;&gt;slides&lt;/a&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Dados abertos e software livre tem muito em comum na sua conceituação, principalmente no que se refere ao objetivo de proporcionar liberdade e autonomia para a sociedade com objetivo de que tenhamos poder debater e contribuir com o desenvolvimento de soluções.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-parte-do-match-o-software-livre&quot;&gt;1. parte do match: O Software Livre&lt;/h2&gt;
+
+&lt;p&gt;“Software livre é uma denominação utilizada para sistemas que respeitam a liberdade e a ideia de comunidade das usuárias quanto a autonomia de executar, copiar, distribuir, estudar, alterar e melhorar o software.” (GNU Operating System, tradução livre)&lt;/p&gt;
+
+&lt;p&gt;Isso não significa que toda distribuição de software livre é gratuita, mas significa que todas elas devem ter licença que permita sua cópia e alteração ou mesmo monetização. O termo “livre” é proposital, para que não haja confusão com “gratuidade”. Podemos fazer uma analogia com a nossa liberdade de “ir e vir”, a qual não significa que essa movimentação é livre de custo.&lt;/p&gt;
+
+&lt;h3 id=&quot;história&quot;&gt;História&lt;/h3&gt;
+
+&lt;p&gt;Na década de 1980, no Laboratorio de Inteligência Artificial do MIT, onde trabalhava o programador estadunidense &lt;a href=&quot;https://pt.wikipedia.org/wiki/Richard_Matthew_Stallman&quot;&gt;Richard Stallman&lt;/a&gt;, havia uma impressora que sempre atolava papel e as pessoas só notavam o problema quando iam buscar os documentos, que não estavam impressos, e, além disso, se deparavam com uma fila enorme de impressões. Isso gerava perda de tempo recorrente para as trabalhadoras do laboratório.&lt;/p&gt;
+
+&lt;p&gt;Então, Richard teve a ideia de implementar um sistema de monitoramento de impressões e notificação à solicitante quando ocorria alguma falha nessa tarefa. Assim, seria possível sua rápida correção. No entanto, ao pedir o código fonte da impressora para a fabricante, ele recebeu uma negativa.&lt;/p&gt;
+
+&lt;p&gt;Esse é um caso anedótico que ilustra a inquietação que deu origem ao movimento chamado “software livre”, o qual Richard é o seu fundador. A partir do desenvolvimento de tecnologias durante a Segunda Guerra Mundial se notava uma tendência de mudança de um dos paradigmas no desenvolvimento de sistemas: fornecimento de código fonte. Logo, naquele momento havia um ambiente propício para o surgimento de um movimento que visasse questões éticas com foco na usuária do produto.&lt;/p&gt;
+
+&lt;p&gt;Em 1984, foi iniciado o projeto GNU, desenvolvido de forma colaborativa, que teve como objetivo dar liberdade e controle para as pessoas usuárias no uso de seus computadores, permitindo, a partir da sua licença, a execução do software, distribuição, estudo e modificação.&lt;/p&gt;
+
+&lt;p&gt;Em 1985, foi publicado o manifesto GNU, que estabeleceu as bases filosóficas do movimento de software livre. Nesse mesmo ano, também, foi fundada a Free Software Foundation, uma organização sem fins lucrativos, que dá suporte ao citado movimento.&lt;/p&gt;
+
+&lt;p&gt;Em 1986, foi publicada a Licença Pública Geral - GNU, a primeira do tipo copyleft, ou seja, que proporciona a liberdade de uso e distribuição de uma obra, exigindo que seja preservado o mesmo tipo de licença nas suas cópias e distribuições.&lt;/p&gt;
+
+&lt;h3 id=&quot;liberdades&quot;&gt;Liberdades&lt;/h3&gt;
+
+&lt;p&gt;A filosofia do movimento “software livre” é composta por quatro liberdades para as pessoas usuárias de sistemas, são elas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Liberdade para usar o programa com qualquer propósito;&lt;/li&gt;
+  &lt;li&gt;Liberdade para estudar como funciona o programa, modificá-lo e adaptá-lo;&lt;/li&gt;
+  &lt;li&gt;Liberdade para distribuir cópias do programa, para ajudar outras usuárias;&lt;/li&gt;
+  &lt;li&gt;Liberdade de distribuir cópias de suas versões modificadas para outras pessoas.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;O detalhamento sobre cada liberdade e as fronteiras entre “livre” e não “livre”, você encontra &lt;a href=&quot;https://www.gnu.org/philosophy/free-sw.html#four-freedoms&quot;&gt;nesse artigo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;vantagens-de-usar-softwares-livres&quot;&gt;Vantagens de usar softwares livres&lt;/h3&gt;
+
+&lt;p&gt;As vantagens são muitas, mas destaco as seguintes:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Desenvolvimento e melhoria contínua:&lt;/strong&gt; O fato de o código fonte estar disponível, permite que muitas pessoas possam revisá-lo e testá-lo, como consequência, pode haver uma maior rapidez no tratamento das falhas e resolução de problemas.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Independência tecnológica:&lt;/strong&gt; As liberdades 2 e 4 garantem que o software possa ser estudado, customizado conforme necessidade da usuária ou sua comunidade e distribuído sem submeter a aprovação ou informar a ninguém.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Economia na aquisição, manutenção e renovação de tecnologias:&lt;/strong&gt; Ainda que “software livre” não signifique “gratuito”, costuma ter um custo menor de aquisição e atualização.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Permite ser copiado:&lt;/strong&gt; Como mencionado anteriormente com as liberdades, o software livre permite ser copiado, portanto, sem a necessidade de adquirir novas licenças, pode ser distribuído a todos que precisarem.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-parte-do-match-os-dados-abertos&quot;&gt;2. parte do match: Os Dados Abertos&lt;/h2&gt;
+
+&lt;p&gt;“Dados abertos são dados que podem ser livremente usados, reutilizados e redistribuídos por qualquer pessoa - sujeitos, no máximo, à exigência de atribuição da fonte e compartilhamento pelas mesmas regras.” (Open Knowledge Foundation)&lt;/p&gt;
+
+&lt;p&gt;À essa definição é necessário acrescentar que os dados devem estar em formato de arquivo aberto, ou seja, que suas especificações técnicas estejam publicadas e sob licença não-proprietária.&lt;/p&gt;
+
+&lt;h3 id=&quot;história-1&quot;&gt;História&lt;/h3&gt;
+
+&lt;p&gt;Em 1942, &lt;a href=&quot;https://pt.wikipedia.org/wiki/Robert_King_Merton&quot;&gt;Robert King Merton&lt;/a&gt; explicou a importância de que resultados de pesquisas científicas fossem livremente acessíveis a todos. Sua ideia era que cada pessoa pesquisadora deveria contribuir para o “pote comum” e abrir mão dos seus direitos de propriedade intelectual para permitir que o conhecimento avançasse mais rapidamente.&lt;/p&gt;
+
+&lt;p&gt;O termo “dados abertos” apareceu pela primeira vez em 1995, em um documento de uma agência científica estadunidense, que estimulava a promoção de um intercâmbio completo e aberto de informações científicas entre diferentes países como pré-requisito para a análise e compreensão de fenômenos globais.&lt;/p&gt;
+
+&lt;p&gt;Só em 2006, foi publicado um artigo que trazia a definição do termo: “dados que qualquer pessoa pode acessar, usar e compartilhar”, escrito por &lt;a href=&quot;https://pt.wikipedia.org/wiki/Tim_Berners-Lee&quot;&gt;Tim Berners-Lee&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;princípios-dos-dados-abertos&quot;&gt;Princípios dos dados abertos&lt;/h3&gt;
+
+&lt;p&gt;Em 2007, durante um encontro do “Open Government Working Group” foram estabelecidos oito princípios para que um dado seja considerado como aberto. São eles:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Completo:&lt;/strong&gt; Todos os dados públicos devem ser disponibilizados. Dados públicos são dados que não estão sujeitos a restrições de privacidade, segurança ou privilégios de acesso.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Primários:&lt;/strong&gt; Os dados devem ser coletados na fonte com o maior nível de detalhamento possível, e não de forma agregada ou modificada.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Oportunidade:&lt;/strong&gt; Sua disponibilidade deve ser feita tão rapidamente quanto necessário para preservar o valor dos dados.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Acessibilidade:&lt;/strong&gt; Os dados devem estar disponíveis para a mais ampla gama de usuários e as mais diversas finalidades.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Processável por máquinas:&lt;/strong&gt; Os dados devem ser razoavelmente estruturados de modo a permitir o processamento automatizado.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Não-discriminatório:&lt;/strong&gt; Os dados devem estar disponíveis para qualquer pessoa, sem necessidade de registro.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Não-proprietário:&lt;/strong&gt; Os dados devem estar disponíveis em um formato sobre o qual nenhuma entidade tem o controle exclusivo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Licença livre:&lt;/strong&gt; Os dados não estão sujeitos a quaisquer direitos de autor, patentes, marcas comerciais ou regulamento secreto. Pode ser permitida uma razoável privacidade e restrições de privilégio e segurança.&lt;/p&gt;
+
+&lt;h3 id=&quot;licença&quot;&gt;Licença&lt;/h3&gt;
+
+&lt;p&gt;Para garantir a proteção jurídica necessária para que os dados possam ser utilizados, reutilizados e redistribuídos, existe um grupo de licenças específica para base de dados, que explicita condições de uso e favorece a redistribuição. Algumas dessas licenças são:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatacommons.org/licenses/odbl/&quot;&gt;Open Data Commons Open Database License (ODbL)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatacommons.org/licenses/by/&quot;&gt;Open Data Commons Attribution License&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatacommons.org/licenses/pddl/&quot;&gt;Open Data Commons Public Domain Dedication and License (PDDL)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Idealmente, os dados devem ser publicados sem nenhum tipo de restrição para uso, reuso e distribuição.&lt;/p&gt;
+
+&lt;h3 id=&quot;vantagens&quot;&gt;Vantagens&lt;/h3&gt;
+
+&lt;p&gt;Alto nível de transparência de dados nos permite comparar, combinar e realizar conexões entre os dados. Isso possibilita identificar tendências, desafios, desigualdades econômicas e sociais, além de facilitar o monitoramento de programas e serviços públicos.&lt;/p&gt;
+
+&lt;p&gt;Um exemplo concreto da importância de ter um alto nível de transparência e abertura de dados, foi a luta coletiva contra a pandemia de COVID-19. Só foi possível acompanhar em tempo real a situação em cada país, monitorar a gestão dos recursos, desenvolver ferramentas tecnológicas e soluções científicas em um curto prazo devido ao esforço coletivo e intencional para abertura de dados e prática de ciência aberta.&lt;/p&gt;
+
+&lt;h2 id=&quot;o-match&quot;&gt;O match&lt;/h2&gt;
+
+&lt;p&gt;Você já percebeu as similaridades entre os temas?&lt;/p&gt;
+
+&lt;p&gt;A tabela abaixo relaciona algumas similaridades:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;Dados Abertos&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Software livre&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Completo:&lt;/strong&gt; Todos os dados públicos devem ser disponibilizados. Dados públicos são dados que não estão sujeitos a restrições de privacidade, segurança ou privilégios de acesso. &lt;br /&gt; &lt;br /&gt; &lt;strong&gt;Primários:&lt;/strong&gt; Os dados devem ser coletados na fonte com o maior nível de detalhamento possível, e não de forma agregada ou modificada. &lt;br /&gt; &lt;br /&gt;&lt;strong&gt;Oportunidade:&lt;/strong&gt; Sua disponibilidade deve ser feita tão rapidamente quanto necessário para preservar o valor dos dados. &lt;br /&gt; &lt;br /&gt;&lt;strong&gt;Processável por máquinas:&lt;/strong&gt; Os dados devem ser razoavelmente estruturados de modo a permitir o processamento automatizado.&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Código fonte:&lt;/strong&gt; O programa deve incluir o código fonte e deve permitir a distribuição do código fonte, bem como na forma compilada. Quando algum tipo de produto não for distribuído com código fonte, deve haver um meio bem divulgado de obtê-lo por um custo de reprodução não superior a um custo razoável, de preferência por download gratuito na Internet.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Não-discriminatório:&lt;/strong&gt; Os dados devem estar disponíveis para qualquer pessoa, sem necessidade de registro. &lt;br /&gt;&lt;br /&gt;&lt;strong&gt;Acessibilidade:&lt;/strong&gt; Os dados devem estar disponíveis para a mais ampla gama de usuários e as mais diversas finalidades.&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Não discriminação contra pessoas ou grupos:&lt;/strong&gt; A licença não deve discriminar nenhuma pessoa ou grupo de pessoas, bem como não deve restringir ninguém de usar o programa em uma área específica de atuação.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Não-proprietário:&lt;/strong&gt; Os dados devem estar disponíveis em um formato sobre o qual nenhuma entidade tem o controle exclusivo.&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Redistribuição Gratuita:&lt;/strong&gt; Nenhuma das partes está impedida de vender ou redistribuir o software. &lt;br /&gt;&lt;br /&gt;&lt;strong&gt;Trabalhos Derivados:&lt;/strong&gt; A licença deve permitir modificações e trabalhos derivados, e deve permitir que sejam distribuídos nos mesmos termos da licença de software original.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Licença livre:&lt;/strong&gt; Os dados não estão sujeitos a quaisquer direitos de autor, patentes, marcas comerciais ou regulamento secreto. Pode ser permitida uma razoável privacidade e restrições de privilégio e segurança.&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Licença aberta:&lt;/strong&gt; Para uso e redistribuição e modificação&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Viu?! Ambos movimentos tem em sua essência o desejo de promover autonomia e liberdade para a usuária, no sentido de desenvolvimento de inovação e solucionar problemas comunitários.&lt;/p&gt;
+
+&lt;h2 id=&quot;e-na-prática&quot;&gt;E na prática?&lt;/h2&gt;
+
+&lt;p&gt;Existe uma revolução global que busca fomentar ações colaborativas em torno a desafios mundiais, proporcionar um monitoramento eficaz das atividades governamentais e privadas, apoiar inovação, desenvolvimento econômico sustentável e criação e expansão de políticas públicas eficientes e eficazes.&lt;/p&gt;
+
+&lt;p&gt;Desde uma perspectiva governamental, em 2011, foi firmada a Parceria para Governo Aberto, a qual o Brasil foi um dos 8 primeiros signatários, junto com representantes da sociedade civil e outros países. Com essa Parceria, começamos a pensar sobre estratégias para transformação digital do nosso governo, além disso é notório o incentivo ao uso de softwares de código aberto e softwares livres. Ademais, algumas ferramentas desenvolvidas pelo governo federal começaram a ter licença aberta e seus códigos fonte publicados em &lt;a href=&quot;https://github.com/govbr&quot;&gt;repositórios no Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Um dos pilares da Parceria para o Governo Aberto é dar poder à sociedade para que possamos participar de forma efetiva das gestões das nossas cidades e dados abertos e software livre são ferramentas potentes para alcançarmos isso.&lt;/p&gt;
+
+&lt;p&gt;Desde a sociedade civil organizada, existe desenvolvimento de muitas tecnologias baseada em software livres e incentivando a abertura ou libertando dados, além de consumi-los. O poder está conosco.&lt;/p&gt;
+
+&lt;h2 id=&quot;referências&quot;&gt;Referências&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.paristechreview.com/2013/03/29/brief-history-open-data/&quot;&gt;A brief history of open data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pt.wikipedia.org/wiki/Formato_aberto&quot;&gt;Formato aberto&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/GNU_Project&quot;&gt;GNU Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.gov.br/governodigital/pt-br/legislacao/legislacao-governanca-digital&quot;&gt;Governança digital&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.gov.br/cgu/pt-br/governo-aberto&quot;&gt;Governo aberto&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14129.htm&quot;&gt;Lei n. 14.129/2021&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.gnu.org/philosophy/free-sw.html&quot;&gt;O que é o software livre?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatacommons.org/&quot;&gt;Open data commons&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ok.org.br/noticia/quando-surgiram-os-oito-principios-dos-dados-abertos/&quot;&gt;Quando surgiram os 8 princípios dos dados abertos?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://es.wikipedia.org/wiki/Software_libre&quot;&gt;Software libre&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;https://res.cloudinary.com/damhz6skt/image/upload/c_scale,w_400/v1682856815/2023-04-29/divulgacao-flisol-palmares-2023_wiwf1l.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Esse artigo é composto pelas anotações da palestra “Dados abertos e software livre: um match perfeito”, apresentada no FLISOL, realizado no IFPE Palmares em 29 abr. 2023.&lt;/p&gt;
+
+&lt;p&gt;Recursos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;../../assets/images/2023-04-29/dados-abertos-software-livre-match-perfeito.pdf&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/douglasfernandesjr/geradorcartelabingo&quot;&gt;Bingo - Gerador de cartelas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 29 Apr 2023 09:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//dados-abertos-e-software-livre-um-match-perfeito/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//dados-abertos-e-software-livre-um-match-perfeito/</guid>
+        
+        <category>artigo</category>
+        
+        <category>palestra</category>
+        
+        
+        <category>dados abertos</category>
+        
+        <category>software livre</category>
+        
+      </item>
+    
+      <item>
+        <title>Quinta com dados</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Nesse artigo você encontrará os slides, links e código apresentados durante a palestra apresentada no evento “Quinta com Dados” promovido pela Alura, além de sua gravação.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Foi um prazer participar do evento “Quinta com dados” promovido pela &lt;a href=&quot;https://www.alura.com.br/&quot;&gt;Alura&lt;/a&gt; para a turma da trilha de Ciência de Dados.&lt;/p&gt;
+
+&lt;p&gt;Nessa palestra foram apresentados conceitos básicos sobre dados abertos, os instrumentos normativos que fomentam o aumento da oferta de dados abertos. Além disso, foram apresentados portais de dados abertos governamentais, empresas que aderiram o movimento de abertura de dados e iniciativas da sociedade civil que disponibilizam dados em formato aberto. Por fim, foram apresentadas organizações da sociedade civil que possuem projetos de código aberto que todos podem contribuir, não importando o nível de conhecimento na área.&lt;/p&gt;
+
+&lt;p&gt;Também foi realizada uma demonstração de como consumir dados a partir do &lt;a href=&quot;dados.ufpe.br/&quot;&gt;Portal de Dados Abertos da UFPE&lt;/a&gt; usando o código abaixo:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;discentes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'https://dados.ufpe.br/dataset/cba99924-ad97-45f6-9d1c-f4fb7a940c6f/resource/3ec70513-eca6-453d-95d1-fde1f1972a11/download/discentes-ingressos-cursos-graduacao-2022-ufpe.csv.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discentes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;discentes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;discentes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apparent_encoding&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'discentes_2022_ufpe.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arquivo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;arquivo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discentes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;df_discentes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'discentes_2022_ufpe.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df_discentes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;container text-center&quot;&gt;
+  &lt;iframe width=&quot;90%&quot; height=&quot;315&quot; title=&quot;Quinta Com Dados com Ana Cecília | 06/04&quot; src=&quot;https://www.youtube.com/embed/__lmwfkaOjE&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+&lt;p&gt;Recursos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;../../assets/images/2023-04-06/Dados abertos - Quinta com dados - Alura.pdf&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;citações&quot;&gt;Citações&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pizzadedados.com/&quot;&gt;Podcast Pizza de Dados&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.instagram.com/pyladiesrecife/&quot;&gt;PyLadies Recife&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/CSVConference&quot;&gt;CSV Conference&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://queridodiario.ok.org.br/&quot;&gt;Querido Diário&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;ttps://cecivieira.com/criando-o-mapa-do-festival-recife-coffee-com-folium/&quot;&gt;Criando mapa do Festival Recife Coffee com Folium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;referências&quot;&gt;Referências&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://datos.gob.es/en/blog/4-examples-projects-private-companies-are-committed-open-data-sharing&quot;&gt;4 examples of projects by private companies that are committed to open data sharing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/es/analisis-exploratorio-de-datos-abiertos-para-el-fortalecimiento-de-democracias/&quot;&gt;Análisis exploratorio de datos abiertos para el fortalecimiento de democracias&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.auna.org.mx/&quot;&gt;Aúna&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://basedosdados.org/&quot;&gt;Base dos dados&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://brasil.io/home/&quot;&gt;Brasil IO&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ciudadaniai.org/&quot;&gt;Ciudadanía inteligente&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://civica.digital/&quot;&gt;Cívica Digital&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://codeandomexico.org/&quot;&gt;Codeando México&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/como-dados-abertos-contribui-para-o-desenvolvimento-de-cidades-inteligentes/&quot;&gt;Como dados abertos contribui para o desenvolvimento de cidades inteligentes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/dados-abertos-para-gestao-publica/&quot;&gt;Dados Abertos para Gestão Pública&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cesar.org.br/pt/w/dados-sao-o-novo-petroleo-quao-segura-esta-essa-nova-riqueza&quot;&gt;Dados são o novo petróleo. Quão segura está essa nova riqueza?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://datacivica.org/&quot;&gt;Data Cívica&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://health.google.com/covid-19/open-data/&quot;&gt;Google Hearth&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.healthdata29.org/platform&quot;&gt;HealthData29&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://idatosabiertos.org/&quot;&gt;ILDA&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cidadedemocratica.org.br&quot;&gt;Instituto Cidade Democrática&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itsrio.org/pt/home/&quot;&gt;Instituto de Tecnologia e Sociedade&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://latinno.net/es/&quot;&gt;Latinno&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ok.org.br/&quot;&gt;Open Knowledge Brasil&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://opendefinition.org/&quot;&gt;The Open definition&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://movement.uber.com/?lang=pt-BR&quot;&gt;Uber Movement&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 06 Apr 2023 09:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//quinta-com-dados/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//quinta-com-dados/</guid>
+        
+        <category>palestra</category>
+        
+        
+        <category>dados abertos</category>
+        
+      </item>
+    
+      <item>
+        <title>Análise exploratória de dados para fortalecimento de democracias</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Nesse artigo você encontrará o material (&lt;a href=&quot;https://github.com/cecivieira/cotas-genero-eleicoes-e-proposicoes-legislativas.git&quot;&gt;repositório&lt;/a&gt; e &lt;a href=&quot;../../assets/images/2022-10-08/pybr2022 - Análise exploratória de dados para fortalecimento de democracias.pdf&quot;&gt;slides&lt;/a&gt;) usados na &lt;a href=&quot;https://www.youtube.com/watch?v=QGyg0ICDIyY&quot;&gt;palestra “Análise exploratória de dados para fortalecimento de democracias”&lt;/a&gt;, apresentada na Python Brasil 2022.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Para começar qualquer análise de dados, é necessário compreender o contexto no qual você está desenvolvendo o estudo. O nosso, é a celebração de &lt;a href=&quot;https://www2.camara.leg.br/legin/fed/decret/1930-1939/decreto-21076-24-fevereiro-1932-507583-publicacaooriginal-1-pe.html&quot;&gt;90 anos do Código Eleitoral&lt;/a&gt;, instrumento que permitiu às mulheres votarem e serem votadas para cargos eletivos. Também faz parte do nosso contexto, a publicação de leis sobre cotas de gênero (Lei &lt;a href=&quot;http://www.planalto.gov.br/ccivil_03/leis/l9504.htm&quot;&gt;9.504/1997&lt;/a&gt; e &lt;a href=&quot;https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12034.htm&quot;&gt;12.034/2009&lt;/a&gt;) e as propostas legislativas apresentadas.&lt;/p&gt;
+
+&lt;p&gt;A Organização dos Estados Americanos (OEA) prevê que a partir de 30% de mulheres ocupando cargos eletivos, em casas legislativas, é possível notar um aumento substancial em propostas legislativas com temas relacionados a defesa da democracia e proteção de direitos de grupos historicamente marginalizados, a saber: mulheres, população campesina, negra, LGBTQIA+, idosos, PCDs, artistas, população economicamente vulneáveis e indígenas.&lt;/p&gt;
+
+&lt;p&gt;Nessa análise exploraremos os conjuntos de dados “Deputados”, “Legislaturas”, “Proposições” e “Temas” publicados pela Câmera dos Deputados Federais, afim de verificar o impacto das citadas legislações na composição de gênero da citada casa legislativa, além da correlação dessa composição com os temas das propostas legislativas ano após ano.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sumário&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#dados-abertos&quot;&gt;Dados abertos&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#panorama-da-transparência-de-dados-na-américa-latina-e-caribe&quot;&gt;Panorama da transparência de dados na América Latina e Caribe&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#índice-de-dados-abertos-úteis-e-reutilizáveis-ourdata-index&quot;&gt;Índice de dados abertos, úteis e reutilizáveis (OURdata Index)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#panorama-das-administrações-públicas-de-américa-latina-e-caribe&quot;&gt;Panorama das Administrações Públicas de América Latina e Caribe&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#análise-exploratória-de-dados&quot;&gt;Análise exploratória de dados&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#pipeline&quot;&gt;Pipeline&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#coleta-de-datos&quot;&gt;Coleta de datos&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#código-completo&quot;&gt;Código completo&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#considerações-finais&quot;&gt;Considerações finais&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Antes de iniciarmos a análise exploratória, vamos observar o panorama atual do nível de transparência de dados na América Latina para comprender a importância da abertura de dados para a manutenção e fortalecimento de gestões democráticas.&lt;/p&gt;
+
+&lt;h1 id=&quot;dados-abertos&quot;&gt;Dados abertos&lt;/h1&gt;
+&lt;p&gt;Dados abertos são dados digitais publicados com as características técnicas e jurídicas necessárias para que possam ser usados, reusados e redistribuidos por qualquer pessoa, em qualquer momento e lugar. Esse conceito aplica-se a dados de interesse público que não sofre nenhuma restrição de acesso.&lt;/p&gt;
+
+&lt;p&gt;Dados abertos permitem a governos, cidadãs, organizações da sociedade civil e setor privado tomarem decisões mais acertivas, baseada em evidências. Além disso, o acesso eficaz e oportuno a dados ajuda a desenvolver novos desafios e ideias inovadoras que podem gerar benefícios sociais e econômicos, bem como, fomentam maior interação entre governos e cidadãs, permitindo assim, um ambiente propício à ações colaborativas.&lt;/p&gt;
+
+&lt;p&gt;Alto nível de transparência de dados nos permite comparar, combinar e realizar conexões entre diversos conjuntos de dados. Isso nos permite identificar tendências, desafios, desigualdades econômicas e sociais, além de monitorar programas e serviços públicos. Um exemplo concreto da importância de ter um alto nível de abertura de dados, foi a luta coletiva contra a pandemia de COVID-19. Só foi possível acompanhar em tempo real a situação em cada país, monitorar a gestão dos recursos, desenvolver ferramentas tecnológicas e soluções científicas em um curto prazo devido ao esforço coletivo e intencional para abertura de dados e prática de ciência aberta.&lt;/p&gt;
+
+&lt;p&gt;Construir sociedades prósperas, equitativas e justas requer governos transparentes, que prestem contas e contribuam de maneira contante e significativa com a sociedade. Nesse sentido, existe uma revolução global de dados, que busca fomentar a ações colaborativas em torno a desafios chaves, proporcionar um monitoramento eficaz das atividades governamentais, apoiar inovação, desenvolvimento econômico sustentável e criação e expansão de políticas públicas eficientes e eficazes.&lt;/p&gt;
+
+&lt;p&gt;Dados abertos é um dos eixos principais para alcançar um governo aberto e democrático.&lt;/p&gt;
+
+&lt;h1 id=&quot;panorama-da-transparência-de-dados-na-américa-latina-e-caribe&quot;&gt;Panorama da transparência de dados na América Latina e Caribe&lt;/h1&gt;
+
+&lt;p&gt;Aqui, na nossa região, os esforços para incentivar gestões mais participativas, começaram há alguns anos. Em 2011 governos de todo o mundo e representantes da sociedade civil se uniram para criar a &lt;a href=&quot;https://www.opengovpartnership.org/&quot;&gt;Parceria para Governo Aberto (OGP)&lt;/a&gt; com o objetivo de promover gestões transparentes, participativas, inclusivas e responsáveis. O Brasil foi um dos 8 países fundadores desta Parceria. Atualmente, 16 países da América Latina e Caribe participam da Parceria.&lt;/p&gt;
+
+&lt;p&gt;Em 2015, como ação do grupo de trabalho de Dados Abertos da OGP, foi lançada a &lt;a href=&quot;https://opendatacharter.net/principles-es/&quot;&gt;Carta internacional de Dados Abertos&lt;/a&gt;. Desenvolvida com participação de representantes da sociedade civil e especialistas no tema, essa carta determina os seguintes princípios:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Abertos por padrão&lt;/li&gt;
+  &lt;li&gt;Oportunos e exaustivos&lt;/li&gt;
+  &lt;li&gt;Acessíveis e utilizáveis&lt;/li&gt;
+  &lt;li&gt;Comparáveis e interoperáveis&lt;/li&gt;
+  &lt;li&gt;Para melhorar a governança e a participação cidadã&lt;/li&gt;
+  &lt;li&gt;Para o desenvolvimento inclusivo e inovação&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Atualmente, as seguintes publicações que se baseiam nessa &lt;a href=&quot;https://opendatacharter.net/principles-es/&quot;&gt;Carta&lt;/a&gt; para analisar o nível de abertura de dados nos governos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://opendatabarometer.org/&quot;&gt;Open Data Barometer&lt;/a&gt;&lt;/strong&gt;: produzido pela &lt;a href=&quot;https://www.w3.org/&quot;&gt;World Wide Web Foundation&lt;/a&gt;, mede como governos de todo o mundo publicam e utilizam dados abertos para prestação de contas, inovação e impacto social;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm&quot;&gt;OURdata Index&lt;/a&gt;&lt;/strong&gt;: publicado pela &lt;a href=&quot;https://www.oecd.org/&quot;&gt;OCDE&lt;/a&gt;, esse índice realiza uma análise comparativa do desenvolvimento e implementação de políticas públicas para abertura de dados governamentais.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nesse artigo enfocaremos no &lt;a href=&quot;https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm&quot;&gt;OURdata Index&lt;/a&gt;, pois possue a abordagem mais apropriada para a comparação que desejamos realizar, além de ser usado como base para o &lt;a href=&quot;https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020&quot;&gt;Panorama das Administrações Públicas: América Latina e Caribe&lt;/a&gt;, que detalharemos nos próximos capítulos.&lt;/p&gt;
+
+&lt;h2 id=&quot;índice-de-dados-abertos-úteis-e-reutilizáveis-ourdata-index&quot;&gt;Índice de dados abertos, úteis e reutilizáveis (OURdata Index)&lt;/h2&gt;
+
+&lt;p&gt;Tem o objetivo de medir o nível de disponibilidade, acessibilidade e apoio governamental para a reutilização de dados, seguindo os princípios da &lt;a href=&quot;https://opendatacharter.net/principles-es/&quot;&gt;Carta Internacional de Dados Abertos&lt;/a&gt;. Os três citados indicadores tem o mesmo peso, além disso pode variar entre 0 e 1.&lt;/p&gt;
+
+&lt;p&gt;Com esse índice é possível comparar os níveis de abertura de dados entre os países da América Latina com os membros da OCDE. No OURdata Index de 2019, a pontuação média dos países latinoamericanos foi de 0,43, enquanto a média dos países da OCDE é 0,60.&lt;/p&gt;
+
+&lt;p&gt;No entanto, entre os países da América Latina, existe um evidente contraste no desenvolvimento do tema de transparência de dados governamentais. Colombia (0,88), México (0,71) e Brasil  (0,63) lideram a região com uma pontuação mais alta do que a média dos países membros da OCDE, enquanto Equador e El Salvador possuem 0,29 e 0.27, respectivamente.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2021-08-28/grafica-ourdata-index-2019-america-latina.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;panorama-das-administrações-públicas-de-américa-latina-e-caribe&quot;&gt;Panorama das Administrações Públicas de América Latina e Caribe&lt;/h2&gt;
+
+&lt;p&gt;A publicação &lt;a href=&quot;https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020&quot;&gt;Panorama das Administrações Públicas de América Latina e Caribe&lt;/a&gt; abrange aspectos importantes para entender a governança pública e permite analizar o desempenho dos governos da região em comparação com os países membros da OCDE. Um dos apectos considerados para construção de indicadores, nessa publicação, é o tema “dados abertos governamentais”, que utiliza os dados do &lt;a href=&quot;https://www.oecd.org/gov/digital-government/policy-paper-ourdata-index-2019.htm&quot;&gt;OURdata Index&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esse Panorama, publicado em 2020, é a publicação mais recente sobre dados abertos públicos da América Latina. Foi produzido pela &lt;a href=&quot;https://www.oecd.org/acerca/miembros-y-socios/&quot;&gt;OCDE (Organização para Cooperação e Desenvolvimento Econômico)&lt;/a&gt;, uma organização que agrupa 38 países com a missão de promover políticas públicas que melhorem o bem estar econômico e social das pessoas; e pelo &lt;a href=&quot;https://www.iadb.org/es/acerca-del-bid/como-estamos-organizados&quot;&gt;BID (Banco Interamericano de Desenvolvimento)&lt;/a&gt;, que é a principal fonte de financiamento para o desenvolvimento da América Latina e Caribe, além disso ajuda a melhorar a vida das cidadãs ao brindar soluções financeiras e conhecimento sobre o desenvolvimento para clientes do setor público e privado.&lt;/p&gt;
+
+&lt;p&gt;Este &lt;a href=&quot;https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020&quot;&gt;Panorama&lt;/a&gt; informa que 81% dos países que compõe a América Latina e Caribe possuem uma estratégia de médio prazo e 75% tem um plano de ação nacional, que prevê implementação de portais e publicação de conjuntos de dados abertos. Quanto a participação cidadã, a metade dos países latinoamericanos possuem programas governamentais para apoiar a qualificação sobre datos abertos para as organizações da sociedade civil. No entanto, essa taxa está abaixo da média dos países da OCDE, que é de 75%.&lt;/p&gt;
+
+&lt;p&gt;Ainda que a agenda sobre dados abertos está avançando na nossa região, há muito o que avançarmos. De acordo com o &lt;a href=&quot;https://opendatabarometer.org/&quot;&gt;Open Data Barómetro&lt;/a&gt;, os governos da região desenvolvem iniciativas isoladas sobre o tema. Ou seja, deveríamos priorizar e investir na gestão baseada em dados para respaldar as mudanças estruturais necessárias para termos um enfoque “aberto” em todos os âmbitos e esimular a participação cidadã no desenvolvimento de políticas e programas governamentais.&lt;/p&gt;
+
+&lt;p&gt;A democracia na América Latina e Caribe vai muito além das eleições, de acordo com o &lt;a href=&quot;https://latinno.net/es/&quot;&gt;projeto LATINNO&lt;/a&gt;, nos últimos anos estamos nos convertendo em um laboratório de inovação política e de gestão participativa. Muito disso se dá devido a transparência de dados governamentais, ainda que tenhamos muito o que avançar nesse tema.&lt;/p&gt;
+
+&lt;h1 id=&quot;análise-exploratória-de-dados&quot;&gt;Análise exploratória de dados&lt;/h1&gt;
+
+&lt;p&gt;Até aqui te mostrei a importância dos dados abertos governamentais para o desenvolvimento de inovação e uma gestão más participativa, além disso também apresentei um panorama do nível de transparência de dados e a política adotada pelos governos da América Latina sobre o tema. Agora, vamos colocar a mão na massa… quer dizer… nos dados.&lt;/p&gt;
+
+&lt;p&gt;A ideia dessa análise exploratória é ensinar um pouco da biblioteca Pandas e ser um exemplo de uso de dados abertos, além disso apresentar a potência dos dados e estimular você a consumi dados governamentais, seja para desenvolver novas tecnologia para melhorar a vida da sua comunidade ou acompanhar uma política governamental.&lt;/p&gt;
+
+&lt;p&gt;Escolhi para esta análise os dados de candidaturas eleitas e propostas legislativas para a Câmera dos Deputados Federal do Brasil.&lt;/p&gt;
+
+&lt;h2 id=&quot;pipeline&quot;&gt;Pipeline&lt;/h2&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2022-10-08/pipeline.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;O pipeline dessa análise é composto por coleta, pré-processamento e análise de dados. Contudo, antes analisar as proposições legislativas foi necessário criar um vocabulário controlado. Para isso, foi desenvolvido um classificador (modelo de aprendizado de máquina).&lt;/p&gt;
+
+&lt;p&gt;Os dados foram coletados no &lt;a href=&quot;https://dadosabertos.camara.leg.br/&quot;&gt;Portal de Dados Abertos da Câmera de Deputados Federal do Brasil&lt;/a&gt; e correspondem às candidaturas eleitas no período entre 1934 e 2021. O objetivo da análise é compreender a evolução da quantidade de mulheres eleitas como deputada federal no período, o impacto da legislação referente a cota de gênero para esta casa legislativa e se já é possível verificar mudança nas temáticas das propostas legislativas.&lt;/p&gt;
+
+&lt;h3 id=&quot;coleta-de-datos&quot;&gt;Coleta de datos&lt;/h3&gt;
+
+&lt;p&gt;Foi utilizada a API Restful em Python para coleta dos dados, exceto das propostas legislativas, pois não estavam disponíveis via API. Então, os dados foram coletados manualmente, ano a ano.&lt;/p&gt;
+
+&lt;p&gt;É importante dizer que no &lt;a href=&quot;https://dadosabertos.camara.leg.br/&quot;&gt;Portal de Dados Abertos da Câmera de Deputados Federal do Brasil&lt;/a&gt; nexistem dados apenas de algumas proposições tramitadas entre os anos de 1934 e 1945, além disso os dados das proposições legislativas entre os anos de 1946 e 2000 estão parcialmente disponibilizados - estão abertos apenas os referentes às “proposições de tipos que poderiam se tornar (ou se tornaram) leis e normas jurídicas” (Brasil, [2021?]). Então, é possível que o resulta desta análise não reflita a realidade, no entanto acredito que é um bom exercício para termos ideia de como podemos reutilizar os dados abertos como sociedade civil.&lt;/p&gt;
+
+&lt;h3 id=&quot;código-completo&quot;&gt;Código completo&lt;/h3&gt;
+
+&lt;p&gt;O código de todas as etapas do &lt;em&gt;pipeline&lt;/em&gt; estão disponíveis &lt;a href=&quot;https://github.com/cecivieira/cotas-genero-eleicoes-e-proposicoes-legislativas.git&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;considerações-finais&quot;&gt;Considerações finais&lt;/h2&gt;
+
+&lt;p&gt;A análise apresente duas hipóteses e a exploração dos dados em busca da confirmação ou não destas. Por fim, o gráfico abaixo representa a evolução da quantidade de deputadas eleitas para a Câmara dos Deputados do Brasil e os marcos legislativos de cotas de gênero.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2022-10-08/evolucao-deputadas.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;referências&quot;&gt;Referências&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www2.camara.leg.br/legin/fed/decret/1930-1939/decreto-21076-24-fevereiro-1932-507583-publicacaooriginal-1-pe.html&quot;&gt;90 anos do Código Eleitoral&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blogs.iadb.org/administracion-publica/es/datos-abiertos-en-gobiernos-de-america-latina-y-el-caribe-como-avanzamos/&quot;&gt;Datos abiertos en gobiernos de América Latina y el Caribe: ¿cómo avanzamos?, 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.planalto.gov.br/ccivil_03/leis/l9504.htm&quot;&gt;Lei 9.504/1997&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12034.htm&quot;&gt;Lei 12.034/2009&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://publications.iadb.org/es/los-datos-abiertos-en-america-latina-y-el-caribe&quot;&gt;Los datos abiertos en América Latina y el Caribe, 2018&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatabarometer.org/3rdedition/regional-report/latin-america/?lang=es&quot;&gt;Open Data Barometer, 3.ed&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://publications.iadb.org/es/panorama-de-las-administraciones-publicas-america-latina-y-el-caribe-2020&quot;&gt;Panorama de las Administraciones Públicas: América Latina y el Caribe 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cepal.org/es/publicaciones/40768-panorama-regional-datos-abiertos-avances-desafios-america-latina-caribe&quot;&gt;Panorama regional de los datos abiertos: avances y desafíos en América Latina y el Caribe, 2016&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opendatahandbook.org/guide/es/what-is-open-data/&quot;&gt;¿Qué son los datos abiertos?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/2022-10-08/divulgacao-pybr-2022.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Esse artigo é composto pelas anotações da palestra “Análise de dados para fortalecimento de democracias”, apresentada na &lt;a href=&quot;https://pretalx.com/python-brasil-2022/talk/AN7RJP/&quot;&gt;Python Brasil 2022&lt;/a&gt;) em 23 out. no Centro de Convenções do Amazonas Vasco Vasquez (Manaus).&lt;/p&gt;
+
+&lt;p&gt;Recursos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;../../assets/images/2022-10-08/pybr2022 - Análise exploratória de dados para fortalecimento de democracias.pdf&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cecivieira/cotas-genero-eleicoes-e-proposicoes-legislativas.git&quot;&gt;Repositório&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=QGyg0ICDIyY&quot;&gt;Palestra completa&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 08 Oct 2022 08:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//analise-exploratoria-de-dados-para-fortalecimento-de-democracias/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//analise-exploratoria-de-dados-para-fortalecimento-de-democracias/</guid>
+        
+        <category>artigo</category>
+        
+        <category>palestra</category>
+        
+        
+        <category>dados abertos</category>
+        
+        <category>governo aberto</category>
+        
+        <category>américa latina</category>
+        
+        <category>análise exploratoria</category>
+        
+        <category>inovação cívica</category>
+        
+        <category>pandas</category>
+        
+      </item>
+    
+      <item>
+        <title>Correlação entre variáveis</title>
+        <description>&lt;p&gt;Esse artigo é o último de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse é apresentado conceito sobre correlação entre variáveis.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cecivieira.com/valores-discrepantes-e-valores-faltantes/&quot;&gt;No artigo anterior falamos sobre valores discrepantes (outliers) e valores faltantes (missings). Talvez, lê-lo te ajude a entender a importância de tratar os dados, antes de estudar sobre a influência de uma variável sobre outra e de fazer alguma inferência.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conceito&quot;&gt;Conceito&lt;/h2&gt;
+
+&lt;p&gt;Às vezes, desejamos analisar um dado cujo comportamento pode está sendo inﬂuenciado por outros dados. Por exemplo, temos mais sede durante os dias que mais suamos, então pode ser que a quantidade de líquido ingerido diariamente por uma pessoa esteja relacionada a quantidade de exercício físico que ela pratica ou ao clima do local aonde ela mora ou por algum outro fator que a faça suar. A esse fenômeno chamamos de correlação entre variáveis, que pode ser de três tipos:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;positiva&lt;/strong&gt;: quando as variáveis analisadas tendem a aumentar na mesma direção;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;negativa&lt;/strong&gt;: quando as variáveis tendem a crescerem em sentidos opostos, ou seja, quando uma variável aumenta a outra tende a diminuir;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;nula&lt;/strong&gt;: quando não se observa variação interdependente.&lt;/p&gt;
+
+&lt;h3 id=&quot;coeficiente-de-correlação&quot;&gt;Coeficiente de correlação&lt;/h3&gt;
+
+&lt;p&gt;Para medir a correlação entre as variáveis usamos o “coeﬁciente de correlação, um valor numérico que indica o grau e a direção da tendência de associação entre [elas]” (&lt;a href=&quot;https://bookdown.org/cienciadedadosnaep/ciencia_de_dados/cap4.html&quot;&gt;Ciência de Dados na Educação Pública, 2021&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Existem vários tipos de cálculo que podemos fazer para achar esse coeﬁciente, a depender das características dos dados. Neste artigo vou falar sobre o coeﬁciente de Pearson, também conhecido como &lt;em&gt;coeficiente de correlação linear&lt;/em&gt;, que é usado para veriﬁcar a correlação entre duas variáveis quantitativas (numéricas).&lt;/p&gt;
+
+&lt;p&gt;Esse coeficiente é resultado da divisão da covariância de duas variáveis pelo produto dos seus desvios padrão, que sempre resultará em valores situados entre -1 e 1. Quanto mais extremos os valores, mais forte é a correlação entre as variáveis analisadas e quanto mais próximo de zero, mais fraca, sendo 0 a indicação de que não há correlação.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/escala-coeficiente-correlacao.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Uma forma comum e muito eﬁciente para visualizar o coeﬁciente é usando a matriz de correlação. Para isso, vamos continuar usando o &lt;a href=&quot;https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/#contexto&quot;&gt;conjunto de dados de candidaturas para a Câmara dos Vereadores de Recife em 2020&lt;/a&gt;. Verificaremos o coeﬁciente de correlação entre as colunas &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NR_IDADE_DATA_POSSE&lt;/code&gt; e &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CD_ESTADO_CIVIL&lt;/code&gt;, tendo como hipótese que a idade tem uma correlação forte com o estado civil das pessoas candidatas.&lt;/p&gt;
+
+&lt;p&gt;Só é possível realizar essa correlação porque cada estado civil está relacionado a um código numérico, conforme apresentado no dicionário de dados.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/matriz-de-correlacao.png&quot; /&gt;
+Fonte:&lt;a href=&quot;https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados&quot;&gt;Notebook “Estatística básica para Ciência de Dados”&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Observamos que a correlação linear é fraca. Então, nossa hipótese não foi comprovada, ou seja, não é possível afirmar que existe correlação entre as variáveis analisadas.&lt;/p&gt;
+
+&lt;h2 id=&quot;correlação-não-significa-causalidade-fator-de-confusão&quot;&gt;Correlação não significa causalidade: fator de confusão&lt;/h2&gt;
+
+&lt;p&gt;Nesse tema precisamos ﬁcar alertas para não fazermos associações absurdas. Nem sempre uma correlação linear forte signiﬁca que as variáveis possuem uma relação de causa-efeito. Correlação não implica em causalidade. É preciso analisar cuidadosa e criticamente cada relação e seu contexto, além de considerar os fatores de confusão.&lt;/p&gt;
+
+&lt;p&gt;Para entender melhor, imaginemos o seguinte caso: nos meses de dezembro e janeiro é observado aumento no número de afogamentos em praias e, ao mesmo tempo, um aumento na venda de picolés. Imaginemos que, segundo os dados analisados, o coeficiente de correlação linear é de 0,96. Nesse caso, podemos concluir que a venda de picolés causa afogamentos em praias? Não. Precisamos considerar uma terceira variável, que nesse contexto, é o &lt;em&gt;fator de confusão&lt;/em&gt;. Esses meses são de verão, isso significa que costumamos ir mais à praia e consumir mais picolés. Portanto, para essa análise, também precisamos considerar a variável “temperatura” para compreender o contexto e não fazer uma inferência equivocada.&lt;/p&gt;
+
+&lt;p&gt;Com esse artigo finalizamos a série sobre conceitos (bem) básicos de estatística para ciência de dados. Espero que essas leituras ajudem que esse tema faça um pouquinho mais de sentido na tua próxima tentativa de estudá-lo.&lt;/p&gt;
+
+&lt;p&gt;Se assistir vídeo aula te ajudar, dá uma olhadinha &lt;a href=&quot;https://youtu.be/xiZwte8D1Xs&quot;&gt;nessa sobre conceitos de estatística básica para ciência de dados&lt;/a&gt;, que fiz para a &lt;a href=&quot;https://youtube.com/playlist?list=PL7h1S1pOf5-t13ktXkAIX5_ZG2nXpU8rE&quot;&gt;Sprint de Dados da PrograMaria&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;continue-estudando&quot;&gt;&lt;strong&gt;Continue estudando&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;outros-artigos-da-série&quot;&gt;&lt;strong&gt;Outros artigos da série&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/&quot;&gt;Estatística descritiva e distribuição estatística&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/medidas-de-tendencia-central/&quot;&gt;Medidas de tendência central&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/medidas-de-dispersao/&quot;&gt;Medidas de dispersão&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/valores-discrepantes-e-valores-faltantes/&quot;&gt;Valores discrepantes e valores faltantes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;recomendações-gerais&quot;&gt;&lt;strong&gt;Recomendações gerais&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;WHEELAN, Charles. Estatística: O que é, para que serve, como funciona. São Paulo: Zahar, 2016.&lt;/strong&gt; (como uma das primeiras tentativas, também recomendo a leitura desse livro)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados&quot;&gt;Notebook “Estatística básica para Ciência de Dados”&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://escoladedados.org/tutoriais/analise-com-estatistica-descritiva-para-leigos/&quot;&gt;OKBR. Análise com estatística descritiva para leigos&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://escoladedados.org/tutoriais/correlacao-nao-e-causalidade-mas-o-que-e-entao/&quot;&gt;OKBR. Correlação não é causalidade, mas o que é então?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dadosabertos.tse.jus.br/dataset/candidatos-2020-subtemas&quot;&gt;Portal de Dados Abertos do Tribunal Superior Eleitoral: candidaturas 2020.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tylervigen.com/spurious-correlations&quot;&gt;Spurious Correlations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bookdown.org/cienciadedadosnaep/ciencia_de_dados/cap4.html&quot;&gt;UFBA. Ciência de Dados na Educação Pública. Correlação e causalidade&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 26 Jun 2022 09:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//correlacao-entre-variaveis/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//correlacao-entre-variaveis/</guid>
+        
+        <category>artigo</category>
+        
+        
+        <category>estatística</category>
+        
+      </item>
+    
+      <item>
+        <title>Valores discrepantes e valores faltantes</title>
+        <description>&lt;p&gt;Esse artigo é o quarto de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse são apresentados conceitos sobre valores discrepantes (outliers) e valores faltantes (missings).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cecivieira.com/medidas-de-dispersao/&quot;&gt;No artigo anterior falamos sobre medidas de dispersão, especificamente &lt;em&gt;variância&lt;/em&gt; e &lt;em&gt;desvio padrão&lt;/em&gt;. Talvez, lê-lo te ajude a entender para que servem as medidas de dispersão que vamos apresentar aqui.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Quando falamos da &lt;em&gt;média&lt;/em&gt; no &lt;a href=&quot;https://cecivieira.com/medidas-de-tendencia-central/&quot;&gt;artigo sobre medidas de tendência central&lt;/a&gt;, comentamos que é uma medida muito afetada por valores discrepantes. Então, agora vamos conversar sobre o que são esses valores.&lt;/p&gt;
+
+&lt;h2 id=&quot;valores-discrepantes-outliers&quot;&gt;Valores discrepantes (outliers)&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Outliers&lt;/em&gt; (valores discrepantes) são valores numericamente distantes da maior parte do conjunto de dados, ou seja, valores extremos. Para determinar esses valores, usamos como parâmetro a medida de intervalo interquartil, que estabelece a dispersão dos dados em torno da mediana.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cecivieira.com/medidas-de-tendencia-central/&quot;&gt;Como já vimos&lt;/a&gt;, a mediana é o valor que ocupa a posição central do conjunto de dados após a ordenação dos seus valores em ordem crescente. Depois dessa ordenação, também é possível determinar o primeiro e o terceiro quartil e, consequentemente, o intervalo entre eles. O que chamamos de intervalo interquartil é a diferença entre os valores do 3. e 1. quartil.&lt;/p&gt;
+
+&lt;p&gt;Os &lt;em&gt;outliers&lt;/em&gt; são todos os valores que ultrapassam o limite superior ou inferior, ou seja, todos os valores que sejam maiores do que a soma do 3. quartil com 1,5 intervalo interquartil ou menores do que a subtração do 1. quartil por 1,5 intervalo interquartil.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/boxplot-intervalo-interquartis-valores-discrepantes.png&quot; /&gt;
+Fonte: &lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Elements_of_a_boxplot_pt.svg&quot;&gt;Wikimedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;É possível calcular os quartis e o intervalo interquartis usando uma função do&lt;a href=&quot;https://pandas.pydata.org/docs/&quot;&gt; Pandas&lt;/a&gt;. Para isso, vamos continuar usando a coluna &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NR_IDADE_DATA_POSSE&lt;/code&gt;  do &lt;a href=&quot;https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/#contexto&quot;&gt;conjunto de dados de candidaturas para a Câmara dos Vereadores de Recife em 2020&lt;/a&gt; para mostrar como fazer:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/quartis.png&quot; alt=&quot;primeiro_quartil = df_candidaturas['NR_IDADE_DATA_POSSE'].quantile(0.25) | terceiro_quartil = df_candidaturas['NR_IDADE_DATA_POSSE'].quantile(0.75) | intervalo_interquartil = terceiro_quartil - primeiro_quartil&quot; /&gt;
+Fonte:&lt;a href=&quot;https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados&quot;&gt; Notebook “Estatística básica para Ciência de Dados”&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Percebemos que o primeiro quartil corresponde a 40 anos, ou seja, 25% das pessoas candidatas são mais jovens do que essa idade. Já o terceiro quartil corresponde a 56 anos, isso quer dizer que 75% das pessoas candidatas são mais jovens do que essa idade. Por fim, o intervalointerquartil é o valor 16.&lt;/p&gt;
+
+&lt;p&gt;Em resumo, todas as pessoas candidatas mais velhas do que 80 anos (56+16&lt;em&gt;1,5) e mais jovens do que 16 anos(40-16&lt;/em&gt;1,5) são consideradas &lt;em&gt;outliers&lt;/em&gt; em relação a sua idade.&lt;/p&gt;
+
+&lt;p&gt;Se os valores discrepantes não são erros produzidos na coleta dos dados, eliminá-los ou substituí-los pode modificar as inferências a partir da análise dos dados. O que pode ocasionar desenvolvimento de tecnologias discriminatórias. A diversidade dos dados é a chave para a produção de tecnologias inclusivas. &lt;em&gt;Outliers&lt;/em&gt; devem ser explicados, não eliminados.&lt;/p&gt;
+
+&lt;h2 id=&quot;valores-faltantes-missings&quot;&gt;Valores faltantes (missings)&lt;/h2&gt;
+
+&lt;p&gt;Se por um lado temos valores extremos, por outro temos valores faltantes (missings) que podem ocorrer de forma aleatória ou estar relacionada com o valor de alguma outra variável, por exemplo, pessoas que moram em bairros periféricos, podem não querer informar seu endereço por receio de sofrer discriminação. Não existe uma diretriz padrão para tratar dados faltantes. Os métodos mais utilizados são exclusão das observações com dados faltantes ou imputação de dados, que pode ser realizado através de várias técnicas. A forma de tratá-los dependerá do tipo de análise a ser realizada.&lt;/p&gt;
+
+&lt;p&gt;No próximo artigo vamos falar sobre correlação, que nos permitirá saber a influência de uma variável sobre outra e fazer algumas inferências.&lt;/p&gt;
+
+&lt;p&gt;Ainda que tu não tenha entendido nada do que escrevi aqui, sugiro que sigas lendo a série até o final, pois os assuntos se complementam e vão ajudar que na tua próxima tentativa de estudo o tema faça um pouquinho mais de sentido.&lt;/p&gt;
+
+&lt;p&gt;Se assistir vídeo aula te ajudar, dá uma olhadinha &lt;a href=&quot;https://youtu.be/xiZwte8D1Xs&quot;&gt;nessa sobre conceitos de estatística básica para ciência de dados&lt;/a&gt;, que fiz para a &lt;a href=&quot;https://youtube.com/playlist?list=PL7h1S1pOf5-t13ktXkAIX5_ZG2nXpU8rE&quot;&gt;Sprint de Dados da PrograMaria&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;continue-estudando&quot;&gt;Continue estudando&lt;/h2&gt;
+
+&lt;h3 id=&quot;outros-artigos-da-série&quot;&gt;Outros artigos da série&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/&quot;&gt;Estatística descritiva e distribuição estatística&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/medidas-de-tendencia-central/&quot;&gt;Medidas de tendência central&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/medidas-de-dispersao/&quot;&gt;Medidas de dispersão&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/correlacao-entre-variaveis/&quot;&gt;Correlação entre variáveis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;recomendações-gerais&quot;&gt;Recomendações gerais&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;WHEELAN, Charles. Estatística: O que é, para que serve, como funciona. São Paulo: Zahar, 2016.&lt;/strong&gt; (como uma das primeiras tentativas, também recomendo a leitura desse livro)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados&quot;&gt;Notebook “Estatística básica para Ciência de Dados”&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://escoladedados.org/tutoriais/analise-com-estatistica-descritiva-para-leigos/&quot;&gt;OKBR. Análise com estatística descritiva para leigos&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dadosabertos.tse.jus.br/dataset/candidatos-2020-subtemas&quot;&gt;Portal de Dados Abertos do Tribunal Superior Eleitoral: candidaturas 2020.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 31 May 2022 09:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//valores-discrepantes-e-valores-faltantes/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//valores-discrepantes-e-valores-faltantes/</guid>
+        
+        <category>artigo</category>
+        
+        
+        <category>estatística</category>
+        
+      </item>
+    
+      <item>
+        <title>Medidas de dispersão</title>
+        <description>&lt;p&gt;Esse artigo é o terceiro  de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse são apresentadas medidas de dispersão, especificamente &lt;em&gt;variância&lt;/em&gt; e &lt;em&gt;desvio padrão&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cecivieira.com/medidas-de-tendencia-central/&quot;&gt;No artigo anterior falamos sobre o conceito das medidas de tendência central e apresentamos as três mais utilizadas: média, moda e mediana. Talvez, lê-lo te ajude a entender para que servem as medidas de dispersão que vamos apresentar aqui.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conceito&quot;&gt;Conceito&lt;/h2&gt;
+
+&lt;p&gt;As medidas de dispersão medem quanto os dados estão afastados uns dos outros em uma distribuição, ou seja, avaliam quanto os dados diferem entre si.&lt;/p&gt;
+
+&lt;p&gt;Imagina um conjunto de dados com os elementos 7, 2 e 3. A grosso modo, o número 2 e 3 estão afastados entre si por 1 passo, enquanto o 3 e o 7 estão afastados em 4 passos.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/dispersao.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As medidas de dispersão representam em um único valor este afastamento entre os dados. Elas também ajudam na escolha da medida de tendência central mais adequada para representar um conjunto de dados, por exemplo, em um conjunto de dados que tenha um desvio padrão alto, talvez não seja uma boa ideia usar a média como medida de tendência central.&lt;/p&gt;
+
+&lt;p&gt;As medidas de dispersão mais usadas são: desvio padrão e variância.&lt;/p&gt;
+
+&lt;h2 id=&quot;variância&quot;&gt;Variância&lt;/h2&gt;
+
+&lt;p&gt;A variância indica quanto o conjunto de dados desvia da sua média, ou seja, quão distante cada valor do conjunto está da média. Isso quer dizer que quanto menor é a variância, mais próximo os valores estão da média. Essa medida é base para descobrirmos o desvio padrão.&lt;/p&gt;
+
+&lt;h2 id=&quot;desvio-padrão&quot;&gt;Desvio padrão&lt;/h2&gt;
+
+&lt;p&gt;O desvio padrão indica o grau de dispersão de um conjunto de dados, ou seja, o quanto ele é uniforme. Quanto menor for o desvio padrão, mais homogêneos são os dados. A vantagem de usarmos o desvio padrão (ao invés da variância), é que essa medida é expressa na mesma unidade dos dados, o que facilita a comparação e seu uso.&lt;/p&gt;
+
+&lt;p&gt;É possível calcular o desvio padrão usando uma função do&lt;a href=&quot;https://pandas.pydata.org/docs/&quot;&gt; Pandas&lt;/a&gt;, para isso vamos continuar usando a coluna &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NR_IDADE_DATA_POSSE&lt;/code&gt;  do &lt;a href=&quot;https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/#contexto&quot;&gt;conjunto de dados de candidaturas para a Câmara dos Vereadores de Recife em 2020&lt;/a&gt; no nosso exemplo:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/desvio-padrao.png&quot; alt=&quot;df_candidaturas['NR_IDADE_DATA_POSSE'].std()&quot; /&gt;
+Fonte:&lt;a href=&quot;https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados&quot;&gt; Notebook “Estatística básica para Ciência de Dados”&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Percebemos que o desvio padrão é de 11,34 anos.&lt;/p&gt;
+
+&lt;p&gt;Em uma distribuição normal, como é a dessa coluna, 68,2% dos dados estão distantes da média 1 desvio padrão para mais ou para menos, ou seja, nesse nosso exemplo 68,2% das pessoas candidatas são 11,34 anos mais jovens do que a idade média ou 11,34 anos mais velhas.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/desvio-padrao-diagrama.svg&quot; /&gt;
+Fonte: &lt;a href=&quot;https://pt.wikipedia.org/wiki/Desvio_padr%C3%A3o#/media/Ficheiro:Standard_deviation_diagram.svg&quot;&gt;Wikimedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Só aceita isso como verdade e segue o assunto. Os cálculos para compreender esse conceito são tão complexos que nem vale a gente parar para entendê-los agora.&lt;/p&gt;
+
+&lt;p&gt;Outro exemplo de como o desvio padrão está no nosso dia a dia é quando, em ano de eleição, vemos as pesquisas de intenções de voto anunciando o percentual de intenção de voto para cada candidatura e logo em seguida informa que esses valores podem variar X pontos percentuais para mais ou para menos. Esses pontos é o desvio padrão da pesquisa.&lt;/p&gt;
+
+&lt;p&gt;No próximo artigo vamos falar sobre valores discrepantes, pois é um tema importante para entendermos a qualidade dos dados do conjunto de dados.&lt;/p&gt;
+
+&lt;p&gt;Ainda que tu não tenha entendido nada do que escrevi aqui, sugiro que sigas lendo a série até o final, pois os assuntos se complementam e vão ajudar que na tua próxima tentativa de estudo o tema faça um pouquinho mais de sentido.&lt;/p&gt;
+
+&lt;p&gt;Se assistir vídeo aula te ajudar, dá uma olhadinha &lt;a href=&quot;https://youtu.be/xiZwte8D1Xs&quot;&gt;nessa sobre conceitos de estatística básica para ciência de dados&lt;/a&gt;, que fiz para a &lt;a href=&quot;https://youtube.com/playlist?list=PL7h1S1pOf5-t13ktXkAIX5_ZG2nXpU8rE&quot;&gt;Sprint de Dados da PrograMaria&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;continue-estudando&quot;&gt;Continue estudando&lt;/h2&gt;
+
+&lt;h3 id=&quot;outros-artigos-da-série&quot;&gt;Outros artigos da série&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/&quot;&gt;Estatística descritiva e distribuição estatística&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/medidas-de-tendencia-central/&quot;&gt;Medidas de tendência central&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/valores-discrepantes-e-valores-faltantes/&quot;&gt;Valores discrepantes e valores faltantes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/correlacao-entre-variaveis/&quot;&gt;Correlação entre variáveis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;recomendações-gerais&quot;&gt;Recomendações gerais&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;WHEELAN, Charles. Estatística: O que é, para que serve, como funciona. São Paulo: Zahar, 2016.&lt;/strong&gt; (como uma das primeiras tentativas, também recomendo a leitura desse livro)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados&quot;&gt;Notebook “Estatística básica para Ciência de Dados”&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://escoladedados.org/tutoriais/analise-com-estatistica-descritiva-para-leigos/&quot;&gt;OKBR. Análise com estatística descritiva para leigos&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dadosabertos.tse.jus.br/dataset/candidatos-2020-subtemas&quot;&gt;Portal de Dados Abertos do Tribunal Superior Eleitoral: candidaturas 2020.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/pizzadedados/medidas-tendencia-central-185924243185&quot;&gt;Pizza de Dados. Medidas de tendência central: moda, média e mediana&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 01 Apr 2022 09:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//medidas-de-dispersao/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//medidas-de-dispersao/</guid>
+        
+        <category>artigo</category>
+        
+        
+        <category>estatística</category>
+        
+      </item>
+    
+      <item>
+        <title>Medidas de tendência central</title>
+        <description>&lt;p&gt;Esse artigo é o segundo de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse são apresentadas medidas de tendência central, especificamente &lt;em&gt;média&lt;/em&gt;, &lt;em&gt;moda&lt;/em&gt; e &lt;em&gt;mediana&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/&quot;&gt;No artigo anterior falamos sobre o conceito de estatística descritiva, distribuição estatística e o contexto dos dados que estão sendo utilizados nos exemplos. Talvez, lê-lo te ajude a entender sobre as medidas de tendência central que vamos apresentar aqui.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conceito&quot;&gt;Conceito&lt;/h2&gt;
+
+&lt;p&gt;Algumas das principais medidas usadas em estatística são as medidas de tendência central, que servem para representar o centro de um conjunto de dados. É aquele valor que se aproxima da maior parte dos dados.&lt;/p&gt;
+
+&lt;p&gt;Sabe quando você olha para um grupo de pessoas e pensa “esse povo tem mais ou menos 20 anos?” Pronto, 20 anos é a medida de tendência central que você identificou. Em ciência de dados as mais utilizadas são: média, mediana e moda.&lt;/p&gt;
+
+&lt;h3 id=&quot;moda&quot;&gt;Moda&lt;/h3&gt;
+
+&lt;p&gt;A &lt;em&gt;moda&lt;/em&gt; é o valor que mais se repete em um conjunto de dados. Das três medidas que vamos falar nesse artigo, ela é a única que pode ser usada em dados não numéricos (o que chamamos de dados qualitativos).&lt;/p&gt;
+
+&lt;p&gt;No &lt;a href=&quot;https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/#contexto&quot;&gt;conjunto de dados de candidaturas para a Câmara dos Vereadores de Recife em 2020&lt;/a&gt; existe uma coluna com a idade que as candidatas teriam no dia da sua posse, chamada &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NR_IDADE_DATA_POSSE&lt;/code&gt;. Vamos usá-la para descobrir a idade que mais se repete:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/moda.png&quot; /&gt;
+Fonte: &lt;a href=&quot;https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados&quot;&gt;Notebook “Estatística básica para Ciência de Dados”&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Percebemos que a &lt;em&gt;moda&lt;/em&gt; dessa coluna é  51.&lt;/p&gt;
+
+&lt;h3 id=&quot;média&quot;&gt;Média&lt;/h3&gt;
+
+&lt;p&gt;Outra medida de tendência central é a &lt;em&gt;média&lt;/em&gt;, que é a soma de todos os valores do conjunto de dados, dividido pela quantidade de valores do conjunto. Vou desenhar pra ficar mais fácil. Imagina esse conjunto de dados:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/lista-numeros.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Os elementos são: 7, 2 e 3.&lt;/li&gt;
+  &lt;li&gt;A quantidade de valores desse conjunto é 3.&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\frac{7+2+3}{3} = 4\]
+
+&lt;ul&gt;
+  &lt;li&gt;Então, a média é 4.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mas, a menos que você queira fazer esse cálculo na mão (o que não recomendo), podemos descobrir a média usando uma função do &lt;a href=&quot;https://pandas.pydata.org/docs/&quot;&gt;Pandas&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/media.png&quot; /&gt;
+Fonte: &lt;a href=&quot;https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados&quot;&gt;Notebook “Estatística básica para Ciência de Dados”&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Observamos que a idade &lt;em&gt;média&lt;/em&gt; que as candidatas teriam no dia da posse é de 47,9 anos,  o que também corresponde ao ponto mais alto do gráfico de distribuição que vimos no &lt;a href=&quot;https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/&quot;&gt;artigo anterior&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;mediana&quot;&gt;Mediana&lt;/h3&gt;
+
+&lt;p&gt;A última medida de tendência central que vamos conversar é a &lt;em&gt;mediana&lt;/em&gt;. Ela é o valor que ocupa a posição central do conjunto de dados, após a ordenação dos valores de forma crescente. Isso quer dizer que, após a ordenação dos valores, aquele localizado exatamente no meio dessa lista é a mediana. O que significa que 50% dos valores são menores do que ela e 50% são maiores.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/lista-numeros-ordenada.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Por exemplo, no nosso conjunto de dados de pessoas candidatas, a &lt;em&gt;mediana&lt;/em&gt; da coluna &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NR_IDADE_DATA_POSSE&lt;/code&gt; significa que metade das pessoas candidatas são mais jovens e metade mais velhas do que o valor apresentado na mediana.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;rounded mx-auto d-block&quot; src=&quot;../../assets/images/serie-estatistica-para-ciencia-dados/mediana.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fonte: &lt;a href=&quot;https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados&quot;&gt;Notebook “Estatística básica para Ciência de Dados”&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A mediana desse conjunto é 48 anos.&lt;/p&gt;
+
+&lt;p&gt;Quando a quantidade de valores do conjunto de dados é par, a &lt;em&gt;mediana&lt;/em&gt; é a média entre os dois valores que estão no centro da ordenação.&lt;/p&gt;
+
+&lt;p&gt;Vocês perceberam que os valores da média, moda e mediana são muito próximos? Isso acontece porque a distribuição desses dados é &lt;em&gt;normal simétrica&lt;/em&gt;. Nesse caso, qualquer uma das medidas (médica, moda e mediana) poderia ser escolhida para representar o centro dessa distribuição, ou seja, a idade que a maior parte das candidaturas teriam no dia da sua posse.&lt;/p&gt;
+
+&lt;p&gt;A escolha nem sempre é fácil assim, pois cada uma dessas medidas tem seus prós e contras, por exemplo a &lt;em&gt;média&lt;/em&gt; é muito afetada por valores discrepantes, então seu uso é recomendado para conjuntos de dados com valores mais uniformes. Algo que nos ajuda na escolha de qual medida de tendência central usar são as medidas de dispersão, assunto do próximo artigo.&lt;/p&gt;
+
+&lt;p&gt;Ainda que tu não tenha entendido nada do que escrevi aqui, sugiro que sigas lendo a série até o final, pois os assuntos se complementam e vão ajudar que na tua próxima tentativa de estudo o tema faça um pouquinho mais de sentido.&lt;/p&gt;
+
+&lt;p&gt;Se assistir vídeo aula te ajudar, dá uma olhadinha &lt;a href=&quot;https://youtu.be/xiZwte8D1Xs&quot;&gt;nessa sobre conceitos de estatística básica para ciência de dados&lt;/a&gt;, que fiz para a &lt;a href=&quot;https://youtube.com/playlist?list=PL7h1S1pOf5-t13ktXkAIX5_ZG2nXpU8rE&quot;&gt;Sprint de Dados da PrograMaria&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;continue-estudando&quot;&gt;Continue estudando&lt;/h2&gt;
+
+&lt;h3 id=&quot;outros-artigos-da-série&quot;&gt;Outros artigos da série&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/&quot;&gt;Estatística descritiva e distribuição estatística&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/medidas-de-dispersao/&quot;&gt;Medidas de dispersão&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/valores-discrepantes-e-valores-faltantes/&quot;&gt;Valores discrepantes e valores faltantes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cecivieira.com/correlacao-entre-variaveis/&quot;&gt;Correlação entre variáveis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;recomendações-gerais&quot;&gt;Recomendações gerais&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;WHEELAN, Charles. Estatística: O que é, para que serve, como funciona. São Paulo: Zahar, 2016.&lt;/strong&gt; (como uma das primeiras tentativas, também recomendo a leitura desse livro)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados&quot;&gt;Notebook “Estatística básica para Ciência de Dados”&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dadosabertos.tse.jus.br/dataset/candidatos-2020-subtemas&quot;&gt;Portal de Dados Abertos do Tribunal Superior Eleitoral: candidaturas 2020.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/pizzadedados/medidas-tendencia-central-185924243185&quot;&gt;Pizza de Dados. Medidas de tendência central: moda, média e mediana&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 25 Mar 2022 09:00:00 -0300</pubDate>
+        <link>http://www.cecivieira.com.br//medidas-de-tendencia-central/</link>
+        <guid isPermaLink="true">http://www.cecivieira.com.br//medidas-de-tendencia-central/</guid>
+        
+        <category>artigo</category>
+        
+        
+        <category>estatística</category>
+        
+      </item>
+    
+  </channel>
+</rss>
