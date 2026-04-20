@@ -1,7 +1,7 @@
 site:
   name: Ana Cecília Vieira
   description: 'Personal blog to share learnings and collect my experiences in the technology communities.'
-  author-description: 'Data analyst expert in data quality. Enthusiastic about open data, open-source and self-managed communities as an instrument for social change. Ambassador of the Data Science for Civic Innovation program of Open Knowledge Brazil and podcaster of Pizza de Dados.'
+  author-description: "Data analyst specialized in government open data. Enthusiast of topics such as open data, open source, and self-managed communities as tools for social transformation. Specialist in Artificial Intelligence and Machine Learning. Currently works as Coordinator of ICT Governance and Open Data at UFPE, and as Technical Lead for the Data team at the Secretaria Nacional das Perferias, do Ministério das Cidades. And a podcaster at Pizza de Datos."
   keywords: Technology
   lang: en
 main:
