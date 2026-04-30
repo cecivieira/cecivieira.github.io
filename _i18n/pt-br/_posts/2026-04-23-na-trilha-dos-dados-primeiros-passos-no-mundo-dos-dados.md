@@ -16,7 +16,7 @@ beforetoc:
 ---
 Entrevista e palestra para a live de abertura do ciclo de eventos "Na trilha dos dados" promovido pela Escola Superior de Gestão e Contas Públicas (EGC) do Tribunal de Contas do Município de São Paulo (TCMSP). Ao longo da transmissão tratei assuntos como primeiros passos no mundo dos dados, transparência pública, dados abertos, governança de dados, projetos com dados públicos, inclusão de mulheres em TI e transição de carreira.
 
-O evento foi realizado no dia 23 de abril de 2026 das 15h às 17h no canal do Youtube da ECG.
+O evento foi realizado no dia 23 de abril de 2026, das 15h às 17h, no canal do Youtube da ECG.
 
 Você pode assistir ao evento completo aqui:
 
