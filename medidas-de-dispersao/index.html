@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia." />
+    <meta name="keywords" content="Tecnologia" />
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <title>Medidas de dispersão | Ana Cecília Vieira</title>
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Medidas de dispersão</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Medidas de dispersão" />
+<meta name="author" content="cecivieira" />
+<meta property="og:locale" content="pt_br" />
+<meta name="description" content="Terceiro de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse são apresentadas medidas de dispersão, especificamente variância e desvio padrão." />
+<meta property="og:description" content="Terceiro de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse são apresentadas medidas de dispersão, especificamente variância e desvio padrão." />
+<link rel="canonical" href="http://www.cecivieira.com.br//medidas-de-dispersao/" />
+<meta property="og:url" content="http://www.cecivieira.com.br//medidas-de-dispersao/" />
+<meta property="og:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/20_aminlw.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-01T09:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/20_aminlw.png" />
+<meta property="twitter:title" content="Medidas de dispersão" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@cecivieira" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","image":"https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/20_aminlw.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.cecivieira.com.br//assets/images/logo.png"},"name":"cecivieira"},"headline":"Medidas de dispersão","dateModified":"2022-04-01T09:00:00-03:00","datePublished":"2022-04-01T09:00:00-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.cecivieira.com.br//medidas-de-dispersao/"},"author":{"@type":"Person","name":"cecivieira"},"description":"Terceiro de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse são apresentadas medidas de dispersão, especificamente variância e desvio padrão.","url":"http://www.cecivieira.com.br//medidas-de-dispersao/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link href="/assets/css/screen.css" rel="stylesheet">
+
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/b68e5ffc41.js" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics -->
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG4L84NMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEG4L84NMR');
+</script>
+    
+
+</head>
+
+
+
+<body class="layout-post">
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CMukta:300,300i,400,400i,700,700i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
+
+
+    <!-- Begin Menu Navigation
+================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/assets/images/logo.png" alt="">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        
+
+                        
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categorias">Categorias</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre-mim">Sobre mim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Contato</a>
+                    </li>
+
+                    
+
+                    <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Buscar..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+                    
+                    <li><a href="http://www.cecivieira.com.br//es"> 🇪🇸 </a></li>
+                    
+                    
+
+                </ul>
+
+                <!-- End Menu -->
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+
+        <div class="container">
+
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Medidas de dispersão&url=http://www.cecivieira.com.br//medidas-de-dispersao/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://www.cecivieira.com.br//medidas-de-dispersao/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.cecivieira.com.br//medidas-de-dispersao/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">Medidas de dispersão</h1>
+
+                <!-- Post Date -->
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="2022-04-01">01 Apr 2022</time></span>           
+                    
+                    </small>
+                </p>
+
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#estatística">estatística</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#artigo">#artigo</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Tags -->                
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image - Insere a imagem do card da notícia, antes do texto do artigo -->
+            <!-- 
+
+            
+            <img class="featured-image img-fluid" src="https://res.cloudinary.com/damhz6skt/image/upload/v1681494290/capas-site/20_aminlw.png" alt="Medidas de dispersão">
+            
+
+             -->
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>Esse artigo é o terceiro  de uma série sobre conceitos (bem) básicos de estatística aplicada a ciência de dados. Nesse são apresentadas medidas de dispersão, especificamente <em>variância</em> e <em>desvio padrão</em>.</p>
+
+<p><a href="https://cecivieira.com/medidas-de-tendencia-central/">No artigo anterior falamos sobre o conceito das medidas de tendência central e apresentamos as três mais utilizadas: média, moda e mediana. Talvez, lê-lo te ajude a entender para que servem as medidas de dispersão que vamos apresentar aqui.</a></p>
+
+<h2 id="conceito">Conceito</h2>
+
+<p>As medidas de dispersão medem quanto os dados estão afastados uns dos outros em uma distribuição, ou seja, avaliam quanto os dados diferem entre si.</p>
+
+<p>Imagina um conjunto de dados com os elementos 7, 2 e 3. A grosso modo, o número 2 e 3 estão afastados entre si por 1 passo, enquanto o 3 e o 7 estão afastados em 4 passos.</p>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/serie-estatistica-para-ciencia-dados/dispersao.png" /></p>
+
+<p>As medidas de dispersão representam em um único valor este afastamento entre os dados. Elas também ajudam na escolha da medida de tendência central mais adequada para representar um conjunto de dados, por exemplo, em um conjunto de dados que tenha um desvio padrão alto, talvez não seja uma boa ideia usar a média como medida de tendência central.</p>
+
+<p>As medidas de dispersão mais usadas são: desvio padrão e variância.</p>
+
+<h2 id="variância">Variância</h2>
+
+<p>A variância indica quanto o conjunto de dados desvia da sua média, ou seja, quão distante cada valor do conjunto está da média. Isso quer dizer que quanto menor é a variância, mais próximo os valores estão da média. Essa medida é base para descobrirmos o desvio padrão.</p>
+
+<h2 id="desvio-padrão">Desvio padrão</h2>
+
+<p>O desvio padrão indica o grau de dispersão de um conjunto de dados, ou seja, o quanto ele é uniforme. Quanto menor for o desvio padrão, mais homogêneos são os dados. A vantagem de usarmos o desvio padrão (ao invés da variância), é que essa medida é expressa na mesma unidade dos dados, o que facilita a comparação e seu uso.</p>
+
+<p>É possível calcular o desvio padrão usando uma função do<a href="https://pandas.pydata.org/docs/"> Pandas</a>, para isso vamos continuar usando a coluna <code class="language-plaintext highlighter-rouge">NR_IDADE_DATA_POSSE</code>  do <a href="https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/#contexto">conjunto de dados de candidaturas para a Câmara dos Vereadores de Recife em 2020</a> no nosso exemplo:</p>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/serie-estatistica-para-ciencia-dados/desvio-padrao.png" alt="df_candidaturas['NR_IDADE_DATA_POSSE'].std()" />
+Fonte:<a href="https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados"> Notebook “Estatística básica para Ciência de Dados”</a></p>
+
+<p>Percebemos que o desvio padrão é de 11,34 anos.</p>
+
+<p>Em uma distribuição normal, como é a dessa coluna, 68,2% dos dados estão distantes da média 1 desvio padrão para mais ou para menos, ou seja, nesse nosso exemplo 68,2% das pessoas candidatas são 11,34 anos mais jovens do que a idade média ou 11,34 anos mais velhas.</p>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/serie-estatistica-para-ciencia-dados/desvio-padrao-diagrama.svg" />
+Fonte: <a href="https://pt.wikipedia.org/wiki/Desvio_padr%C3%A3o#/media/Ficheiro:Standard_deviation_diagram.svg">Wikimedia</a></p>
+
+<p>Só aceita isso como verdade e segue o assunto. Os cálculos para compreender esse conceito são tão complexos que nem vale a gente parar para entendê-los agora.</p>
+
+<p>Outro exemplo de como o desvio padrão está no nosso dia a dia é quando, em ano de eleição, vemos as pesquisas de intenções de voto anunciando o percentual de intenção de voto para cada candidatura e logo em seguida informa que esses valores podem variar X pontos percentuais para mais ou para menos. Esses pontos é o desvio padrão da pesquisa.</p>
+
+<p>No próximo artigo vamos falar sobre valores discrepantes, pois é um tema importante para entendermos a qualidade dos dados do conjunto de dados.</p>
+
+<p>Ainda que tu não tenha entendido nada do que escrevi aqui, sugiro que sigas lendo a série até o final, pois os assuntos se complementam e vão ajudar que na tua próxima tentativa de estudo o tema faça um pouquinho mais de sentido.</p>
+
+<p>Se assistir vídeo aula te ajudar, dá uma olhadinha <a href="https://youtu.be/xiZwte8D1Xs">nessa sobre conceitos de estatística básica para ciência de dados</a>, que fiz para a <a href="https://youtube.com/playlist?list=PL7h1S1pOf5-t13ktXkAIX5_ZG2nXpU8rE">Sprint de Dados da PrograMaria</a>.</p>
+
+<h2 id="continue-estudando">Continue estudando</h2>
+
+<h3 id="outros-artigos-da-série">Outros artigos da série</h3>
+
+<ul>
+  <li><a href="https://cecivieira.com/estatistica-descritiva-e-distribuicao-estatistica/">Estatística descritiva e distribuição estatística</a></li>
+  <li><a href="https://cecivieira.com/medidas-de-tendencia-central/">Medidas de tendência central</a></li>
+  <li><a href="https://cecivieira.com/valores-discrepantes-e-valores-faltantes/">Valores discrepantes e valores faltantes</a></li>
+  <li><a href="https://cecivieira.com/correlacao-entre-variaveis/">Correlação entre variáveis</a></li>
+</ul>
+
+<h3 id="recomendações-gerais">Recomendações gerais</h3>
+
+<ul>
+  <li><strong>WHEELAN, Charles. Estatística: O que é, para que serve, como funciona. São Paulo: Zahar, 2016.</strong> (como uma das primeiras tentativas, também recomendo a leitura desse livro)</li>
+  <li><a href="https://github.com/cecivieira/estatistica-basica-para-ciencia-de-dados">Notebook “Estatística básica para Ciência de Dados”</a></li>
+  <li><a href="https://escoladedados.org/tutoriais/analise-com-estatistica-descritiva-para-leigos/">OKBR. Análise com estatística descritiva para leigos</a></li>
+  <li><a href="https://dadosabertos.tse.jus.br/dataset/candidatos-2020-subtemas">Portal de Dados Abertos do Tribunal Superior Eleitoral: candidaturas 2020.</a></li>
+  <li><a href="https://medium.com/pizzadedados/medidas-tendencia-central-185924243185">Pizza de Dados. Medidas de tendência central: moda, média e mediana</a></li>
+</ul>
+
+                <i class="far fa-laugh-beam"></i>               
+            </div>
+
+            <!-- Version in other languages -->
+            <div class="language-version">
+                
+                
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Author Box -->
+                        
+            <div class="row post-top-meta">
+            <!-- Foto da autora
+                <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                    
+                    <img class="author-thumb" src="/" alt="Ana Cecília Vieira">
+                    
+                </div>
+            -->
+
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                    <i class="fas fa-star"></i>                     
+                </div>
+                
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">                                                        
+                    Ana Cecília Vieira
+                    <span class="author-description">Analista de dados especializada em abertura de dados governamentais. Entusiasta nos temas: dados abertos, código aberto e comunidades autogestionadas como instrumento para transformação social. É especialista em Inteligência Artificial e Aprendizado de Máquina. Está como coordenadora de Governança de TIC e Dados Abertos da UFPE e líder técnica do time de Dados na Secretaria Nacional das Periferias, do Ministério das Cidades. E é podcaster no Pizza de Dados.</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- Prev/Next -->
+            <p> ----- </p>
+            <h4>Leia também: </h4>
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://www.cecivieira.com.br///medidas-de-tendencia-central/"> &laquo; Medidas de tendência central</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="http://www.cecivieira.com.br///valores-discrepantes-e-valores-faltantes/">Valores discrepantes e valores faltantes &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+            </div>
+
+            
+
+        </div>
+
+        <!-- Categories Jumbotron
+================================================== -->
+        
+
+<div class="jumbotron fortags">
+      <div class="d-md-flex h-100">
+            <div class="col-md-4 transpdark align-self-center text-center h-100">
+                  <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">
+                              Temas
+                              <span class="d-none d-md-inline">→</span>
+                        </h2>
+                  </div>
+            </div>
+            <div class="col-md-8 p-5 align-self-center text-center">
+                  
+
+    
+        <a class="mt-1 mb-1" href="/temas#dados-abertos">dados abertos (11)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#carreira">carreira (4)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#bash">bash (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#controle-de-tarefas">controle de tarefas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#linux">linux (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#terminal-commands">terminal commands (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#cidades-inteligentes">cidades inteligentes (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#governo-aberto">governo aberto (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#oracle-virtual-box">oracle virtual box (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ubuntu-20.04">ubuntu 20.04 (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#comunidades">comunidades (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#internacionalização">internacionalização (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#plugin">plugin (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ruby">ruby (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jekyll">jekyll (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ckan">ckan (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#docker">docker (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#folium">folium (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#mapa">mapa (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#extensão-ckan">extensão ckan (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#gestão-pública">gestão pública (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#estatística">estatística (5)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#américa-latina">américa latina (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#análise-exploratoria">análise exploratoria (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#inovação-cívica">inovação cívica (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#pandas">pandas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#software-livre">software livre (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jinja">jinja (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#python">python (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#qualidade-de-dados">qualidade de dados (1)</a>
+    
+
+
+            </div>
+      </div>
+</div>
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 text-center text-lg-left">
+                        Ana Cecília Vieira © <a target="_blank"
+                            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center social-media">
+                        <!-- 
+                        <a target="_blank" href="https://twitter.com/cecivieira"><i class="fab fa-twitter"></i></a>
+                         -->
+                        
+                        <a target="_blank" href="https://www.linkedin.com/in/cecivieira/"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        
+                        <a target="_blank" href="http://lattes.cnpq.br/9296198356646640"><i class="ai ai-lattes"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://github.com/cecivieira"><i class="fab fa-github"></i></a>
+                        
+                        
+                        <a target="_blank" href="mailto:cecivieira@gmail.com"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center text-lg-right">
+                        <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish
+                            Jekyll Theme</a> by WowThemes.net
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer
+================================================== -->
+
+    </div> <!-- /.site-content -->
+
+    <!-- Scripts
+================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script src="/assets/js/mediumish.js"></script>
+
+    
+
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+    
+
+</body>
+
+</html>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script>
+<script>L2Dwidget.init({ "model": { "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618, "jsonPath": "/live2dw/assets/hijiki.model.json" }, "display": { "superSample": 2, "width": 150, "height": 300, "position": "right", "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 }, "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }, "log": false, "pluginJsPath": "lib/", "pluginModelPath": "assets/", "pluginRootPath": "live2dw/", "tagMode": false });</script>

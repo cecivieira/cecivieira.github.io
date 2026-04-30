@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia." />
+    <meta name="keywords" content="Tecnologia" />
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <title>Dados abertos para gestão pública | Ana Cecília Vieira</title>
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Dados abertos para gestão pública</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Dados abertos para gestão pública" />
+<meta name="author" content="cecivieira" />
+<meta property="og:locale" content="pt_br" />
+<meta name="description" content="Dados abertos é um dos pilares para o Governo Aberto. Nesse artigo explicitamos conceitos iniciais, base legislativa, como está sendo feita a governança de dados na gestão pública, como estimular uma gestão orientada a dados e algumas sugestões de uso." />
+<meta property="og:description" content="Dados abertos é um dos pilares para o Governo Aberto. Nesse artigo explicitamos conceitos iniciais, base legislativa, como está sendo feita a governança de dados na gestão pública, como estimular uma gestão orientada a dados e algumas sugestões de uso." />
+<link rel="canonical" href="http://www.cecivieira.com.br//dados-abertos-para-gestao-publica/" />
+<meta property="og:url" content="http://www.cecivieira.com.br//dados-abertos-para-gestao-publica/" />
+<meta property="og:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/15_p6n4af.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-20T09:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/15_p6n4af.jpg" />
+<meta property="twitter:title" content="Dados abertos para gestão pública" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@cecivieira" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","image":"https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/15_p6n4af.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.cecivieira.com.br//assets/images/logo.png"},"name":"cecivieira"},"headline":"Dados abertos para gestão pública","dateModified":"2021-11-20T09:00:00-03:00","datePublished":"2021-11-20T09:00:00-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.cecivieira.com.br//dados-abertos-para-gestao-publica/"},"author":{"@type":"Person","name":"cecivieira"},"description":"Dados abertos é um dos pilares para o Governo Aberto. Nesse artigo explicitamos conceitos iniciais, base legislativa, como está sendo feita a governança de dados na gestão pública, como estimular uma gestão orientada a dados e algumas sugestões de uso.","url":"http://www.cecivieira.com.br//dados-abertos-para-gestao-publica/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link href="/assets/css/screen.css" rel="stylesheet">
+
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/b68e5ffc41.js" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics -->
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG4L84NMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEG4L84NMR');
+</script>
+    
+
+</head>
+
+
+
+<body class="layout-post">
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CMukta:300,300i,400,400i,700,700i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
+
+
+    <!-- Begin Menu Navigation
+================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/assets/images/logo.png" alt="">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        
+
+                        
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categorias">Categorias</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre-mim">Sobre mim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Contato</a>
+                    </li>
+
+                    
+
+                    <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Buscar..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+                    
+                    <li><a href="http://www.cecivieira.com.br//es"> 🇪🇸 </a></li>
+                    
+                    
+
+                </ul>
+
+                <!-- End Menu -->
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+
+        <div class="container">
+
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Dados abertos para gestão pública&url=http://www.cecivieira.com.br//dados-abertos-para-gestao-publica/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://www.cecivieira.com.br//dados-abertos-para-gestao-publica/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.cecivieira.com.br//dados-abertos-para-gestao-publica/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">Dados abertos para gestão pública</h1>
+
+                <!-- Post Date -->
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="2021-11-20">20 Nov 2021</time></span>           
+                    
+                    </small>
+                </p>
+
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#dados-abertos">dados abertos</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#gestão-pública">gestão pública</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#artigo">#artigo</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#palestra">#palestra</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Tags -->                
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image - Insere a imagem do card da notícia, antes do texto do artigo -->
+            <!-- 
+
+            
+            <img class="featured-image img-fluid" src="https://res.cloudinary.com/damhz6skt/image/upload/v1681494289/capas-site/15_p6n4af.jpg" alt="Dados abertos para gestão pública">
+            
+
+             -->
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>A administração pública está de forma consistente avançando na discussão e implantação da abertura de dados governamentais como pilar para um governo aberto. Abaixo apresento alguns marcos importantes nesse sentido. Ressalto que essa não é uma cronologia exaustiva, para mais informações verifique o capítulo <a href="#continue-estudando">Continue estudando</a>.</p>
+
+<p><img class="rounded mx-auto d-block" src="../../assets/images/2021-11-20/cronologia-parcial-dados-abertos.png" /></p>
+
+<p>Em 2011 o Brasil foi um dos oito primeiros signatários da <a href="https://www.gov.br/cgu/pt-br/governo-aberto/a-ogp/o-que-e-a-iniciativa">Parceria para Governo Aberto</a>, que tem como objetivo “difundir e incentivar práticas governamentais relacionadas à transparência dos governos, ao acesso à informação pública e à participação social”. Com isso, fortalecer a prática democrática e fomentar inovação e tecnologia no setor público.</p>
+
+<p>Nesse mesmo ano, aprovamos a <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm">Lei de Acesso à Informação (12.527/2011)</a>, que prevê a publicação de dados em formato aberto.</p>
+
+<blockquote>
+  <p>Esse mês (nov. 21) estamos celebrando 10 anos da LAI, uma das mais modernas legislações de acesso a informação do mundo. Saiba mais sobre o impacto dessa lei na nossa sociedade:</p>
+  <ul>
+    <li><a href="https://youtu.be/DVJFNxZn9jo">Lançamento da WikiLAI: 10 anos de LAI (Portal Fiquem Sabendo)</a>;</li>
+    <li><a href="https://www.youtube.com/watch?v=1rCsoU7XSdM">10 anos da Infraestrutura de Dados Abertos - INDA (Open Knowledge Brasil)</a>;</li>
+    <li><a href="https://www.instagram.com/p/CWb44jaPgEK/">PLA</a></li>
+  </ul>
+</blockquote>
+
+<p>Em 2012, foi lançado o <a href="dados.gov.br">Portal Brasileiro de Dados Abertos</a> do Governo Federal, onde são reunidos conjuntos de dados em formato aberto dessa esfera governamental.</p>
+
+<p>Em 2016, foi publicado o <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8777.htm">Decreto 8.777/2016</a> com a Política de Dados Abertos do Poder Executivo Federal, onde são detalhadas e explicitadas as regras e princípios que devem ser seguidos por todas as entidades dessa esfera de poder, além disso estabelece a obrigatoriedade de publicação dessa política por estas entidades.</p>
+
+<p>No ano passado (2020), foi instituída a <a href="https://www.in.gov.br/web/dou/-/decreto-n-10.332-de-28-de-abril-de-2020-254430358">Estratégia de Governo Digital para o período de 2020 a 2022</a> no âmbito da administração pública federal, esta trás uma reformulação dos canais de transparência e dados abertos. Além disso, nesse mesmo ano, tivemos o lançamento do <a href="https://www.gov.br/cgu/pt-br/governo-aberto/a-ogp/planos-de-acao/4o-plano-de-acao-brasileiro/compromisso-2-docs/modelo-de-referencia-de-abertura-de-dados_versao-final-2.pdf">Modelo de Referência de Abertura de Dados</a> voltado para governos estaduais e municipais. Tal modelo é produto do compromisso <a href="https://www.gov.br/cgu/pt-br/governo-aberto/a-ogp/planos-de-acao/4o-plano-de-acao-brasileiro/compromisso-2-docs/ecossistema-de-dados-abertos-monitoramento-e-execucao">Ecossistema de dados abertos</a> do <a href="https://www.gov.br/cgu/pt-br/governo-aberto/a-ogp/planos-de-acao/4o-plano-de-acao-brasileiro">4. Plano de Ação para Governo Aberto (2018-2021)</a>.</p>
+
+<p>Reforço que essa cronologia não é exaustiva, trago aqui apenas alguns marcos para ilustrar o trabalho contínuo em direção a transparência de dados e para evidenciar a importância que o tema está ganhando para a gestão pública. Você pode verificar mais marcos legislativos no capítulo <a href="#continue-estudando">Continue estudando</a>.</p>
+
+<h1 id="afinal-o-que-são-dados-abertos">Afinal, o que são dados abertos?</h1>
+
+<p>Dados abertos são “dados acessíveis ao público, representados em meio digital, estruturados em formato aberto [não proprietário, cujas especificação esteja documentada publicamente], processáveis por máquina, referenciados na internet [ou seja, precisa estar pesquisável em portais de busca, ex. Google] e disponibilizados sob licença aberta que permita sua livre utilização, consumo ou cruzamento, limitando-se a creditar a autoria ou a fonte” <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8777.htm">Decreto 8.777/2016 (art. 2., III)</a></p>
+
+<p>Quando falamos em <strong>dados abertos</strong> estamos nos referindo a dados de interesse público, ou seja:</p>
+
+<ul>
+  <li>Produzido ou acumulado por órgãos e entidades públicas ou mantida por pessoa física ou privada decorrente de um vínculo com órgãos e entidades públicas;</li>
+  <li>Sobre atividades de órgãos e entidades, inclusive relativa à sua política, organização e serviços;</li>
+  <li>Pertinentes ao patrimônio público, recursos públicos, licitação, contratos administrativos, políticas públicas, inspeções;</li>
+  <li>Que não possuem restrição de acesso público</li>
+</ul>
+
+<p>Atualmente temos diversas legislações que regulam o acesso a certos dados, algumas delas são <a href="http://www.planalto.gov.br/ccivil_03/leis/l9610.htm">Direito autoral</a>, <a href="http://www.planalto.gov.br/ccivil_03/leis/l5172compilado.htm">Sigilo de justiça</a> e <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">Lei Geral de Proteção a Dados Pessoais</a>. Dados com restrição de acesso não podem ser abertos.</p>
+
+<p>Para a gestão pública, algumas vantagens de abrir dados são:</p>
+<ul>
+  <li>Aumentar o nível de transparência dos governos;</li>
+  <li>Tomar melhores decisões baseadas em informação e evidências;</li>
+  <li>Fomentar o desenvolvimento de ideias inovadoras para o bem estar social e crescimento econômico;</li>
+  <li>Estimular maior interação entre governo e sociedade;</li>
+  <li>Identificar tendências, desafios e desigualdades econômicas e sociais;</li>
+  <li>Obter dados originais, completos e atualizados no ato da demanda.</li>
+</ul>
+
+<p>Os dados abertos permitem a governos, cidadãs, sociedade civil organizada e ao setor privado tomar decisões baseada em evidências. O acesso eficaz e oportuno aos dados nos ajuda a identificar novos desafios e ideias inovadoras que podem gerar benefícios sociais e econômicos para a sociedade e administração pública, além de oportunizar ações co-criadas entre governo e sociedade. Especificamente na gestão pública, a abertura de dados possibilita identificar tendências, desafios, desigualdades econômicas e sociais, bem como avaliar avanços dos programas e serviços públicos implementados.</p>
+
+<h1 id="de-quem-é-a-responsabilidade-de-abrir-os-dados">De quem é a responsabilidade de abrir os dados?</h1>
+
+<p>A abertura de dados institucionais é de responsabilidade de toda as pessoas servidoras da entidade e vários integrantes fazem parte da governança desses dados. Abaixo alguns dos principais:</p>
+
+<ul>
+  <li><strong>Comitê de TI:</strong> maior instância da instituição, responsável por desenvolver e aprovar políticas estratégicas, como o Plano de Dados Abertos;</li>
+  <li><strong>Autoridade de monitoramento da LAI:</strong> instância legal, instituída pela <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm">LAI</a> para monitoramento da aplicação da legislação na instituição. É responsável pela fiscalização do cumprimento do Plano de Dados Abertos instituconal;</li>
+  <li><strong>Setores proprietários dos dados:</strong> Setores cujos dados são produto de suas atividades. Seu papel é facilitar o acesso aos dados e ao entendimento das atividades as quais coletam e produzem dados, além de qualificar essa coleta;</li>
+  <li><strong>Setor de TI:</strong> fornecedor de infraestrutura e manutenção para o Portal de Dados Abertos institucional, além de suporte técnico na área de tecnologia da informação no que tange o acesso às bases de dados sob sua guarda, bem como à sua documentação e auxílio no entendimento da sua estrutura;</li>
+  <li><strong>Setores de monitoramento de legislações sobre restrição de acesso a dados e informações:</strong> é de responsabilidade destas unidades autorizar o uso e avaliar a eventual necessidade de controle de acesso aos dados, em conformidade às seguintes legislações: <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm">Lei n. 12.527/2011</a> (Tema: Proteção de dados pessoais), <a href="http://www.planalto.gov.br/ccivil_03/leis/lcp/lcp105.htm">Lei Complementar n. 105/2001</a> (Tema: Sigilo bancário), <a href="http://www.planalto.gov.br/ccivil_03/leis/l5172compilado.htm">Lei n. 5.172/1966</a> (Tema: Sigilo Fiscal), <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12681.htm">Lei n. 12.681/2012</a> (Tema: Sigilo de Justiça), <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13115.htm">Lei n. 13.115/2015</a> (Tema: Sigilo de Justiça), <a href="http://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm">Constituição da República Federativa do Brasil 1988</a> (Tema: Sigilo industrial), <a href="http://www.planalto.gov.br/ccivil_03/leis/l9610.htm">Lei n. 9610/1988</a> (Tema: Direitos autorais), <a href="http://www.planalto.gov.br/ccivil_03/leis/l6404consol.htm">Lei n. 6.404/1976</a> (Tema: Sigilo Sociedades anônimas), <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7724.htm">Decreto n. 7.724/2012</a> (Tema: Sigilo Governança Empresarial), entre outras;</li>
+  <li><strong>Setor de Comunicação:</strong> responsável por campanhas publicitárias e informativas, além de colaborar na divulgação das ações relativas à abertura de dados, bem como ações de fomento à cultura de dados abertos.</li>
+</ul>
+
+<p>A responsabilidade por publicar os dados em formato aberto e monitorar sua qualidade varia de acordo com a governança de dados da instituição, usualmente é compartilhada entre os setores proprietário dos dados e setor específico destinado a atividade.</p>
+
+<h1 id="gestão-orientada-a-dados">Gestão Orientada a Dados?</h1>
+
+<p>Uma gestão orientada a dados (<em>data driven</em>) se caracteriza por qualificar processos, produtos e serviços orientados pela coleta e análise de dados. Significa utilizar como fator determinante para tomada de decisão as informações e argumentações extraídas de dados confiáveis, fugindo de uma gestão baseada no achismo, impulso ou intuição.</p>
+
+<p>Para criar uma cultura de gestão orientada a dados é necessário investir em tecnologias que dê suporte a tomada de decisão, além de capacitar servidores para o uso dessas tecnologias e para pensar a partir de dados, ou seja, como qualificar sua coleta, limpeza, desenvolver análises exploratórias, participar de equipes multidisciplinares para desenvolvimento de soluções para seu setor e usar dados na sua atividade cotidiana. Com isso, reduzir o riscos e aumentar probabilidade de sucesso da tomada de decisão.</p>
+
+<p>Algumas sugestões de uso de dados abertos na gestão pública são:</p>
+<ul>
+  <li>Mapeamento do perfil socioeconômico do público alvo para desenvolvimento de políticas afirmativas;</li>
+  <li>Identificação do tempo de retenção de processos internos;</li>
+  <li>Acompanhamento de cumprimento de objetivos de interesse por parte de outros órgãos;</li>
+  <li>Execução orçamentária;</li>
+  <li>Adesão de normativas por parte de outros entes da federação.</li>
+</ul>
+
+<p>Fomentar a cultura de dados na gestão pública significa incentivar inovação no setor e fortalecimento de gestões democráticas.</p>
+
+<h1 id="continue-estudando">Continue estudando</h1>
+
+<ul>
+  <li><a href="https://ebadados.com.br/etapa-1-introducao-a-uma-gestao-orientada-por-dados/">Introdução a uma Gestão Orientada por Dados</a></li>
+  <li><a href="https://www.in.gov.br/en/web/dou/-/lei-n-14.129-de-29-de-marco-de-2021-311282132">Lei n. 14.129, de 29 de março de 2021</a></li>
+  <li><a href="https://www.gov.br/governodigital/pt-br/dados-abertos">Governo digital: dados abertos</a></li>
+  <li><a href="https://www.gov.br/governodigital/pt-br/estrategias-e-politicas-digitais/politicas-e-planos-de-acao-para-governo-aberto">Políticas e Planos de ação para Governo Aberto</a></li>
+  <li><a href="http://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/D10160.htm">Política Nacional de Governo Aberto</a></li>
+</ul>
+
+<p><strong>Portais com dados abertos governamentais</strong></p>
+
+<ul>
+  <li><a href="https://basedosdados.org/">Base dos dados</a></li>
+  <li><a href="https://brasil.io/home/">Brasil IO</a></li>
+  <li><a href="https://queridodiario.ok.org.br/">Querido Diário</a></li>
+</ul>
+
+<hr />
+<p><img class="rounded float-left mr-4" src="../../assets/images/2021-11-20/cartaz-aula-informatica-administradores-publicos-ufrpe.jpeg" /></p>
+
+<p>Esse texto é composto por anotações da palestra “Dados Abertos para Gestão Pública” apresentada na disciplina “Informática para administradores” do curso de Bacharelado em Administração Pública da <a href="http://www.ufrpe.br/">UFRPE</a> em 20 de novembro de 2021. Recursos:</p>
+<ul>
+  <li><a href="../../assets/images/2021-11-20/slides-dados-abertos-para-gestao-publica.pdf">Slides</a></li>
+  <li><a href="https://youtu.be/j4Yo6soPnOI">Palestra completa</a></li>
+</ul>
+
+<p>A apresentação foi realizada no <a href="https://pt.wikipedia.org/wiki/Dia_da_Consci%C3%AAncia_Negra">Dia da Consciência Negra</a> e Luta Antirracista, então foram compartilhadas as seguintes informações:</p>
+
+<p><img class="rounded float-right mr-4" src="../../assets/images/2021-11-20/racismo-a-brasileira-genero-numero.png" /></p>
+
+<p>Iniciativa <a href="https://racismo.generonumero.media/">Racismo à brasileira</a> com depoimentos e impactos do racismo cotidiano que todas nós praticamos consciente ou inconscientemente. Lançada essa semana pela <a href="https://www.generonumero.media/">Gênero e Número</a>, a primeira organização de mídia do Brasil orientada por dados para qualificar o debate sobre equidade de gênero e raça.</p>
+
+<p><img class="rounded float-left mr-4" src="../../assets/images/2021-11-20/texto-geledes-consciencia-negra.png" /></p>
+
+<p><a href="https://www.geledes.org.br/dia-da-consciencia-negra-e-luta-antirracista/">Texto Dia da Consciência Negra e luta antirracista</a> do portal <a href="https://www.geledes.org.br/">Geledés</a>, Instituto da Mulher Negra que desenvolve ações e projetos com foco na erradicação do racismo e sexismo.</p>
+
+<p><img class="rounded float-right mr-4" src="../../assets/images/2021-11-20/marcha-consciencia-negra-pe-2021.png" /></p>
+
+<p><br /></p>
+
+<p>Marcha da Consciência negra que ocorre hoje (20 nov. 2021) a partir das 14h, sendo a concentração no <a href="https://goo.gl/maps/XMmo7iDR2e5KYKdr6">pátio da igreja do Carmo em Recife</a>. <a href="https://www.instagram.com/p/CWYF0ZJr6T5/">Clique aqui para mais informações</a></p>
+
+<p><img class="rounded float-left mr-4" src="../../assets/images/2021-11-20/pyladies-convida-cara-gente-branca.jpg" /></p>
+
+<p>A comunidade <a href="https://www.instagram.com/pyladiesrecife/">PyLadies Recife</a> promove uma conversa aberta com o grupo de discussão Cara Gente Branca no dia 24 de nov. 2021. O grupo é composto por pessoas não negras para discutir racismo, seus privilégios enquanto pessoas brancas e sua atuação na luta antirracista. O evento é gratuito. <a href="https://www.instagram.com/p/CWf1QdVr71E/">Clique aqui para mais informações</a>.</p>
+
+                <i class="far fa-laugh-beam"></i>               
+            </div>
+
+            <!-- Version in other languages -->
+            <div class="language-version">
+                
+                
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Author Box -->
+                        
+            <div class="row post-top-meta">
+            <!-- Foto da autora
+                <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                    
+                    <img class="author-thumb" src="/" alt="Ana Cecília Vieira">
+                    
+                </div>
+            -->
+
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                    <i class="fas fa-star"></i>                     
+                </div>
+                
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">                                                        
+                    Ana Cecília Vieira
+                    <span class="author-description">Analista de dados especializada em abertura de dados governamentais. Entusiasta nos temas: dados abertos, código aberto e comunidades autogestionadas como instrumento para transformação social. É especialista em Inteligência Artificial e Aprendizado de Máquina. Está como coordenadora de Governança de TIC e Dados Abertos da UFPE e líder técnica do time de Dados na Secretaria Nacional das Periferias, do Ministério das Cidades. E é podcaster no Pizza de Dados.</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- Prev/Next -->
+            <p> ----- </p>
+            <h4>Leia também: </h4>
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://www.cecivieira.com.br///extensao-ckan-pages-instalacao-e-uso/"> &laquo; Extensão CKAN Pages: instalação e uso</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="http://www.cecivieira.com.br///como-apagar-imagens-docker/">Como apagar imagens Docker &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+            </div>
+
+            
+
+        </div>
+
+        <!-- Categories Jumbotron
+================================================== -->
+        
+
+<div class="jumbotron fortags">
+      <div class="d-md-flex h-100">
+            <div class="col-md-4 transpdark align-self-center text-center h-100">
+                  <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">
+                              Temas
+                              <span class="d-none d-md-inline">→</span>
+                        </h2>
+                  </div>
+            </div>
+            <div class="col-md-8 p-5 align-self-center text-center">
+                  
+
+    
+        <a class="mt-1 mb-1" href="/temas#dados-abertos">dados abertos (11)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#carreira">carreira (4)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#bash">bash (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#controle-de-tarefas">controle de tarefas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#linux">linux (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#terminal-commands">terminal commands (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#cidades-inteligentes">cidades inteligentes (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#governo-aberto">governo aberto (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#oracle-virtual-box">oracle virtual box (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ubuntu-20.04">ubuntu 20.04 (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#comunidades">comunidades (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#internacionalização">internacionalização (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#plugin">plugin (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ruby">ruby (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jekyll">jekyll (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ckan">ckan (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#docker">docker (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#folium">folium (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#mapa">mapa (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#extensão-ckan">extensão ckan (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#gestão-pública">gestão pública (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#estatística">estatística (5)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#américa-latina">américa latina (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#análise-exploratoria">análise exploratoria (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#inovação-cívica">inovação cívica (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#pandas">pandas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#software-livre">software livre (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jinja">jinja (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#python">python (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#qualidade-de-dados">qualidade de dados (1)</a>
+    
+
+
+            </div>
+      </div>
+</div>
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 text-center text-lg-left">
+                        Ana Cecília Vieira © <a target="_blank"
+                            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center social-media">
+                        <!-- 
+                        <a target="_blank" href="https://twitter.com/cecivieira"><i class="fab fa-twitter"></i></a>
+                         -->
+                        
+                        <a target="_blank" href="https://www.linkedin.com/in/cecivieira/"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        
+                        <a target="_blank" href="http://lattes.cnpq.br/9296198356646640"><i class="ai ai-lattes"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://github.com/cecivieira"><i class="fab fa-github"></i></a>
+                        
+                        
+                        <a target="_blank" href="mailto:cecivieira@gmail.com"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center text-lg-right">
+                        <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish
+                            Jekyll Theme</a> by WowThemes.net
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer
+================================================== -->
+
+    </div> <!-- /.site-content -->
+
+    <!-- Scripts
+================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script src="/assets/js/mediumish.js"></script>
+
+    
+
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+    
+
+</body>
+
+</html>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script>
+<script>L2Dwidget.init({ "model": { "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618, "jsonPath": "/live2dw/assets/hijiki.model.json" }, "display": { "superSample": 2, "width": 150, "height": 300, "position": "right", "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 }, "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }, "log": false, "pluginJsPath": "lib/", "pluginModelPath": "assets/", "pluginRootPath": "live2dw/", "tagMode": false });</script>
