@@ -7,14 +7,14 @@ lang: pt-br
 translated-es: 
 translated-en: 
 translated-ptbr: 
-categories: [carreira, entrevista, comunidades]
-tags: [podcast]
+categories: [carreira, comunidades]
+tags: [entrevista]
 image: https://res.cloudinary.com/damhz6skt/image/upload/v1681494288/capas-site/5_mvgtff.png
 description: Entrevista para o podcast da comunidade Start Coding sobre PyLadies Recife e algumas reflexões sobre minha jornada em TI.
 toc: false
 beforetoc:
 ---
-Nessa entrevista falei sobre a atuação da comunidade [Pyladies Recife](https://www.instagram.com/pyladiesbrasil/), minhas experiências nas comunidades de mulheres em TI e algumas reflexões sobre elas.
+Nessa entrevista, que foi ao ar em 28 de julho de 2021, falei sobre a atuação da comunidade [Pyladies Recife](https://www.instagram.com/pyladiesbrasil/), minhas experiências nas comunidades de mulheres em TI e algumas reflexões sobre elas.
 
 [Start Coding](https://www.instagram.com/_startcoding/) é uma iniciativa que promove cursos, palestras, podcasts e eventos com o objetivo de inserir mulheres no setor de tecnologia.
 
