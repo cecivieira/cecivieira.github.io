@@ -1,7 +1,7 @@
 site:
   name: Ana Cecília Vieira
   description: 'Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia.'
-  author-description: "Analista de dados especializada em abertura de dados governamentais. Entusiasta nos temas: dados abertos, código aberto e comunidades autogestionadas como instrumento para transformação social. É especialista em Inteligência Artificial e Aprendizado de Máquina. Está como coordenadora de Governança de TIC e Dados Abertos da UFPE, na liderança técnica do time de Dados na Secretaria Nacional das Periferias, do Ministério das Cidades. E é podcaster no Pizza de Dados."
+  author-description: "Analista de dados especializada em abertura de dados governamentais. Entusiasta nos temas: dados abertos, código aberto e comunidades autogestionadas como instrumento para transformação social. É especialista em Inteligência Artificial e Aprendizado de Máquina. Está como coordenadora de Governança de TIC e Dados Abertos da UFPE e líder técnica do time de Dados na Secretaria Nacional das Periferias, do Ministério das Cidades. E é podcaster no Pizza de Dados."
   keywords: Tecnologia
   lang: pt-br
 main:
