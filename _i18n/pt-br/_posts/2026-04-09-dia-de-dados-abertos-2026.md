@@ -31,5 +31,5 @@ A programação contou com a participação do Instituto de Pesquisa e Inovaçã
 Matéria completa:
 
 <div class="container text-center">
-    <iframe width="90%" height="315" title="Dia de Dados Abertos 2026" src="https://youtu.be/ChC7Phyo4bU" frameborder="0" allowfullscreen></iframe>
+    <iframe width="90%" height="315" title="Dia de Dados Abertos 2026" src="https://www.youtube.com/embed/ChC7Phyo4bU?si=Bv6xfti-9waOaQ85" frameborder="0" allowfullscreen></iframe>
 </div>
