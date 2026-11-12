@@ -10,7 +10,7 @@ translated-ptbr:
 categories: [dados abertos, reúso de dados]
 tags: [palestra]
 image: https://res.cloudinary.com/damhz6skt/image/upload/v1794487677/capas-site/spring-floral-border-background-green-with-leaf-watercolor-illustration_gwfveg.jpg
-description: ----
+description: EM DESENVOLVIMENTO
 toc: false
 beforetoc:
 ---
