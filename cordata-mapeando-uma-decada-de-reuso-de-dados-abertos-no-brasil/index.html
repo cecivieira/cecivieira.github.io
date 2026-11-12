@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Blog pessoal para compartilhar aprendizados e reunir minhas andanças pelas comunidades de tecnologia." />
+    <meta name="keywords" content="Tecnologia" />
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <title>CORDATA: Mapeando uma década de reúso de dados abertos no Brasil | Ana Cecília Vieira</title>
+
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>CORDATA: Mapeando uma década de reúso de dados abertos no Brasil</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="CORDATA: Mapeando uma década de reúso de dados abertos no Brasil" />
+<meta name="author" content="cecivieira" />
+<meta property="og:locale" content="pt_br" />
+<meta name="description" content="EM DESENVOLVIMENTO" />
+<meta property="og:description" content="EM DESENVOLVIMENTO" />
+<link rel="canonical" href="http://www.cecivieira.com.br//cordata-mapeando-uma-decada-de-reuso-de-dados-abertos-no-brasil/" />
+<meta property="og:url" content="http://www.cecivieira.com.br//cordata-mapeando-uma-decada-de-reuso-de-dados-abertos-no-brasil/" />
+<meta property="og:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1794487677/capas-site/spring-floral-border-background-green-with-leaf-watercolor-illustration_gwfveg.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-11-12T00:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://res.cloudinary.com/damhz6skt/image/upload/v1794487677/capas-site/spring-floral-border-background-green-with-leaf-watercolor-illustration_gwfveg.jpg" />
+<meta property="twitter:title" content="CORDATA: Mapeando uma década de reúso de dados abertos no Brasil" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@cecivieira" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","image":"https://res.cloudinary.com/damhz6skt/image/upload/v1794487677/capas-site/spring-floral-border-background-green-with-leaf-watercolor-illustration_gwfveg.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.cecivieira.com.br//assets/images/logo.png"},"name":"cecivieira"},"headline":"CORDATA: Mapeando uma década de reúso de dados abertos no Brasil","dateModified":"2026-11-12T00:00:00-03:00","datePublished":"2026-11-12T00:00:00-03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.cecivieira.com.br//cordata-mapeando-uma-decada-de-reuso-de-dados-abertos-no-brasil/"},"author":{"@type":"Person","name":"cecivieira"},"description":"EM DESENVOLVIMENTO","url":"http://www.cecivieira.com.br//cordata-mapeando-uma-decada-de-reuso-de-dados-abertos-no-brasil/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link href="/assets/css/screen.css" rel="stylesheet">
+
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/b68e5ffc41.js" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics -->
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG4L84NMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEG4L84NMR');
+</script>
+    
+
+</head>
+
+
+
+<body class="layout-post">
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CMukta:300,300i,400,400i,700,700i"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
+
+
+    <!-- Begin Menu Navigation
+================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/assets/images/logo.png" alt="">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    
+                    <li class="nav-item">
+                        
+
+                        
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categorias">Categorias</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre-mim">Sobre mim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Contato</a>
+                    </li>
+
+                    
+
+                    <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Buscar..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+                    
+                    <li><a href="http://www.cecivieira.com.br//es"> 🇪🇸 </a></li>
+                    
+                    
+
+                </ul>
+
+                <!-- End Menu -->
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+
+        <div class="container">
+
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Compartilhe
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=CORDATA: Mapeando uma década de reúso de dados abertos no Brasil&url=http://www.cecivieira.com.br//cordata-mapeando-uma-decada-de-reuso-de-dados-abertos-no-brasil/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://www.cecivieira.com.br//cordata-mapeando-uma-decada-de-reuso-de-dados-abertos-no-brasil/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.cecivieira.com.br//cordata-mapeando-uma-decada-de-reuso-de-dados-abertos-no-brasil/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">CORDATA: Mapeando uma década de reúso de dados abertos no Brasil</h1>
+
+                <!-- Post Date -->
+                <p>
+                <small>
+                    <span class="post-date"><time class="post-date" datetime="2026-11-12">12 Nov 2026</time></span>           
+                    
+                    </small>
+                </p>
+
+                <!-- Post Categories -->
+                <div class="after-post-cats">
+                    <ul class="tags mb-4">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#dados-abertos">dados abertos</a>
+                        </li>
+                        
+                        <li>
+                            <a class="smoothscroll" href="/temas#reúso-de-dados">reúso de dados</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Categories -->
+
+                <!-- Post Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        
+                        
+                        <li>
+                            <a class="smoothscroll" href="/atividades#palestra">#palestra</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Tags -->                
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image - Insere a imagem do card da notícia, antes do texto do artigo -->
+            <!-- 
+
+            
+            <img class="featured-image img-fluid" src="https://res.cloudinary.com/damhz6skt/image/upload/v1794487677/capas-site/spring-floral-border-background-green-with-leaf-watercolor-illustration_gwfveg.jpg" alt="CORDATA: Mapeando uma década de reúso de dados abertos no Brasil">
+            
+
+             -->
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <blockquote>
+  <p>Nesse artigo você encontrará o conteúdo na palestra “CORDATA: Mapeando uma década de reúso de dados abertos no Brasil”, apresentada no evento <a href="https://escoladedados.org/coda/coda2026/">CODA.BR</a>, e os <a href="">slides[em breve]</a> utilizados.</p>
+</blockquote>
+
+<p><strong>[EM DESENVOLVIMENTO]</strong>
+Um dos princípios constitucionais da administração pública brasileira é o da “publicidade”. Ao longo dos anos os meios para publicizar dados e informação foram se transformando, passou de páginas impressas fixadas nas portas das repartições públicas, diários oficiais e jornais de grande circulação, para publicações com grande alcance na internet.</p>
+
+<p>No Brasil, o debate sobre o tema tem como um dos seus marcos a Parceria para o Governo Aberto (2011), que tem como objetivo “difundir e incentivar práticas governamentais relacionadas à transparência dos governos, ao acesso à informação pública e à participação social.” (Brasil, 2015), tendo como um dos pilares para sua viabilização a disponibilização de dados governamentais em formato aberto.</p>
+
+<p>Os primeiros marcos legislativos e estruturais surgem na continuação da Parceria, sendo em 2011 promulgada a Lei de Acesso à Informação (Lei 12.527/2011). Em 2012 foi instituída a Infraestrutura Nacional de Dados Abertos (IN MPOG/SLTI 04/2012) como parte do compromisso do 1º Plano de Ação Nacional para Governo Aberto. Em 2016, a Política de Dados Abertos do Poder Executivo Federal (Decreto 8.777/2016), a qual traz em seu bojo a definição do termo “dados abertos” e a obrigatoriedade dos órgãos e entidades da administração pública federal direta, autárquica e fundacional desenvolverem bianualmente um plano para abertura de dados, promoção e fomento de seu uso. O primeiro Modelo de Referência para Publicação de Dados foi lançado em 2020, visando a promoção de parâmetros para publicação de dados em formato aberto por estados e municípios, sendo esse o produto do compromisso “Ecossistema de dados abertos” do 4º Plano de Ação da Parceria para Governo Aberto.</p>
+
+<p>Tal contexto impulsionou a publicação, em meio digital, de dados em formato aberto, possibilitando, assim, maior transparência na gestão pública, desenvolvimento de tecnologias de controle e/ou impacto social, estudos e trabalhos acadêmicos que tem como objetivo pesquisar ações, programas e instituições públicas, além de uma maior participação social na gestão de todas as esferas do Poder Executivo.</p>
+
+<p>Entendemos que para alcançar os objetivos previstos no Decreto 8.777/2016 precisamos de boa qualidade de dados, promover letramento de dados da população e ações de incentivo ao uso e reúso dos conjuntos de dados. Entre os objetivos citados, destacamos:</p>
+
+<blockquote>
+  <p>V - fomentar o controle social e o desenvolvimento de novas tecnologias destinadas à construção de ambiente de gestão pública participativa e democrática e à melhor oferta de serviços públicos para o cidadão;
+VI - fomentar a pesquisa científica de base empírica sobre a gestão pública;
+VII - promover o desenvolvimento tecnológico e a inovação nos setores público e privado e fomentar novos negócios;
+(Brasil, 2016)</p>
+</blockquote>
+
+<p>No entanto, não podemos ignorar que a partir de 2016 houve a criação de portais de dados abertos e uma crescente publicação de</p>
+
+<p>dados acessíveis ao público, representados em meio digital, estruturados em formato aberto, processáveis por máquina, referenciados na internet e disponibilizados sob licença aberta que permita sua livre utilização, consumo ou cruzamento, limitando-se a creditar a autoria ou a fonte.
+(Brasil, 2016)</p>
+
+<p>Este trabalho se debruça sobre as iniciativas de consumo de tais dados. Dez anos depois da promulgação da Política de Dados Abertos, queremos saber como está o panorama nacional.</p>
+
+<h2 id="cordata">CORDATA</h2>
+<p>Em 2023 o Centro de Estudos sobre Tecnologias Web do NIC.br lançou o Catálogo Online de Reúso de Dados Públicos (CORDATA), uma plataforma que reúne metadados sobre projetos, estudos, publicações, aplicações e outros produtos que utilizam dados abertos e públicos disponíveis na web. Esses metadados são acessíveis de forma livre, permitindo seu uso, compartilhamento e reaproveitamento por diferentes públicos.</p>
+
+<p>O objetivo do CORDATA é dar visibilidade aos casos de uso e reúso de dados abertos e públicos, apresentando exemplos concretos de como essas informações são aplicadas em diversas áreas. Além disso, a plataforma busca mapear e descrever as principais características desses casos, contribuindo para o fortalecimento da cultura de dados abertos e para a promoção da transparência, da inovação e da geração de conhecimento.</p>
+
+<p>Inicialmente o catálogo foi construído pensando na catalogação voluntária por parte da comunidade de dados abertos, no entanto isso aconteceu de forma muito tímida, reunindo apenas 28 casos após 1 ano de seu lançamento. Em 2025, com apoio da Superintendência de TI da UFPE, foi iniciada uma revisão da metodologia, coleta e catalogação sistemática de casos de reúso. Hoje,11 de novembro de 2026, há 643 casos de uso e reúso de dados abertos catalogados.</p>
+
+<p>No Brasil, há em alguns portais de dados abertos uma sessão dedicada aos casos de reúso. Em sua maioria são poucos os casos catalogados e referem-se a reúso de dados da própria plataforma. Com exceção do Portal Brasileiro de Dados Abertos, que reúne 185 casos (nov. 2026) de diversas fontes, sendo a sua catalogação voluntária ou oriunda do <a href="https://www.gov.br/cgu/pt-br/acesso-a-informacao/dados-abertos/concurso-dados-abertos/concurso-de-reuso-de-dados-abertos-da-cgu">Concurso de Reúso de Dados Abertos da CGU</a>.</p>
+
+<p>Em âmbito internacional, há catálogos robustos localizados em busca realizada (jul. 2026) via o agente de inteligência artificial (IA) Claude, recomendando explicitamente que a procura fosse feita nos oito idiomas mais falados no mundo – chinês, espanhol, inglês, hindi, português, bengali, russo e japonês. Foram localizados 24 catálogos, sendo os 5 mais populosos:</p>
+
+<ul>
+  <li><a href="https://www.data.gouv.fr/reuses">Portal Dados Públicos da França</a> - 5.296</li>
+  <li><a href="https://artefacts.data.gov.in/all-visualizations/">Portal de Dados Governamentais da Índi</a> - 3.246</li>
+  <li><a href="https://data.europa.eu/en/publications/use-cases">Portal de Dados da União Européia</a> - 774</li>
+  <li><a href="https://datos.gob.es/en/applications">Portal de Dados Abertos da Espanha</a> - 532</li>
+  <li><a href="https://data.gov.tw/applications">Portal de Dados Abertos de Taiwan</a> - 237</li>
+</ul>
+
+<p>Podemos observar que o CORDATA figura entre os catálogos de reúso com maior quantidade de casos catalogados e o único que não é mantido pelo governo de um país.</p>
+
+<h3 id="expansão">Expansão</h3>
+
+<p>A expansão do CORDATA teve início em junho de 2025 e, até agora, foi constituída pelas seguintes etapas:</p>
+
+<p><strong>1. Revisão de conjunto de metadados para catalogação dos casos</strong></p>
+
+<p>Tendo como objetivo elevar o nível de catalogação para qualificar o CORDATA e possibilitar uma análise mais aprofundada do panorama atual do uso e reúso de dados abertos e públicos no país, foram implementadas alterações tanto para descrição geral dos casos, quanto para o detalhamento dos conjuntos de dados usados em cada um:</p>
+
+<p>Geral: Inclusão de metadados sobre cobertura geográfica, URL para página arquivada e inclusão dos temas “Gênero e Raça” e “Religião” no vocabulário controlado .
+Conjuntos de dados: Inclusão de tipo de licença e extensão do arquivo por conjunto de dados utilizado.</p>
+
+<p>Além disso, foi ampliada a capacidade de cadastro de conjuntos de dados em cada caso de uso e reúso, no entanto convencionou-se cadastrar os 10 primeiros conjuntos de dados citados em cada caso catalogado. Também foi adotada como iniciativa de preservação e desenvolvimento de memória histórica dos casos, o arquivamento da página principal de cada caso em uma biblioteca de acesso livre que tenha como objetivo a preservação de páginas web, como a Internet Archive.
+Vale ressaltar que usa-se um vocabulário controlado criado para o CORDATA, inspirado no utilizado pela Câmara de Deputados para classificação de temas das proposições legislativas e o usado pela CGU para classificação dos casos de reúso de dados abertos disponíveis no Portal Brasileiro de Dados Abertos.</p>
+
+<p><strong>2. Revisão dos critérios para seleção</strong></p>
+
+<p>Tendo em vista a necessidade de identificar apenas casos de uso e reúso de dados abertos ou públicos, foram estabelecidos os seguintes critérios gerais para sua seleção:</p>
+
+<ul>
+  <li>Ter referenciado, ao menos, 01 fonte de dados abertos ou público;</li>
+  <li>Não ter uso exclusivo de fonte de dados solicitados via Lei de Acesso à Informação (LAI);</li>
+  <li>Não ter uso exclusivo de diários oficiais.</li>
+</ul>
+
+<p>O reúso, em si, não precisa ser público; por exemplo, ele pode ser uma matéria jornalística sob paywall, um serviço prestado por uma empresa em troca de um pagamento ou um sistema utilizado exclusivamente pelo poder público. Embora tais restrições de acesso possam dificultar a coleta de informações a respeito desses casos, elas não tornam os casos inelegíveis para catalogação no CORDATA.</p>
+
+<p><strong>3. Mapeamento de fontes de casos de reúso</strong></p>
+
+<p>Foi realizado o mapeamento de portais e plataformas agregadoras ou produtoras de múltiplos casos de uso e reúso de dados abertos e públicos, tais como:</p>
+
+<ul>
+  <li>Comunidades e eventos nacionais de dados abertos e jornalismo de dados;</li>
+  <li>Observatórios de dados;</li>
+  <li>Portais de dados abertos nacional, estaduais e municipais (capitais);</li>
+  <li>Portais de jornalismo de dados;</li>
+  <li>Repositórios digitais de universidades federais;</li>
+  <li>Repositórios de tecnologia.</li>
+</ul>
+
+<p>Foram mapeadas 21 fontes de casos de uso e reúso de dados abertos e públicos dos tipos comunidade e eventos nacionais de dados abertos e jornalismo de dados, observatórios de dados, portais de dados abertos nacional, estaduais e municipais (capitais), portais de jornalismo de dados, e repositórios de tecnologia, além de 61 repositórios digital de universidades federais</p>
+
+<p>Aqui começam os primeiros achados, mas antes vou falar da etapa de seleção e catalogação.</p>
+
+<h3 id="seleção-e-catalogação">Seleção e catalogação</h3>
+
+<p>A seleção dos casos encontrados nessas fontes se deu manualmente e considerando a totalidade dos reúsos, exceto os casos localizados nos repositórios institucionais das universidades. Devido ao seu grande volume, foram inspecionadas amostras aleatórias correspondentes a 7% dos trabalhos acadêmicos (trabalhos de conclusão de curso - TCCs, dissertações e teses) publicados entre 2020 e 2025 das universidades UFCG, UFAM e UFES, além de 3,5% dos trabalhos acadêmicos da UFRGS do mesmo período e mil trabalhos acadêmicos da UFPE de 2024. Para otimizar a identificação, utilizamos um grande modelo de linguagem (Large Language Model, LLM) para filtrar trabalhos acadêmicos que possuíam alta probabilidade de ter utilizado dados públicos em seu desenvolvimento.</p>
+
+<p>O modelo utilizado foi o GPT-5, acessado via API da OpenAI. O modelo recebeu um prompt com as variáveis título, resumo e palavras-chave para avaliar se um trabalho acadêmico provavelmente utilizava dados abertos,. A precisão obtida na identificação de reúso de dados públicos foi de 84%, ou seja: 84% dos trabalhos selecionados pelo GPT-5 de fato utilizavam dados públicos. A partir da avaliação manual dos casos selecionados, estimou-se que aproximadamente 9% dos trabalhos acadêmicos em repositórios digitais de universidades federais utilizam dados públicos. Se essa porcentagem se mantiver para os trabalhos de conclusão de cursos de pós-graduação stricto sensu de todas as universidades brasileiras, isso se traduz em 8.265 reúsos de dados públicos desse tipo em 2024, segundo dados da Plataforma Sucupira (CAPES, 2025).</p>
+
+<h2 id="análise-de-dados-das-fontes-de-casos-de-reúso">Análise de dados das fontes de casos de reúso</h2>
+
+<p>Agora vamos voltar para os achados, começando pelas observações a partir do mapeamento das fontes de reúso de dados abertos. Os achados se concentram em dois tipos de fontes: portais de dados abertos e repositórios institucionais.</p>
+
+<p>De acordo com a Lei n° 12.527/2011 (Lei de Acesso à Informação - LAI), informações de interesse coletivo devem estar disponíveis em local de fácil acesso na internet, tendo como alguns dos requisitos funcionais:</p>
+
+<blockquote>
+  <p>I - conter ferramenta de pesquisa de conteúdo que permita o acesso à informação de forma objetiva, transparente, clara e em linguagem de fácil compreensão;
+II - possibilitar a gravação de relatórios em diversos formatos eletrônicos, inclusive abertos e não proprietários, tais como planilhas e texto, de modo a facilitar a análise das informações;
+III - possibilitar o acesso automatizado por sistemas externos em formatos abertos, estruturados e legíveis por máquina;
+IV - divulgar em detalhes os formatos utilizados para estruturação da informação; (…)
+(Lei n° 12.527/2011, art. 8º, § 3º)</p>
+</blockquote>
+
+<p>Ampliando o escopo, os portais de dados abertos além de conter tais requisitos técnicos, devem ser denominados como tal e centralizar, organizar e disponibilizar dados públicos com licença aberta e metadados sobre os conjuntos de dados e seus recursos. Sendo seu acesso gratuito e irrestrito. 
+Ao longo do mapeamento das fontes de casos de uso e reúso de dados abertos e públicos, direcionamos as buscas por portais de dados abertos de Estados, capitais estaduais e Distrito Federal, considerando os seguintes pontos:</p>
+
+<ul>
+  <li>Denominação “Portal de Dados Abertos”;</li>
+  <li>Disponibilização de API (Application Programming Interface) para consumo dos conjuntos de dados abertos;</li>
+  <li>Licença aberta nos conjuntos de dados;</li>
+  <li>Presença de sessão dedicada a casos de reúso de dados abertos.</li>
+</ul>
+
+<h3 id="portais-de-dados-abertos-estaduais">Portais de dados abertos estaduais</h3>
+
+<p>Ao buscar portais de dados abertos estaduais, foi observado que dos 26 estados da federação, apenas 05 não foi localizada plataforma denominada “Portal de Dados Abertos”, são eles: Roraima, Sergipe, Tocantins, Paraná e Piauí.</p>
+
+<p>Dos 21 estados com Portal de Dados Abertos, apenas 05 possuíam todos os conjuntos de dados sob licença aberta, sendo eles os estados de Alagoas, Goiás, Paraíba, Pernambuco e Santa Catarina. No mesmo montante, em outros 05 estados (Acre, Amapá, Amazonas, Ceará e Pará), nenhum dos conjuntos de dados publicados possuíam licença aberta. Nos demais estados (10), foi identificada a licença aberta em parte dos conjuntos de dados publicados. Um destaque para o Portal de Dados Abertos do Rio Grande do Norte, onde não foi localizado nenhum conjunto de dados publicado.</p>
+
+<p>No que tange a presença de funcionalidade que permita o consumo automatizado dos conjuntos de dados (API), dos 21 estados com Portal de Dados Abertos, apenas o Amapá não disponibiliza a funcionalidade e o Amazonas não possui a funcionalidade implementada em todo o Portal. Os demais estados possuem a funcionalidade habilitada.</p>
+
+<p>Os estados de Roraima e Sergipe, ainda que não possuam Portal de Dados Abertos,  foram localizados dados disponíveis para consumo via API no portal da transparência estadual.</p>
+
+<p>Dos 21 Portais de Dados Abertos estaduais apenas os dos estados de Alagoas e Rio Grande do Sul possuem sessão dedicada a casos de reúso de dados abertos.</p>
+
+<p>[FAZER VISUALIZAÇÃO JUNTANDO TODAS OS CRITERIOS EM UM ÚNICO MAPA]</p>
+
+<h3 id="portais-de-dados-abertos-municipais">Portais de dados abertos municipais</h3>
+
+<p>A busca por portais de dados abertos municipais foi restrita a capitais estaduais, sendo localizados 10 municípios com Portal de Dados Abertos (Belo Horizonte, Curitiba, Fortaleza, Macapá, Maceió, Palmas, Porto Alegre, Recife, Rio de Janeiro e São Paulo).
+Dos quais, em apenas 04 Portais todos os conjuntos de dados publicados possuem licença aberta (Curitiba, Porto Alegre, Recife e São Paulo). Nos Portais dos municípios de Belo Horizonte, Fortaleza, Maceió e Rio de Janeiro parte dos conjuntos de dados possuem licença aberta, a outra a licença não é explicitada ou se enquadra na categoria “proprietária”. Já nos Portais de Macapá e Palmas nenhum dos conjuntos possui licença aberta.</p>
+
+<p>No que se refere à presença de funcionalidade que permita o consumo de dados via API, dos 10 municípios com Portal de Dados Abertos, 04 não possuíam (Curitiba, Macapá, Palmas e Rio de Janeiro) a citada funcionalidade. Um achado interessante desse mapeamento foi a identificação de disponibilização de consumo automatizado de dados em 06 municípios, ainda que não possuíssem Portal de Dados Abertos. Nesses casos, os dados estão disponibilizados no Portal da Transparência. Acreditamos que isso se dá para o cumprimento da Lei 12.527/2011, art. 8º, § 3º, inciso II.</p>
+
+<p>Dos 10 Portais de Dados Abertos Municipais apenas os dos municípios de Recife e Rio de Janeiro possuem seção dedicada a casos de reúso de dados abertos.</p>
+
+<p>[FAZER VISUALIZAÇÃO JUNTANDO TODAS OS CRITERIOS EM UM ÚNICO MAPA]</p>
+
+<h3 id="repositórios-digitais-de-universidades-públicas-federais">Repositórios digitais de universidades públicas (federais)</h3>
+
+<p>Repositórios digitais institucionais reúnem de maneira ordenada a produção científica de uma instituição, tendo como principal objetivo preservar e dar acesso aberto à produção acadêmica. Sendo estrategicamente instrumentos para aumentar a visibilidade e a preservação da memória intelectual. Para este estudo entende-se como produção acadêmica os trabalhos de conclusão de curso, dissertações e teses, por serem produções mínimas obrigatórias para obtenção de diploma.</p>
+
+<p>Foi observado que nenhum dos repositórios digitais mapeados possuíam a funcionalidade de exportação de metadados das catalogações em lote, tão pouco o seu consumo via API. Devido a isso, para ter acesso aos dados foram realizados pedidos de acesso à informação para 60 universidades mapeadas. Com exceção da Universidade Federal de Pernambuco, que disponibiliza no seu Portal de Dados Abertos os metadados de catalogação de todo o seu acervo de trabalhos de conclusão de curso, dissertações e teses.</p>
+
+<p>Para a coleta de dados das produções acadêmicas de universidades federais, foi considerado o recorte temporal entre 2020-2025, em observância à Portaria MEC n. 315/2018 que determina que todos os documentos e informações que compõem o acervo acadêmico, conforme Tabela de temporalidade e destinação de documentos de arquivo relativos às atividades-fim das IFES, devem ser mantidos em sistema especializado de gerenciamento de documentos eletrônicos conforme critérios estabelecidos pela portaria.</p>
+
+<p>Os pedidos de informação foram realizados, em janeiro de 2026, em parceria com a Fiquem Sabendo, organização da sociedade civil especializada no acesso à informação pública, com base na Lei de Acesso à Informação (LAI). Foi obtida uma taxa de 41% de respostas positivas quanto ao fornecimento de metadados de catalogação da produção acadêmica. Dos 59% de respostas negativas,  as principais justificativas recebidas foram :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Justifica</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Existência de repositório institucional</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <td>Pedido desproporcional</td>
+      <td>06</td>
+    </tr>
+    <tr>
+      <td>Impossibilidade técnica</td>
+      <td>03</td>
+    </tr>
+    <tr>
+      <td>Ausência de repositório institucional</td>
+      <td>01</td>
+    </tr>
+    <tr>
+      <td>Não obrigatoriedade legal</td>
+      <td>01</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Esses achados das fontes de casos nos mostra o quanto ainda estamos por avançar na qualificação de portais e repositórios que disponibilizam dados e informações públicas destinadas a reutilização.</p>
+
+<h2 id="análise-de-dados-dos-metadados-dos-casos-de-reúso">Análise de dados dos metadados dos casos de reúso</h2>
+
+<p>A partir do aumento do volume de casos catalogados no CORDATA, foi possível analisar seus metadados para tentar compreender o perfil dos reúsos de dados abertos e públicos no país.</p>
+
+<p>Em um âmbito geral temos o seguinte cenário:</p>
+
+<p><strong>[EM DESENVOLVIMENTO]</strong></p>
+
+                <i class="far fa-laugh-beam"></i>               
+            </div>
+
+            <!-- Version in other languages -->
+            <div class="language-version">
+                
+                
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Author Box -->
+                        
+            <div class="row post-top-meta">
+            <!-- Foto da autora
+                <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                    
+                    <img class="author-thumb" src="/" alt="Ana Cecília Vieira">
+                    
+                </div>
+            -->
+
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                    <i class="fas fa-star"></i>                     
+                </div>
+                
+                <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">                                                        
+                    Ana Cecília Vieira
+                    <span class="author-description">Analista de dados especializada em abertura de dados governamentais. Entusiasta nos temas: dados abertos, código aberto e comunidades autogestionadas como instrumento para transformação social. É especialista em Inteligência Artificial e Aprendizado de Máquina. Está como coordenadora de Governança de TIC e Dados Abertos da UFPE e líder técnica do time de Dados na Secretaria Nacional das Periferias, do Ministério das Cidades. E é podcaster no Pizza de Dados.</span>
+                </div>
+            </div>
+            
+
+            
+            <!-- Prev/Next -->
+            <p> ----- </p>
+            <h4>Leia também: </h4>
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="http://www.cecivieira.com.br///na-trilha-dos-dados-primeiros-passos-no-mundo-dos-dados/"> &laquo; Na trilha dos dados: primeiros passos no mundo dos dados</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+            </div>
+
+            
+
+        </div>
+
+        <!-- Categories Jumbotron
+================================================== -->
+        
+
+<div class="jumbotron fortags">
+      <div class="d-md-flex h-100">
+            <div class="col-md-4 transpdark align-self-center text-center h-100">
+                  <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">
+                              Temas
+                              <span class="d-none d-md-inline">→</span>
+                        </h2>
+                  </div>
+            </div>
+            <div class="col-md-8 p-5 align-self-center text-center">
+                  
+
+    
+        <a class="mt-1 mb-1" href="/temas#dados-abertos">dados abertos (12)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#carreira">carreira (4)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#bash">bash (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#controle-de-tarefas">controle de tarefas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#linux">linux (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#terminal-commands">terminal commands (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#cidades-inteligentes">cidades inteligentes (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#governo-aberto">governo aberto (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#oracle-virtual-box">oracle virtual box (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ubuntu-20.04">ubuntu 20.04 (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#comunidades">comunidades (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#internacionalização">internacionalização (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#plugin">plugin (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ruby">ruby (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jekyll">jekyll (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#ckan">ckan (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#docker">docker (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#folium">folium (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#mapa">mapa (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#extensão-ckan">extensão ckan (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#gestão-pública">gestão pública (3)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#estatística">estatística (5)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#américa-latina">américa latina (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#análise-exploratoria">análise exploratoria (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#inovação-cívica">inovação cívica (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#pandas">pandas (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#software-livre">software livre (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#jinja">jinja (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#python">python (2)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#qualidade-de-dados">qualidade de dados (1)</a>
+    
+        <a class="mt-1 mb-1" href="/temas#reúso-de-dados">reúso de dados (1)</a>
+    
+
+
+            </div>
+      </div>
+</div>
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 text-center text-lg-left">
+                        Ana Cecília Vieira © <a target="_blank"
+                            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center social-media">
+                        <!-- 
+                        <a target="_blank" href="https://twitter.com/cecivieira"><i class="fab fa-twitter"></i></a>
+                         -->
+                        
+                        <a target="_blank" href="https://www.linkedin.com/in/cecivieira/"><i class="fab fa-linkedin-in"></i></a>
+                        
+                        
+                        <a target="_blank" href="http://lattes.cnpq.br/9296198356646640"><i class="ai ai-lattes"></i></a>
+                        
+                        
+                        <a target="_blank" href="https://github.com/cecivieira"><i class="fab fa-github"></i></a>
+                        
+                        
+                        <a target="_blank" href="mailto:cecivieira@gmail.com"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center text-lg-right">
+                        <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish
+                            Jekyll Theme</a> by WowThemes.net
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- End Footer
+================================================== -->
+
+    </div> <!-- /.site-content -->
+
+    <!-- Scripts
+================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script src="/assets/js/mediumish.js"></script>
+
+    
+
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+    
+
+</body>
+
+</html>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script>
+<script>L2Dwidget.init({ "model": { "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618, "jsonPath": "/live2dw/assets/hijiki.model.json" }, "display": { "superSample": 2, "width": 150, "height": 300, "position": "right", "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 }, "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }, "log": false, "pluginJsPath": "lib/", "pluginModelPath": "assets/", "pluginRootPath": "live2dw/", "tagMode": false });</script>
