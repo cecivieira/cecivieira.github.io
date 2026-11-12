@@ -9,7 +9,7 @@ translated-en:
 translated-ptbr: 
 categories: [gestão pública, dados abertos]
 tags: [entrevista, evento]
-image: https://res.cloudinary.com/damhz6skt/image/upload/v1777544395/49661500_9281975_mnainu.jpg
+image: https://res.cloudinary.com/damhz6skt/image/upload/v1777544395/capas-site/49661500_9281975_mnainu.jpg
 description: Matéria exibida pelo NETV2 (Globo Nordeste) sobre o evento Dia de Dados Abertos 2026.
 toc: false
 beforetoc:

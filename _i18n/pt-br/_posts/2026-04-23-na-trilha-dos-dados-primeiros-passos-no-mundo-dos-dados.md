@@ -9,7 +9,7 @@ translated-en:
 translated-ptbr: 
 categories: [gestão pública, dados abertos, carreira]
 tags: [entrevista, palestra]
-image: https://res.cloudinary.com/damhz6skt/image/upload/v1777506346/29348532_17524_wvgqbp.jpg
+image: https://res.cloudinary.com/damhz6skt/image/upload/v1777506346/capas-site/29348532_17524_wvgqbp.jpg
 description: Entrevista sobre primeiros passos no mundo dos dados para o ciclo de eventos "Na trilha dos dados" promovido pela EGC do TCMSP.
 toc: false
 beforetoc:
