@@ -14,7 +14,7 @@ description: "Conteúdo do keynote realizado na Python Nordeste 2024, sobre dado
 toc: false
 beforetoc:
 ---
-> Nesse artigo você encontrará o conteúdo na palestra (keynote) ["Dados abertos feat Qualidade de Dados"](https://www.youtube.com/@PythonNordeste), apresentada na Python Nordeste 2024, e os [slides](../../assets/images/2024-08-10/Dados abertos feat qualidade de dados.pdf) utilizados. Esta palestra também foi apresentada no evento [América Aberta 2024](https://atividades.americaaberta.org/2024/talk/DXCAK7/) (trilha Coda.BR) e [Python Brasil 2024](https://talks.python.org.br/pythonbrasil-2024/talk/KL78N7/). 
+> Nesse artigo você encontrará o conteúdo na palestra (keynote) ["Dados abertos feat Qualidade de Dados"](https://youtu.be/racvK6kEbXg?si=oVdUlIm94KEPToAf), apresentada na Python Nordeste 2024, e os [slides](../../assets/images/2024-08-10/Dados abertos feat qualidade de dados.pdf) utilizados. Esta palestra também foi apresentada no evento [América Aberta 2024](https://atividades.americaaberta.org/2024/talk/DXCAK7/) (trilha Coda.BR) e [Python Brasil 2024](https://talks.python.org.br/pythonbrasil-2024/talk/KL78N7/). 
 
 ---
 Em outubro de 2023 recebi o [prêmio Dorneles Treméa \| Jean Ferri](https://apyb.python.org.br/apyb/premio-dorneles-tremea-jean-ferri/) em reconhecimento pelo trabalho que faço junto à comunidade Python. No momento do anúncio, fiquei tão surpresa que não consegui agradecer apropriadamente ao vivo. Depois que a emoção arrefeceu, eu só conseguia pensar em uma coisa: "precisarei de uma palestra keynote para agradecer o prêmio". Meses depois, a organização da Python Nordeste 2024 me convidou para ser a palestrante principal do evento. Essa palestra, é o meu agradecimento.
@@ -190,6 +190,14 @@ Precisamos entender que transparência de dados é um dos pilares de gestões de
 
 A democracia na América Latina vai muito além das eleições, ela precisa do seu engajamento na associação de moradores do bairro, ONGs, comunidades de tecnologia, etc. É necessário pensar coletivamente para soluções de problemas coletivos. 
 
+--------------------
+Assista a palestra:
+
+<div class="container text-center">
+    <iframe width="90%" height="315" title="Keynote - Ana Cecília Vieira - Dados Abertos feat Qualidade de Dados" src="https://www.youtube.com/embed/racvK6kEbXg?si=W7B1uP2efFOeYfNt" frameborder="0" allowfullscreen></iframe>
+</div>
+--------------------
+
 
 ## Referências
 
@@ -223,4 +231,4 @@ Esse artigo é composto pelas anotações da palestra (keynote) “Dados abertos
 
 Recursos:
 - [Slides](../../assets/images/2024-08-10/Dados abertos feat qualidade de dados.pdf)
-- [Palestra completa (em construção)](https://www.youtube.com/@PythonNordeste) 
+- [Palestra completa](https://youtu.be/racvK6kEbXg?si=oVdUlIm94KEPToAf) 
