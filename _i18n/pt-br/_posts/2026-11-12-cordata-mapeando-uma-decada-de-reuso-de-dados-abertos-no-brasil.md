@@ -10,7 +10,7 @@ translated-ptbr:
 categories: [dados abertos, reúso de dados]
 tags: [palestra]
 image: https://res.cloudinary.com/damhz6skt/image/upload/v1794487677/capas-site/spring-floral-border-background-green-with-leaf-watercolor-illustration_gwfveg.jpg
-description: EM DESENVOLVIMENTO
+description: Conteúdo da palestra realizada no Coda.Br 2026 sobre o CORDATA:Catálogo Online de Reúso de Dados Públicos.
 toc: false
 beforetoc:
 ---
