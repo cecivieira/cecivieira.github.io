@@ -7,7 +7,7 @@ lang: pt-br
 translated-es: 
 translated-en: 
 translated-ptbr: 
-categories: [dados abertos, transparência pública]
+categories: [dados abertos, transparência pública, gestão pública, governo aberto]
 tags: [palestra]
 image: https://res.cloudinary.com/damhz6skt/image/upload/v1795600391/capas-site/5481640_2857358_zjsxpw.png
 description: Fala sobre transparência pública, acesso à informação e participação social durante a mesa de abertura do evento "Monitora MDS - Transparência, Resultados e Novos Horizontes no Planejamento Estratégico"
